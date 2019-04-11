@@ -1,21 +1,21 @@
 <template>
   <div id="app">
     <HelloWorld msg="Coming Soon :)"/>
-   <!--  <Statistics/>
-    <ShowCard/> -->
+    <Statistics/>
+    <Shows/>
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
-// import ShowCard from './components/ShowCard.vue'
-// import Statistics from './components/Statistics.vue'
+import Shows from './components/Shows.vue'
+import Statistics from './components/Statistics.vue'
 export default {
   name: 'app',
   components: {
     HelloWorld,
-    // ShowCard,
-    // Statistics
+    Shows,
+    Statistics
   }
 }
 </script>
