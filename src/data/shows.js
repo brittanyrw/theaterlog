@@ -1,5 +1,6 @@
 export const showList = [
 	{
+    id: 's58',
     name: "Legally Blonde the Musical",
     theater: "Keegan Theatre",
     date: "Aug 2019",
@@ -12,6 +13,7 @@ export const showList = [
     type: 'musical',
     review: 'meh'
     },{
+    id: 's57',
     name: "Dear Evan Hansen",
     theater: "John F. Kennedy Center for the Performing Arts",
     date: "Aug 2019",
@@ -24,6 +26,7 @@ export const showList = [
     type: 'musical',
     review: ''
     },{
+    id: 's56',
     name: "Falsettos",
     theater: "John F. Kennedy Center for the Performing Arts",
     date: "Jun 2019",
@@ -36,18 +39,7 @@ export const showList = [
     type: 'musical',
     review: ''
     },{
-    name: "Into the Woods",
-    theater: "Ford's Theatre",
-    date: "Mar 2019",
-    location: "Washington, DC",
-    illustration: 'cow',    
-    favSong: '',
-    fav: false,
-    upcoming: true,
-    multi: 0,
-    type: 'musical',
-    review: ''
-    },{
+    id: 's55',        
     name: "Dear Evan Hansen",
     theater: "Music Box Theatre",
     date: "Jan 2019",
@@ -60,6 +52,7 @@ export const showList = [
     type: 'musical',
     review: ''
     },{
+    id: 's54',        
     name: "American Son",
     theater: "Booth Theatre",
     date: "Jan 2019",
@@ -72,6 +65,7 @@ export const showList = [
     type: 'play',
     review: ''
     },{
+    id: 's53',        
     name: "The Play That Goes Wrong",
     theater: "John F. Kennedy Center for the Performing Arts",
     date: "Jan 2019",
@@ -84,6 +78,7 @@ export const showList = [
     type: 'play',
     review: ''
     },{
+    id: 's52',            
     name: "Hamilton: An American Musical",
     theater: "John F. Kennedy Center for the Performing Arts",
     date: "Jun 2018",
@@ -96,6 +91,7 @@ export const showList = [
     type: 'musical',
     review: ''
     },{
+    id: 's51',            
     name: "Aladdin",
     theater: "New Amsterdam Theatre",
     date: "May 2018",
@@ -108,6 +104,7 @@ export const showList = [
     type: 'musical',
     review: ''
     },{
+    id: 's50',            
     name: "Anastasia",
     theater: "Broadhurst Theatre",
     date: "May 2018",
@@ -120,6 +117,7 @@ export const showList = [
     type: 'musical',
     review: ''
     },{
+    id: 's49',            
     name: "Puffs, or: Seven Increasingly Eventful Years at a Certain School of Magic & Magic",
     theater: "New World Stages",
     date: "May 2018",
@@ -132,6 +130,7 @@ export const showList = [
     type: 'play',
     review: ''
     },{
+    id: 's48',            
     name: "Chicago",
     theater: "Keegan Theatre",
     date: "April 2018",
@@ -144,6 +143,7 @@ export const showList = [
     type: 'musical',
     review: ''
     },{
+    id: 's47',            
     name: "In the Heights",
     theater: "John F. Kennedy Center for the Performing Arts",
     date: "Mar 2018",
@@ -156,6 +156,7 @@ export const showList = [
     type: 'musical',
     review: ''
     },{
+    id: 's46',            
     name: "Natasha, Pierre & The Great Comet of 1812",
     theater: "Imperial Theatre",
     date: "Jun 2017",
@@ -168,6 +169,7 @@ export const showList = [
     type: 'musical',
     review: ''
     },{
+    id: 's45',            
     name: "Dear Evan Hansen",
     theater: "Music Box Theatre",
     date: "Jun 2017",
@@ -180,6 +182,7 @@ export const showList = [
     type: 'musical',
     review: ''
     },{
+    id: 's44',            
     name: "Miss Saigon",
     theater: "Broadway Theatre",
     date: "Apr 2017",
@@ -192,6 +195,7 @@ export const showList = [
     type: 'musical',
     review: ''
     },{
+    id: 's43',            
     name: "Hamilton: An American Musical",
     theater: "Richard Rodgers Theatre",
     date: "Jan 2017",
@@ -203,6 +207,7 @@ export const showList = [
     multi: 5,
     type: 'musical'
     },{
+    id: 's42',            
     name: "Natasha, Pierre & The Great Comet of 1812",
     theater: "Imperial Theatre",
     date: "Jan 2017",
@@ -214,6 +219,7 @@ export const showList = [
     multi: 2,
     type: 'musical'
     },{
+    id: 's41',        
     name: "Sister Act",
     theater: "Toby’s Dinner Theatre",
     date: "Oct 2016",
@@ -225,6 +231,7 @@ export const showList = [
     multi: 0,
     type: 'musical'
     },{
+    id: 's40',        
     name: "Heathers",
     theater: "White Plains Performing Arts Center",
     date: "Oct 2016",
@@ -236,6 +243,7 @@ export const showList = [
     multi: 0,
     type: 'musical'
     },{
+    id: 's39',        
     name: "Hamilton: An American Musical",
     theater: "Richard Rodgers Theatre",
     date: "Oct 2016",
@@ -247,6 +255,7 @@ export const showList = [
     multi: 5,
     type: 'musical'
     },{
+    id: 's38',        
     name: "Falsettos",
     theater: "Walter Kerr Theatre ",
     date: "Oct 2016",
@@ -258,6 +267,7 @@ export const showList = [
     multi: 0,
     type: 'musical'
     },{
+    id: 's37',        
     name: "Angels in America: Part 1",
     theater: "Round House Theatre",
     date: "Sep 2016",
@@ -269,6 +279,7 @@ export const showList = [
     multi: 0,
     type: 'play'
     },{
+    id: 's36',        
     name: "Urinetown",
     theater: "Constellation Theatre Company",
     date: "Sep 2016",
@@ -280,6 +291,7 @@ export const showList = [
     multi: 0,
     type: 'musical'
     },{
+    id: 's35',        
     name: "Matilda",
     theater: "Shubert Theatre",
     date: "Aug 2016",
@@ -291,6 +303,7 @@ export const showList = [
     multi: 3,
     type: 'musical'
     },{
+    id: 's34',        
     name: "The Color Purple",
     theater: "Bernard Jacobs Theatre",
     date: "Aug 2016",
@@ -302,6 +315,7 @@ export const showList = [
     multi: 0,
     type: 'musical'
     },{
+    id: 's33',        
     name: "The Tempest",
     theater: "Shakespeare Theatre Company",
     date: "Aug 2016",
@@ -313,6 +327,7 @@ export const showList = [
     multi: 0,
     type: 'play'
     },{
+    id: 's32',        
     name: "Next to Normal",
     theater: "The Keegan Theatre",
     date: "Jul 2016",
@@ -324,6 +339,7 @@ export const showList = [
     multi: 0,
     type: 'musical'
     },{
+    id: 's31',        
     name: "Hamilton: An American Musical",
     theater: "Richard Rodgers Theatre",
     date: "Apr 2016",
@@ -335,6 +351,7 @@ export const showList = [
     multi: 5,
     type: 'musical'
     },{
+    id: 's30',        
     name: "The King and I",
     theater: "Lincoln Center Theatre",
     date: "April 2016",
@@ -346,6 +363,7 @@ export const showList = [
     multi: 0,
     type: 'musical'
     },{
+    id: 's29',        
     name: "American Idiot",
     theater: "The Keegan Theatre",
     date: "Mar 2016",
@@ -357,6 +375,7 @@ export const showList = [
     multi: 0,
     type: 'musical'
     },{
+    id: 's28',        
     name: "1984",
     theater: "Shakespeare Theatre Company",
     date: "Mar 2016",
@@ -368,6 +387,7 @@ export const showList = [
     multi: 0,
     type: 'play'
     },{
+    id: 's27',        
     name: "Fun Home",
     theater: "Circle in the Square Theatre",
     date: "Feb 2016",
@@ -379,6 +399,7 @@ export const showList = [
     multi: 0,
     type: 'musical'
     },{
+    id: 's26',        
     name: "Rent",
     theater: "Abe Burrows Theatre (NYU)",
     date: "Feb 2016",
@@ -390,6 +411,7 @@ export const showList = [
     multi: 0,
     type: 'musical'
     },{
+    id: 's25',        
     name: "A View From A Bridge",
     theater: "Lyceum Theatre",
     date: "Jan 2016",
@@ -401,6 +423,7 @@ export const showList = [
     multi: 0,
     type: 'play'
     },{
+    id: 's24',        
     name: "Hamilton: An American Musical",
     theater: "Richard Rodgers Theatre",
     date: "Jan 2016",
@@ -412,6 +435,7 @@ export const showList = [
     multi: 5,
     type: 'musical'
     },{
+    id: 's23',        
     name: "Matilda",
     theater: "John F. Kennedy Center for the Performing Arts",
     date: "Jan 2016",
@@ -423,6 +447,7 @@ export const showList = [
     multi: 3,
     type: 'musical'
     },{
+    id: 's22',        
     name: "Matilda",
     theater: "John F. Kennedy Center for the Performing Arts",
     date: "Jan 2016",
@@ -434,6 +459,7 @@ export const showList = [
     multi: 3,
     type: 'musical'
     },{
+    id: 's21',        
     name: "Bright Star",
     theater: "John F. Kennedy Center for the Performing Arts",
     date: "Dec 2015",
@@ -445,6 +471,7 @@ export const showList = [
     multi: 0,
     type: 'musical'
     },{
+    id: 's20',        
     name: "Avenue Q",
     theater: "Constellation Theatre Company",
     date: "Oct 2015",
@@ -456,6 +483,7 @@ export const showList = [
     multi: 0,
     type: 'musical'
     },{
+    id: 's19',        
     name: "Spring Awakening (ASL)",
     theater: "Brooks Atkinson Theatre",
     date: "Oct 2015",
@@ -467,6 +495,7 @@ export const showList = [
     multi: 0,
     type: 'musical'
     },{
+    id: 's18',        
     name: "Something Rotten",
     theater: "St. James Theatre",
     date: "Oct 2015",
@@ -478,6 +507,7 @@ export const showList = [
     multi: 0,
     type: 'musical'
     },{
+    id: 's17',        
     name: "Book of Mormon",
     theater: "John F. Kennedy Center for the Performing Arts",
     date: "Aug 2015",
@@ -489,6 +519,7 @@ export const showList = [
     multi: 2,
     type: 'musical'
     },{
+    id: 's16',        
     name: "Once",
     theater: "John F. Kennedy Center for the Performing Arts",
     date: "Jul 2015",
@@ -500,6 +531,7 @@ export const showList = [
     multi: 0,
     type: 'musical'
     },{
+    id: 's15',        
     name: "Newsies",
     theater: "The National Theatre",
     date: "Jun 2015",
@@ -511,6 +543,7 @@ export const showList = [
     multi: 0,
     type: 'musical'
     },{
+    id: 's14',        
     name: "Book of Mormon",
     theater: "John F. Kennedy Center for the Performing Arts",
     date: "Jun 2015",
@@ -522,6 +555,7 @@ export const showList = [
     multi: 2,
     type: 'musical'
     },{
+    id: 's13',        
     name: "Wolf Hall: Part 2",
     theater: "Winter Garden Theatre",
     date: "Apr 2015",
@@ -533,6 +567,7 @@ export const showList = [
     multi: 0,
     type: 'play'
     },{
+    id: 's12',        
     name: "Wolf Hall: Part 1",
     theater: "Winter Garden Theatre",
     date: "Apr 2015",
@@ -544,6 +579,7 @@ export const showList = [
     multi: 0,
     type: 'play'
     },{
+    id: 's11',        
     name: "Mary Stuart",
     theater: "Folger Theatre",
     date: "Feb 2015",
@@ -555,6 +591,7 @@ export const showList = [
     multi: 0,
     type: 'play'
     },{
+    id: 's10',        
     name: "Baskerville: A Sherlock Holmes Mystery",
     theater: "Arena Stage",
     date: "Jan 2015",
@@ -566,6 +603,7 @@ export const showList = [
     multi: 0,
     type: 'play'
     },{
+    id: 's9',        
     name: "Les Miserables",
     theater: "Imperial Theatre",
     date: "Jan 2015",
@@ -577,6 +615,7 @@ export const showList = [
     multi: 0,
     type: 'musical'
     },{
+    id: 's8',        
     name: "Elephant Man",
     theater: "Booth Theatre",
     date: "Jan 2015",
@@ -588,6 +627,7 @@ export const showList = [
     multi: 0,
     type: 'play'
     },{
+    id: 's7',
     name: "Mary Poppins",
     theater: "Bass Concert Hall",
     date: "Apr 2012",
@@ -599,6 +639,7 @@ export const showList = [
     multi: 4,
     type: 'musical'
     },{
+    id: 's6',
     name: "Wicked",
     theater: "Bass Concert Hall",
     date: "Jan & Feb 2012",
@@ -610,6 +651,7 @@ export const showList = [
     multi: 11,
     type: 'musical'
     },{
+    id: 's5',
     name: "Beauty and the Beast",
     theater: "Bass Concert Hall",
     date: "Dec 2011",
@@ -621,6 +663,7 @@ export const showList = [
     multi: 3,
     type: 'musical'
     },{
+    id: 's4',
     name: "South Pacific",
     theater: "Bass Concert Hall",
     date: "Nov 2011",
@@ -633,6 +676,7 @@ export const showList = [
     multi: 0,
     type: 'musical'
     },{
+    id: 's3',
     name: "West Side Story",
     theater: "Bass Concert Hall",
     date: "Mar 2011",
@@ -644,6 +688,7 @@ export const showList = [
     multi: 0,
     type: 'musical'
     },{
+    id: 's2',
     name: "The Black Watch",
     theater: "Bass Concert Hall",
     date: "Feb 2011",
@@ -655,6 +700,7 @@ export const showList = [
     multi: 0,
     type: 'play'
     },{
+    id: 's1',
     name: "Shrek the Musical",
     theater: "Bass Concert Hall",
     date: "Nov 2010",
