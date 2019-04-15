@@ -1,20 +1,27 @@
 <template>
 	<div class="shows">
 		<div class="row" v-for="i in rowCount" v-bind:key="i">
-			<div v-for="(show) in itemCountInRow(i)" v-bind:key="show.id" class="card" v-bind:class="[{ fav: show.fav, upcoming: show.upcoming }] ">
-				<!-- <img v-bind:src="show.illustration"> -->
-				<div class="show-info">
-					<div v-if="show.review" class="review"><Review /></div>
+			<div v-for="(show) in itemCountInRow(i)" v-bind:key="show.id" class="show" v-bind:class="[{ upcoming: show.upcoming }] ">
+				<div v-if="show.upcoming == false" class="show-opinion">
+					<div v-if="show.fav" class="fav-view">{{ show.fav }}</div>
+					<div v-if="show.review" class="review">REVIEW</div>
 					<div v-if="show.multi" class="multi-view">{{ show.multi }}</div>
-					<div v-if="show.fav" class="fav-view">favorite show</div>
 				</div>
-				<div class="show-illustration">{{ show.illustration }}</div>
-				<p class="show-name">{{ show.name }}</p>
-				<p class="show-theater">{{ show.theater }}</p>
-				<p class="show-location">{{ show.location }}</p>
-				<p class="show-date">{{ show.date }}</p>
-				<div v-if="show.favSong" class="opinions">
-					<div v-if="show.favSong" class="fav-song"><p class="song-label"><font-awesome-icon icon="music" /></p><p class="song-name">{{ show.favSong }}</p></div> 
+				<!-- <div class="show-illustration">
+					<img v-bind:src="show.illustration" v-bind:alt="show.imgName">
+				</div> -->
+				<div class="show-info">
+					<p class="show-name">{{ show.name }}</p>
+					<p class="show-theater">{{ show.theater }}</p>
+					<p class="show-location">{{ show.location }}</p>
+					<p class="show-date">{{ show.date }}</p>					
+				</div>
+				<div v-if="show.favSong" class="favs">
+					<div v-if="show.favSong" class="fav-song">
+						<p class="song-label">
+						<font-awesome-icon icon="music" /></p>
+						<p class="song-name">{{ show.favSong }}</p>
+					</div> 
 				</div>
 			</div>
 		</div>
@@ -24,11 +31,9 @@
 <script>
 
 import {showList} from "../data/shows";
-import Review from "./Review";
 
 export default {
 	name: 'Shows',
-	components: { Review },
 	data: function () {
 		return {
 			shows: showList,

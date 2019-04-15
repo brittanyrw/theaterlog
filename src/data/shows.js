@@ -63,7 +63,7 @@ export const showList = [
     upcoming: false,
     multi: 0,
     type: 'play',
-    review: ''
+    review: 'cry'
     },{
     id: 's53',        
     name: "The Play That Goes Wrong",
@@ -76,7 +76,7 @@ export const showList = [
     upcoming: false,
     multi: 0,
     type: 'play',
-    review: ''
+    review: 'love'
     },{
     id: 's52',            
     name: "Hamilton: An American Musical",
@@ -89,7 +89,7 @@ export const showList = [
     upcoming: false,
     multi: 5,
     type: 'musical',
-    review: ''
+    review: 'meh'
     },{
     id: 's51',            
     name: "Aladdin",
