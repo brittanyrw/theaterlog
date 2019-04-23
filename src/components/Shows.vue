@@ -2,9 +2,9 @@
 	<div class="shows">
 		<div class="row" v-for="i in rowCount" v-bind:key="i">
 			<div v-for="(show) in itemCountInRow(i)" v-bind:key="show.id" class="show" v-bind:class="[{ upcoming: show.upcoming }] ">
-				<div v-if="show.upcoming == false" class="show-opinion">
-					<div v-if="show.fav" class="fav-view">{{ show.fav }}</div>
-					<div v-if="show.review" class="review">REVIEW</div>
+				<div v-if="show.upcoming == false && (show.fav || show.review || show.multi)" class="show-opinion">
+					<div v-if="show.fav" class="fav-view">fav</div>
+					<div v-if="show.review" class="review">{{ show.review }}</div>
 					<div v-if="show.multi" class="multi-view">{{ show.multi }}</div>
 				</div>
 				<div class="show-info">
@@ -54,16 +54,47 @@ export default {
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
 		grid-auto-rows: auto;
-		grid-gap: 20px;
+		grid-gap: 40px;
 		padding: 40px;
 		min-height: 400px;
 		border: 10px solid gray;
 	}
 	.show {
-		padding: 20px;
+		padding: 20px 25px;
 		background-color: white;
 		position: relative;
 		border: 1px solid black;
+	}
+
+	.show-name {
+		font-family: 'Amaranth', sans-serif;
+	}
+
+	.show-opinion {
+		position: absolute;
+		left: -25px;
+		width: 45px;
+	}
+
+	.show-opinion div {
+		margin-bottom: 10px;
+		height: 50px;
+		color: black;
+	}
+
+	.show-opinion .review {
+		background-color: lightpink;
+		border-radius: 50%;
+	}
+
+	.show-opinion .fav-view {
+		background-color: gold;
+		border-radius: 50%;
+	}
+
+	.show-opinion .multi-view {
+		background-color: dimgray;
+		color: white;
 	}
 
 	.favs {
@@ -73,6 +104,7 @@ export default {
 		width: 100%;
 		background-color: lavender;
 		padding: 0 20px;
+		font-size: 16px;
 	}
 
 	.fs-icon {
