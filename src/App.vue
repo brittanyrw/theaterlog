@@ -28,6 +28,21 @@ export default {
 
 body {
   padding: 30px;
+  background-color: #283747;
+}
+
+h1, ul {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  display: inline-block;
+  padding-right: 5px;
 }
 
 #app {
@@ -38,7 +53,7 @@ body {
   color: #2c3e50;
   max-width: 1000px;
   margin: auto;
-  border: 1px solid gray;
+  border: 2px solid #A39594;
 }
 
 @media screen and (max-width: 425px){

@@ -51,3 +51,9 @@ export default {
   }
 }
 </script>
+
+<style>
+  .statistics {
+    background-color: white;
+  }
+</style>

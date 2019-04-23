@@ -55,7 +55,7 @@ export default {
 		grid-template-columns: 1fr 1fr 1fr;
 		grid-auto-rows: auto;
 		grid-gap: 20px;
-		padding: 40px 20px;
+		padding: 40px;
 		min-height: 400px;
 		border: 10px solid gray;
 	}
