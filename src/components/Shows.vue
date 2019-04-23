@@ -57,7 +57,7 @@ export default {
 		grid-gap: 40px;
 		padding: 40px;
 		min-height: 400px;
-		border: 10px solid gray;
+		border: 10px solid #120400;
 	}
 	.show {
 		padding: 20px 25px;

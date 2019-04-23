@@ -30,7 +30,7 @@ export default {
 
 body {
   padding: 30px;
-  background-color: dimgray;
+  background-color: #FD6B47;
   font-family: 'Lato', sans-serif;
   font-size: 21px;
 }
@@ -61,7 +61,7 @@ li {
   color: black;
   max-width: 1000px;
   margin: auto;
-  border: 2px solid dimgray;
+  border: 2px solid #120400;
 }
 
 @media screen and (max-width: 425px){

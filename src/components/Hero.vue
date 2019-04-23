@@ -11,7 +11,7 @@
 		<p class="counter">Plays: {{ playsCounter}}</p>		
 	</div>     
 	<div class="review-legend">
-		<h2>Review Ledgend</h2>
+		<h2>Review Legend</h2>
 		<ul>
 			<li>love</li>
 			<li>sad</li>
