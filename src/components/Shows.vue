@@ -64,6 +64,7 @@ export default {
 		background-color: white;
 		position: relative;
 		border: 1px solid black;
+		box-shadow: 5px 5px 0 black;
 	}
 
 	.show-name {

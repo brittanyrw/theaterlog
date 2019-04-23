@@ -55,5 +55,17 @@ export default {
 <style>
   .statistics {
     background-color: white;
+    padding: 30px;
+  }
+  .stats p {
+    display: inline-block;
+    padding: 10px;
+    border: 1px solid black;
+    margin-right: 10px;
+  }
+  .review-legend li {
+    border: 1px solid black;
+    padding: 5px;
+    margin-right: 5px;
   }
 </style>

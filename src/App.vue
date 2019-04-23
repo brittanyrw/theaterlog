@@ -61,7 +61,7 @@ li {
   color: black;
   max-width: 1000px;
   margin: auto;
-  border: 2px solid black;
+  border: 2px solid dimgray;
 }
 
 @media screen and (max-width: 425px){
