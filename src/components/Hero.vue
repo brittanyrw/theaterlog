@@ -1,7 +1,7 @@
 <template>
   <div class="statistics">
 				
-	<h1>TheaterLog</h1>
+	<h1>Broadway in CSS</h1>
 	<p>My earliest musical theater memory is from 5th grade. My parents had bought me a VHS copy of Grease that I carried around in my backpack, forcing friends to watch it with me after school. Since then, I have had a special love for plays and musicals. I created TheaterLog to keep track of which shows I have seen since 2010, when I first started watching shows on my own.</p>
 	<div class="stats">
 		<h2>Statistics</h2>
