@@ -2,13 +2,21 @@
   <div class="box-office-container">
 				
 	<div class="posters">
-		<div class="wall"></div>
+		<div class="wall">
+			
+		</div>
 	</div>
 	<div class="doors">
-		<div class="door"></div>
+		<div class="door">
+			<div class="door-sign"></div>
+			<div class="door-left"></div>
+			<div class="door-right"></div>
+		</div>
 	</div>  
 	<div class="box-office">
-		<div class="window"></div>
+		<div class="window">
+			
+		</div>
 	</div>
   </div>
 </template>
