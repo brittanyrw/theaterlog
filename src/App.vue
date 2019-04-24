@@ -8,6 +8,7 @@
 </template>
 
 <script>
+
 import Shows from './components/Shows.vue'
 import Hero from './components/Hero.vue'
 import BoxOffice from './components/BoxOffice.vue'
