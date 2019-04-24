@@ -3,7 +3,7 @@
 		<div class="row" v-for="i in rowCount" v-bind:key="i">
 			<div v-for="(show) in itemCountInRow(i)" v-bind:key="show.id" class="show" v-bind:class="[{ upcoming: show.upcoming }] ">
 				<div v-if="show.upcoming == false && (show.fav || show.review || show.multi)" class="show-opinion">
-					<div v-if="show.fav" class="fav-view">fav</div>
+					<div v-if="show.fav" class="fav-view"><font-awesome-icon icon="star" class="fav-icon" /></div>
 					<div v-if="show.review" class="review">{{ show.review }}</div>
 					<div v-if="show.multi" class="multi-view">{{ show.multi }}</div>
 				</div>
@@ -14,7 +14,8 @@
 					<p class="show-date">{{ show.date }}</p>					
 				</div>
 				<div v-if="show.favSong" class="favs">
-					<div v-if="show.favSong" class="fav-song">
+					<p class="fav-song-label">Fav Song</p>
+					<div class="fav-song">
 						<p class="song-label">
 						<font-awesome-icon icon="music" class="fs-icon" /></p>
 						<p class="song-name">{{ show.favSong }}</p>
@@ -50,25 +51,37 @@ export default {
 </script>
 <style>
 	.row {
-		background-color: lightgray;
+		background-color: white;
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
 		grid-auto-rows: auto;
 		grid-gap: 40px;
 		padding: 40px;
 		min-height: 400px;
-		border: 10px solid #120400;
+		border: 10px solid black;
 	}
 	.show {
 		padding: 20px 25px;
 		background-color: white;
 		position: relative;
-		border: 1px solid black;
-		box-shadow: 5px 5px 0 black;
+		border: 2px solid black;
+		box-shadow: 5px 5px 0 #1458FA;
+	}
+
+	.show.upcoming {
+		box-shadow: gray;
+		border: 1px solid dimgray;
+		color: gray;
+		box-shadow: 5px 5px 0 dimgray;
 	}
 
 	.show-name {
 		font-family: 'Amaranth', sans-serif;
+		font-size: 24px;
+	}
+
+	.show-theater, .show-location, .show-date {
+		font-size: 18px;
 	}
 
 	.show-opinion {
@@ -78,7 +91,6 @@ export default {
 	}
 
 	.show-opinion div {
-		margin-bottom: 10px;
 		height: 50px;
 		color: black;
 	}
@@ -86,16 +98,30 @@ export default {
 	.show-opinion .review {
 		background-color: lightpink;
 		border-radius: 50%;
+		margin-bottom: 15px;
+		border: 2px solid black;
+		padding: 14px 5px;
+		font-size: 15px;
+		width: 50px;
 	}
 
-	.show-opinion .fav-view {
-		background-color: gold;
-		border-radius: 50%;
+	.show-opinion .fav-view .fav-icon {
+		color: gold;
+		font-size: 39px;
+		margin-bottom: 8px;
 	}
 
 	.show-opinion .multi-view {
-		background-color: dimgray;
+		background-color: #1458FA;
 		color: white;
+		height: 30px;
+		padding: 10px;
+		font-weight: bold;
+		height: 47px;
+	}
+
+	.multi-view {
+		border: 2px solid black;
 	}
 
 	.favs {
@@ -103,13 +129,35 @@ export default {
 		bottom: 0;
 		left: 0;
 		width: 100%;
-		background-color: lavender;
+		background-color: white;
 		padding: 0 20px;
 		font-size: 16px;
+		color: black;
+		border-top: 2px solid black;
 	}
 
-	.fs-icon {
-		float: left;
+	.fav-song-label {
+		position: absolute;
+		top: -30px;
+		background-color: gold;
+		font-weight: bold;
+		padding: 3px 5px;
+		left: 10px;
+		font-size: 14px;
+		border: 2px solid black;
+		transform: rotate(-2deg);
+	}
+
+	.fav-view path {
+		stroke: black;
+		stroke-width: 25;
+	}
+
+	.song-label, .song-name {
+		display: inline-block;
+	}
+	.song-label {
+		margin-right: 5px;
 	}
 
 	@media screen and (max-width: 667px){

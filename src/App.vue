@@ -30,9 +30,11 @@ export default {
 
 body {
   padding: 30px;
-  background-color: #FD6B47;
+  background-color: #1458FA;
   font-family: 'Lato', sans-serif;
   font-size: 21px;
+  position: relative;
+  margin: 0;
 }
 
 h1, ul {
