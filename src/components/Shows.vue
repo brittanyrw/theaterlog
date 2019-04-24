@@ -66,7 +66,8 @@ export default {
 		background-color: white;
 		position: relative;
 		border: 2px solid black;
-		box-shadow: 5px 5px 0 #4579f5;
+		/*box-shadow: 5px 5px 0 #4579f5;*/
+		box-shadow: -4px 4px 0 pink, -8px 8px 0 #4579f5, -12px 12px 0 gold;
 	}
 
 	.show.upcoming {

@@ -56,6 +56,9 @@ export default {
   .statistics {
     background-color: white;
     padding: 30px;
+    margin-bottom: 100px;
+    border: 2px solid black;
+    z-index: 1;
   }
   .stats p {
     display: inline-block;
