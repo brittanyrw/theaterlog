@@ -59,14 +59,25 @@ export default {
 		grid-gap: 40px;
 		padding: 40px;
 		min-height: 400px;
-		border: 10px solid black;
+		border: 10px solid #3128BB;
+		position: relative;
+	}
+	.row:after {
+		position: absolute;
+		content: '';
+		height: 20px;
+		width: 105%;
+		left: -2.5%;
+		top: -5%;
+		background-color: #3128BB;
+		box-shadow: 2px 2px 1px rgba(49, 40, 187,.5);
 	}
 	.show {
 		padding: 20px 25px;
 		background-color: white;
 		position: relative;
-		border: 2px solid black;
-		box-shadow: 5px 5px 0 #9994E1;
+		border: 2px solid #402e47;
+		box-shadow: 3px 3px 0 #9994E1, 6px 6px 0 #3128BB;
 		/*box-shadow: -4px 4px 0 pink, -8px 8px 0 #4579f5, -12px 12px 0 gold;*/
 	}
 
@@ -102,21 +113,21 @@ export default {
 		padding: 5px;
 		top: -14px;
 		transform: rotate(3deg);
-		border: 2px solid black;
-		color: black;
+		border: 2px solid #402e47;
+		color: #402e47;
 		font-weight: bold;
 	}
 
 	.show-opinion div {
 		height: 50px;
-		color: black;
+		color: #402e47;
 	}
 
 	.show-opinion .review {
 		background-color: lightpink;
 		border-radius: 50%;
 		margin-bottom: 15px;
-		border: 2px solid black;
+		border: 2px solid #402e47;
 		padding: 14px 5px;
 		font-size: 15px;
 		width: 50px;
@@ -129,16 +140,13 @@ export default {
 	}
 
 	.show-opinion .multi-view {
-		background-color: #9994E1;
+		background-color: #908ae2;
 		color: white;
 		height: 30px;
 		padding: 10px;
 		font-weight: bold;
 		height: 47px;
-	}
-
-	.multi-view {
-		border: 2px solid black;
+		border: 2px solid #402e47;
 	}
 
 	.favs {
@@ -149,8 +157,8 @@ export default {
 		background-color: white;
 		padding: 0 20px;
 		font-size: 16px;
-		color: black;
-		border-top: 2px solid black;
+		color: #402e47;
+		border-top: 2px solid #402e47;
 	}
 
 	.fav-song-label {
@@ -161,7 +169,7 @@ export default {
 		padding: 3px 5px;
 		left: 10px;
 		font-size: 14px;
-		border: 2px solid black;
+		border: 2px solid #402e47;
 		transform: rotate(-2deg);
 	}
 
@@ -172,7 +180,7 @@ export default {
 	}
 
 	.fav-view path {
-		stroke: black;
+		stroke: #402e47;
 		stroke-width: 25;
 	}
 

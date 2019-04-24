@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <Roof/>
     <Hero/>
     <Shows/>
     <BoxOffice/>
@@ -10,12 +11,14 @@
 import Shows from './components/Shows.vue'
 import Hero from './components/Hero.vue'
 import BoxOffice from './components/BoxOffice.vue'
+import Roof from './components/Roof.vue'
 export default {
   name: 'app',
   components: {
     Shows,
     Hero,
-    BoxOffice
+    BoxOffice,
+    Roof
   }
 }
 </script>
@@ -60,7 +63,7 @@ li {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: black;
+  color: #402e47;
   max-width: 1000px;
   margin: auto;
 }
