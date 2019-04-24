@@ -30,7 +30,7 @@ export default {
 
 body {
   padding: 30px;
-  background-color: white;
+  background-color: #9994E1;
   font-family: 'Lato', sans-serif;
   font-size: 21px;
   position: relative;

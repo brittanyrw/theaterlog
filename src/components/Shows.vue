@@ -52,7 +52,7 @@ export default {
 </script>
 <style>
 	.row {
-		background-color: white;
+		background-color: #EDECFA;
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
 		grid-auto-rows: auto;
@@ -66,8 +66,8 @@ export default {
 		background-color: white;
 		position: relative;
 		border: 2px solid black;
-		/*box-shadow: 5px 5px 0 #4579f5;*/
-		box-shadow: -4px 4px 0 pink, -8px 8px 0 #4579f5, -12px 12px 0 gold;
+		box-shadow: 5px 5px 0 #9994E1;
+		/*box-shadow: -4px 4px 0 pink, -8px 8px 0 #4579f5, -12px 12px 0 gold;*/
 	}
 
 	.show.upcoming {
@@ -129,7 +129,7 @@ export default {
 	}
 
 	.show-opinion .multi-view {
-		background-color: #4579f5;
+		background-color: #9994E1;
 		color: white;
 		height: 30px;
 		padding: 10px;
