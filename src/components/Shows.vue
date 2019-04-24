@@ -66,7 +66,7 @@ export default {
 		background-color: white;
 		position: relative;
 		border: 2px solid black;
-		box-shadow: 5px 5px 0 #1458FA;
+		box-shadow: 5px 5px 0 #4579f5;
 	}
 
 	.show.upcoming {
@@ -79,6 +79,7 @@ export default {
 	.show-name {
 		font-family: 'Amaranth', sans-serif;
 		font-size: 24px;
+		
 	}
 
 	.show-theater, .show-location, .show-date {
@@ -101,6 +102,8 @@ export default {
 		top: -14px;
 		transform: rotate(3deg);
 		border: 2px solid black;
+		color: black;
+		font-weight: bold;
 	}
 
 	.show-opinion div {
@@ -125,7 +128,7 @@ export default {
 	}
 
 	.show-opinion .multi-view {
-		background-color: #1458FA;
+		background-color: #4579f5;
 		color: white;
 		height: 30px;
 		padding: 10px;
@@ -159,6 +162,12 @@ export default {
 		font-size: 14px;
 		border: 2px solid black;
 		transform: rotate(-2deg);
+	}
+
+	.show.upcoming .type {
+		border: 2px solid dimgray;
+		background-color: lightgray;
+		color: dimgray;
 	}
 
 	.fav-view path {

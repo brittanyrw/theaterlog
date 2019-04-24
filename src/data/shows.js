@@ -1,6 +1,6 @@
 export const showList = [
 	{
-    id: 's58',
+    id: 's60',
     name: "Legally Blonde the Musical",
     theater: "Keegan Theatre",
     date: "Aug 2019",
@@ -13,7 +13,7 @@ export const showList = [
     type: 'musical',
     review: 'meh'
     },{
-    id: 's57',
+    id: 's59',
     name: "Dear Evan Hansen",
     theater: "John F. Kennedy Center for the Performing Arts",
     date: "Aug 2019",
@@ -26,7 +26,7 @@ export const showList = [
     type: 'musical',
     review: ''
     },{
-    id: 's56',
+    id: 's58',
     name: "Falsettos",
     theater: "John F. Kennedy Center for the Performing Arts",
     date: "Jun 2019",
@@ -36,6 +36,19 @@ export const showList = [
     fav: true,
     upcoming: true,
     multi: 2,
+    type: 'musical',
+    review: ''
+    },{
+    id: 's57',
+    name: "My Fair Lady",
+    theater: "Vivian Beaumont Theater",
+    date: "May 2019",
+    location: "New York, NY",
+    illustration: '',    
+    favSong: '',
+    fav: false,
+    upcoming: true,
+    multi: 0,
     type: 'musical',
     review: ''
     },{
@@ -477,7 +490,7 @@ export const showList = [
     date: "Oct 2015",
     location: "Washington, DC",
     illustration: 'puppet',    
-    favSong: 'Everyone\'s A Little Bit Racist',
+    favSong: '',
     fav: true,
     upcoming: false,
     multi: 0,
