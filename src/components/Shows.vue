@@ -8,6 +8,7 @@
 					<div v-if="show.multi" class="multi-view">{{ show.multi }}</div>
 				</div>
 				<div class="show-info">
+					<p class="type">{{show.type}}</p>
 					<p class="show-name">{{ show.name }}</p>
 					<p class="show-theater">{{ show.theater }}</p>
 					<p class="show-location">{{ show.location }}</p>
@@ -88,6 +89,18 @@ export default {
 		position: absolute;
 		left: -25px;
 		width: 45px;
+	}
+
+	.type {
+		font-size: 16px;
+		position: absolute;
+		right: -15px;
+		background: lightpink;
+		margin: 0;
+		padding: 5px;
+		top: -14px;
+		transform: rotate(3deg);
+		border: 2px solid black;
 	}
 
 	.show-opinion div {
