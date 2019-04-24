@@ -1,6 +1,6 @@
-# Broadway in CSS
+# TheaterLog
 
-Broadway in CSS is a theater show tracker. This web application tracks all of the musicals and plays that I have seen live since 2010. The tracker is built using Vue.js and the theater illustration that houses the show directory is created using only CSS. 
+TheaterLog is a theater show tracker. This web application tracks all of the musicals and plays that I have seen live since 2010. The tracker is built using Vue.js.
 
 Demo: [demo link here]
 

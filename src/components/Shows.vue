@@ -1,7 +1,7 @@
 <template>
 	<div class="shows">
 		<div class="row" v-for="i in rowCount" v-bind:key="i">
-			<div v-for="(show) in itemCountInRow(i)" v-bind:key="show.id" class="show" v-bind:class="[{ upcoming: show.upcoming }, show.illustration ] ">
+			<div v-for="(show) in itemCountInRow(i)" v-bind:key="show.id" class="show" v-bind:class="[{ upcoming: show.upcoming }] ">
 				<div v-if="show.upcoming == false && (show.fav || show.review || show.multi)" class="show-opinion">
 					<div v-if="show.fav" class="fav-view"><font-awesome-icon icon="star" class="fav-icon" /></div>
 					<div v-if="show.review" class="review">{{ show.review }}</div>

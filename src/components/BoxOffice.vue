@@ -1,23 +1,7 @@
 <template>
   <div class="box-office-container">
-				
-	<div class="posters">
-		<div class="wall">
-			
-		</div>
-	</div>
-	<div class="doors">
-		<div class="door">
-			<div class="door-sign"></div>
-			<div class="door-left"></div>
-			<div class="door-right"></div>
-		</div>
-	</div>  
-	<div class="box-office">
-		<div class="window">
-			
-		</div>
-	</div>
+	<div>Social Media?</div>
+	<img src="" alt="box office image">
   </div>
 </template>
 
@@ -34,14 +18,7 @@ export default {
 		display: grid;
 		grid-template-columns: .5fr 1fr .5fr;
 		min-height: 400px;
+		color: white;
 	}
-	.posters {
-		background-color: gray;
-	}
-	.doors {
-		background: lightgray;
-	}
-	.box-office {
-		background: dimgray;
-	}
+
 </style>
