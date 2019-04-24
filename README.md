@@ -1,4 +1,17 @@
-# testtting
+# Broadway in CSS
+
+Broadway in CSS is a theater show tracker. This web application tracks all of the musicals and plays that I have seen live since 2010. 
+
+Demo: 
+
+## Wireframes
+
+[ Wireframes here ]
+
+## Features
+
+## Built With
+* Vue.js
 
 ## Project setup
 ```
