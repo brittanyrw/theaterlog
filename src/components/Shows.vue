@@ -69,8 +69,7 @@ export default {
 		width: 105%;
 		left: -2.5%;
 		top: -5%;
-		background-color: #3128BB;
-		box-shadow: 2px 2px 1px rgba(49, 40, 187,.5);
+		background-color: #2A229D;
 	}
 	.show {
 		padding: 20px 25px;
@@ -108,7 +107,7 @@ export default {
 		font-size: 16px;
 		position: absolute;
 		right: -15px;
-		background: lightpink;
+		background: #7ed6c9;
 		margin: 0;
 		padding: 5px;
 		top: -14px;
