@@ -63,7 +63,7 @@ export const showList = [
     upcoming: false,
     multi: 3,
     type: 'musical',
-    review: ''
+    review: 'happy-sad'
     },{
     id: 's54',        
     name: "American Son",

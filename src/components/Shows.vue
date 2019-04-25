@@ -4,7 +4,13 @@
 			<div v-for="(show) in itemCountInRow(i)" v-bind:key="show.id" class="show" v-bind:class="[{ upcoming: show.upcoming }] ">
 				<div v-if="show.upcoming == false && (show.fav || show.review || show.multi)" class="show-opinion">
 					<div v-if="show.fav" class="fav-view"><font-awesome-icon icon="star" class="fav-icon" /></div>
-					<div v-if="show.review" class="review">{{ show.review }}</div>
+					<div v-if="show.review" class="review">
+
+						<img v-if="show.review == 'happy-sad'" alt="crying but happy emoji" src="./../assets/happy-sad.svg">
+						<img v-if="show.review == 'sad'" alt="sad" src="./../assets/sad.svg">
+						<img v-if="show.review == 'happy'" alt="happy" src="./../assets/happy.svg">
+
+					</div>
 					<div v-if="show.multi" class="multi-view">{{ show.multi }}</div>
 				</div>
 				<div class="show-info">
@@ -126,10 +132,13 @@ export default {
 		background-color: lightpink;
 		border-radius: 50%;
 		margin-bottom: 15px;
-		border: 2px solid #402e47;
-		padding: 14px 5px;
+		/*border: 1px solid #402e47;*/
 		font-size: 15px;
 		width: 50px;
+	}
+
+	.show-opinion .review img {
+		width: 100%;
 	}
 
 	.show-opinion .fav-view .fav-icon {
