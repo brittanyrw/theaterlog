@@ -11,7 +11,7 @@ export const showList = [
     upcoming: true,
     multi: 0,
     type: 'musical',
-    review: 'meh'
+    review: 'love'
     },{
     id: 's59',
     name: "Dear Evan Hansen",
