@@ -1,6 +1,5 @@
 <template>
   <div class="statistics">
-    <div class="window"></div>
     <div class="statistics-content">
       <h1>TheaterLog</h1>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -9,7 +8,16 @@
       consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
       cillum dolore eu fugiat nulla pariatur.</p>
       <!-- <p>My earliest musical theater memory is from 5th grade. My parents had bought me a VHS copy of Grease that I carried around in my backpack, forcing friends to watch it with me after school. Since then, I have had a special love for plays and musicals. I created TheaterLog to keep track of which shows I have seen since 2010, when I first started watching shows on my own.</p>    -->
-<!--       <div class="review-legend">
+      <div class="stats">
+        <h2>Statistics</h2>
+        <p class="counter">Total Shows Seen: {{ shows.length + 26}}</p>
+        <p class="counter">Upcoming: {{ upcomingCounter }}</p>
+        <p class="counter">Musicals: {{ musicalsCounter + 26}}</p>
+        <p class="counter">Plays: {{ playsCounter}}</p>   
+      </div>    
+    </div>
+    <div class="window">
+      <div class="review-legend">
         <h2>Review Legend</h2>
         <ul>
           <li>
@@ -49,16 +57,7 @@
             <p>dislike</p>
           </li>                               
         </ul>                  
-      </div> -->
-    </div>
-    <div class="window">
-      <div class="stats">
-        <h2>Statistics</h2>
-        <p class="counter">Total Shows Seen: {{ shows.length + 26}}</p>
-        <p class="counter">Upcoming: {{ upcomingCounter }}</p>
-        <p class="counter">Musicals: {{ musicalsCounter + 26}}</p>
-        <p class="counter">Plays: {{ playsCounter}}</p>   
-      </div>  
+      </div> 
     </div>			
   </div>
 </template>
@@ -97,7 +96,7 @@ export default {
     padding: 30px;
     border: 10px solid #3128BB;
     display: grid;
-    grid-template-columns: .5fr 1fr .5fr;
+    grid-template-columns: 1.5fr .5fr;
     grid-auto-rows: auto;
     text-align: left;
   }
@@ -121,6 +120,11 @@ export default {
     border: 1px solid black;
     margin-right: 10px;
     margin-bottom: 10px;
+  }
+
+  .review-legend ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 
   .review-legend li {

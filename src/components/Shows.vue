@@ -8,6 +8,12 @@
 
 						<img v-if="show.review == 'happy-sad'" alt="crying but happy emoji" src="./../assets/happy-sad.svg">
 						<img v-if="show.review == 'sad'" alt="sad" src="./../assets/sad.svg">
+						<img v-if="show.review == 'confused'" alt="confused" src="./../assets/confused.svg">
+						<img v-if="show.review == 'funny'" alt="funny" src="./../assets/funny.svg">
+						<img v-if="show.review == 'love'" alt="love" src="./../assets/love.svg">
+						<img v-if="show.review == 'meh'" alt="meh" src="./../assets/meh.svg">
+						<img v-if="show.review == 'thought-provoking'" alt="thought-provoking" src="./../assets/thought-provoking.svg">
+						<img v-if="show.review == 'dislike'" alt="dislike" src="./../assets/dislike.svg">
 						<img v-if="show.review == 'happy'" alt="happy" src="./../assets/happy.svg">
 
 					</div>
