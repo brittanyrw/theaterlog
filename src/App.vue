@@ -1,9 +1,7 @@
 <template>
   <div id="app">
-<!--     <Roof/> -->
     <Hero/>
     <Shows/>
- <!--    <BoxOffice/> -->
   </div>
 </template>
 
@@ -11,15 +9,11 @@
 
 import Shows from './components/Shows.vue'
 import Hero from './components/Hero.vue'
-// import BoxOffice from './components/BoxOffice.vue'
-// import Roof from './components/Roof.vue'
 export default {
   name: 'app',
   components: {
     Shows,
-    Hero,
-    // BoxOffice,
-    // Roof
+    Hero
   }
 }
 </script>

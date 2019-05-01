@@ -8,7 +8,6 @@
         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
         consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
         cillum dolore eu fugiat nulla pariatur.</p>
-        <!-- <p>My earliest musical theater memory is from 5th grade. My parents had bought me a VHS copy of Grease that I carried around in my backpack, forcing friends to watch it with me after school. Since then, I have had a special love for plays and musicals. I created TheaterLog to keep track of which shows I have seen since 2010, when I first started watching shows on my own.</p>    -->
         <div class="stats">
           <h2>Statistics</h2>
           <p class="counter">Total Shows Seen: {{ shows.length + 26}}</p>
