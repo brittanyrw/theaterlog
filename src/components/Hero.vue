@@ -94,7 +94,7 @@ export default {
   .statistics {
     background-color: white;
     padding: 30px;
-    border: 10px solid #3128BB;
+    border: 10px solid white;
     display: grid;
     grid-template-columns: 1.5fr .5fr;
     grid-auto-rows: auto;

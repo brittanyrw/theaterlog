@@ -71,17 +71,17 @@ export default {
 		grid-gap: 40px;
 		padding: 40px;
 		min-height: 400px;
-		border: 10px solid #3128BB;
+		border: 10px solid #6661af;
 		position: relative;
 	}
 	.row:after {
 		position: absolute;
 		content: '';
-		height: 20px;
+		height: 23px;
 		width: 105%;
 		left: -2.5%;
-		top: -5%;
-		background-color: #2A229D;
+		top: -5.5%;
+		background-color: #6661af;
 	}
 	.show {
 		padding: 20px 25px;
