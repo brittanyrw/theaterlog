@@ -154,7 +154,7 @@ export const showList = [
     upcoming: false,
     multi: 0,
     type: 'musical',
-    review: ''
+    review: 'happy'
     },{
     id: 's47',            
     name: "In the Heights",
@@ -206,7 +206,7 @@ export const showList = [
     upcoming: false,
     multi: 0,
     type: 'musical',
-    review: ''
+    review: 'thought-provoking'
     },{
     id: 's43',            
     name: "Hamilton: An American Musical",
@@ -244,7 +244,8 @@ export const showList = [
     fav: false,
     upcoming: false,
     multi: 0,
-    type: 'musical'
+    type: 'musical',
+    review: 'funny'
     },{
     id: 's40',        
     name: "Heathers",
@@ -308,7 +309,8 @@ export const showList = [
     fav: true,
     upcoming: false,
     multi: 0,
-    type: 'musical'
+    type: 'musical',
+    review: 'happy'
     },{
     id: 's35',        
     name: "Matilda",
@@ -436,7 +438,8 @@ export const showList = [
     fav: false,
     upcoming: false,
     multi: 0,
-    type: 'musical'
+    type: 'musical',
+    review: 'love'
     },{
     id: 's25',        
     name: "A View From A Bridge",
@@ -461,7 +464,8 @@ export const showList = [
     fav: true,
     upcoming: false,
     multi: 5,
-    type: 'musical'
+    type: 'musical',
+    review: 'love'
     },{
     id: 's23',        
     name: "Matilda",
@@ -473,7 +477,8 @@ export const showList = [
     fav: true,
     upcoming: false,
     multi: 3,
-    type: 'musical'
+    type: 'musical',
+    review: 'love'
     },{
     id: 's22',        
     name: "Matilda",
@@ -485,7 +490,8 @@ export const showList = [
     fav: true,
     upcoming: false,
     multi: 3,
-    type: 'musical'
+    type: 'musical',
+    review: 'love'
     },{
     id: 's21',        
     name: "Bright Star",
@@ -497,7 +503,8 @@ export const showList = [
     fav: false,
     upcoming: false,
     multi: 0,
-    type: 'musical'
+    type: 'musical',
+    review: 'happy'
     },{
     id: 's20',        
     name: "Avenue Q",
@@ -509,7 +516,8 @@ export const showList = [
     fav: true,
     upcoming: false,
     multi: 0,
-    type: 'musical'
+    type: 'musical',
+    review: 'funny'
     },{
     id: 's19',        
     name: "Spring Awakening (ASL)",
@@ -521,7 +529,8 @@ export const showList = [
     fav: false,
     upcoming: false,
     multi: 0,
-    type: 'musical'
+    type: 'musical',
+    review: 'happy'
     },{
     id: 's18',        
     name: "Something Rotten",
@@ -533,7 +542,8 @@ export const showList = [
     fav: true,
     upcoming: false,
     multi: 0,
-    type: 'musical'
+    type: 'musical',
+    review: 'funny'
     },{
     id: 's17',        
     name: "Book of Mormon",
@@ -558,7 +568,8 @@ export const showList = [
     fav: true,
     upcoming: false,
     multi: 0,
-    type: 'musical'
+    type: 'musical',
+    review: 'love'
     },{
     id: 's15',        
     name: "Newsies",
@@ -582,7 +593,8 @@ export const showList = [
     fav: false,
     upcoming: false,
     multi: 2,
-    type: 'musical'
+    type: 'musical',
+    review: 'funny'
     },{
     id: 's13',        
     name: "Wolf Hall: Part 2",
@@ -620,7 +632,8 @@ export const showList = [
     fav: false,
     upcoming: false,
     multi: 0,
-    type: 'play'
+    type: 'play',
+    review: 'happy'
     },{
     id: 's10',        
     name: "Baskerville: A Sherlock Holmes Mystery",
@@ -632,7 +645,8 @@ export const showList = [
     fav: false,
     upcoming: false,
     multi: 0,
-    type: 'play'
+    type: 'play',
+    review: 'funny'
     },{
     id: 's9',        
     name: "Les Miserables",
@@ -644,7 +658,8 @@ export const showList = [
     fav: false,
     upcoming: false,
     multi: 0,
-    type: 'musical'
+    type: 'musical',
+    review: 'happy'
     },{
     id: 's8',        
     name: "Elephant Man",
@@ -656,7 +671,8 @@ export const showList = [
     fav: false,
     upcoming: false,
     multi: 0,
-    type: 'play'
+    type: 'play',
+    review: 'thought-provoking'
     },{
     id: 's7',
     name: "Mary Poppins",
@@ -668,7 +684,8 @@ export const showList = [
     fav: false,
     upcoming: false,
     multi: 4,
-    type: 'musical'
+    type: 'musical',
+    review: 'love'
     },{
     id: 's6',
     name: "Wicked",
@@ -680,7 +697,8 @@ export const showList = [
     fav: false,
     upcoming: false,
     multi: 11,
-    type: 'musical'
+    type: 'musical',
+    review: 'love'
     },{
     id: 's5',
     name: "Beauty and the Beast",
@@ -692,7 +710,8 @@ export const showList = [
     fav: false,
     upcoming: false,
     multi: 3,
-    type: 'musical'
+    type: 'musical',
+    review: 'happy'
     },{
     id: 's4',
     name: "South Pacific",
@@ -717,7 +736,8 @@ export const showList = [
     fav: false,
     upcoming: false,
     multi: 0,
-    type: 'musical'
+    type: 'musical',
+    review: 'happy'
     },{
     id: 's2',
     name: "The Black Watch",
