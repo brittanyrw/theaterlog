@@ -47,10 +47,10 @@ export const showList = [
     illustration: '',    
     favSong: '',
     fav: false,
-    upcoming: true,
+    upcoming: false,
     multi: 0,
     type: 'musical',
-    review: ''
+    review: 'happy'
     },{
     id: 's55',        
     name: "Dear Evan Hansen",

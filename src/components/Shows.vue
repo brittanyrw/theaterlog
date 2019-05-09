@@ -81,7 +81,7 @@ export default {
 		width: 105%;
 		left: -2.5%;
 		top: -5.5%;
-		background-color: #6661af;
+		background-color: #504b8c;
 	}
 	.show {
 		padding: 20px 25px;
@@ -155,7 +155,6 @@ export default {
 
 	.show-opinion .multi-view {
 		background-color: #908ae2;
-		color: white;
 		height: 30px;
 		padding: 10px;
 		font-weight: bold;

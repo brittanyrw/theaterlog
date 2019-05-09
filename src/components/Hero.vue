@@ -95,7 +95,7 @@ export default {
   .statistics {
     background-color: white;
     padding: 30px;
-    border: 10px solid white;
+    border: 10px solid #6661af;
     display: grid;
     grid-template-columns: 1.5fr .5fr;
     grid-auto-rows: auto;
@@ -123,9 +123,25 @@ export default {
   .stats .counter {
     display: inline-block;
     padding: 10px;
-    border: 1px solid black;
+    border: 2px solid #402e47;
     margin-right: 10px;
     margin-bottom: 10px;
+  }
+
+  .stats .counter:nth-child(2) {
+    background-color: lightpink;
+  }
+
+  .stats .counter:nth-child(3) {
+    background-color: gold;
+  }
+
+  .stats .counter:nth-child(4) {
+    background-color: teal;
+  }
+
+  .stats .counter:nth-child(5)  {
+    background-color: red;
   }
 
   .review-legend ul {
