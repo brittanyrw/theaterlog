@@ -134,19 +134,19 @@ export default {
   }
 
   .stats .counter:nth-child(2) {
-    background-color: lightpink;
+    /*background-color: lightpink;*/
   }
 
   .stats .counter:nth-child(3) {
-    background-color: gold;
+    /*background-color: gold;*/
   }
 
   .stats .counter:nth-child(4) {
-    background-color: teal;
+    /*background-color: teal;*/
   }
 
   .stats .counter:nth-child(5)  {
-    background-color: red;
+    /*background-color: red;*/
   }
 
   .review-legend ul {
