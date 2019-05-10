@@ -96,7 +96,7 @@ export default {
 		box-shadow: gray;
 		border: 1px solid dimgray;
 		color: gray;
-		box-shadow: 5px 5px 0 dimgray;
+		box-shadow: 3px 3px 0 lightgray, 6px 6px 0 gray;
 	}
 
 	.show-name {
@@ -138,7 +138,6 @@ export default {
 		background-color: lightpink;
 		border-radius: 50%;
 		margin-bottom: 15px;
-		/*border: 1px solid #402e47;*/
 		font-size: 15px;
 		width: 50px;
 	}
@@ -204,7 +203,17 @@ export default {
 		margin-right: 5px;
 	}
 
-	@media screen and (max-width: 667px){
+	@media screen and (max-width: 992px){
+		.row {
+			grid-template-columns: 1fr 1fr;
+		}
+		.favs {
+			margin-top: 15px;
+			position: relative;
+		}
+	}
+
+	@media screen and (max-width: 667px){ 
 		.row {
 			grid-template-columns: 1fr;
 		}

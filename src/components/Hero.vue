@@ -94,7 +94,7 @@ export default {
 <style>
   .statistics {
     background-color: white;
-    padding: 30px;
+    padding: 60px 30px 30px 30px;
     border: 10px solid #6661af;
     display: grid;
     grid-template-columns: 1.5fr .5fr;
@@ -107,9 +107,14 @@ export default {
     font-family: 'Amaranth', sans-serif;
     padding: 12px 100px;
     display: inline-block;
-    background-color: #ccc;
+    font-size: 60px;
+    background-color: white;
     margin-bottom: -50px;
-    border: 5px solid gray;
+    color: #402e47;
+    border: 8px solid #6661af;
+    -webkit-box-shadow: 5px 5px 0 #9994E1, 8px 8px 0 #3128BB;
+    box-shadow: 5px 5px 0 gold, 10px 10px 0 #3128BB;
+    /* box-shadow: -4px 4px 0 pink, -8px 8px 0 #4579f5, -12px 12px 0 gold; */
   } 
 
   h2 {
@@ -160,5 +165,15 @@ export default {
   }
   .review-legend img {
       height: 30px;
+  }
+
+  @media screen and (max-width: 992px){ 
+    .statistics, .review-ledgend ul {
+      grid-template-columns: 1fr;
+    }
+    h1 {
+      font-size: 40px;
+      padding: 12px 50px;
+    }
   }
 </style>
