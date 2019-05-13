@@ -54,11 +54,13 @@ export const showList = [
     },{
     id: 's55',        
     name: "Dear Evan Hansen",
+    link: 'https://dearevanhansen.com/',
     theater: "Music Box Theatre",
     date: "Jan 2019",
     location: "New York, NY",
     illustration: 'laptop',    
     favSong: 'Words Fail',
+    favSongLink: 'https://www.google.com',
     fav: true,
     upcoming: false,
     multi: 3,

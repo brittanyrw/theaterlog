@@ -21,7 +21,7 @@
 				</div>
 				<div class="show-info">
 					<p class="type">{{show.type}}</p>
-					<p class="show-name">{{ show.name }}</p>
+					<p class="show-name"><a v-bind:href="show.link" target="_blank">{{ show.name }}</a></p>
 					<p class="show-theater">{{ show.theater }}</p>
 					<p class="show-location">{{ show.location }}</p>
 					<p class="show-date">{{ show.date }}</p>					
@@ -31,7 +31,7 @@
 					<div class="fav-song">
 						<p class="song-label">
 						<font-awesome-icon icon="music" class="fs-icon" /></p>
-						<p class="song-name">{{ show.favSong }}</p>
+						<p class="song-name"><a v-bind:href="show.favSongLink" target="_blank">{{ show.favSong }}</a></p>
 					</div> 
 				</div>
 			</div>
@@ -61,6 +61,7 @@ export default {
 		}
 	}
 }
+
 </script>
 <style>
 	.row {
@@ -89,6 +90,7 @@ export default {
 		position: relative;
 		border: 2px solid #402e47;
 		box-shadow: 3px 3px 0 #9994E1, 6px 6px 0 #3128BB;
+		transition: .5s;
 		/*box-shadow: -4px 4px 0 pink, -8px 8px 0 #4579f5, -12px 12px 0 gold;*/
 	}
 
@@ -103,6 +105,17 @@ export default {
 		font-family: 'Amaranth', sans-serif;
 		font-size: 24px;
 		
+	}
+
+	.show-name a {
+		color: #402e47;
+		text-decoration: none;
+		transition: .5s;
+	}
+
+	.show-name a:hover {
+		color: #3128BB;
+		transition: .5s;
 	}
 
 	.show-theater, .show-location, .show-date {
@@ -152,6 +165,15 @@ export default {
 		margin-bottom: 8px;
 	}
 
+	.show .fav-icon {
+		transition: .5s;
+	}
+
+	.show .fav-icon:hover {
+		transform: scale(1.2);
+		transition: .5s;
+	}
+
 	.show-opinion .multi-view {
 		background-color: #908ae2;
 		height: 30px;
@@ -199,8 +221,19 @@ export default {
 	.song-label, .song-name {
 		display: inline-block;
 	}
+	
+	.song-name a {
+		text-decoration: none;
+		color: #402e47;
+		transition: .5s;
+	}
+
 	.song-label {
 		margin-right: 5px;
+	}
+
+	.fav-song:hover .fs-icon {
+		transform: rotate(5deg);
 	}
 
 	@media screen and (max-width: 992px){
