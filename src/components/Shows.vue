@@ -5,17 +5,7 @@
 				<div v-if="show.upcoming == false && (show.fav || show.review || show.multi)" class="show-opinion">
 					<div v-if="show.fav" class="fav-view"><font-awesome-icon icon="star" class="fav-icon" /></div>
 					<div v-if="show.review" class="review">
-
-						<img v-if="show.review == 'happy-sad'" alt="crying but happy emoji" src="./../assets/happy-sad.svg">
-						<img v-if="show.review == 'sad'" alt="sad" src="./../assets/sad.svg">
-						<img v-if="show.review == 'confused'" alt="confused" src="./../assets/confused.svg">
-						<img v-if="show.review == 'funny'" alt="funny" src="./../assets/funny.svg">
-						<img v-if="show.review == 'love'" alt="love" src="./../assets/love.svg">
-						<img v-if="show.review == 'meh'" alt="meh" src="./../assets/meh.svg">
-						<img v-if="show.review == 'thought-provoking'" alt="thought-provoking" src="./../assets/thought-provoking.svg">
-						<img v-if="show.review == 'dislike'" alt="dislike" src="./../assets/dislike.svg">
-						<img v-if="show.review == 'happy'" alt="happy" src="./../assets/happy.svg">
-
+						<img v-bind:src="require('../assets/' + show.review + '.svg')" v-bind:alt="show.review + ' emoji'">
 					</div>
 					<div v-if="show.multi" class="multi-view">{{ show.multi }}</div>
 				</div>
