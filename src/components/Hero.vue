@@ -6,10 +6,10 @@
         <p>Click on the show names to learn more about the show or current productions. And click on the song names to listen to my favorite songs from each show!</p>
         <div class="stats">
           <h2>Statistics</h2>
-          <p class="counter">Total Shows Seen: {{ shows.length + 26}}</p>
-          <p class="counter">Upcoming: {{ upcomingCounter }}</p>
-          <p class="counter">Musicals: {{ musicalsCounter + 26}}</p>
-          <p class="counter">Plays: {{ playsCounter}}</p>   
+          <div class="counter total-stat"><p>Total Shows Seen</p> <p>{{ shows.length + 26}}</p></div>
+          <div class="counter upcoming-stat"><p>Upcoming </p><p>{{ upcomingCounter }}</p></div>
+          <div class="counter musical-stat"><p>Musicals</p> <p>{{ musicalsCounter + 26}}</p></div>
+          <div class="counter play-stat"><p>Plays</p> <p>{{ playsCounter}}</p></div>   
         </div>    
       </div>
       <div class="window">
@@ -123,26 +123,36 @@ export default {
 
   .stats .counter {
     display: inline-block;
-    padding: 10px;
     border: 2px solid #402e47;
     margin-right: 10px;
     margin-bottom: 10px;
   }
 
-  .stats .counter:nth-child(2) {
-    /*background-color: lightpink;*/
+  .stats .counter p {
+    display: inline-block;
+    margin: 0;
+    padding: 10px;
+    font-size: 18px;
   }
 
-  .stats .counter:nth-child(3) {
-    /*background-color: gold;*/
+  .stats .counter p:last-child {
+    border-left: 2px solid #402e47;
   }
 
-  .stats .counter:nth-child(4) {
-    /*background-color: teal;*/
+  .stats .total-stat p:last-child {
+    background-color: lightpink;
   }
 
-  .stats .counter:nth-child(5)  {
-    /*background-color: red;*/
+  .stats .upcoming-stat p:last-child {
+    background-color: gold;
+  }
+
+  .stats .musical-stat p:last-child {
+    background-color: #7ed6c9;
+  }
+
+  .stats .play-stat p:last-child {
+    background-color: #908ae2;
   }
 
   .review-legend ul {
