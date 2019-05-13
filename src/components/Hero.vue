@@ -3,9 +3,15 @@
     <h1>TheaterLog</h1>
     <div class="statistics">
       <div class="statistics-content">
-        <p>Click on the show names to learn more about the show or current productions. And click on the song names to listen to my favorite songs from each show!</p>
+        <div class="stats-intro">
+          <h2>Overview</h2>
+          <p>Since watching Grease for the first time in 5th grade, I have been hooked on musicals. This app was built to keep track of all of the musicals and plays I have seen since 2010.</p>
+          <p> Click on the show names to learn more about the show or current productions. And click on the song names to listen to my favorite songs from each show!</p>
+          <p>The <font-awesome-icon icon="star" class="fav-icon" /> represents favorite shows and the <span class="multi-example">4</span> is the number of times I have seen a show.</p>
+          <p class="note">* Upcoming shows are gray!</p>
+        </div>
         <div class="stats">
-          <h2>Statistics</h2>
+          <h3>Statistics</h3>
           <div class="counter total-stat"><p>Total Shows Seen</p> <p>{{ shows.length + 26}}</p></div>
           <div class="counter upcoming-stat"><p>Upcoming </p><p>{{ upcomingCounter }}</p></div>
           <div class="counter musical-stat"><p>Musicals</p> <p>{{ musicalsCounter + 26}}</p></div>
@@ -14,7 +20,7 @@
       </div>
       <div class="window">
         <div class="review-legend">
-          <h2>Review Legend</h2>
+          <h3>Review Legend</h3>
           <ul>
             <li>
               <img alt="Vue logo" src="./../assets/love.svg">
@@ -119,6 +125,24 @@ export default {
 
   p {
     margin-bottom: 20px;
+  }
+
+  .fav-icon {
+    color: gold;
+  }
+
+  .fav-icon path {
+    stroke: #402e47;
+    stroke-width: 25;
+  }
+
+  .stats-intro {
+    padding-right: 20px;
+    margin-bottom: 30px;
+  }
+
+  .note {
+    font-size: 16px;
   }
 
   .stats .counter {
