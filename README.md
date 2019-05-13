@@ -4,10 +4,6 @@ TheaterLog is a theater show tracker. This web application tracks all of the mus
 
 Demo: [demo link here]
 
-## Wireframes
-
-[ Wireframes here ]
-
 ## Features
 
 ## Project setup
