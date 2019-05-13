@@ -6,7 +6,7 @@
         <div class="stats-intro">
           <h2>Overview</h2>
           <p>Since watching Grease for the first time in 5th grade, I have been hooked on musicals. This app was built to keep track of all of the musicals and plays I have seen since 2010.</p>
-          <p> Click on the show names to learn more about the show or current productions. And click on the song names to listen to my favorite songs from each show!</p>
+          <p> Click on the show names to learn more about the show or current productions. And click on the song names to see a video of my favorite songs from each show!</p>
           <p>The <font-awesome-icon icon="star" class="fav-icon" /> represents favorite shows and the <span class="multi-example">4</span> is the number of times I have seen a show.</p>
           <p class="note">* Upcoming shows are gray!</p>
         </div>

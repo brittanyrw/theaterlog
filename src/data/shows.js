@@ -15,6 +15,7 @@ export const showList = [
     },{
     id: 's59',
     name: "Dear Evan Hansen",
+    link: 'https://dearevanhansen.com/',
     theater: "John F. Kennedy Center for the Performing Arts",
     date: "Aug 2019",
     location: "Washington, DC",
@@ -95,6 +96,7 @@ export const showList = [
     },{
     id: 's52',            
     name: "Hamilton: An American Musical",
+    link: 'https://hamiltonmusical.com/new-york/',
     theater: "John F. Kennedy Center for the Performing Arts",
     date: "Jun 2018",
     location: "Washington, DC",
@@ -104,7 +106,8 @@ export const showList = [
     upcoming: false,
     multi: 5,
     type: 'musical',
-    review: 'love'
+    review: 'love',
+    favSongLink: ''
     },{
     id: 's51',            
     name: "Aladdin",
@@ -186,6 +189,7 @@ export const showList = [
     },{
     id: 's45',            
     name: "Dear Evan Hansen",
+    link: 'https://dearevanhansen.com/',
     theater: "Music Box Theatre",
     date: "Jun 2017",
     location: "New York, NY",
@@ -195,10 +199,12 @@ export const showList = [
     upcoming: false,
     multi: 0,
     type: 'musical',
-    review: 'love'
+    review: 'love',
+    favSongLink: ''
     },{
     id: 's44',            
     name: "Miss Saigon",
+    link: '',
     theater: "Broadway Theatre",
     date: "Apr 2017",
     location: "New York, NY",
@@ -208,10 +214,12 @@ export const showList = [
     upcoming: false,
     multi: 0,
     type: 'musical',
-    review: 'thought-provoking'
+    review: 'thought-provoking',
+    favSongLink: ''
     },{
     id: 's43',            
     name: "Hamilton: An American Musical",
+    link: 'https://hamiltonmusical.com/new-york/',
     theater: "Richard Rodgers Theatre",
     date: "Jan 2017",
     location: "New York, NY",
@@ -221,10 +229,12 @@ export const showList = [
     upcoming: false,
     multi: 5,
     type: 'musical',
-    review: 'love'
+    review: 'love',
+    favSongLink: ''
     },{
     id: 's42',            
     name: "Natasha, Pierre & The Great Comet of 1812",
+    link: '',
     theater: "Imperial Theatre",
     date: "Jan 2017",
     location: "New York, NY",
@@ -234,10 +244,12 @@ export const showList = [
     upcoming: false,
     multi: 2,
     type: 'musical',
-    review: 'love'
+    review: 'love',
+    favSongLink: ''
     },{
     id: 's41',        
     name: "Sister Act",
+    link: '',
     theater: "Toby’s Dinner Theatre",
     date: "Oct 2016",
     location: "Columbia, MD",
@@ -247,10 +259,12 @@ export const showList = [
     upcoming: false,
     multi: 0,
     type: 'musical',
-    review: 'funny'
+    review: 'funny',
+    favSongLink: ''
     },{
     id: 's40',        
     name: "Heathers",
+    link: '',
     theater: "White Plains Performing Arts Center",
     date: "Oct 2016",
     location: "White Plains, NY",
@@ -260,10 +274,12 @@ export const showList = [
     upcoming: false,
     multi: 0,
     type: 'musical',
-    review: 'love'
+    review: 'love',
+    favSongLink: ''
     },{
     id: 's39',        
     name: "Hamilton: An American Musical",
+    link: 'https://hamiltonmusical.com/new-york/',
     theater: "Richard Rodgers Theatre",
     date: "Oct 2016",
     location: "New York, NY",
@@ -273,10 +289,12 @@ export const showList = [
     upcoming: false,
     multi: 5,
     type: 'musical',
-    review: 'love'
+    review: 'love',
+    favSongLink: ''
     },{
     id: 's38',        
     name: "Falsettos",
+    link: '',
     theater: "Walter Kerr Theatre ",
     date: "Oct 2016",
     location: "New York, NY",
@@ -286,7 +304,8 @@ export const showList = [
     upcoming: false,
     multi: 0,
     type: 'musical',
-    review: 'sad'
+    review: 'sad',
+    favSongLink: ''
     },{
     id: 's37',        
     name: "Angels in America: Part 1",
@@ -303,6 +322,7 @@ export const showList = [
     },{
     id: 's36',        
     name: "Urinetown",
+    link: '',
     theater: "Constellation Theatre Company",
     date: "Sep 2016",
     location: "Washington, DC",
@@ -312,10 +332,12 @@ export const showList = [
     upcoming: false,
     multi: 0,
     type: 'musical',
-    review: 'happy'
+    review: 'happy',
+    favSongLink: ''
     },{
     id: 's35',        
     name: "Matilda",
+    link: '',
     theater: "Shubert Theatre",
     date: "Aug 2016",
     location: "New York, NY",
@@ -324,10 +346,12 @@ export const showList = [
     fav: true,
     upcoming: false,
     multi: 3,
-    type: 'musical'
+    type: 'musical',
+    favSongLink: ''
     },{
     id: 's34',        
     name: "The Color Purple",
+    link: '',
     theater: "Bernard Jacobs Theatre",
     date: "Aug 2016",
     location: "New York, NY",
@@ -337,7 +361,8 @@ export const showList = [
     upcoming: false,
     multi: 0,
     type: 'musical',
-    review: 'happy-sad'
+    review: 'happy-sad',
+    favSongLink: ''
     },{
     id: 's33',        
     name: "The Tempest",
@@ -354,6 +379,7 @@ export const showList = [
     },{
     id: 's32',        
     name: "Next to Normal",
+    link: '',
     theater: "The Keegan Theatre",
     date: "Jul 2016",
     location: "Washington, DC",
@@ -363,10 +389,12 @@ export const showList = [
     upcoming: false,
     multi: 0,
     type: 'musical',
-    review: 'love'
+    review: 'love',
+    favSongLink: ''
     },{
     id: 's31',        
     name: "Hamilton: An American Musical",
+    link: 'https://hamiltonmusical.com/new-york/',
     theater: "Richard Rodgers Theatre",
     date: "Apr 2016",
     location: "New York, NY",
@@ -376,10 +404,12 @@ export const showList = [
     upcoming: false,
     multi: 5,
     type: 'musical',
-    review: 'love'
+    review: 'love',
+    favSongLink: ''
     },{
     id: 's30',        
     name: "The King and I",
+    link: '',
     theater: "Lincoln Center Theatre",
     date: "April 2016",
     location: "New York, NY",
@@ -389,10 +419,12 @@ export const showList = [
     upcoming: false,
     multi: 0,
     type: 'musical',
-    review: 'happy'
+    review: 'happy',
+    favSongLink: ''
     },{
     id: 's29',        
     name: "American Idiot",
+    link: '',
     theater: "The Keegan Theatre",
     date: "Mar 2016",
     location: "Washington, DC",
@@ -402,7 +434,8 @@ export const showList = [
     upcoming: false,
     multi: 0,
     type: 'musical',
-    review: 'love'
+    review: 'love',
+    favSongLink: ''
     },{
     id: 's28',        
     name: "1984",
@@ -419,6 +452,7 @@ export const showList = [
     },{
     id: 's27',        
     name: "Fun Home",
+    link: '',
     theater: "Circle in the Square Theatre",
     date: "Feb 2016",
     location: "New York, NY",
@@ -428,10 +462,12 @@ export const showList = [
     upcoming: false,
     multi: 0,
     type: 'musical',
-    review: 'happy-sad'
+    review: 'happy-sad',
+    favSongLink: ''
     },{
     id: 's26',        
     name: "Rent",
+    link: '',
     theater: "Abe Burrows Theatre (NYU)",
     date: "Feb 2016",
     location: "New York, NY",
@@ -441,7 +477,8 @@ export const showList = [
     upcoming: false,
     multi: 0,
     type: 'musical',
-    review: 'love'
+    review: 'love',
+    favSongLink: ''
     },{
     id: 's25',        
     name: "A View From A Bridge",
@@ -458,6 +495,7 @@ export const showList = [
     },{
     id: 's24',        
     name: "Hamilton: An American Musical",
+    link: 'https://hamiltonmusical.com/new-york/',
     theater: "Richard Rodgers Theatre",
     date: "Jan 2016",
     location: "New York, NY",
@@ -467,10 +505,12 @@ export const showList = [
     upcoming: false,
     multi: 5,
     type: 'musical',
-    review: 'love'
+    review: 'love',
+    favSongLink: ''
     },{
     id: 's23',        
     name: "Matilda",
+    link: '',
     theater: "John F. Kennedy Center for the Performing Arts",
     date: "Jan 2016",
     location: "Washington, DC",
@@ -480,10 +520,12 @@ export const showList = [
     upcoming: false,
     multi: 3,
     type: 'musical',
-    review: 'love'
+    review: 'love',
+    favSongLink: ''
     },{
     id: 's22',        
     name: "Matilda",
+    link: '',
     theater: "John F. Kennedy Center for the Performing Arts",
     date: "Jan 2016",
     location: "Washington, DC",
@@ -493,10 +535,12 @@ export const showList = [
     upcoming: false,
     multi: 3,
     type: 'musical',
-    review: 'love'
+    review: 'love',
+    favSongLink: '',
     },{
     id: 's21',        
     name: "Bright Star",
+    link: '',
     theater: "John F. Kennedy Center for the Performing Arts",
     date: "Dec 2015",
     location: "Washington, DC",
@@ -506,10 +550,12 @@ export const showList = [
     upcoming: false,
     multi: 0,
     type: 'musical',
-    review: 'happy'
+    review: 'happy',
+    favSongLink: ''
     },{
     id: 's20',        
     name: "Avenue Q",
+    link: '',
     theater: "Constellation Theatre Company",
     date: "Oct 2015",
     location: "Washington, DC",
@@ -519,10 +565,12 @@ export const showList = [
     upcoming: false,
     multi: 0,
     type: 'musical',
-    review: 'funny'
+    review: 'funny',
+    favSongLink: ''
     },{
     id: 's19',        
     name: "Spring Awakening (ASL)",
+    link: '',
     theater: "Brooks Atkinson Theatre",
     date: "Oct 2015",
     location: "New York, NY",
@@ -532,23 +580,27 @@ export const showList = [
     upcoming: false,
     multi: 0,
     type: 'musical',
-    review: 'happy'
+    review: 'happy',
+    favSongLink: ''
     },{
     id: 's18',        
     name: "Something Rotten",
+    link: '',
     theater: "St. James Theatre",
     date: "Oct 2015",
     location: "New York, NY",
     illustration: 'eggs',    
-    favSong: 'Hard to Be The Bard',
+    favSong: 'A Musical',
     fav: true,
     upcoming: false,
     multi: 0,
     type: 'musical',
-    review: 'funny'
+    review: 'funny',
+    favSongLink: ''
     },{
     id: 's17',        
     name: "Book of Mormon",
+    link: 'https://bookofmormonbroadway.com/welcome.php',
     theater: "John F. Kennedy Center for the Performing Arts",
     date: "Aug 2015",
     location: "Washington, DC",
@@ -558,10 +610,12 @@ export const showList = [
     upcoming: false,
     multi: 2,
     type: 'musical',
-    review: 'funny'
+    review: 'funny',
+    favSongLink: ''
     },{
     id: 's16',        
     name: "Once",
+    link: 'http://www.playbill.com/production/once-bernard-b-jacobs-theatre-vault-0000013862',
     theater: "John F. Kennedy Center for the Performing Arts",
     date: "Jul 2015",
     location: "Washington, DC",
@@ -571,10 +625,12 @@ export const showList = [
     upcoming: false,
     multi: 0,
     type: 'musical',
-    review: 'love'
+    review: 'love',
+    favSongLink: 'https://www.youtube.com/watch?v=KfeRdH4Q_sg'
     },{
     id: 's15',        
     name: "Newsies",
+    link: 'https://www.newsiesthemusical.com/',
     theater: "The National Theatre",
     date: "Jun 2015",
     location: "Washington, DC",
@@ -583,10 +639,12 @@ export const showList = [
     fav: true,
     upcoming: false,
     multi: 0,
-    type: 'musical'
+    type: 'musical',
+    favSongLink: 'https://www.youtube.com/watch?v=y_Sz7_7T50Q'
     },{
     id: 's14',        
     name: "Book of Mormon",
+    link: 'https://bookofmormonbroadway.com/welcome.php',
     theater: "John F. Kennedy Center for the Performing Arts",
     date: "Jun 2015",
     location: "Washington, DC",
@@ -596,7 +654,8 @@ export const showList = [
     upcoming: false,
     multi: 2,
     type: 'musical',
-    review: 'funny'
+    review: 'funny',
+    favSongLink: ''
     },{
     id: 's13',        
     name: "Wolf Hall: Part 2",
@@ -652,6 +711,7 @@ export const showList = [
     },{
     id: 's9',        
     name: "Les Miserables",
+    link: 'https://www.lesmis.com/us-tour',
     theater: "Imperial Theatre",
     date: "Jan 2015",
     location: "New York, NY",
@@ -661,7 +721,8 @@ export const showList = [
     upcoming: false,
     multi: 0,
     type: 'musical',
-    review: 'happy'
+    review: 'happy',
+    favSongLink: 'https://www.youtube.com/watch?v=IddP8AAIGTQ'
     },{
     id: 's8',        
     name: "Elephant Man",
@@ -678,6 +739,7 @@ export const showList = [
     },{
     id: 's7',
     name: "Mary Poppins",
+    link: 'http://www.playbill.com/production/mary-poppins-new-amsterdam-theatre-vault-0000008728',
     theater: "Bass Concert Hall",
     date: "Apr 2012",
     location: "Austin, TX",
@@ -687,7 +749,8 @@ export const showList = [
     upcoming: false,
     multi: 4,
     type: 'musical',
-    review: 'love'
+    review: 'love',
+    favSongLink: 'https://www.youtube.com/watch?v=1VNGIQ51aiw'
     },{
     id: 's6',
     name: "Wicked",
