@@ -21,7 +21,10 @@
 				</div>
 				<div class="show-info">
 					<p class="type">{{show.type}}</p>
-					<p class="show-name"><a v-bind:href="show.link" target="_blank">{{ show.name }}</a></p>
+					<div class="show-name">
+						<p v-if="show.link"><a v-bind:href="show.link" target="_blank">{{ show.name }}</a></p>
+						<p v-else>{{ show.name }}</p>
+					</div>
 					<p class="show-theater">{{ show.theater }}</p>
 					<p class="show-location">{{ show.location }}</p>
 					<p class="show-date">{{ show.date }}</p>					

@@ -691,6 +691,7 @@ export const showList = [
     },{
     id: 's6',
     name: "Wicked",
+    link: 'https://wickedthemusical.com/',
     theater: "Bass Concert Hall",
     date: "Jan & Feb 2012",
     location: "Austin, TX",
@@ -700,10 +701,12 @@ export const showList = [
     upcoming: false,
     multi: 11,
     type: 'musical',
-    review: 'love'
+    review: 'love',
+    favSongLink: 'https://www.youtube.com/watch?v=TZ0pXUb5jVU'
     },{
     id: 's5',
     name: "Beauty and the Beast",
+    link: 'http://www.playbill.com/production/beauty-and-the-beast-palace-theatre-vault-0000009145',
     theater: "Bass Concert Hall",
     date: "Dec 2011",
     location: "Austin, TX",
@@ -713,10 +716,12 @@ export const showList = [
     upcoming: false,
     multi: 3,
     type: 'musical',
-    review: 'happy'
+    review: 'happy',
+    favSongLink: 'https://www.youtube.com/watch?v=CaU4MvRJRB8'
     },{
     id: 's4',
     name: "South Pacific",
+    link: 'http://www.playbill.com/production/south-pacific-majestic-theatre-vault-0000007854',
     theater: "Bass Concert Hall",
     date: "Nov 2011",
     location: "Austin, TX",
@@ -726,10 +731,12 @@ export const showList = [
     fav: false,
     upcoming: false,
     multi: 0,
-    type: 'musical'
+    type: 'musical',
+    favSongLink: ''
     },{
     id: 's3',
     name: "West Side Story",
+    link: 'http://www.playbill.com/production/west-side-story-palace-theatre-vault-0000009137',
     theater: "Bass Concert Hall",
     date: "Mar 2011",
     location: "Austin, TX",
@@ -739,10 +746,12 @@ export const showList = [
     upcoming: false,
     multi: 0,
     type: 'musical',
-    review: 'happy'
+    review: 'happy',
+    favSongLink: 'https://www.youtube.com/watch?v=YhSKk-cvblc'
     },{
     id: 's2',
     name: "The Black Watch",
+    link: 'https://www.nationaltheatrescotland.com/production/black-watch-2008/',
     theater: "Bass Concert Hall",
     date: "Feb 2011",
     location: "Austin, TX",
@@ -756,6 +765,7 @@ export const showList = [
     },{
     id: 's1',
     name: "Shrek the Musical",
+    link: 'http://www.playbill.com/production/shrek-the-musical-broadway-theatre-vault-0000012248',
     theater: "Bass Concert Hall",
     date: "Nov 2010",
     location: "Austin, TX",
@@ -765,6 +775,7 @@ export const showList = [
     upcoming: false,
     multi: 0,
     review: 'funny',
-    type: 'musical'
+    type: 'musical',
+    favSongLink: 'https://www.youtube.com/watch?v=Gqfz6Kc2al8'
     }      
 ]
