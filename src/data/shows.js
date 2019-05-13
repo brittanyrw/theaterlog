@@ -15,7 +15,7 @@ export const showList = [
     },{
     id: 's59',
     name: "Dear Evan Hansen",
-    link: 'https://dearevanhansen.com/',
+    link: '',
     theater: "John F. Kennedy Center for the Performing Arts",
     date: "Aug 2019",
     location: "Washington, DC",
