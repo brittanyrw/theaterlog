@@ -29,6 +29,7 @@
 				</div>
 			</div>
 		</div>
+		<div class="icon-attribute">Icons made by <a href="https://www.flaticon.com/authors/darius-dan" title="Darius Dan">Darius Dan</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
 	</div>
 </template>
 
@@ -146,6 +147,12 @@ export default {
 		margin-bottom: 15px;
 		font-size: 15px;
 		width: 50px;
+		transition: .5s;
+	}
+
+	.show-opinion .review:hover {
+		transform: rotate(-10deg);
+		transition: .5s;
 	}
 
 	.show-opinion .review img {
@@ -174,6 +181,12 @@ export default {
 		font-weight: bold;
 		height: 47px;
 		border: 2px solid #402e47;
+		transition: .5s;
+	}
+
+	.show-opinion .multi-view:hover {
+		transform: translateY(5px);
+		transition: .5s;
 	}
 
 	.favs {
@@ -225,8 +238,22 @@ export default {
 		margin-right: 5px;
 	}
 
+	.fav-song .fs-icon {
+		transition: .5s;
+	}
+
 	.fav-song:hover .fs-icon {
-		transform: rotate(5deg);
+		transform: rotate(10deg);
+		transition: .5s;
+	}
+
+	.fav-song a {
+		transition: .5s;
+	}
+
+	.fav-song:hover a {
+		font-weight: bold;
+		transition: .5s;
 	}
 
 	@media screen and (max-width: 992px){
@@ -243,6 +270,17 @@ export default {
 		.row {
 			grid-template-columns: 1fr;
 		}
+	}
+
+	.icon-attribute {
+		font-size: 15px;
+		color: #402e47;
+		margin-top: 15px;
+	}
+
+	.icon-attribute a {
+		font-weight: bold;
+		color: #402e47; 
 	}
 
 </style>

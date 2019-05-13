@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="hero">
     <h1>TheaterLog</h1>
     <div class="statistics">
       <div class="statistics-content">
@@ -104,6 +104,19 @@ export default {
     text-align: left;
   }
 
+  .stats-intro .multi-example {
+    background-color: #908ae2;
+		padding: 5px 10px;
+		font-weight: bold;
+    font-size: 21px;
+		border: 2px solid #402e47;
+    display: inline-block;
+  }
+
+  .stats-intro .multi-example:hover, .stats-intro .fav-icon:hover {
+    transform: rotate(5deg);
+  }
+
 
   h1 {
     font-family: 'Amaranth', sans-serif;
@@ -129,6 +142,7 @@ export default {
 
   .fav-icon {
     color: gold;
+    font-size: 30px;
   }
 
   .fav-icon path {
