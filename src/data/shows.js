@@ -42,16 +42,18 @@ export const showList = [
     },{
     id: 's57',
     name: "My Fair Lady",
+    link: 'http://www.playbill.com/production/my-fair-lady-vivian-beaumont-theater-2017-2018',
     theater: "Vivian Beaumont Theater",
     date: "May 2019",
     location: "New York, NY",
     illustration: '',    
-    favSong: '',
+    favSong: 'The Rain in Spain',
     fav: false,
     upcoming: false,
     multi: 0,
     type: 'musical',
-    review: 'happy'
+    review: 'happy',
+    favSongLink: 'https://www.youtube.com/watch?v=xmADMB2utAo'
     },{
     id: 's55',        
     name: "Dear Evan Hansen",
@@ -61,7 +63,7 @@ export const showList = [
     location: "New York, NY",
     illustration: 'laptop',    
     favSong: 'Words Fail',
-    favSongLink: 'https://www.google.com',
+    favSongLink: 'https://www.youtube.com/watch?v=RKP9UdIcXFk',
     fav: true,
     upcoming: false,
     multi: 3,
@@ -107,10 +109,11 @@ export const showList = [
     multi: 5,
     type: 'musical',
     review: 'love',
-    favSongLink: ''
+    favSongLink: 'https://www.youtube.com/watch?v=PEHKBckBcr4'
     },{
     id: 's51',            
     name: "Aladdin",
+    link: 'https://www.aladdinthemusical.com/',
     theater: "New Amsterdam Theatre",
     date: "May 2018",
     location: "New York, NY",
@@ -120,10 +123,12 @@ export const showList = [
     upcoming: false,
     multi: 0,
     type: 'musical',
-    review: 'happy'
+    review: 'happy',
+    favSongLink: 'https://www.youtube.com/watch?v=-UL0CDMhjj4'
     },{
     id: 's50',            
     name: "Anastasia",
+    link: 'https://anastasiathemusical.com/',
     theater: "Broadhurst Theatre",
     date: "May 2018",
     location: "New York, NY",
@@ -133,7 +138,8 @@ export const showList = [
     upcoming: false,
     multi: 0,
     type: 'musical',
-    review: 'happy'
+    review: 'happy',
+    favSongLink: 'https://www.youtube.com/watch?v=Usz_fcW2aNk'
     },{
     id: 's49',            
     name: "Puffs, or: Seven Increasingly Eventful Years at a Certain School of Magic & Magic",
@@ -150,6 +156,7 @@ export const showList = [
     },{
     id: 's48',            
     name: "Chicago",
+    link: 'https://chicagothemusical.com/',
     theater: "Keegan Theatre",
     date: "April 2018",
     location: "Washington, DC",
@@ -159,10 +166,12 @@ export const showList = [
     upcoming: false,
     multi: 0,
     type: 'musical',
-    review: 'happy'
+    review: 'happy',
+    favSongLink: 'https://www.youtube.com/watch?v=C9dFKRZ8EbU'
     },{
     id: 's47',            
     name: "In the Heights",
+    link: 'http://www.playbill.com/production/in-the-heights-richard-rodgers-theatre-vault-0000003064',
     theater: "John F. Kennedy Center for the Performing Arts",
     date: "Mar 2018",
     location: "Washington, DC",
@@ -172,10 +181,12 @@ export const showList = [
     upcoming: false,
     multi: 0,
     type: 'musical',
-    review: 'love'
+    review: 'love',
+    favSongLink: 'https://www.youtube.com/watch?v=8Gdnph6Ycko'
     },{
     id: 's46',            
     name: "Natasha, Pierre & The Great Comet of 1812",
+    link: 'http://www.playbill.com/production/natasha-pierre-the-great-comet-of-1812-imperial-theatre-2016-2017',
     theater: "Imperial Theatre",
     date: "Jun 2017",
     location: "New York, NY",
@@ -185,7 +196,8 @@ export const showList = [
     upcoming: false,
     multi: 2,
     type: 'musical',
-    review: 'love'
+    review: 'love',
+    favSongLink: 'https://www.youtube.com/watch?v=JcVcYT2TBAo'
     },{
     id: 's45',            
     name: "Dear Evan Hansen",
@@ -200,11 +212,11 @@ export const showList = [
     multi: 0,
     type: 'musical',
     review: 'love',
-    favSongLink: ''
+    favSongLink: 'https://www.youtube.com/watch?v=uW52dVhmzn4'
     },{
     id: 's44',            
     name: "Miss Saigon",
-    link: '',
+    link: 'https://www.miss-saigon.com/us-tour',
     theater: "Broadway Theatre",
     date: "Apr 2017",
     location: "New York, NY",
@@ -215,7 +227,7 @@ export const showList = [
     multi: 0,
     type: 'musical',
     review: 'thought-provoking',
-    favSongLink: ''
+    favSongLink: 'https://www.youtube.com/watch?v=cwB3Zxh2gSE'
     },{
     id: 's43',            
     name: "Hamilton: An American Musical",
@@ -230,11 +242,11 @@ export const showList = [
     multi: 5,
     type: 'musical',
     review: 'love',
-    favSongLink: ''
+    favSongLink: 'https://www.youtube.com/watch?v=PEHKBckBcr4'
     },{
     id: 's42',            
     name: "Natasha, Pierre & The Great Comet of 1812",
-    link: '',
+    link: 'http://www.playbill.com/production/natasha-pierre-the-great-comet-of-1812-imperial-theatre-2016-2017',
     theater: "Imperial Theatre",
     date: "Jan 2017",
     location: "New York, NY",
@@ -245,11 +257,11 @@ export const showList = [
     multi: 2,
     type: 'musical',
     review: 'love',
-    favSongLink: ''
+    favSongLink: 'https://www.youtube.com/watch?v=JcVcYT2TBAo'
     },{
     id: 's41',        
     name: "Sister Act",
-    link: '',
+    link: 'http://www.playbill.com/production/sister-act-broadway-theatre-vault-0000013729',
     theater: "Toby’s Dinner Theatre",
     date: "Oct 2016",
     location: "Columbia, MD",
@@ -260,11 +272,11 @@ export const showList = [
     multi: 0,
     type: 'musical',
     review: 'funny',
-    favSongLink: ''
+    favSongLink: 'https://www.youtube.com/watch?v=0InYv_5uWak'
     },{
     id: 's40',        
     name: "Heathers",
-    link: '',
+    link: 'https://www.samuelfrench.com/p/56725/heathers-the-musical/',
     theater: "White Plains Performing Arts Center",
     date: "Oct 2016",
     location: "White Plains, NY",
@@ -275,7 +287,7 @@ export const showList = [
     multi: 0,
     type: 'musical',
     review: 'love',
-    favSongLink: ''
+    favSongLink: 'https://www.youtube.com/watch?v=tNeAXIFOY8Q'
     },{
     id: 's39',        
     name: "Hamilton: An American Musical",
@@ -290,11 +302,11 @@ export const showList = [
     multi: 5,
     type: 'musical',
     review: 'love',
-    favSongLink: ''
+    favSongLink: 'https://www.youtube.com/watch?v=b5VqyCQV1Tg'
     },{
     id: 's38',        
     name: "Falsettos",
-    link: '',
+    link: 'https://falsettosbroadway.com/',
     theater: "Walter Kerr Theatre ",
     date: "Oct 2016",
     location: "New York, NY",
@@ -305,7 +317,7 @@ export const showList = [
     multi: 0,
     type: 'musical',
     review: 'sad',
-    favSongLink: ''
+    favSongLink: 'https://www.youtube.com/watch?v=QC4zjD9qL5o'
     },{
     id: 's37',        
     name: "Angels in America: Part 1",
@@ -322,7 +334,7 @@ export const showList = [
     },{
     id: 's36',        
     name: "Urinetown",
-    link: '',
+    link: 'http://www.playbill.com/production/urinetown-the-musical-henry-millers-theatre-vault-0000013327',
     theater: "Constellation Theatre Company",
     date: "Sep 2016",
     location: "Washington, DC",
@@ -333,11 +345,11 @@ export const showList = [
     multi: 0,
     type: 'musical',
     review: 'happy',
-    favSongLink: ''
+    favSongLink: 'https://www.youtube.com/watch?v=CZV431zhXA4'
     },{
     id: 's35',        
     name: "Matilda",
-    link: '',
+    link: 'http://us.matildathemusical.com/',
     theater: "Shubert Theatre",
     date: "Aug 2016",
     location: "New York, NY",
@@ -347,11 +359,11 @@ export const showList = [
     upcoming: false,
     multi: 3,
     type: 'musical',
-    favSongLink: ''
+    favSongLink: 'https://www.youtube.com/watch?v=vhaJD2AQbnY'
     },{
     id: 's34',        
     name: "The Color Purple",
-    link: '',
+    link: 'http://www.playbill.com/production/the-color-purple-bernard-b-jacobs-theatre-vault-0000014109',
     theater: "Bernard Jacobs Theatre",
     date: "Aug 2016",
     location: "New York, NY",
@@ -362,7 +374,7 @@ export const showList = [
     multi: 0,
     type: 'musical',
     review: 'happy-sad',
-    favSongLink: ''
+    favSongLink: 'https://www.youtube.com/watch?v=VKtFfqinmWo'
     },{
     id: 's33',        
     name: "The Tempest",
@@ -379,7 +391,7 @@ export const showList = [
     },{
     id: 's32',        
     name: "Next to Normal",
-    link: '',
+    link: 'http://www.playbill.com/production/next-to-normal-booth-theatre-vault-0000001652',
     theater: "The Keegan Theatre",
     date: "Jul 2016",
     location: "Washington, DC",
@@ -390,7 +402,7 @@ export const showList = [
     multi: 0,
     type: 'musical',
     review: 'love',
-    favSongLink: ''
+    favSongLink: 'https://www.youtube.com/watch?v=jfQmoR36toI'
     },{
     id: 's31',        
     name: "Hamilton: An American Musical",
@@ -405,11 +417,11 @@ export const showList = [
     multi: 5,
     type: 'musical',
     review: 'love',
-    favSongLink: ''
+    favSongLink: 'https://www.youtube.com/watch?v=PEHKBckBcr4'
     },{
     id: 's30',        
     name: "The King and I",
-    link: '',
+    link: 'http://www.playbill.com/production/the-king-and-i-vivian-beaumont-theater-vault-0000014073',
     theater: "Lincoln Center Theatre",
     date: "April 2016",
     location: "New York, NY",
@@ -420,11 +432,11 @@ export const showList = [
     multi: 0,
     type: 'musical',
     review: 'happy',
-    favSongLink: ''
+    favSongLink: 'https://www.youtube.com/watch?v=QgVPnWmUqd4'
     },{
     id: 's29',        
     name: "American Idiot",
-    link: '',
+    link: 'http://www.playbill.com/production/american-idiot-st-james-theatre-vault-0000004165',
     theater: "The Keegan Theatre",
     date: "Mar 2016",
     location: "Washington, DC",
@@ -435,7 +447,7 @@ export const showList = [
     multi: 0,
     type: 'musical',
     review: 'love',
-    favSongLink: ''
+    favSongLink: 'https://www.youtube.com/watch?v=YLxdoCBk_H0'
     },{
     id: 's28',        
     name: "1984",
@@ -452,7 +464,7 @@ export const showList = [
     },{
     id: 's27',        
     name: "Fun Home",
-    link: '',
+    link: 'http://www.playbill.com/production/fun-home-circle-in-the-square-theatre-vault-0000014079',
     theater: "Circle in the Square Theatre",
     date: "Feb 2016",
     location: "New York, NY",
@@ -463,11 +475,11 @@ export const showList = [
     multi: 0,
     type: 'musical',
     review: 'happy-sad',
-    favSongLink: ''
+    favSongLink: 'https://www.youtube.com/watch?v=KZnGFkkhZj0'
     },{
     id: 's26',        
     name: "Rent",
-    link: '',
+    link: 'http://www.playbill.com/production/rent-nederlander-theatre-vault-0000002708',
     theater: "Abe Burrows Theatre (NYU)",
     date: "Feb 2016",
     location: "New York, NY",
@@ -478,7 +490,7 @@ export const showList = [
     multi: 0,
     type: 'musical',
     review: 'love',
-    favSongLink: ''
+    favSongLink: 'https://www.youtube.com/watch?v=W_5mhPxVfck'
     },{
     id: 's25',        
     name: "A View From A Bridge",
@@ -486,7 +498,7 @@ export const showList = [
     date: "Jan 2016",
     location: "New York City",
     illustration: 'chair',    
-    favSong: 'N/A',
+    favSong: '',
     fav: true,
     upcoming: false,
     multi: 0,
@@ -506,11 +518,11 @@ export const showList = [
     multi: 5,
     type: 'musical',
     review: 'love',
-    favSongLink: ''
+    favSongLink: 'https://www.youtube.com/watch?v=PEHKBckBcr4'
     },{
     id: 's23',        
     name: "Matilda",
-    link: '',
+    link: 'http://us.matildathemusical.com/',
     theater: "John F. Kennedy Center for the Performing Arts",
     date: "Jan 2016",
     location: "Washington, DC",
@@ -521,11 +533,11 @@ export const showList = [
     multi: 3,
     type: 'musical',
     review: 'love',
-    favSongLink: ''
+    favSongLink: 'https://www.youtube.com/watch?v=vhaJD2AQbnY'
     },{
     id: 's22',        
     name: "Matilda",
-    link: '',
+    link: 'http://us.matildathemusical.com/',
     theater: "John F. Kennedy Center for the Performing Arts",
     date: "Jan 2016",
     location: "Washington, DC",
@@ -536,11 +548,11 @@ export const showList = [
     multi: 3,
     type: 'musical',
     review: 'love',
-    favSongLink: '',
+    favSongLink: 'https://www.youtube.com/watch?v=vhaJD2AQbnY',
     },{
     id: 's21',        
     name: "Bright Star",
-    link: '',
+    link: 'http://www.playbill.com/production/bright-star-cort-theatre-vault-0000014147',
     theater: "John F. Kennedy Center for the Performing Arts",
     date: "Dec 2015",
     location: "Washington, DC",
@@ -551,11 +563,11 @@ export const showList = [
     multi: 0,
     type: 'musical',
     review: 'happy',
-    favSongLink: ''
+    favSongLink: 'https://www.youtube.com/watch?v=vzJ2zOQ8hMg'
     },{
     id: 's20',        
     name: "Avenue Q",
-    link: '',
+    link: 'http://avenueq.com/',
     theater: "Constellation Theatre Company",
     date: "Oct 2015",
     location: "Washington, DC",
@@ -570,7 +582,7 @@ export const showList = [
     },{
     id: 's19',        
     name: "Spring Awakening (ASL)",
-    link: '',
+    link: 'http://www.playbill.com/production/spring-awakening-eugene-oneill-theatre-vault-0000004687',
     theater: "Brooks Atkinson Theatre",
     date: "Oct 2015",
     location: "New York, NY",
@@ -581,11 +593,11 @@ export const showList = [
     multi: 0,
     type: 'musical',
     review: 'happy',
-    favSongLink: ''
+    favSongLink: 'https://www.youtube.com/watch?v=CSagsMcak4Q'
     },{
     id: 's18',        
     name: "Something Rotten",
-    link: '',
+    link: 'https://www.rottenbroadway.com/',
     theater: "St. James Theatre",
     date: "Oct 2015",
     location: "New York, NY",
@@ -596,7 +608,7 @@ export const showList = [
     multi: 0,
     type: 'musical',
     review: 'funny',
-    favSongLink: ''
+    favSongLink: 'https://www.youtube.com/watch?v=1KFNcy9VjQI'
     },{
     id: 's17',        
     name: "Book of Mormon",
@@ -611,7 +623,7 @@ export const showList = [
     multi: 2,
     type: 'musical',
     review: 'funny',
-    favSongLink: ''
+    favSongLink: 'https://www.youtube.com/watch?v=Of5cgecGIhg'
     },{
     id: 's16',        
     name: "Once",
@@ -655,10 +667,11 @@ export const showList = [
     multi: 2,
     type: 'musical',
     review: 'funny',
-    favSongLink: ''
+    favSongLink: 'https://www.youtube.com/watch?v=Of5cgecGIhg'
     },{
     id: 's13',        
     name: "Wolf Hall: Part 2",
+    link: 'http://www.playbill.com/production/wolf-hall-parts-1-2-winter-garden-theatre-vault-0000014083',    
     theater: "Winter Garden Theatre",
     date: "Apr 2015",
     location: "New York, NY",
@@ -672,6 +685,7 @@ export const showList = [
     },{
     id: 's12',        
     name: "Wolf Hall: Part 1",
+    link: 'http://www.playbill.com/production/wolf-hall-parts-1-2-winter-garden-theatre-vault-0000014083',
     theater: "Winter Garden Theatre",
     date: "Apr 2015",
     location: "New York, NY",
@@ -685,6 +699,7 @@ export const showList = [
     },{
     id: 's11',        
     name: "Mary Stuart",
+    link: 'https://www.folger.edu/events/mary-stuart',
     theater: "Folger Theatre",
     date: "Feb 2015",
     location: "Washington, DC",
@@ -698,6 +713,7 @@ export const showList = [
     },{
     id: 's10',        
     name: "Baskerville: A Sherlock Holmes Mystery",
+    link: 'https://www.samuelfrench.com/p/57235/ken-ludwigs-baskerville-a-sherlock-holmes-mystery/',
     theater: "Arena Stage",
     date: "Jan 2015",
     location: "Washington, DC",
@@ -726,6 +742,7 @@ export const showList = [
     },{
     id: 's8',        
     name: "Elephant Man",
+    link: 'http://www.playbill.com/production/the-elephant-man-booth-theatre-vault-0000014065',
     theater: "Booth Theatre",
     date: "Jan 2015",
     location: "New York, NY",

@@ -57,7 +57,7 @@ li {
   text-align: center;
   color: #402e47;
   max-width: 1000px;
-  margin: auto;
+  margin: 100px auto auto auto;
 }
 
 @media screen and (max-width: 425px){

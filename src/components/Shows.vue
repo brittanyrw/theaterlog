@@ -259,8 +259,11 @@ export default {
 		.row {
 			grid-template-columns: 1fr 1fr;
 		}
+		.row:after {
+			top: -3%;
+		}
 		.favs {
-			margin-top: 15px;
+			margin-top: 25px;
 			position: relative;
 		}
 	}

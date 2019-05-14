@@ -125,11 +125,23 @@ export default {
     font-size: 60px;
     background-color: white;
     margin-bottom: -50px;
-    color: #402e47;
+    color: #6661af;
     border: 8px solid #6661af;
-    -webkit-box-shadow: 5px 5px 0 #9994E1, 8px 8px 0 #3128BB;
-    box-shadow: 5px 5px 0 gold, 10px 10px 0 #3128BB;
+    position: relative;
   } 
+
+  h1:after {
+    position: absolute;
+    content: '';
+    height: 214%;
+    width: 131%;
+    top: -128%;
+    left: -15%;
+    z-index: -1;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('~@/assets/marquee.svg');
+  }
 
   h2 {
     margin-top: 0;
@@ -245,8 +257,15 @@ export default {
       grid-template-columns: 1fr;
     }
     h1 {
-      font-size: 40px;
-      padding: 12px 50px;
+      font-size: 50px;
+      padding: 12px 20px;
     }
+    h1:after {
+      height: 189%;
+      width: 146%;
+      top: -75%;
+      left: -23%;
+    }
+
   }
 </style>
