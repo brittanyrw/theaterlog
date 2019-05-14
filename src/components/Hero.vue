@@ -17,7 +17,7 @@
           <div class="counter musical-stat"><p>Musicals</p> <p>{{ musicalsCounter + 26}}</p></div>
           <div class="counter play-stat"><p>Plays</p> <p>{{ playsCounter}}</p></div>   
         </div>
-        <p>Created by <a href="https://musicalwebdev.com" target="_blank">Brittany Walker.</a></p>    
+        <p class="portfolio-link">Created by <a href="https://musicalwebdev.com" target="_blank">Brittany Walker.</a></p>    
       </div>
       <div class="window">
         <div class="review-legend">
@@ -103,6 +103,10 @@ export default {
     grid-template-columns: 1.5fr .5fr;
     grid-auto-rows: auto;
     text-align: left;
+  }
+
+  .portfolio-link a {
+    color: #6661af;
   }
 
   .stats-intro .multi-example {
