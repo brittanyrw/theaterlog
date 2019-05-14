@@ -85,7 +85,6 @@ export default {
 		border: 2px solid #402e47;
 		box-shadow: 3px 3px 0 #9994E1, 6px 6px 0 #3128BB;
 		transition: .5s;
-		/*box-shadow: -4px 4px 0 pink, -8px 8px 0 #4579f5, -12px 12px 0 gold;*/
 	}
 
 	.show.upcoming {
@@ -116,12 +115,6 @@ export default {
 		font-size: 18px;
 	}
 
-	.show-opinion {
-		position: absolute;
-		left: -25px;
-		width: 45px;
-	}
-
 	.type {
 		font-size: 16px;
 		position: absolute;
@@ -134,6 +127,12 @@ export default {
 		border: 2px solid #402e47;
 		color: #402e47;
 		font-weight: bold;
+	}	
+
+	.show-opinion {
+		position: absolute;
+		left: -25px;
+		width: 45px;
 	}
 
 	.show-opinion div {
@@ -159,21 +158,6 @@ export default {
 		width: 100%;
 	}
 
-	.show-opinion .fav-view .fav-icon {
-		color: gold;
-		font-size: 39px;
-		margin-bottom: 8px;
-	}
-
-	.show .fav-icon {
-		transition: .5s;
-	}
-
-	.show .fav-icon:hover {
-		transform: scale(1.2);
-		transition: .5s;
-	}
-
 	.show-opinion .multi-view {
 		background-color: #908ae2;
 		height: 30px;
@@ -186,6 +170,21 @@ export default {
 
 	.show-opinion .multi-view:hover {
 		transform: translateY(5px);
+		transition: .5s;
+	}
+
+	.show-opinion .fav-view .fav-icon {
+		color: gold;
+		font-size: 39px;
+		margin-bottom: 8px;
+	}
+
+	.show .fav-icon {
+		transition: .5s;
+	}
+
+	.show .fav-icon:hover {
+		transform: scale(1.2);
 		transition: .5s;
 	}
 
