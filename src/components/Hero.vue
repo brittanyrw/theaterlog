@@ -5,7 +5,7 @@
       <div class="statistics-content">
         <div class="stats-intro">
           <h2>Overview</h2>
-          <p>Since watching Grease for the first time in 5th grade, I have been hooked on musicals. This app was built to keep track of all of the musicals and plays I have seen since 2010.</p>
+          <p>Since watching Grease for the first time in 5th grade, I have been hooked on musicals! This app was built to keep track of all of the musicals and plays I have seen since 2010.</p>
           <p> Click on the show names to learn more about the show or current productions. And click on the song names to see a video of my favorite songs from each show!</p>
           <p>The <font-awesome-icon icon="star" class="fav-icon" /> represents favorite shows and the <span class="multi-example">4</span> is the number of times I have seen a show.</p>
           <p class="note">* Upcoming shows are gray!</p>
@@ -16,7 +16,8 @@
           <div class="counter upcoming-stat"><p>Upcoming </p><p>{{ upcomingCounter }}</p></div>
           <div class="counter musical-stat"><p>Musicals</p> <p>{{ musicalsCounter + 26}}</p></div>
           <div class="counter play-stat"><p>Plays</p> <p>{{ playsCounter}}</p></div>   
-        </div>    
+        </div>
+        <p>Created by <a href="https://musicalwebdev.com" target="_blank">Brittany Walker.</a></p>    
       </div>
       <div class="window">
         <div class="review-legend">
