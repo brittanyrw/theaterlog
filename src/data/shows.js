@@ -72,6 +72,7 @@ export const showList = [
     },{
     id: 's54',        
     name: "American Son",
+    link: "https://americansonplay.com/",
     theater: "Booth Theatre",
     date: "Jan 2019",
     location: "New York, NY",
@@ -85,6 +86,7 @@ export const showList = [
     },{
     id: 's53',        
     name: "The Play That Goes Wrong",
+    link: "https://broadwaygoeswrong.com/",
     theater: "John F. Kennedy Center for the Performing Arts",
     date: "Jan 2019",
     location: "Washington, DC",
@@ -143,6 +145,7 @@ export const showList = [
     },{
     id: 's49',            
     name: "Puffs, or: Seven Increasingly Eventful Years at a Certain School of Magic & Magic",
+    link: "http://www.puffstheplay.com/",
     theater: "New World Stages",
     date: "May 2018",
     location: "New York, NY",
@@ -321,6 +324,7 @@ export const showList = [
     },{
     id: 's37',        
     name: "Angels in America: Part 1",
+    link: "https://www.roundhousetheatre.org/performances/angels-in-america/",
     theater: "Round House Theatre",
     date: "Sep 2016",
     location: "Bethesda, MD",
@@ -359,6 +363,7 @@ export const showList = [
     upcoming: false,
     multi: 3,
     type: 'musical',
+    review: "love",
     favSongLink: 'https://www.youtube.com/watch?v=vhaJD2AQbnY'
     },{
     id: 's34',        
@@ -451,6 +456,7 @@ export const showList = [
     },{
     id: 's28',        
     name: "1984",
+    link: "https://www.shakespearetheatre.org/events/1984/",
     theater: "Shakespeare Theatre Company",
     date: "Mar 2016",
     location: "Washington, DC",
@@ -494,6 +500,7 @@ export const showList = [
     },{
     id: 's25',        
     name: "A View From A Bridge",
+    link: "http://www.playbill.com/production/a-view-from-the-bridge-lyceum-theatre-vault-0000014134",
     theater: "Lyceum Theatre",
     date: "Jan 2016",
     location: "New York City",
@@ -503,7 +510,7 @@ export const showList = [
     upcoming: false,
     multi: 0,
     type: 'play',
-    review: 'happy'
+    review: 'thought-provoking'
     },{
     id: 's24',        
     name: "Hamilton: An American Musical",
