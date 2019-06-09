@@ -12,7 +12,7 @@
 				<div class="show-info">
 					<p class="type">{{show.type}}</p>
 					<div class="show-name">
-						<p v-if="show.link"><a v-bind:href="show.link" target="_blank">{{ show.name }}</a></p>
+						<p v-if="show.link"><a v-bind:href="show.link" target="_blank" :title="'Go to website for ' + show.name">{{ show.name }}</a></p>
 						<p v-else>{{ show.name }}</p>
 					</div>
 					<p class="show-theater">{{ show.theater }}</p>
@@ -24,7 +24,7 @@
 					<div class="fav-song">
 						<p class="song-label">
 						<font-awesome-icon icon="music" class="fs-icon" /></p>
-						<p class="song-name"><a v-bind:href="show.favSongLink" target="_blank">{{ show.favSong }}</a></p>
+						<p class="song-name"><a v-bind:href="show.favSongLink" target="_blank" :title="'View performance video for ' + show.favSong + ' from the musical ' + show.name">{{ show.favSong }}</a></p>
 					</div> 
 				</div>
 			</div>
