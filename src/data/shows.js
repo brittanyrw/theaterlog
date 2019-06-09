@@ -1,6 +1,6 @@
 export const showList = [
 	{
-    id: 's60',
+    id: 's61',
     name: "Legally Blonde the Musical",
     theater: "Keegan Theatre",
     date: "Aug 2019",
@@ -13,7 +13,7 @@ export const showList = [
     type: 'musical',
     review: 'love'
     },{
-    id: 's59',
+    id: 's60',
     name: "Dear Evan Hansen",
     link: '',
     theater: "John F. Kennedy Center for the Performing Arts",
@@ -27,7 +27,7 @@ export const showList = [
     type: 'musical',
     review: ''
     },{
-    id: 's58',
+    id: 's59',
     name: "Falsettos",
     theater: "John F. Kennedy Center for the Performing Arts",
     date: "Jun 2019",
@@ -39,6 +39,21 @@ export const showList = [
     multi: 2,
     type: 'musical',
     review: ''
+    },{
+    id: 's58',
+    name: "Kiss Me Kate",
+    link: 'https://www.roundabouttheatre.org/get-tickets/2018-2019-season/kiss-me-kate/',
+    theater: "Studio 54",
+    date: "Jun 2019",
+    location: "New York, NY",
+    illustration: 'flowers',    
+    favSong: 'Tom, Dick or Harry',
+    fav: true,
+    upcoming: false,
+    multi: 0,
+    type: 'musical',
+    review: 'love',
+    favSongLink: 'https://www.youtube.com/watch?v=3SbfecQoCig'
     },{
     id: 's57',
     name: "My Fair Lady",
