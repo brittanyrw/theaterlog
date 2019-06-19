@@ -1,5 +1,18 @@
 export const showList = [
 	{
+    id: 's62',
+    name: "Six the Musical",
+    theater: "TBD",
+    date: "TBD",
+    location: "TBD",
+    illustration: 'crown',
+    favSong: 'Don\'t Lose Your Head',
+    fav: true,
+    upcoming: true,
+    multi: 0,
+    type: 'musical',
+    review: 'love'
+    },{
     id: 's61',
     name: "Legally Blonde the Musical",
     theater: "Keegan Theatre",
