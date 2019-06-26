@@ -42,16 +42,18 @@ export const showList = [
     },{
     id: 's59',
     name: "Falsettos",
+    link: 'https://falsettosbroadway.com/',
     theater: "John F. Kennedy Center for the Performing Arts",
     date: "Jun 2019",
     location: "Washington, DC",
     illustration: 'chess',    
-    favSong: '',
+    favSong: 'What Would I Do',
     fav: true,
-    upcoming: true,
+    upcoming: false,
     multi: 2,
     type: 'musical',
-    review: ''
+    review: 'sad',
+    favSongLink: 'https://www.youtube.com/watch?v=QC4zjD9qL5o'
     },{
     id: 's58',
     name: "Kiss Me Kate",
