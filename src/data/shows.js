@@ -2,9 +2,9 @@ export const showList = [
 	{
     id: 's62',
     name: "Six the Musical",
-    theater: "Chicago Shakespeare Theater",
+    theater: "Loeb Drama Center",
     date: "Aug 2019",
-    location: "Chicago, IL",
+    location: "Boston, MA",
     illustration: 'crown',
     favSong: '',
     fav: true,
