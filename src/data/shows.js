@@ -2,9 +2,9 @@ export const showList = [
 	{
     id: 's62',
     name: "Six the Musical",
-    theater: "Loeb Drama Center",
-    date: "Aug 2019",
-    location: "Boston, MA",
+    theater: "Brooks Atkinson Theatre",
+    date: "TBD 2020",
+    location: "New York, NY",
     illustration: 'crown',
     favSong: '',
     fav: true,
@@ -28,17 +28,18 @@ export const showList = [
     },{
     id: 's60',
     name: "Dear Evan Hansen",
-    link: '',
+    link: 'https://dearevanhansen.com/',
     theater: "John F. Kennedy Center for the Performing Arts",
     date: "Aug 2019",
     location: "Washington, DC",
     illustration: 'cast',    
-    favSong: '',
+    favSong: 'For Forever',
     fav: true,
-    upcoming: true,
+    upcoming: false,
     multi: 3,
     type: 'musical',
-    review: ''
+    review: 'love',
+    favSongLink: 'https://www.youtube.com/watch?v=uW52dVhmzn4'
     },{
     id: 's59',
     name: "Falsettos",
