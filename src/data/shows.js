@@ -15,16 +15,18 @@ export const showList = [
     },{
     id: 's61',
     name: "Legally Blonde the Musical",
+    link: 'http://www.playbill.com/production/legally-blonde-palace-theatre-vault-0000009139',
     theater: "Keegan Theatre",
     date: "Aug 2019",
     location: "Washington, DC",
     illustration: 'purse',
-    favSong: '',
+    favSong: 'Serious',
     fav: true,
-    upcoming: true,
+    upcoming: false,
     multi: 0,
     type: 'musical',
-    review: 'love'
+    review: 'love',
+    favSongLink: 'https://www.youtube.com/watch?v=5eajQWyoOPk'
     },{
     id: 's60',
     name: "Dear Evan Hansen",
