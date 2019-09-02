@@ -1,10 +1,23 @@
 export const showList = [
 	{
-    id: 's62',
+    id: 's63',
     name: "Six the Musical",
     theater: "Brooks Atkinson Theatre",
-    date: "TBD 2020",
+    date: "April 2020",
     location: "New York, NY",
+    illustration: 'crown',
+    favSong: '',
+    fav: true,
+    upcoming: true,
+    multi: 0,
+    type: 'musical',
+    review: 'love'
+    },{
+    id: 's62',
+    name: "Newsies",
+    theater: "Arena Stage",
+    date: "November 2019",
+    location: "Washington, DC",
     illustration: 'crown',
     favSong: '',
     fav: true,
