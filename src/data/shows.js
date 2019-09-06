@@ -1,6 +1,5 @@
-export const showList = [
-	{
-    id: 's63',
+export const showList = [{
+    id: 's64',
     name: "Six the Musical",
     theater: "Brooks Atkinson Theatre",
     date: "April 2020",
@@ -12,6 +11,19 @@ export const showList = [
     multi: 0,
     type: 'musical',
     review: 'love'
+    },{
+    id: 's63',
+    name: "Harry Potter and the Cursed Child",
+    theater: "Lyric Theatre",
+    date: "December 2019",
+    location: "New York, NY",
+    illustration: 'wand',
+    favSong: '',
+    fav: false,
+    upcoming: true,
+    multi: 0,
+    type: 'play',
+    review: ''
     },{
     id: 's62',
     name: "Newsies",
