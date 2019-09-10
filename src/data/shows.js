@@ -1,8 +1,21 @@
 export const showList = [{
-    id: 's64',
+    id: 's65',
     name: "Six the Musical",
     theater: "Brooks Atkinson Theatre",
     date: "April 2020",
+    location: "New York, NY",
+    illustration: 'crown',
+    favSong: '',
+    fav: true,
+    upcoming: true,
+    multi: 0,
+    type: 'musical',
+    review: 'love'
+    },{
+    id: 's64',
+    name: "Six the Musical",
+    theater: "Brooks Atkinson Theatre",
+    date: "March 2020",
     location: "New York, NY",
     illustration: 'crown',
     favSong: '',
