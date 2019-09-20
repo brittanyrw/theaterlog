@@ -1,5 +1,5 @@
 export const showList = [{
-    id: 's65',
+    id: 's66',
     name: "Six the Musical",
     theater: "Brooks Atkinson Theatre",
     date: "April 2020",
@@ -12,7 +12,7 @@ export const showList = [{
     type: 'musical',
     review: 'love'
     },{
-    id: 's64',
+    id: 's65',
     name: "Six the Musical",
     theater: "Brooks Atkinson Theatre",
     date: "March 2020",
@@ -25,7 +25,7 @@ export const showList = [{
     type: 'musical',
     review: 'love'
     },{
-    id: 's63',
+    id: 's64',
     name: "Harry Potter and the Cursed Child",
     theater: "Lyric Theatre",
     date: "December 2019",
@@ -38,7 +38,7 @@ export const showList = [{
     type: 'play',
     review: ''
     },{
-    id: 's62',
+    id: 's63',
     name: "Newsies",
     theater: "Arena Stage",
     date: "November 2019",
@@ -50,6 +50,19 @@ export const showList = [{
     multi: 0,
     type: 'musical',
     review: 'love'
+    },{
+    id: 's62',
+    name: "Little Shop of Horrors",
+    theater: "Constellation Theatre Company",
+    date: "October 2019",
+    location: "Washington, DC",
+    illustration: 'plant',
+    favSong: '',
+    fav: false,
+    upcoming: true,
+    multi: 0,
+    type: 'musical',
+    review: ''
     },{
     id: 's61',
     name: "Legally Blonde the Musical",
