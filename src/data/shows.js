@@ -15,7 +15,7 @@ export const showList = [{
     id: 's65',
     name: "Next to Normal",
     theater: "John F. Kennedy Center for the Performing Arts",
-    date: "March 2020",
+    date: "January 2020",
     location: "Washington, DC",
     illustration: 'cake',
     favSong: '',
