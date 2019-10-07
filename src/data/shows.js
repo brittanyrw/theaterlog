@@ -1,5 +1,5 @@
 export const showList = [{
-    id: 's66',
+    id: 's67',
     name: "Six the Musical",
     theater: "Brooks Atkinson Theatre",
     date: "March 2020",
@@ -12,7 +12,7 @@ export const showList = [{
     type: 'musical',
     review: 'love'
     },{
-    id: 's65',
+    id: 's66',
     name: "Next to Normal",
     theater: "John F. Kennedy Center for the Performing Arts",
     date: "January 2020",
@@ -25,7 +25,7 @@ export const showList = [{
     type: 'musical',
     review: 'love'
     },{
-    id: 's64',
+    id: 's65',
     name: "Harry Potter and the Cursed Child",
     theater: "Lyric Theatre",
     date: "December 2019",
@@ -38,7 +38,7 @@ export const showList = [{
     type: 'play',
     review: ''
     },{
-    id: 's63',
+    id: 's64',
     name: "Newsies",
     theater: "Arena Stage",
     date: "November 2019",
@@ -51,7 +51,7 @@ export const showList = [{
     type: 'musical',
     review: 'love'
     },{
-    id: 's62',
+    id: 's63',
     name: "Little Shop of Horrors",
     theater: "Constellation Theatre Company",
     date: "October 2019",
@@ -63,6 +63,21 @@ export const showList = [{
     multi: 0,
     type: 'musical',
     review: ''
+    },{
+    id: 's62',
+    name: "Waitress",
+    link: 'https://waitressthemusical.com/',
+    theater: "Brooks Atkinson Theatre",
+    date: "October 2019",
+    location: "New York, NY",
+    illustration: 'pie',
+    favSong: 'She Used to be Mine',
+    fav: false,
+    upcoming: false,
+    multi: 0,
+    type: 'musical',
+    review: 'happy',
+    favSongLink: 'https://www.youtube.com/watch?v=Erjdq6wwRuU'
     },{
     id: 's61',
     name: "Legally Blonde the Musical",
