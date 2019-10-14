@@ -1,5 +1,5 @@
 export const showList = [{
-    id: 's67',
+    id: 's66',
     name: "Six the Musical",
     theater: "Brooks Atkinson Theatre",
     date: "March 2020",
@@ -12,7 +12,7 @@ export const showList = [{
     type: 'musical',
     review: 'love'
     },{
-    id: 's66',
+    id: 's65',
     name: "Next to Normal",
     theater: "John F. Kennedy Center for the Performing Arts",
     date: "January 2020",
@@ -24,19 +24,6 @@ export const showList = [{
     multi: 0,
     type: 'musical',
     review: 'love'
-    },{
-    id: 's65',
-    name: "Harry Potter and the Cursed Child",
-    theater: "Lyric Theatre",
-    date: "December 2019",
-    location: "New York, NY",
-    illustration: 'wand',
-    favSong: '',
-    fav: false,
-    upcoming: true,
-    multi: 0,
-    type: 'play',
-    review: ''
     },{
     id: 's64',
     name: "Newsies",
