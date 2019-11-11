@@ -28,24 +28,26 @@ export const showList = [{
     theater: "Arena Stage",
     date: "November 2019",
     location: "Washington, DC",
-    favSong: '',
+    favSong: 'Seize the Day',
     fav: true,
-    upcoming: true,
-    multi: 0,
+    upcoming: false,
+    multi: 2,
     type: 'musical',
-    review: 'love'
+    review: 'love',
+    favSongLink: 'https://www.youtube.com/watch?v=y_Sz7_7T50Q'
     },{
     id: 's63',
     name: "Little Shop of Horrors",
     theater: "Constellation Theatre Company",
     date: "October 2019",
     location: "Washington, DC",
-    favSong: '',
-    fav: false,
-    upcoming: true,
+    favSong: 'Suddenly Seymour',
+    fav: true,
+    upcoming: false,
     multi: 0,
     type: 'musical',
-    review: ''
+    review: 'love',
+    favSongLink: 'https://www.youtube.com/watch?v=pkUPUc4Q6bg'
     },{
     id: 's62',
     name: "Waitress",
@@ -692,7 +694,7 @@ export const showList = [{
     favSong: 'Seize The Day',
     fav: true,
     upcoming: false,
-    multi: 0,
+    multi: 2,
     type: 'musical',
     favSongLink: 'https://www.youtube.com/watch?v=y_Sz7_7T50Q'
     },{
