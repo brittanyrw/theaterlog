@@ -1,5 +1,5 @@
 export const showList = [{
-    id: 's66',
+    id: 's67',
     name: "Six the Musical",
     theater: "Brooks Atkinson Theatre",
     date: "March 2020",
@@ -9,9 +9,10 @@ export const showList = [{
     upcoming: true,
     multi: 0,
     type: 'musical',
-    review: 'love'
+    review: 'love',
+    price: 113.70
     },{
-    id: 's65',
+    id: 's66',
     name: "Next to Normal",
     theater: "John F. Kennedy Center for the Performing Arts",
     date: "January 2020",
@@ -21,7 +22,23 @@ export const showList = [{
     upcoming: true,
     multi: 0,
     type: 'musical',
-    review: 'love'
+    review: 'love',
+    price: 89
+    },{
+    id: 's65',
+    name: "Little Shop of Horrors",
+    theater: "Constellation Theatre Company",
+    date: "November 2019",
+    location: "Washington, DC",
+    favSong: 'Suddenly Seymour',
+    fav: true,
+    upcoming: true,
+    multi: 0,
+    type: 'musical',
+    review: 'love',
+    favSongLink: 'https://www.youtube.com/watch?v=pkUPUc4Q6bg',
+    price: 61,
+    year: 2019
     },{
     id: 's64',
     name: "Newsies",
@@ -34,7 +51,8 @@ export const showList = [{
     multi: 2,
     type: 'musical',
     review: 'love',
-    favSongLink: 'https://www.youtube.com/watch?v=y_Sz7_7T50Q'
+    favSongLink: 'https://www.youtube.com/watch?v=y_Sz7_7T50Q',
+        year: 2019
     },{
     id: 's63',
     name: "Little Shop of Horrors",
@@ -47,7 +65,9 @@ export const showList = [{
     multi: 0,
     type: 'musical',
     review: 'love',
-    favSongLink: 'https://www.youtube.com/watch?v=pkUPUc4Q6bg'
+    favSongLink: 'https://www.youtube.com/watch?v=pkUPUc4Q6bg',
+    price: 25,
+        year: 2019
     },{
     id: 's62',
     name: "Waitress",
@@ -61,7 +81,9 @@ export const showList = [{
     multi: 0,
     type: 'musical',
     review: 'happy',
-    favSongLink: 'https://www.youtube.com/watch?v=Erjdq6wwRuU'
+    favSongLink: 'https://www.youtube.com/watch?v=Erjdq6wwRuU',
+    price: 107,
+        year: 2019
     },{
     id: 's61',
     name: "Legally Blonde the Musical",
@@ -75,7 +97,9 @@ export const showList = [{
     multi: 0,
     type: 'musical',
     review: 'love',
-    favSongLink: 'https://www.youtube.com/watch?v=5eajQWyoOPk'
+    favSongLink: 'https://www.youtube.com/watch?v=5eajQWyoOPk',
+    price: 62.00,
+        year: 2019
     },{
     id: 's60',
     name: "Dear Evan Hansen",
@@ -89,7 +113,9 @@ export const showList = [{
     multi: 3,
     type: 'musical',
     review: 'love',
-    favSongLink: 'https://www.youtube.com/watch?v=uW52dVhmzn4'
+    favSongLink: 'https://www.youtube.com/watch?v=uW52dVhmzn4',
+    price: 132,
+        year: 2019
     },{
     id: 's59',
     name: "Falsettos",
@@ -103,7 +129,8 @@ export const showList = [{
     multi: 2,
     type: 'musical',
     review: 'sad',
-    favSongLink: 'https://www.youtube.com/watch?v=QC4zjD9qL5o'
+    favSongLink: 'https://www.youtube.com/watch?v=QC4zjD9qL5o',
+    price: 62
     },{
     id: 's58',
     name: "Kiss Me Kate",
@@ -145,7 +172,8 @@ export const showList = [{
     upcoming: false,
     multi: 3,
     type: 'musical',
-    review: 'happy-sad'
+    review: 'happy-sad',
+    price: 213.75
     },{
     id: 's54',        
     name: "American Son",
@@ -158,7 +186,8 @@ export const showList = [{
     upcoming: false,
     multi: 0,
     type: 'play',
-    review: 'meh'
+    review: 'meh',
+    price: 93.75
     },{
     id: 's53',        
     name: "The Play That Goes Wrong",
@@ -171,7 +200,8 @@ export const showList = [{
     upcoming: false,
     multi: 0,
     type: 'play',
-    review: 'funny'
+    review: 'funny',
+    price: 52
     },{
     id: 's52',            
     name: "Hamilton: An American Musical",
@@ -185,7 +215,8 @@ export const showList = [{
     multi: 5,
     type: 'musical',
     review: 'love',
-    favSongLink: 'https://www.youtube.com/watch?v=PEHKBckBcr4'
+    favSongLink: 'https://www.youtube.com/watch?v=PEHKBckBcr4',
+    price: 149.00
     },{
     id: 's51',            
     name: "Aladdin",
@@ -199,7 +230,8 @@ export const showList = [{
     multi: 0,
     type: 'musical',
     review: 'happy',
-    favSongLink: 'https://www.youtube.com/watch?v=-UL0CDMhjj4'
+    favSongLink: 'https://www.youtube.com/watch?v=-UL0CDMhjj4',
+    price: 162.3
     },{
     id: 's50',            
     name: "Anastasia",
@@ -213,7 +245,8 @@ export const showList = [{
     multi: 0,
     type: 'musical',
     review: 'happy',
-    favSongLink: 'https://www.youtube.com/watch?v=Usz_fcW2aNk'
+    favSongLink: 'https://www.youtube.com/watch?v=Usz_fcW2aNk',
+    price: 0
     },{
     id: 's49',            
     name: "Puffs, or: Seven Increasingly Eventful Years at a Certain School of Magic & Magic",
@@ -226,7 +259,8 @@ export const showList = [{
     upcoming: false,
     multi: 2,
     type: 'play',
-    review: 'love'
+    review: 'love',
+    price: 56.37
     },{
     id: 's48',            
     name: "Chicago",
@@ -254,7 +288,8 @@ export const showList = [{
     multi: 0,
     type: 'musical',
     review: 'love',
-    favSongLink: 'https://www.youtube.com/watch?v=8Gdnph6Ycko'
+    favSongLink: 'https://www.youtube.com/watch?v=8Gdnph6Ycko',
+    price: 35
     },{
     id: 's46',            
     name: "Natasha, Pierre & The Great Comet of 1812",
@@ -268,7 +303,8 @@ export const showList = [{
     multi: 2,
     type: 'musical',
     review: 'love',
-    favSongLink: 'https://www.youtube.com/watch?v=JcVcYT2TBAo'
+    favSongLink: 'https://www.youtube.com/watch?v=JcVcYT2TBAo',
+    price: 193.00
     },{
     id: 's45',            
     name: "Dear Evan Hansen",
@@ -282,7 +318,8 @@ export const showList = [{
     multi: 0,
     type: 'musical',
     review: 'love',
-    favSongLink: 'https://www.youtube.com/watch?v=uW52dVhmzn4'
+    favSongLink: 'https://www.youtube.com/watch?v=uW52dVhmzn4',
+    price: 203.00
     },{
     id: 's44',            
     name: "Miss Saigon",
@@ -296,7 +333,8 @@ export const showList = [{
     multi: 0,
     type: 'musical',
     review: 'thought-provoking',
-    favSongLink: 'https://www.youtube.com/watch?v=cwB3Zxh2gSE'
+    favSongLink: 'https://www.youtube.com/watch?v=cwB3Zxh2gSE',
+    price: 163.00
     },{
     id: 's43',            
     name: "Hamilton: An American Musical",
@@ -310,7 +348,8 @@ export const showList = [{
     multi: 5,
     type: 'musical',
     review: 'love',
-    favSongLink: 'https://www.youtube.com/watch?v=PEHKBckBcr4'
+    favSongLink: 'https://www.youtube.com/watch?v=PEHKBckBcr4',
+    price: 211.6
     },{
     id: 's42',            
     name: "Natasha, Pierre & The Great Comet of 1812",
@@ -324,7 +363,8 @@ export const showList = [{
     multi: 2,
     type: 'musical',
     review: 'love',
-    favSongLink: 'https://www.youtube.com/watch?v=JcVcYT2TBAo'
+    favSongLink: 'https://www.youtube.com/watch?v=JcVcYT2TBAo',
+    price: 143.00
     },{
     id: 's41',        
     name: "Sister Act",
@@ -366,7 +406,8 @@ export const showList = [{
     multi: 5,
     type: 'musical',
     review: 'love',
-    favSongLink: 'https://www.youtube.com/watch?v=b5VqyCQV1Tg'
+    favSongLink: 'https://www.youtube.com/watch?v=b5VqyCQV1Tg',
+    price: 165.46
     },{
     id: 's38',        
     name: "Falsettos",
@@ -380,7 +421,8 @@ export const showList = [{
     multi: 0,
     type: 'musical',
     review: 'sad',
-    favSongLink: 'https://www.youtube.com/watch?v=QC4zjD9qL5o'
+    favSongLink: 'https://www.youtube.com/watch?v=QC4zjD9qL5o',
+    price: 152.20
     },{
     id: 's37',        
     name: "Angels in America: Part 1",
@@ -421,7 +463,8 @@ export const showList = [{
     multi: 3,
     type: 'musical',
     review: "love",
-    favSongLink: 'https://www.youtube.com/watch?v=vhaJD2AQbnY'
+    favSongLink: 'https://www.youtube.com/watch?v=vhaJD2AQbnY',
+    price: 129.87
     },{
     id: 's34',        
     name: "The Color Purple",
@@ -435,7 +478,8 @@ export const showList = [{
     multi: 0,
     type: 'musical',
     review: 'happy-sad',
-    favSongLink: 'https://www.youtube.com/watch?v=VKtFfqinmWo'
+    favSongLink: 'https://www.youtube.com/watch?v=VKtFfqinmWo',
+    price: 119.87
     },{
     id: 's33',        
     name: "The Tempest",
@@ -447,7 +491,8 @@ export const showList = [{
     upcoming: false,
     multi: 0,
     type: 'play',
-    review: 'confused'
+    review: 'confused',
+    price: 0
     },{
     id: 's32',        
     name: "Next to Normal",
@@ -475,7 +520,8 @@ export const showList = [{
     multi: 5,
     type: 'musical',
     review: 'love',
-    favSongLink: 'https://www.youtube.com/watch?v=PEHKBckBcr4'
+    favSongLink: 'https://www.youtube.com/watch?v=PEHKBckBcr4',
+    price: 189.54
     },{
     id: 's30',        
     name: "The King and I",
@@ -557,7 +603,8 @@ export const showList = [{
     upcoming: false,
     multi: 0,
     type: 'play',
-    review: 'thought-provoking'
+    review: 'thought-provoking',
+    price: 147.25
     },{
     id: 's24',        
     name: "Hamilton: An American Musical",
@@ -571,7 +618,8 @@ export const showList = [{
     multi: 5,
     type: 'musical',
     review: 'love',
-    favSongLink: 'https://www.youtube.com/watch?v=PEHKBckBcr4'
+    favSongLink: 'https://www.youtube.com/watch?v=PEHKBckBcr4',
+    price: 195.20
     },{
     id: 's23',        
     name: "Matilda",
@@ -585,7 +633,8 @@ export const showList = [{
     multi: 3,
     type: 'musical',
     review: 'love',
-    favSongLink: 'https://www.youtube.com/watch?v=vhaJD2AQbnY'
+    favSongLink: 'https://www.youtube.com/watch?v=vhaJD2AQbnY',
+    price: 0
     },{
     id: 's22',        
     name: "Matilda",
@@ -600,6 +649,7 @@ export const showList = [{
     type: 'musical',
     review: 'love',
     favSongLink: 'https://www.youtube.com/watch?v=vhaJD2AQbnY',
+    price: 85.00
     },{
     id: 's21',        
     name: "Bright Star",
@@ -613,7 +663,8 @@ export const showList = [{
     multi: 0,
     type: 'musical',
     review: 'happy',
-    favSongLink: 'https://www.youtube.com/watch?v=vzJ2zOQ8hMg'
+    favSongLink: 'https://www.youtube.com/watch?v=vzJ2zOQ8hMg',
+    price: 119.00
     },{
     id: 's20',        
     name: "Avenue Q",
@@ -641,7 +692,8 @@ export const showList = [{
     multi: 0,
     type: 'musical',
     review: 'happy',
-    favSongLink: 'https://www.youtube.com/watch?v=CSagsMcak4Q'
+    favSongLink: 'https://www.youtube.com/watch?v=CSagsMcak4Q',
+    price: 267.20
     },{
     id: 's18',        
     name: "Something Rotten",
@@ -655,7 +707,8 @@ export const showList = [{
     multi: 0,
     type: 'musical',
     review: 'funny',
-    favSongLink: 'https://www.youtube.com/watch?v=1KFNcy9VjQI'
+    favSongLink: 'https://www.youtube.com/watch?v=1KFNcy9VjQI',
+    price: 264.25
     },{
     id: 's17',        
     name: "Book of Mormon",
@@ -669,7 +722,8 @@ export const showList = [{
     multi: 2,
     type: 'musical',
     review: 'funny',
-    favSongLink: 'https://www.youtube.com/watch?v=Of5cgecGIhg'
+    favSongLink: 'https://www.youtube.com/watch?v=Of5cgecGIhg',
+    price: 151.2
     },{
     id: 's16',        
     name: "Once",
@@ -710,7 +764,8 @@ export const showList = [{
     multi: 2,
     type: 'musical',
     review: 'funny',
-    favSongLink: 'https://www.youtube.com/watch?v=Of5cgecGIhg'
+    favSongLink: 'https://www.youtube.com/watch?v=Of5cgecGIhg',
+    price: 120.00
     },{
     id: 's13',        
     name: "Wolf Hall: Part 2",
@@ -723,7 +778,8 @@ export const showList = [{
     upcoming: false,
     multi: 0,
     type: 'play',
-    review: 'happy'
+    review: 'happy',
+    price: 156.00
     },{
     id: 's12',        
     name: "Wolf Hall: Part 1",
@@ -736,7 +792,8 @@ export const showList = [{
     upcoming: false,
     multi: 0,
     type: 'play',
-    review: 'happy'    
+    review: 'happy',
+    price: 158.75  
     },{
     id: 's11',        
     name: "Mary Stuart",
@@ -789,7 +846,8 @@ export const showList = [{
     upcoming: false,
     multi: 0,
     type: 'play',
-    review: 'thought-provoking'
+    review: 'thought-provoking',
+    price: 0
     },{
     id: 's7',
     name: "Mary Poppins",
@@ -803,7 +861,8 @@ export const showList = [{
     multi: 4,
     type: 'musical',
     review: 'love',
-    favSongLink: 'https://www.youtube.com/watch?v=1VNGIQ51aiw'
+    favSongLink: 'https://www.youtube.com/watch?v=1VNGIQ51aiw',
+    price: 0
     },{
     id: 's6',
     name: "Wicked",
@@ -817,7 +876,8 @@ export const showList = [{
     multi: 11,
     type: 'musical',
     review: 'love',
-    favSongLink: 'https://www.youtube.com/watch?v=TZ0pXUb5jVU'
+    favSongLink: 'https://www.youtube.com/watch?v=TZ0pXUb5jVU',
+    price: 0
     },{
     id: 's5',
     name: "Beauty and the Beast",
@@ -831,7 +891,8 @@ export const showList = [{
     multi: 3,
     type: 'musical',
     review: 'happy',
-    favSongLink: 'https://www.youtube.com/watch?v=CaU4MvRJRB8'
+    favSongLink: 'https://www.youtube.com/watch?v=CaU4MvRJRB8',
+    price: 0
     },{
     id: 's4',
     name: "South Pacific",
@@ -845,7 +906,8 @@ export const showList = [{
     upcoming: false,
     multi: 0,
     type: 'musical',
-    favSongLink: ''
+    favSongLink: '',
+    price: 0
     },{
     id: 's3',
     name: "West Side Story",
@@ -859,7 +921,8 @@ export const showList = [{
     multi: 0,
     type: 'musical',
     review: 'happy',
-    favSongLink: 'https://www.youtube.com/watch?v=YhSKk-cvblc'
+    favSongLink: 'https://www.youtube.com/watch?v=YhSKk-cvblc',
+    price: 0
     },{
     id: 's2',
     name: "The Black Watch",
@@ -872,7 +935,8 @@ export const showList = [{
     upcoming: false,
     multi: 0,
     review: 'thought-provoking',
-    type: 'play'
+    type: 'play',
+    price: 0
     },{
     id: 's1',
     name: "Shrek the Musical",
@@ -886,6 +950,7 @@ export const showList = [{
     multi: 0,
     review: 'funny',
     type: 'musical',
-    favSongLink: 'https://www.youtube.com/watch?v=Gqfz6Kc2al8'
+    favSongLink: 'https://www.youtube.com/watch?v=Gqfz6Kc2al8',
+    price: 0
     }      
 ]
