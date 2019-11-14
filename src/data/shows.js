@@ -48,7 +48,8 @@ export const showList = [{
     multi: 2,
     type: 'musical',
     review: 'love',
-    favSongLink: 'https://www.youtube.com/watch?v=y_Sz7_7T50Q'
+    favSongLink: 'https://www.youtube.com/watch?v=y_Sz7_7T50Q',
+    price: 66
 }, {
     id: 's63',
     name: "Little Shop of Horrors",
@@ -136,7 +137,8 @@ export const showList = [{
     multi: 0,
     type: 'musical',
     review: 'love',
-    favSongLink: 'https://www.youtube.com/watch?v=3SbfecQoCig'
+    favSongLink: 'https://www.youtube.com/watch?v=3SbfecQoCig',
+    price: 109
 }, {
     id: 's57',
     name: "My Fair Lady",
