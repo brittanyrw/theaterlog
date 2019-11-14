@@ -16,7 +16,8 @@
           <div class="counter upcoming-stat"><p>Upcoming </p><p>{{ upcomingCounter }}</p></div>
           <div class="counter musical-stat"><p>Musicals</p> <p>{{ musicalsCounter + 26}}</p></div>
           <div class="counter play-stat"><p>Plays</p> <p>{{ playsCounter}}</p></div> 
-          <div class="counter price-stat"><p>Total Spent</p> <p>${{ priceCounter}}</p></div> 
+          <div class="counter price-stat"><p>Total Spent</p> <p>${{ priceCounter.toLocaleString() }}</p></div> 
+          <div class="counter price-stat"><p>Average Ticket Cost</p> <p>${{ Math.floor(priceCounter/shows.length) }}</p></div> 
         </div>
         <p class="portfolio-link">Created by <a href="https://musicalwebdev.com" target="_blank">Brittany Walker.</a></p>    
       </div>
@@ -93,7 +94,7 @@ export default {
     },
       priceCounter:function(){
       var result = showList.reduce((res, item) => item.price ? res + item.price : res, 0);
-      return Math.floor(result).toLocaleString();
+      return Math.floor(result);
     }
   },
 }

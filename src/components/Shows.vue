@@ -8,6 +8,7 @@
 						<img v-bind:src="require('../assets/' + show.review + '.svg')" v-bind:alt="show.review + ' emoji'">
 					</div>
 					<div v-if="show.multi" class="multi-view">{{ show.multi }}</div>
+					<p v-if="show.price >= 0" class="show-price">${{ show.price }}</p>	
 				</div>
 				<div class="show-info">
 					<p class="type">{{show.type}}</p>
@@ -17,7 +18,7 @@
 					</div>
 					<p class="show-theater">{{ show.theater }}</p>
 					<p class="show-location">{{ show.location }}</p>
-					<p class="show-date">{{ show.date }}</p>					
+					<p class="show-date">{{ show.date }}</p>				
 				</div>
 				<div v-if="show.favSong" class="favs">
 					<p class="fav-song-label">Fav Song</p>
@@ -65,7 +66,7 @@ export default {
 		grid-auto-rows: auto;
 		grid-gap: 40px;
 		padding: 40px;
-		min-height: 400px;
+		min-height: 410px;
 		border: 10px solid #6661af;
 		position: relative;
 	}
@@ -97,6 +98,7 @@ export default {
 	.show-name {
 		font-family: 'Amaranth', sans-serif;
 		font-size: 24px;
+		border-bottom: 2px solid #402e47;
 		
 	}
 
@@ -113,6 +115,10 @@ export default {
 
 	.show-theater, .show-location, .show-date {
 		font-size: 18px;
+	}
+
+	.show-price {
+		font-size: 14px;
 	}
 
 	.type {
@@ -170,6 +176,21 @@ export default {
 
 	.show-opinion .multi-view:hover {
 		transform: translateY(5px);
+		transition: .5s;
+	}
+
+	.show-opinion .show-price {
+		background-color: #7EC5D6;
+		padding: 5px;
+		font-weight: bold;
+		border: 2px solid #402e47;
+		-webkit-transition: .5s;
+		transition: .5s;
+		margin-top: 17px;
+	}
+
+	.show-opinion .show-price:hover {
+		transform: translateY(-5px);
 		transition: .5s;
 	}
 
