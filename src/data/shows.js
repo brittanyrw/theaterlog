@@ -1,5 +1,6 @@
-export const showList = [{
-    id: 's67',
+export const showList = [
+{
+    id: 's68',
     name: "Six the Musical",
     theater: "Brooks Atkinson Theatre",
     date: "March 2020",
@@ -12,7 +13,7 @@ export const showList = [{
     review: 'love',
     price: 114
 }, {
-    id: 's66',
+    id: 's67',
     name: "Next to Normal",
     theater: "John F. Kennedy Center for the Performing Arts",
     date: "January 2020",
@@ -24,6 +25,19 @@ export const showList = [{
     type: 'musical',
     review: 'love',
     price: 89
+},{
+    id: 's66',
+    name: "Love Factually",
+    theater: "John F. Kennedy Center for the Performing Arts",
+    date: "December 2019",
+    location: "Washington, DC",
+    favSong: '',
+    fav: true,
+    upcoming: true,
+    multi: 0,
+    type: 'play',
+    review: 'love',
+    price: 29
 }, {
     id: 's65',
     name: "Little Shop of Horrors",
