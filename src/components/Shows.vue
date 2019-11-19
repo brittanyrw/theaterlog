@@ -31,7 +31,6 @@
 			</div>
 		</div>
 		<div class="icon-attribute">Icons made by <a href="https://www.flaticon.com/authors/darius-dan" title="Darius Dan" target="_blank">Darius Dan</a> from <a href="https://www.flaticon.com/" title="Flaticon" target="_blank">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
-		<div class="icon-attribute">Project created by <a href="https://musicalwebdev.com" title="Darius Dan" target="_blank">Brittany Walker</a></div>
 	</div>
 </template>
 
