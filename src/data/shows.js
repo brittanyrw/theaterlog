@@ -1,6 +1,6 @@
 export const showList = [
 {
-    id: 's68',
+    id: 's69',
     name: "Six the Musical",
     theater: "Brooks Atkinson Theatre",
     date: "March 2020",
@@ -12,6 +12,19 @@ export const showList = [
     type: 'musical',
     review: 'love',
     price: 114
+},{
+    id: 's68',
+    name: "The 39 Steps",
+    theater: "Constellation Theatre Company",
+    date: "February 2020",
+    location: "Washington, DC",
+    favSong: '',
+    fav: true,
+    upcoming: true,
+    multi: 0,
+    type: 'play',
+    review: 'love',
+    price: 25
 }, {
     id: 's67',
     name: "Next to Normal",
