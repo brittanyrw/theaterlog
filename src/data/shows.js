@@ -11,7 +11,8 @@ export const showList = [
     multi: 0,
     type: 'musical',
     review: 'love',
-    price: 114
+    price: 114,
+    seating: "M-E"
 },{
     id: 's68',
     name: "The 39 Steps",
@@ -24,7 +25,8 @@ export const showList = [
     multi: 0,
     type: 'play',
     review: 'love',
-    price: 25
+    price: 25,
+    seating: "O-C"
 }, {
     id: 's67',
     name: "Next to Normal",
@@ -37,7 +39,8 @@ export const showList = [
     multi: 0,
     type: 'musical',
     review: 'love',
-    price: 89
+    price: 89,
+    seating: "O-C"
 },{
     id: 's65',
     name: "Little Shop of Horrors",
@@ -51,7 +54,8 @@ export const showList = [
     type: 'musical',
     review: 'love',
     favSongLink: 'https://www.youtube.com/watch?v=pkUPUc4Q6bg',
-    price: 61
+    price: 61,
+    seating: "Front Row"
 }, {
     id: 's64',
     name: "Newsies",
@@ -65,7 +69,8 @@ export const showList = [
     type: 'musical',
     review: 'love',
     favSongLink: 'https://www.youtube.com/watch?v=y_Sz7_7T50Q',
-    price: 66
+    price: 66,
+    seating: "O-D" 
 }, {
     id: 's63',
     name: "Little Shop of Horrors",
@@ -79,7 +84,8 @@ export const showList = [
     type: 'musical',
     review: 'love',
     favSongLink: 'https://www.youtube.com/watch?v=pkUPUc4Q6bg',
-    price: 25
+    price: 25,
+    seating: "O-H" 
 }, {
     id: 's62',
     name: "Waitress",
@@ -94,7 +100,8 @@ export const showList = [
     type: 'musical',
     review: 'happy',
     favSongLink: 'https://www.youtube.com/watch?v=Erjdq6wwRuU',
-    price: 107
+    price: 107,
+    seating: "O-A" 
 }, {
     id: 's61',
     name: "Legally Blonde the Musical",
@@ -109,7 +116,8 @@ export const showList = [
     type: 'musical',
     review: 'love',
     favSongLink: 'https://www.youtube.com/watch?v=5eajQWyoOPk',
-    price: 62
+    price: 62,
+    seating: "O-B" 
 }, {
     id: 's60',
     name: "Dear Evan Hansen",
@@ -154,7 +162,8 @@ export const showList = [
     type: 'musical',
     review: 'love',
     favSongLink: 'https://www.youtube.com/watch?v=3SbfecQoCig',
-    price: 109
+    price: 109,
+    seating: "M-CC"
 }, {
     id: 's57',
     name: "My Fair Lady",
@@ -169,7 +178,8 @@ export const showList = [
     type: 'musical',
     review: 'happy',
     favSongLink: 'https://www.youtube.com/watch?v=xmADMB2utAo',
-    price: 35
+    price: 35,
+    seating: "O-F"
 }, {
     id: 's55',
     name: "Dear Evan Hansen",
@@ -285,7 +295,8 @@ export const showList = [
     multi: 0,
     type: 'musical',
     review: 'happy',
-    favSongLink: 'https://www.youtube.com/watch?v=C9dFKRZ8EbU'
+    favSongLink: 'https://www.youtube.com/watch?v=C9dFKRZ8EbU',
+    price: 45
 }, {
     id: 's47',
     name: "In the Heights",
@@ -404,7 +415,8 @@ export const showList = [
     multi: 0,
     type: 'musical',
     review: 'love',
-    favSongLink: 'https://www.youtube.com/watch?v=tNeAXIFOY8Q'
+    favSongLink: 'https://www.youtube.com/watch?v=tNeAXIFOY8Q',
+    price: 39
 }, {
     id: 's39',
     name: "Hamilton: An American Musical",
@@ -434,7 +446,8 @@ export const showList = [
     type: 'musical',
     review: 'sad',
     favSongLink: 'https://www.youtube.com/watch?v=QC4zjD9qL5o',
-    price: 152
+    price: 152,
+    seating: "B-B"
 }, {
     id: 's37',
     name: "Angels in America: Part 1",
@@ -462,7 +475,8 @@ export const showList = [
     multi: 0,
     type: 'musical',
     review: 'happy',
-    favSongLink: 'https://www.youtube.com/watch?v=CZV431zhXA4'
+    favSongLink: 'https://www.youtube.com/watch?v=CZV431zhXA4',
+    price: 15
 }, {
     id: 's35',
     name: "Matilda",
@@ -519,7 +533,8 @@ export const showList = [
     multi: 0,
     type: 'musical',
     review: 'love',
-    favSongLink: 'https://www.youtube.com/watch?v=jfQmoR36toI'
+    favSongLink: 'https://www.youtube.com/watch?v=jfQmoR36toI',
+    price: 45
 }, {
     id: 's31',
     name: "Hamilton: An American Musical",
@@ -550,7 +565,23 @@ export const showList = [
     review: 'happy',
     favSongLink: 'https://www.youtube.com/watch?v=QgVPnWmUqd4',
     price: 35
-}, {
+    },{
+    id: 's70',
+    name: "Eclipsed",
+    link: '',
+    theater: "John Golden Theatre",
+    date: "April 2016",
+    location: "New York, NY",
+    favSong: '',
+    fav: false,
+    upcoming: false,
+    multi: 0,
+    type: 'play',
+        review: 'thought-provoking',
+    favSongLink: '',
+    price: 0,
+    seating: "O-C"
+    },{
     id: 's29',
     name: "American Idiot",
     link: 'http://www.playbill.com/production/american-idiot-st-james-theatre-vault-0000004165',
@@ -563,7 +594,8 @@ export const showList = [
     multi: 0,
     type: 'musical',
     review: 'love',
-    favSongLink: 'https://www.youtube.com/watch?v=YLxdoCBk_H0'
+    favSongLink: 'https://www.youtube.com/watch?v=YLxdoCBk_H0',
+    price: 45
 }, {
     id: 's28',
     name: "1984",
@@ -576,7 +608,8 @@ export const showList = [
     upcoming: false,
     multi: 0,
     type: 'play',
-    review: 'thought-provoking'
+    review: 'thought-provoking',
+    price: 123
 }, {
     id: 's27',
     name: "Fun Home",
@@ -590,7 +623,8 @@ export const showList = [
     multi: 0,
     type: 'musical',
     review: 'happy-sad',
-    favSongLink: 'https://www.youtube.com/watch?v=KZnGFkkhZj0'
+    favSongLink: 'https://www.youtube.com/watch?v=KZnGFkkhZj0',
+    price: 37
 }, {
     id: 's26',
     name: "Rent",
@@ -693,7 +727,8 @@ export const showList = [
     multi: 0,
     type: 'musical',
     review: 'funny',
-    favSongLink: ''
+    favSongLink: '',
+    price: 50
 }, {
     id: 's19',
     name: "Spring Awakening (ASL)",
@@ -738,7 +773,8 @@ export const showList = [
     type: 'musical',
     review: 'funny',
     favSongLink: 'https://www.youtube.com/watch?v=Of5cgecGIhg',
-    price: 151
+    price: 151,
+    seating: "O-K"
 }, {
     id: 's16',
     name: "Once",
@@ -752,7 +788,8 @@ export const showList = [
     multi: 0,
     type: 'musical',
     review: 'love',
-    favSongLink: 'https://www.youtube.com/watch?v=KfeRdH4Q_sg'
+    favSongLink: 'https://www.youtube.com/watch?v=KfeRdH4Q_sg',
+    price: 79
 }, {
     id: 's15',
     name: "Newsies",
@@ -781,7 +818,8 @@ export const showList = [
     type: 'musical',
     review: 'funny',
     favSongLink: 'https://www.youtube.com/watch?v=Of5cgecGIhg',
-    price: 120
+    price: 120,
+    seating: "O-E"
 }, {
     id: 's13',
     name: "Wolf Hall: Part 2",
@@ -822,7 +860,8 @@ export const showList = [
     upcoming: false,
     multi: 0,
     type: 'play',
-    review: 'happy'
+    review: 'happy',
+    price: 35
 }, {
     id: 's10',
     name: "Baskerville: A Sherlock Holmes Mystery",
@@ -835,7 +874,8 @@ export const showList = [
     upcoming: false,
     multi: 0,
     type: 'play',
-    review: 'funny'
+    review: 'funny',
+    price: 55
 }, {
     id: 's9',
     name: "Les Miserables",
@@ -849,7 +889,8 @@ export const showList = [
     multi: 0,
     type: 'musical',
     review: 'happy',
-    favSongLink: 'https://www.youtube.com/watch?v=IddP8AAIGTQ'
+    favSongLink: 'https://www.youtube.com/watch?v=IddP8AAIGTQ',
+    price: 125
 }, {
     id: 's8',
     name: "Elephant Man",
@@ -863,6 +904,7 @@ export const showList = [
     multi: 0,
     type: 'play',
     review: 'thought-provoking',
+    price: 125
 }, {
     id: 's7',
     name: "Mary Poppins",
