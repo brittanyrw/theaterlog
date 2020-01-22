@@ -39,19 +39,6 @@ export const showList = [
     review: 'love',
     price: 89
 },{
-    id: 's66',
-    name: "Love Factually",
-    theater: "John F. Kennedy Center for the Performing Arts",
-    date: "December 2019",
-    location: "Washington, DC",
-    favSong: '',
-    fav: true,
-    upcoming: true,
-    multi: 0,
-    type: 'play',
-    review: 'love',
-    price: 29
-}, {
     id: 's65',
     name: "Little Shop of Horrors",
     theater: "Constellation Theatre Company",
