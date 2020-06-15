@@ -1,45 +1,19 @@
 export const showList = [
 {
-    id: 's69',
-    name: "Six the Musical",
-    theater: "Brooks Atkinson Theatre",
-    date: "March 2020",
-    location: "New York, NY",
-    favSong: '',
-    fav: true,
-    upcoming: true,
-    multi: 0,
-    type: 'musical',
-    review: 'love',
-    price: 114,
-    seating: "M-E"
-},{
-    id: 's68',
-    name: "The 39 Steps",
-    theater: "Constellation Theatre Company",
-    date: "February 2020",
-    location: "Washington, DC",
-    favSong: '',
-    fav: true,
-    upcoming: true,
-    multi: 0,
-    type: 'play',
-    review: 'love',
-    price: 25,
-    seating: "O-C"
-}, {
     id: 's67',
     name: "Next to Normal",
     theater: "John F. Kennedy Center for the Performing Arts",
     date: "January 2020",
+    favSong: "I Miss the Mountains",
     location: "Washington, DC",
     favSong: '',
     fav: true,
-    upcoming: true,
+    upcoming: false,
     multi: 0,
     type: 'musical',
     review: 'love',
     price: 89,
+    favSongLink: 'https://www.youtube.com/watch?v=jfQmoR36toI',
     seating: "O-C"
 },{
     id: 's65',
