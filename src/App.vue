@@ -1,68 +1,54 @@
 <template>
   <div id="app">
-    <Hero/>
-    <Shows/>
+    <Hero />
+    <Shows />
   </div>
 </template>
 
 <script>
-
-import Shows from './components/Shows.vue'
-import Hero from './components/Hero.vue'
+import Shows from "./components/Shows.vue";
+import Hero from "./components/Hero.vue";
 export default {
-  name: 'app',
+  name: "app",
   components: {
     Shows,
     Hero
   }
-}
+};
 </script>
 
-<style>
-
-@import url('https://fonts.googleapis.com/css?family=Amaranth:700|Lato');
+<style lang="scss">
+@import "@/assets/styles/variables.scss";
 
 * {
   box-sizing: border-box;
 }
 
 body {
-  padding: 30px;
-  background-color: #7e8dd6;
-  font-family: 'Lato', sans-serif;
-  font-size: 21px;
-  position: relative;
   margin: 0;
-}
-
-ul {
-  margin: 0;
-}
-
-p {
-  margin: 10px auto;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  padding-right: 5px;
+  font-family: "Verdana";
+  background-color: $purple;
+  color: $black;
 }
 
 #app {
-  text-align: center;
-  color: #402e47;
-  max-width: 1000px;
-  margin: 100px auto auto auto;
+  background-color: $purple;
+  border: 7px solid $black;
+  box-shadow: 10px 10px 0 $black;
+  border-radius: 7px 7px 7px 0;
+  max-width: 1200px;
+  margin: 50px auto;
+  @media screen and (max-width: 1200px) {
+    margin: 20px;
+  }
 }
 
-@media screen and (max-width: 425px){
-  body {
-    padding: 10px;
+ul {
+  margin: 0;
+  list-style: none;
+  padding: 0;
+  li {
+    display: inline-block;
   }
 }
 
