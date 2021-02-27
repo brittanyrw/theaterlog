@@ -207,6 +207,18 @@ export default {
       .external-links {
         border-top: 3px solid $black;
         border-bottom: 3px solid $black;
+        a {
+          padding: 5px 10px;
+          background-color: $black;
+          color: $purple;
+          text-decoration: none;
+          border: 3px solid $black;
+        }
+        a:hover {
+          background-color: $purple;
+          color: $black;
+          transition: .5s; 
+        }
         @media screen and (min-width: 662px) {
           border-top: 0;
         }
@@ -224,7 +236,13 @@ export default {
         li:first-child {
           margin-bottom: 10px;
         }
+        li {
+          display: block;
+        }
       }
+    }
+    .portfolio-link a {
+      color: $black;
     }
   }
 }
@@ -266,7 +284,7 @@ export default {
         }
         .stat-title {
           margin: 0;
-          padding: 0 15px 30px 15px;
+          padding: 0 15px 15px 15px;
         }
       }
     }
