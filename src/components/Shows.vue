@@ -55,9 +55,7 @@
                 <a
                   v-bind:href="show.favSongLink"
                   target="_blank"
-                  :title="
-                    `View performance video for ${show.favSong} from the musical ${show.name}`"
-                >
+                  :title="`View video for ${show.favSong} from ${show.name}`">
                   {{ show.favSong }}
                 </a>
               </p>
@@ -97,13 +95,13 @@ export default {
   data: function() {
     return {
       shows: showList,
-      rowLength: 3,
+      rowLength: 3
     };
   },
   computed: {
     rowCount: function() {
       return Math.ceil(this.shows.length / this.rowLength);
-    },
+    }
   },
   methods: {
     itemCountInRow: function(index) {
@@ -111,8 +109,8 @@ export default {
         (index - 1) * this.rowLength,
         index * this.rowLength
       );
-    },
-  },
+    }
+  }
 };
 </script>
 <style lang="scss" scoped>
@@ -265,23 +263,23 @@ export default {
             .song-label {
               margin-right: 10px;
             }
-			.song-name a {
-				text-decoration: none;
-				color: $purple;
-			}
+            .song-name a {
+              text-decoration: none;
+              color: $purple;
+            }
           }
         }
       }
     }
   }
   .icon-attribute {
-	  background-color: $purple;
-	  padding: 20px;
-	  border-radius: 3px;
-	  color: $black;
-	  a {
-		  color: $black;
-	  }
+    background-color: $purple;
+    padding: 20px;
+    border-radius: 3px;
+    color: $black;
+    a {
+      color: $black;
+    }
   }
 }
 </style>

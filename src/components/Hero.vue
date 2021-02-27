@@ -132,7 +132,7 @@ export default {
   name: "Hero",
   data: function() {
     return {
-      shows: showList,
+      shows: showList
     };
   },
   computed: {
@@ -163,8 +163,8 @@ export default {
         0
       );
       return Math.floor(result);
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -217,7 +217,7 @@ export default {
         a:hover {
           background-color: $purple;
           color: $black;
-          transition: .5s; 
+          transition: 0.5s;
         }
         @media screen and (min-width: 662px) {
           border-top: 0;
