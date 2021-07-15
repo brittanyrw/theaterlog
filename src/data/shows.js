@@ -1,5 +1,35 @@
 export const showList = [
   {
+    id: "s69",
+    name: "Little Shop of Horrors",
+    theater: "Westside Theatre Upstairs",
+    date: "October 2021",
+    favSong: "Suddenly Seymour",
+    location: "New York, NY",
+    fav: true,
+    upcoming: true,
+    multi: 3,
+    type: "musical",
+    review: "",
+    favSongLink: "https://www.youtube.com/watch?v=pkUPUc4Q6bg",
+    seating: "Center Orchestra Row B Seat 112"
+  },
+  {
+    id: "s68",
+    name: "Six: The Musical",
+    theater: "Brooks Atkinson Theatre",
+    date: "October 2021",
+    favSong: "All You Wanna Do",
+    location: "New York, NY",
+    fav: true,
+    upcoming: true,
+    multi: 0,
+    type: "musical",
+    review: "",
+    favSongLink: "https://www.youtube.com/watch?v=awwXs6c9sjs",
+    seating: "FMEZZ, Row C, Seat 114"
+  },
+  {
     id: "s67",
     name: "Next to Normal",
     theater: "John F. Kennedy Center for the Performing Arts",
