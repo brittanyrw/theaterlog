@@ -205,6 +205,7 @@ export default {
           right: 10px;
           border: 3px solid $black;
           background-color: $purple;
+          z-index: 99;
         }
         .show-name {
           background-color: $black;
@@ -267,6 +268,34 @@ export default {
               text-decoration: none;
               color: $purple;
             }
+          }
+        }
+      }
+      &.upcoming {
+        position: relative;
+        border: 3px solid dimgray;
+        outline: none;
+        &:before {
+          position: absolute;
+          content: "";
+          height: 100%;
+          width: 100%;
+          background-color: rgba(255,255,255,.5);
+          top: 0;
+          left: 0;
+          z-index: 1;
+        }
+        .type {
+          border: 3px solid dimgray;
+          &:before {
+            position: absolute;
+            content: "";
+            height: 100%;
+            width: 100%;
+            background-color: rgba(255,255,255,.5);
+            top: 0;
+            left: 0;
+            z-index: 1;
           }
         }
       }
