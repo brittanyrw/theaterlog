@@ -55,7 +55,8 @@
                 <a
                   v-bind:href="show.favSongLink"
                   target="_blank"
-                  :title="`View video for ${show.favSong} from ${show.name}`">
+                  :title="`View video for ${show.favSong} from ${show.name}`"
+                >
                   {{ show.favSong }}
                 </a>
               </p>
@@ -280,7 +281,7 @@ export default {
           content: "";
           height: 100%;
           width: 100%;
-          background-color: rgba(255,255,255,.5);
+          background-color: rgba(255, 255, 255, 0.5);
           top: 0;
           left: 0;
           z-index: 1;
@@ -292,7 +293,7 @@ export default {
             content: "";
             height: 100%;
             width: 100%;
-            background-color: rgba(255,255,255,.5);
+            background-color: rgba(255, 255, 255, 0.5);
             top: 0;
             left: 0;
             z-index: 1;
