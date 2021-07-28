@@ -1,5 +1,20 @@
 export const showList = [
   {
+    id: "s71",
+    name: "Hadestown",
+    theater: "John F. Kennedy Center for the Performing Arts",
+    date: "October 2021",
+    favSong: "",
+    location: "Washington, DC",
+    fav: false,
+    upcoming: true,
+    multi: 0,
+    type: "musical",
+    review: "",
+    favSongLink: "",
+    seating: ""
+  },
+  {
     id: "s69",
     name: "Little Shop of Horrors",
     theater: "Westside Theatre Upstairs",
