@@ -26,6 +26,7 @@
           <p v-if="show.price >= 0" class="show-price">${{ show.price }}</p>
         </div>
         <div class="show-info">
+          <p v-if="show.upcoming" class="upcoming-tag">upcoming</p>
           <p class="type">{{ show.type }}</p>
           <div class="show-name">
             <p v-if="show.link">
@@ -44,7 +45,7 @@
             <p class="show-date">{{ show.date }}</p>
           </div>
         </div>
-        <div v-if="show.favSong" class="favs">
+        <div v-if="show.favSong && !show.upcoming" class="favs">
           <p class="fav-song-label">Fav Song</p>
           <div class="fav-song">
             <div class="fav-song-content">
@@ -200,13 +201,23 @@ export default {
         position: relative;
         .type {
           position: absolute;
-          background-color: orange;
           padding: 5px 10px;
           top: -38px;
           right: 10px;
           border: 3px solid $black;
           background-color: $purple;
           z-index: 99;
+          text-align: center;
+        }
+        .upcoming-tag {
+          position: absolute;
+          padding: 5px 10px;
+          top: -38px;
+          right: 110px;
+          border: 3px solid $black;
+          background-color: $purple;
+          z-index: 99;
+          text-align: center;
         }
         .show-name {
           background-color: $black;
@@ -273,31 +284,21 @@ export default {
         }
       }
       &.upcoming {
-        position: relative;
-        border: 3px solid dimgray;
-        outline: none;
-        &:before {
-          position: absolute;
-          content: "";
-          height: 100%;
-          width: 100%;
-          background-color: rgba(255, 255, 255, 0.5);
-          top: 0;
-          left: 0;
-          z-index: 1;
+        background-color: $black;
+        .show-name {
+          background-color: $purple;
+          color: $black;
         }
-        .type {
-          border: 3px solid dimgray;
-          &:before {
-            position: absolute;
-            content: "";
-            height: 100%;
-            width: 100%;
-            background-color: rgba(255, 255, 255, 0.5);
-            top: 0;
-            left: 0;
-            z-index: 1;
+        .show-content {
+          padding-bottom: 20px;
+          color: $purple;
           }
+        
+        .type, .upcoming-tag {
+          background-color: $black;
+          color: $purple;
+          border: 3px solid $purple;
+          outline: 3px solid $black;
         }
       }
     }
