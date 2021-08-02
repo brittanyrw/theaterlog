@@ -1,20 +1,5 @@
 export const showList = [
   {
-    id: "s71",
-    name: "Hadestown",
-    theater: "John F. Kennedy Center for the Performing Arts",
-    date: "October 2021",
-    favSong: "",
-    location: "Washington, DC",
-    fav: false,
-    upcoming: true,
-    multi: 0,
-    type: "musical",
-    review: "",
-    favSongLink: "",
-    seating: ""
-  },
-  {
     id: "s69",
     name: "Little Shop of Horrors",
     theater: "Westside Theatre Upstairs",
@@ -43,6 +28,21 @@ export const showList = [
     review: "",
     favSongLink: "https://www.youtube.com/watch?v=awwXs6c9sjs",
     seating: "FMEZZ, Row C, Seat 114"
+  },
+  {
+    id: "s71",
+    name: "Hadestown",
+    theater: "John F. Kennedy Center for the Performing Arts",
+    date: "October 2021",
+    favSong: "",
+    location: "Washington, DC",
+    fav: false,
+    upcoming: true,
+    multi: 0,
+    type: "musical",
+    review: "",
+    favSongLink: "",
+    seating: ""
   },
   {
     id: "s67",
@@ -1120,6 +1120,22 @@ export const showList = [
     review: "funny",
     type: "musical",
     favSongLink: "https://www.youtube.com/watch?v=Gqfz6Kc2al8",
+    price: 0
+  },
+  {
+    id: "s0",
+    name: "Rent",
+    link: "",
+    theater: "Zach Theatre",
+    date: "Oct 2010",
+    location: "Austin, TX",
+    favSong: "I'll Cover You (Reprise)",
+    fav: true,
+    upcoming: false,
+    multi: 2,
+    review: "sad",
+    type: "musical",
+    favSongLink: "https://www.youtube.com/watch?v=W_5mhPxVfck",
     price: 0
   }
 ];
