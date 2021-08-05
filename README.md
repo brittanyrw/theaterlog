@@ -4,7 +4,7 @@ TheaterLog is a theater show tracker. This web application tracks all of the mus
 
 [View Project Here](https://theaterlog.com)
 
-![TheaterLog Screenshots](readme/readme-screenshot.png?raw=true "TheaterLog Screenshots")
+![TheaterLog Screenshots](readme/theaterlog-screenshot.png?raw=true "TheaterLog Screenshots")
 
 
 ## Features
@@ -12,7 +12,7 @@ The tracker is built using Vue.js. The site consists of Show Cards that are crea
 
 ### Show Cards
 Each show generates a card that includes the following:
-- The show name (that links to the offical show website or the Playbill.com archive site for the show)
+- The show name 
 - The theater and city of the show
 - The month and year
 - A label indicating if the show is a musical or a play
@@ -20,4 +20,4 @@ Each show generates a card that includes the following:
   - A star if a show is a favorite
   - An emoji representing my review of the show
   - A numbered card displaying the number of times I have seen that particular show
-- If a musical, my favorite song from the show (at the time of viewing) will be displayed. This will link to a video performance of the show (if avaliable)
+- If a musical, my favorite song from the show (at the time of viewing) will be displayed. 
