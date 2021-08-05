@@ -1,18 +1,74 @@
 <template>
   <div id="app">
-    <Hero />
-    <Shows />
+    <Hero v-bind:shows="shows"/>
+    <Shows v-bind:shows="shows"/>
   </div>
 </template>
 
 <script>
 import Shows from "./components/Shows.vue";
 import Hero from "./components/Hero.vue";
+
 export default {
   name: "app",
+  data: function() {
+    return {
+      shows: []
+    };
+  },
   components: {
     Shows,
     Hero
+  },
+  async created (){
+    this.shows = await this.getShows() 
+  },
+  methods: {
+    getShows : async() => {
+      const query = `{
+        showCollection(limit:100, order: eventDate_DESC) {
+          items {
+            sys {
+              id
+            }
+            name
+            link
+            eventDate
+            price
+            favorite
+            upcoming
+            multi
+            type
+            seat
+            rating
+            theater {
+              name
+              location
+            }
+            song {
+              name
+              videoLink
+            }
+          }
+        }
+      }`;
+      const fetchUrl = `https://graphql.contentful.com/content/v1/spaces/${process.env.VUE_APP_CONTENTFUL_SPACE_ID}`;
+      const fetchOptions = {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${process.env.VUE_APP_CONTENTFUL_ACCESS_TOKEN}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ query }),
+      };
+
+      try {
+        const response = await fetch(fetchUrl, fetchOptions).then((response) => response.json());
+        return response.data.showCollection.items;
+      } catch (error) {
+        throw new Error("Could not fetch data from Contentful!");
+      }
+    }
   }
 };
 </script>

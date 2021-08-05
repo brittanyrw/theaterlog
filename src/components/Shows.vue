@@ -1,25 +1,25 @@
 <template>
-  <div class="shows">
+  <main class="shows">
     <div class="row">
       <div
         v-for="show in shows"
-        v-bind:key="show.id"
+        v-bind:key="show.sys.id"
         class="show"
         v-bind:class="[{ upcoming: show.upcoming }]"
       >
         <div
           v-if="
-            show.upcoming == false && (show.fav || show.review || show.multi)
+            show.upcoming == false && (show.favorite || show.rating || show.multi)
           "
           class="show-opinion"
         >
-          <div v-if="show.fav" class="fav-view">
+          <div v-if="show.favorite" class="fav-view">
             <font-awesome-icon icon="star" class="fav-icon" />
           </div>
-          <div v-if="show.review" class="review">
+          <div v-if="show.rating" class="review">
             <img
-              v-bind:src="require('../assets/' + show.review + '.svg')"
-              v-bind:alt="show.review + ' emoji'"
+              v-bind:src="require('../assets/' + show.rating + '.svg')"
+              v-bind:alt="show.rating + ' emoji'"
             />
           </div>
           <div v-if="show.multi" class="multi-view">{{ show.multi }}</div>
@@ -40,12 +40,12 @@
             <p v-else>{{ show.name }}</p>
           </div>
           <div class="show-content">
-            <p class="show-theater">{{ show.theater }}</p>
-            <p class="show-location">{{ show.location }}</p>
-            <p class="show-date">{{ show.date }}</p>
+            <p class="show-theater">{{ show.theater.name }}</p>
+            <p class="show-location">{{ show.theater.location }}</p>
+            <p class="show-date">{{moment(show.eventDate).format('MMMM YYYY')}}</p>
           </div>
         </div>
-        <div v-if="show.favSong && !show.upcoming" class="favs">
+        <div v-if="show.song && !show.upcoming" class="favs">
           <p class="fav-song-label">Fav Song</p>
           <div class="fav-song">
             <div class="fav-song-content">
@@ -54,11 +54,12 @@
               </p>
               <p class="song-name">
                 <a
-                  v-bind:href="show.favSongLink"
+                  v-if="show.song.name"
+                  v-bind:href="show.song.videoLink"
                   target="_blank"
-                  :title="`View video for ${show.favSong} from ${show.name}`"
+                  :title="`View video for ${show.song.name} from ${show.name}`"
                 >
-                  {{ show.favSong }}
+                  {{ show.song.name }}
                 </a>
               </p>
             </div>
@@ -86,35 +87,20 @@
         >CC 3.0 BY</a
       >
     </div>
-  </div>
+  </main>
 </template>
 
 <script>
-import { showList } from "../data/shows";
 
 export default {
   name: "Shows",
-  data: function() {
-    return {
-      shows: showList,
-      rowLength: 3
-    };
-  },
-  computed: {
-    rowCount: function() {
-      return Math.ceil(this.shows.length / this.rowLength);
-    }
-  },
-  methods: {
-    itemCountInRow: function(index) {
-      return this.shows.slice(
-        (index - 1) * this.rowLength,
-        index * this.rowLength
-      );
-    }
+  props: {
+    shows: Array,
   }
 };
+
 </script>
+
 <style lang="scss" scoped>
 @import "@/assets/styles/variables.scss";
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
@@ -243,7 +229,7 @@ export default {
         text-align: center;
         padding: 10px 20px 60px 20px;
         @media screen and (min-width: 662px) {
-          padding: 20px 35px 90px 35px;
+          padding: 20px 35px 75px 35px;
         }
       }
       .favs {
@@ -292,7 +278,7 @@ export default {
         .show-content {
           padding-bottom: 20px;
           color: $purple;
-          }
+        }
         
         .type, .upcoming-tag {
           background-color: $black;

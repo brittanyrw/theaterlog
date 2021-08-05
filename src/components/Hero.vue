@@ -45,7 +45,7 @@
         <h3>Statistics</h3>
         <div class="stats">
           <div class="counter total-stat">
-            <p class="stat-number">{{ shows.length + 26 }}</p>
+            <p class="stat-number">{{ shows.length }}</p>
             <p class="stat-title">Total Shows Seen</p>
           </div>
           <div class="counter upcoming-stat">
@@ -53,7 +53,7 @@
             <p class="stat-title">Upcoming</p>
           </div>
           <div class="counter musical-stat">
-            <p class="stat-number">{{ musicalsCounter + 26 }}</p>
+            <p class="stat-number">{{ musicalsCounter }}</p>
             <p class="stat-title">Musicals</p>
           </div>
           <div class="counter play-stat">
@@ -126,39 +126,36 @@
 </template>
 
 <script>
-import { showList } from "../data/shows";
 
 export default {
   name: "Hero",
-  data: function() {
-    return {
-      shows: showList
-    };
+  props: {
+    shows: Array,
   },
   computed: {
     musicalsCounter: function() {
-      var result = showList.reduce(
+      var result = this.shows.reduce(
         (res, item) => (item.type == "musical" ? res + 1 : res),
         0
       );
       return result;
     },
     playsCounter: function() {
-      var result = showList.reduce(
+      var result = this.shows.reduce(
         (res, item) => (item.type == "play" ? res + 1 : res),
         0
       );
       return result;
     },
     upcomingCounter: function() {
-      var result = showList.reduce(
+      var result = this.shows.reduce(
         (res, item) => (item.upcoming ? res + item.upcoming : res),
         0
       );
       return result;
     },
     priceCounter: function() {
-      var result = showList.reduce(
+      var result = this.shows.reduce(
         (res, item) => (item.price ? res + item.price : res),
         0
       );
