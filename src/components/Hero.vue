@@ -1,5 +1,5 @@
 <template>
-  <div class="hero">
+  <section class="hero">
     <header>
       <div class="overview">
         <h1>Theater Log</h1>
@@ -122,7 +122,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
