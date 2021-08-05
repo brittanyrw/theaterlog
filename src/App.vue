@@ -1,8 +1,8 @@
 <template>
-  <div id="app">
+  <main id="app">
     <Hero v-bind:shows="shows"/>
     <Shows v-bind:shows="shows"/>
-  </div>
+  </main>
 </template>
 
 <script>
