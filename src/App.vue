@@ -1,8 +1,8 @@
 <template>
-  <div id="app">
+  <main id="app">
     <Hero />
     <Shows />
-  </div>
+  </main>
 </template>
 
 <script>
