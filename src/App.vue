@@ -26,14 +26,14 @@ export default {
   methods: {
     getShows : async() => {
       const query = `{
-        showCollection(limit:100, order: eventDate_DESC) {
+        showCollection(limit:100, order: date_DESC) {
           items {
             sys {
               id
             }
             name
             link
-            eventDate
+            date
             price
             favorite
             upcoming
