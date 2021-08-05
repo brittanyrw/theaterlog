@@ -24,7 +24,7 @@
       </div>
       <div class="hero-sidebar">
         <div class="external-links">
-          <h4>Other Logs</h4>
+          <h2>Other Logs</h2>
           <a href="https://thebookishlog.com" target="_blank">Bookish Log</a>
         </div>
         <div class="info">
