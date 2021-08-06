@@ -1,7 +1,7 @@
 <template>
-  <main class="shows">
-    <div class="row">
-      <div
+  <div class="shows">
+    <ul class="show-container">
+      <li
         v-for="show in shows"
         v-bind:key="show.sys.id"
         class="show"
@@ -65,8 +65,8 @@
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </li>
+    </ul>
     <div class="icon-attribute">
       Icons made by
       <a
@@ -87,7 +87,7 @@
         >CC 3.0 BY</a
       >
     </div>
-  </main>
+  </div>
 </template>
 
 <script>
@@ -110,10 +110,11 @@ export default {
   @media screen and (min-width: 662px) {
     padding: 20px;
   }
-  .row {
+  .show-container {
     padding: 0;
     position: relative;
     margin-bottom: 20px;
+    list-style: none;
     @media screen and (min-width: 662px) {
       display: grid;
       grid-template-columns: 1fr 1fr;
