@@ -113,6 +113,8 @@ The terminal will do some fancy things. If all looks good - refresh Contentful i
 
 To run the project on your local machine, open a new termimal window, navigate to the project and run the following:
 
-`npm install`
-`npm run serve`
+```bash
+npm install
+npm run serve
+```
 
