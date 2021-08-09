@@ -8,9 +8,7 @@
         v-bind:class="[{ upcoming: show.upcoming }]"
       >
         <div
-          v-if="
-            show.upcoming == false && (show.favorite || show.rating || show.multi)
-          "
+          v-if="show.upcoming == false && (show.favorite || show.rating || show.multi)"
           class="show-opinion"
         >
           <div v-if="show.favorite" class="fav-view">
@@ -18,12 +16,12 @@
           </div>
           <div v-if="show.rating" class="review">
             <img
-              v-bind:src="require('../assets/' + show.rating + '.svg')"
-              v-bind:alt="show.rating + ' emoji'"
+              v-bind:src="require(`../assets/${show.rating}.svg`)"
+              v-bind:alt="`Impression of the show is ${show.rating}`"
             />
           </div>
           <div v-if="show.multi" class="multi-view">{{ show.multi }}</div>
-          <p v-if="show.price >= 0" class="show-price">${{ show.price }}</p>
+          <p v-if="show.price" class="show-price">${{ show.price }}</p>
         </div>
         <div class="show-info">
           <p v-if="show.upcoming" class="upcoming-tag">upcoming</p>
@@ -33,7 +31,7 @@
               <a
                 v-bind:href="show.link"
                 target="_blank"
-                :title="'Go to website for ' + show.name"
+                :title="`Go to website for ${show.name}`"
                 >{{ show.name }}</a
               >
             </p>

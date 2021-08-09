@@ -134,28 +134,28 @@ export default {
   },
   computed: {
     musicalsCounter: function() {
-      var result = this.shows.reduce(
+      const result = this.shows.reduce(
         (res, item) => (item.type == "musical" ? res + 1 : res),
         0
       );
       return result;
     },
     playsCounter: function() {
-      var result = this.shows.reduce(
+      const result = this.shows.reduce(
         (res, item) => (item.type == "play" ? res + 1 : res),
         0
       );
       return result;
     },
     upcomingCounter: function() {
-      var result = this.shows.reduce(
+      const result = this.shows.reduce(
         (res, item) => (item.upcoming ? res + item.upcoming : res),
         0
       );
       return result;
     },
     priceCounter: function() {
-      var result = this.shows.reduce(
+      const result = this.shows.reduce(
         (res, item) => (item.price ? res + item.price : res),
         0
       );
