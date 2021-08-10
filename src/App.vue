@@ -64,7 +64,6 @@ export default {
         const response = await fetch(fetchUrl, fetchOptions).then(response =>
           response.json()
         );
-        console.log(response);
         return response.data.showCollection.items;
       } catch (error) {
         throw new Error("Could not receive the data from Contentful!");
