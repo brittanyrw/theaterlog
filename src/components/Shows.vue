@@ -39,7 +39,7 @@
           </div>
           <div class="show-content">
             <p class="show-theater">{{ show.theater.name }}</p>
-            <p class="show-location">{{ show.theater.location }}</p>
+            <p class="show-location">{{ show.theater.city }}</p>
             <p class="show-date">{{moment(show.date).format('MMMM YYYY')}}</p>
           </div>
         </div>

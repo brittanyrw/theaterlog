@@ -26,7 +26,7 @@ export default {
   methods: {
     getShows : async() => {
       const query = `{
-        showCollection(limit:100, order: date_DESC) {
+        showCollection(order: date_DESC) {
           items {
             sys {
               id
@@ -39,11 +39,10 @@ export default {
             upcoming
             multi
             type
-            seat
             rating
             theater {
               name
-              location
+              city
             }
             song {
               name
