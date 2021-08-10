@@ -1,0 +1,1944 @@
+{
+  "contentTypes": [
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "kcjus2du6460"
+          }
+        },
+        "id": "show",
+        "type": "ContentType",
+        "createdAt": "2021-08-09T14:34:48.269Z",
+        "updatedAt": "2021-08-10T23:08:48.137Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 23,
+        "publishedAt": "2021-08-10T23:08:48.137Z",
+        "firstPublishedAt": "2021-08-09T14:34:48.869Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1CDBzySYdM8I3Kvr3h6A0D"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1CDBzySYdM8I3Kvr3h6A0D"
+          }
+        },
+        "publishedCounter": 12,
+        "version": 24,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1CDBzySYdM8I3Kvr3h6A0D"
+          }
+        }
+      },
+      "displayField": "name",
+      "name": "Show",
+      "description": "A musical or play!",
+      "fields": [
+        {
+          "id": "name",
+          "name": "Name",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "link",
+          "name": "Link",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "date",
+          "name": "Date",
+          "type": "Date",
+          "localized": false,
+          "required": true,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "type",
+          "name": "Type",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "in": [
+                "Musical",
+                "Play"
+              ]
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "price",
+          "name": "Price",
+          "type": "Number",
+          "localized": false,
+          "required": true,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "upcoming",
+          "name": "Upcoming",
+          "type": "Boolean",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "favorite",
+          "name": "Favorite",
+          "type": "Boolean",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "multi",
+          "name": "Multi",
+          "type": "Integer",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "rating",
+          "name": "Rating",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "in": [
+                "confused",
+                "dislike",
+                "funny",
+                "happy-sad",
+                "love",
+                "meh",
+                "sad"
+              ]
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "theater",
+          "name": "Theater",
+          "type": "Link",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "linkContentType": [
+                "theater"
+              ]
+            }
+          ],
+          "disabled": false,
+          "omitted": false,
+          "linkType": "Entry"
+        },
+        {
+          "id": "song",
+          "name": "Song",
+          "type": "Link",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "linkContentType": [
+                "song"
+              ]
+            }
+          ],
+          "disabled": false,
+          "omitted": false,
+          "linkType": "Entry"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "kcjus2du6460"
+          }
+        },
+        "id": "theater",
+        "type": "ContentType",
+        "createdAt": "2021-08-09T14:36:35.800Z",
+        "updatedAt": "2021-08-09T14:36:35.935Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 1,
+        "publishedAt": "2021-08-09T14:36:35.935Z",
+        "firstPublishedAt": "2021-08-09T14:36:35.935Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1CDBzySYdM8I3Kvr3h6A0D"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1CDBzySYdM8I3Kvr3h6A0D"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 2,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1CDBzySYdM8I3Kvr3h6A0D"
+          }
+        }
+      },
+      "displayField": "name",
+      "name": "Theater",
+      "description": "The venue where the show was seen.",
+      "fields": [
+        {
+          "id": "name",
+          "name": "Name",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "city",
+          "name": "City",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        }
+      ]
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "kcjus2du6460"
+          }
+        },
+        "id": "song",
+        "type": "ContentType",
+        "createdAt": "2021-08-09T17:20:34.559Z",
+        "updatedAt": "2021-08-09T17:26:37.244Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 3,
+        "publishedAt": "2021-08-09T17:26:37.244Z",
+        "firstPublishedAt": "2021-08-09T17:20:34.869Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1CDBzySYdM8I3Kvr3h6A0D"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1CDBzySYdM8I3Kvr3h6A0D"
+          }
+        },
+        "publishedCounter": 2,
+        "version": 4,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1CDBzySYdM8I3Kvr3h6A0D"
+          }
+        }
+      },
+      "displayField": "name",
+      "name": "Song",
+      "description": "Favorite song from musical at time of viewing.",
+      "fields": [
+        {
+          "id": "name",
+          "name": "Name",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "videoLink",
+          "name": "Video Link",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        }
+      ]
+    }
+  ],
+  "tags": [
+  ],
+  "editorInterfaces": [
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "space": {
+          "sys": {
+            "id": "kcjus2du6460",
+            "type": "Link",
+            "linkType": "Space"
+          }
+        },
+        "version": 24,
+        "createdAt": "2021-08-09T14:34:49.031Z",
+        "createdBy": {
+          "sys": {
+            "id": "1CDBzySYdM8I3Kvr3h6A0D",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "updatedAt": "2021-08-10T23:08:49.101Z",
+        "updatedBy": {
+          "sys": {
+            "id": "1CDBzySYdM8I3Kvr3h6A0D",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "id": "show",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        },
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        }
+      },
+      "controls": [
+        {
+          "fieldId": "name",
+          "settings": {
+            "helpText": "Name of the show"
+          },
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "link",
+          "settings": {
+            "helpText": "A link to the show's website or Playbill.com archive page"
+          },
+          "widgetId": "urlEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "date",
+          "settings": {
+            "ampm": "24",
+            "format": "dateonly",
+            "helpText": "The date the show was seen"
+          },
+          "widgetId": "datePicker",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "type",
+          "settings": {
+            "helpText": "The type of show (play or musical)"
+          },
+          "widgetId": "dropdown",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "price",
+          "settings": {
+            "helpText": "Total price for an individual ticket for this show"
+          },
+          "widgetId": "numberEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "upcoming",
+          "settings": {
+            "helpText": "Is this a show that will be seen in the future?",
+            "trueLabel": "Yes",
+            "falseLabel": "No"
+          },
+          "widgetId": "boolean",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "favorite",
+          "settings": {
+            "helpText": "Is this show a favorite? (will be marked with a star on the website)",
+            "trueLabel": "Yes",
+            "falseLabel": "No"
+          },
+          "widgetId": "boolean",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "multi",
+          "settings": {
+            "helpText": "How many times has this show been seen?"
+          },
+          "widgetId": "numberEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "rating",
+          "settings": {
+            "helpText": "What would you rate this show? "
+          },
+          "widgetId": "dropdown",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "theater",
+          "settings": {
+            "helpText": "The venue where the show was seen",
+            "showLinkEntityAction": true,
+            "showCreateEntityAction": true
+          },
+          "widgetId": "entryCardEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "song",
+          "settings": {
+            "helpText": "A favorite song from the show at the time of viewing",
+            "showLinkEntityAction": true,
+            "showCreateEntityAction": true
+          },
+          "widgetId": "entryLinkEditor",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "space": {
+          "sys": {
+            "id": "kcjus2du6460",
+            "type": "Link",
+            "linkType": "Space"
+          }
+        },
+        "version": 2,
+        "createdAt": "2021-08-09T14:36:36.116Z",
+        "createdBy": {
+          "sys": {
+            "id": "1CDBzySYdM8I3Kvr3h6A0D",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "updatedAt": "2021-08-09T14:36:36.532Z",
+        "updatedBy": {
+          "sys": {
+            "id": "1CDBzySYdM8I3Kvr3h6A0D",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "id": "theater",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        },
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        }
+      },
+      "controls": [
+        {
+          "fieldId": "name",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "city",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "space": {
+          "sys": {
+            "id": "kcjus2du6460",
+            "type": "Link",
+            "linkType": "Space"
+          }
+        },
+        "version": 4,
+        "createdAt": "2021-08-09T17:20:34.960Z",
+        "createdBy": {
+          "sys": {
+            "id": "1CDBzySYdM8I3Kvr3h6A0D",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "updatedAt": "2021-08-09T17:26:37.679Z",
+        "updatedBy": {
+          "sys": {
+            "id": "1CDBzySYdM8I3Kvr3h6A0D",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "id": "song",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        },
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        }
+      },
+      "controls": [
+        {
+          "fieldId": "name",
+          "settings": {
+            "helpText": "The name of the song"
+          },
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "videoLink",
+          "settings": {
+            "helpText": "A link to a video performance of this song"
+          },
+          "widgetId": "urlEditor",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "kcjus2du6460"
+          }
+        },
+        "id": "3dOXWzmYn1Fmt1ULlZf8uD",
+        "type": "Entry",
+        "createdAt": "2021-08-09T17:23:41.927Z",
+        "updatedAt": "2021-08-09T17:25:55.941Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 8,
+        "publishedAt": "2021-08-09T17:25:55.941Z",
+        "firstPublishedAt": "2021-08-09T17:25:55.941Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1CDBzySYdM8I3Kvr3h6A0D"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1CDBzySYdM8I3Kvr3h6A0D"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 9,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1CDBzySYdM8I3Kvr3h6A0D"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "show"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-US": "Hamilton: An American Musical"
+        },
+        "link": {
+          "en-US": "https://hamiltonmusical.com/new-york/"
+        },
+        "date": {
+          "en-US": "2016-01-30"
+        },
+        "type": {
+          "en-US": "Musical"
+        },
+        "price": {
+          "en-US": 195
+        },
+        "upcoming": {
+          "en-US": false
+        },
+        "favorite": {
+          "en-US": true
+        },
+        "multi": {
+          "en-US": 3
+        },
+        "rating": {
+          "en-US": "love"
+        },
+        "theater": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "5AlaLDAzZtx7IjsMAE1dyp"
+            }
+          }
+        },
+        "song": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "7swXRxAgJQ6pzMZaOxXN3M"
+            }
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "kcjus2du6460"
+          }
+        },
+        "id": "5AlaLDAzZtx7IjsMAE1dyp",
+        "type": "Entry",
+        "createdAt": "2021-08-09T17:25:15.534Z",
+        "updatedAt": "2021-08-09T17:25:29.575Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 3,
+        "publishedAt": "2021-08-09T17:25:29.575Z",
+        "firstPublishedAt": "2021-08-09T17:25:29.575Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1CDBzySYdM8I3Kvr3h6A0D"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1CDBzySYdM8I3Kvr3h6A0D"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 4,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1CDBzySYdM8I3Kvr3h6A0D"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "theater"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-US": "Richard Rodgers Theatre"
+        },
+        "city": {
+          "en-US": "New York City, NY"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "kcjus2du6460"
+          }
+        },
+        "id": "7swXRxAgJQ6pzMZaOxXN3M",
+        "type": "Entry",
+        "createdAt": "2021-08-09T17:25:34.193Z",
+        "updatedAt": "2021-08-09T17:25:51.837Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 2,
+        "publishedAt": "2021-08-09T17:25:51.837Z",
+        "firstPublishedAt": "2021-08-09T17:25:51.837Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1CDBzySYdM8I3Kvr3h6A0D"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1CDBzySYdM8I3Kvr3h6A0D"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 3,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1CDBzySYdM8I3Kvr3h6A0D"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "song"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-US": "My Shot"
+        },
+        "videoLink": {
+          "en-US": "https://www.youtube.com/watch?v=PEHKBckBcr4"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "kcjus2du6460"
+          }
+        },
+        "id": "2FcI00qcQY1qbEXsdfCfFV",
+        "type": "Entry",
+        "createdAt": "2021-08-10T23:09:24.255Z",
+        "updatedAt": "2021-08-10T23:11:14.678Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 9,
+        "publishedAt": "2021-08-10T23:11:14.678Z",
+        "firstPublishedAt": "2021-08-10T23:11:14.678Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1CDBzySYdM8I3Kvr3h6A0D"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1CDBzySYdM8I3Kvr3h6A0D"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 10,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1CDBzySYdM8I3Kvr3h6A0D"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "show"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-US": "Aladdin"
+        },
+        "link": {
+          "en-US": "https://www.aladdinthemusical.com/"
+        },
+        "date": {
+          "en-US": "2018-05-19"
+        },
+        "type": {
+          "en-US": "Musical"
+        },
+        "price": {
+          "en-US": 162
+        },
+        "upcoming": {
+          "en-US": false
+        },
+        "favorite": {
+          "en-US": false
+        },
+        "rating": {
+          "en-US": "love"
+        },
+        "theater": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "2ZGaomgPfXNEsBDbNGOp5E"
+            }
+          }
+        },
+        "song": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "4CrazF1fjNaHFmPiywS48s"
+            }
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "kcjus2du6460"
+          }
+        },
+        "id": "2ZGaomgPfXNEsBDbNGOp5E",
+        "type": "Entry",
+        "createdAt": "2021-08-10T23:10:36.771Z",
+        "updatedAt": "2021-08-10T23:10:49.048Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 4,
+        "publishedAt": "2021-08-10T23:10:49.048Z",
+        "firstPublishedAt": "2021-08-10T23:10:44.245Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1CDBzySYdM8I3Kvr3h6A0D"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1CDBzySYdM8I3Kvr3h6A0D"
+          }
+        },
+        "publishedCounter": 2,
+        "version": 5,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1CDBzySYdM8I3Kvr3h6A0D"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "theater"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-US": "New Amsterdam Theatre"
+        },
+        "city": {
+          "en-US": "New York City, NY"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "kcjus2du6460"
+          }
+        },
+        "id": "4CrazF1fjNaHFmPiywS48s",
+        "type": "Entry",
+        "createdAt": "2021-08-10T23:10:54.380Z",
+        "updatedAt": "2021-08-10T23:11:10.864Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 3,
+        "publishedAt": "2021-08-10T23:11:10.864Z",
+        "firstPublishedAt": "2021-08-10T23:11:10.864Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1CDBzySYdM8I3Kvr3h6A0D"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1CDBzySYdM8I3Kvr3h6A0D"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 4,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1CDBzySYdM8I3Kvr3h6A0D"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "song"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-US": "Friend Like Me"
+        },
+        "videoLink": {
+          "en-US": "https://www.youtube.com/watch?v=FpT94oylSaU"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "kcjus2du6460"
+          }
+        },
+        "id": "0FukXVZEjeXuG3tzBlMu4",
+        "type": "Entry",
+        "createdAt": "2021-08-10T23:11:56.286Z",
+        "updatedAt": "2021-08-10T23:13:43.503Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 9,
+        "publishedAt": "2021-08-10T23:13:43.503Z",
+        "firstPublishedAt": "2021-08-10T23:13:43.503Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1CDBzySYdM8I3Kvr3h6A0D"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1CDBzySYdM8I3Kvr3h6A0D"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 10,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1CDBzySYdM8I3Kvr3h6A0D"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "show"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-US": "The Play That Goes Wrong"
+        },
+        "link": {
+          "en-US": "https://broadwaygoeswrong.com/"
+        },
+        "date": {
+          "en-US": "2019-01-12"
+        },
+        "type": {
+          "en-US": "Play"
+        },
+        "price": {
+          "en-US": 52
+        },
+        "upcoming": {
+          "en-US": false
+        },
+        "favorite": {
+          "en-US": true
+        },
+        "rating": {
+          "en-US": "funny"
+        },
+        "theater": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "5B6tybjU7UZuc08KOdHaRN"
+            }
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "kcjus2du6460"
+          }
+        },
+        "id": "5B6tybjU7UZuc08KOdHaRN",
+        "type": "Entry",
+        "createdAt": "2021-08-10T23:13:33.097Z",
+        "updatedAt": "2021-08-10T23:13:37.674Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 2,
+        "publishedAt": "2021-08-10T23:13:37.674Z",
+        "firstPublishedAt": "2021-08-10T23:13:37.674Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1CDBzySYdM8I3Kvr3h6A0D"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1CDBzySYdM8I3Kvr3h6A0D"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 3,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1CDBzySYdM8I3Kvr3h6A0D"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "theater"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-US": "John F. Kennedy Center for the Performing Arts"
+        },
+        "city": {
+          "en-US": "Washington, DC"
+        }
+      }
+    }
+  ],
+  "assets": [
+  ],
+  "locales": [
+    {
+      "name": "English (United States)",
+      "code": "en-US",
+      "fallbackCode": null,
+      "default": true,
+      "contentManagementApi": true,
+      "contentDeliveryApi": true,
+      "optional": false,
+      "sys": {
+        "type": "Locale",
+        "id": "3dJykZu0heUZURUa4eD17k",
+        "version": 1,
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "kcjus2du6460"
+          }
+        },
+        "environment": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Environment",
+            "id": "master",
+            "uuid": "65b56668-489c-4df7-abfb-8bf192558264"
+          }
+        },
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1CDBzySYdM8I3Kvr3h6A0D"
+          }
+        },
+        "createdAt": "2021-08-09T14:31:31Z",
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1CDBzySYdM8I3Kvr3h6A0D"
+          }
+        },
+        "updatedAt": "2021-08-09T14:31:31Z"
+      }
+    }
+  ],
+  "webhooks": [
+  ],
+  "roles": [
+    {
+      "name": "Author",
+      "description": "Allows editing of content",
+      "policies": [
+        {
+          "effect": "allow",
+          "actions": [
+            "create"
+          ],
+          "constraint": {
+            "and": [
+              {
+                "equals": [
+                  {
+                    "doc": "sys.type"
+                  },
+                  "Entry"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "effect": "allow",
+          "actions": [
+            "read"
+          ],
+          "constraint": {
+            "and": [
+              {
+                "equals": [
+                  {
+                    "doc": "sys.type"
+                  },
+                  "Entry"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "effect": "allow",
+          "actions": [
+            "update"
+          ],
+          "constraint": {
+            "and": [
+              {
+                "equals": [
+                  {
+                    "doc": "sys.type"
+                  },
+                  "Entry"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "effect": "allow",
+          "actions": [
+            "create"
+          ],
+          "constraint": {
+            "and": [
+              {
+                "equals": [
+                  {
+                    "doc": "sys.type"
+                  },
+                  "Asset"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "effect": "allow",
+          "actions": [
+            "read"
+          ],
+          "constraint": {
+            "and": [
+              {
+                "equals": [
+                  {
+                    "doc": "sys.type"
+                  },
+                  "Asset"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "effect": "allow",
+          "actions": [
+            "update"
+          ],
+          "constraint": {
+            "and": [
+              {
+                "equals": [
+                  {
+                    "doc": "sys.type"
+                  },
+                  "Asset"
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "permissions": {
+        "ContentModel": [
+          "read"
+        ],
+        "Settings": [
+        ],
+        "ContentDelivery": [
+        ],
+        "Environments": [
+        ],
+        "EnvironmentAliases": [
+        ],
+        "Tags": [
+        ]
+      },
+      "sys": {
+        "type": "Role",
+        "id": "3dLwoeMpzkJkCSyo9UT4vU",
+        "version": 0,
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "kcjus2du6460"
+          }
+        },
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1CDBzySYdM8I3Kvr3h6A0D"
+          }
+        },
+        "createdAt": "2021-08-09T14:31:31Z",
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1CDBzySYdM8I3Kvr3h6A0D"
+          }
+        },
+        "updatedAt": "2021-08-09T14:31:31Z"
+      }
+    },
+    {
+      "name": "Editor",
+      "description": "Allows editing, publishing and archiving of content",
+      "policies": [
+        {
+          "effect": "allow",
+          "actions": "all",
+          "constraint": {
+            "and": [
+              {
+                "equals": [
+                  {
+                    "doc": "sys.type"
+                  },
+                  "Entry"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "effect": "allow",
+          "actions": "all",
+          "constraint": {
+            "and": [
+              {
+                "equals": [
+                  {
+                    "doc": "sys.type"
+                  },
+                  "Asset"
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "permissions": {
+        "ContentModel": [
+          "read"
+        ],
+        "Settings": [
+        ],
+        "ContentDelivery": [
+        ],
+        "Environments": [
+        ],
+        "EnvironmentAliases": [
+        ],
+        "Tags": [
+        ]
+      },
+      "sys": {
+        "type": "Role",
+        "id": "3dM87NYiw8GlMNQGEIF91o",
+        "version": 0,
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "kcjus2du6460"
+          }
+        },
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1CDBzySYdM8I3Kvr3h6A0D"
+          }
+        },
+        "createdAt": "2021-08-09T14:31:31Z",
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1CDBzySYdM8I3Kvr3h6A0D"
+          }
+        },
+        "updatedAt": "2021-08-09T14:31:31Z"
+      }
+    },
+    {
+      "name": "Freelancer",
+      "description": "Allows only editing of content they created themselves",
+      "policies": [
+        {
+          "effect": "allow",
+          "actions": [
+            "create"
+          ],
+          "constraint": {
+            "and": [
+              {
+                "equals": [
+                  {
+                    "doc": "sys.type"
+                  },
+                  "Entry"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "effect": "allow",
+          "actions": [
+            "create"
+          ],
+          "constraint": {
+            "and": [
+              {
+                "equals": [
+                  {
+                    "doc": "sys.type"
+                  },
+                  "Asset"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "effect": "allow",
+          "actions": [
+            "read"
+          ],
+          "constraint": {
+            "and": [
+              {
+                "equals": [
+                  {
+                    "doc": "sys.type"
+                  },
+                  "Entry"
+                ]
+              },
+              {
+                "equals": [
+                  {
+                    "doc": "sys.createdBy.sys.id"
+                  },
+                  "User.current()"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "effect": "allow",
+          "actions": [
+            "update"
+          ],
+          "constraint": {
+            "and": [
+              {
+                "equals": [
+                  {
+                    "doc": "sys.type"
+                  },
+                  "Entry"
+                ]
+              },
+              {
+                "equals": [
+                  {
+                    "doc": "sys.createdBy.sys.id"
+                  },
+                  "User.current()"
+                ]
+              },
+              {
+                "paths": [
+                  {
+                    "doc": "fields.%.%"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "effect": "allow",
+          "actions": [
+            "delete"
+          ],
+          "constraint": {
+            "and": [
+              {
+                "equals": [
+                  {
+                    "doc": "sys.type"
+                  },
+                  "Entry"
+                ]
+              },
+              {
+                "equals": [
+                  {
+                    "doc": "sys.createdBy.sys.id"
+                  },
+                  "User.current()"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "effect": "allow",
+          "actions": [
+            "read"
+          ],
+          "constraint": {
+            "and": [
+              {
+                "equals": [
+                  {
+                    "doc": "sys.type"
+                  },
+                  "Asset"
+                ]
+              },
+              {
+                "equals": [
+                  {
+                    "doc": "sys.createdBy.sys.id"
+                  },
+                  "User.current()"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "effect": "allow",
+          "actions": [
+            "update"
+          ],
+          "constraint": {
+            "and": [
+              {
+                "equals": [
+                  {
+                    "doc": "sys.type"
+                  },
+                  "Asset"
+                ]
+              },
+              {
+                "equals": [
+                  {
+                    "doc": "sys.createdBy.sys.id"
+                  },
+                  "User.current()"
+                ]
+              },
+              {
+                "paths": [
+                  {
+                    "doc": "fields.%.%"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "effect": "allow",
+          "actions": [
+            "delete"
+          ],
+          "constraint": {
+            "and": [
+              {
+                "equals": [
+                  {
+                    "doc": "sys.type"
+                  },
+                  "Asset"
+                ]
+              },
+              {
+                "equals": [
+                  {
+                    "doc": "sys.createdBy.sys.id"
+                  },
+                  "User.current()"
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "permissions": {
+        "ContentModel": [
+          "read"
+        ],
+        "Settings": [
+        ],
+        "ContentDelivery": [
+        ],
+        "Environments": [
+        ],
+        "EnvironmentAliases": [
+        ],
+        "Tags": [
+        ]
+      },
+      "sys": {
+        "type": "Role",
+        "id": "3dMwgC6AhAPH9NQNIsqMkG",
+        "version": 0,
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "kcjus2du6460"
+          }
+        },
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1CDBzySYdM8I3Kvr3h6A0D"
+          }
+        },
+        "createdAt": "2021-08-09T14:31:31Z",
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1CDBzySYdM8I3Kvr3h6A0D"
+          }
+        },
+        "updatedAt": "2021-08-09T14:31:31Z"
+      }
+    },
+    {
+      "name": "Translator",
+      "description": "Allows editing of localized fields in the specified language",
+      "policies": [
+        {
+          "effect": "allow",
+          "actions": [
+            "read"
+          ],
+          "constraint": {
+            "and": [
+              {
+                "equals": [
+                  {
+                    "doc": "sys.type"
+                  },
+                  "Entry"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "effect": "allow",
+          "actions": [
+            "read"
+          ],
+          "constraint": {
+            "and": [
+              {
+                "equals": [
+                  {
+                    "doc": "sys.type"
+                  },
+                  "Asset"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "effect": "allow",
+          "actions": [
+            "update"
+          ],
+          "constraint": {
+            "and": [
+              {
+                "equals": [
+                  {
+                    "doc": "sys.type"
+                  },
+                  "Entry"
+                ]
+              },
+              {
+                "paths": [
+                  {
+                    "doc": "fields.%.%"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "effect": "allow",
+          "actions": [
+            "update"
+          ],
+          "constraint": {
+            "and": [
+              {
+                "equals": [
+                  {
+                    "doc": "sys.type"
+                  },
+                  "Asset"
+                ]
+              },
+              {
+                "paths": [
+                  {
+                    "doc": "fields.%.%"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "permissions": {
+        "ContentModel": [
+          "read"
+        ],
+        "Settings": [
+        ],
+        "ContentDelivery": [
+        ],
+        "Environments": [
+        ],
+        "EnvironmentAliases": [
+        ],
+        "Tags": [
+        ]
+      },
+      "sys": {
+        "type": "Role",
+        "id": "3dN0uQcHfxT2Wv1qoYGTOa",
+        "version": 0,
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "kcjus2du6460"
+          }
+        },
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1CDBzySYdM8I3Kvr3h6A0D"
+          }
+        },
+        "createdAt": "2021-08-09T14:31:31Z",
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1CDBzySYdM8I3Kvr3h6A0D"
+          }
+        },
+        "updatedAt": "2021-08-09T14:31:31Z"
+      }
+    }
+  ]
+}
