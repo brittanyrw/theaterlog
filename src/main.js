@@ -4,9 +4,9 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { faMusic } from "@fortawesome/free-solid-svg-icons";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-import moment from 'moment';
+import moment from "moment";
 
-Vue.prototype.moment = moment
+Vue.prototype.moment = moment;
 
 library.add(faMusic);
 library.add(faStar);

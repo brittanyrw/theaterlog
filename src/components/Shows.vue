@@ -8,7 +8,10 @@
         v-bind:class="[{ upcoming: show.upcoming }]"
       >
         <div
-          v-if="show.upcoming == false && (show.favorite || show.rating || show.multi)"
+          v-if="
+            show.upcoming == false &&
+              (show.favorite || show.rating || show.multi)
+          "
           class="show-opinion"
         >
           <div v-if="show.favorite" class="fav-view">
@@ -40,7 +43,7 @@
           <div class="show-content">
             <p class="show-theater">{{ show.theater.name }}</p>
             <p class="show-location">{{ show.theater.city }}</p>
-            <p class="show-date">{{moment(show.date).format('MMMM YYYY')}}</p>
+            <p class="show-date">{{ moment(show.date).format("MMMM YYYY") }}</p>
           </div>
         </div>
         <div v-if="show.song && !show.upcoming" class="favs">
@@ -89,14 +92,11 @@
 </template>
 
 <script>
-
 export default {
-  name: "Shows",
   props: {
-    shows: Array,
+    shows: Array
   }
 };
-
 </script>
 
 <style lang="scss" scoped>
@@ -278,8 +278,9 @@ export default {
           padding-bottom: 20px;
           color: $purple;
         }
-        
-        .type, .upcoming-tag {
+
+        .type,
+        .upcoming-tag {
           background-color: $black;
           color: $purple;
           border: 3px solid $purple;

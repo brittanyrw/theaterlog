@@ -126,11 +126,9 @@
 </template>
 
 <script>
-
 export default {
-  name: "Hero",
   props: {
-    shows: Array,
+    shows: Array
   },
   computed: {
     musicalsCounter: function() {

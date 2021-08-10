@@ -1,7 +1,7 @@
 <template>
   <main id="app">
-    <Hero v-bind:shows="shows"/>
-    <Shows v-bind:shows="shows"/>
+    <Hero v-bind:shows="shows" />
+    <Shows v-bind:shows="shows" />
   </main>
 </template>
 
@@ -10,8 +10,7 @@ import Shows from "./components/Shows.vue";
 import Hero from "./components/Hero.vue";
 
 export default {
-  name: "app",
-  data: function() {
+  data() {
     return {
       shows: []
     };
@@ -20,11 +19,11 @@ export default {
     Shows,
     Hero
   },
-  async created (){
-    this.shows = await this.getShows() 
+  async created() {
+    this.shows = await this.getShows();
   },
   methods: {
-    getShows : async() => {
+    getShows: async () => {
       const query = `{
         showCollection(order: date_DESC) {
           items {
@@ -56,14 +55,16 @@ export default {
         method: "POST",
         headers: {
           Authorization: `Bearer ${process.env.VUE_APP_CONTENTFUL_ACCESS_TOKEN}`,
-          "Content-Type": "application/json",
+          "Content-Type": "application/json"
         },
-        body: JSON.stringify({ query }),
+        body: JSON.stringify({ query })
       };
 
       try {
-        const response = await fetch(fetchUrl, fetchOptions).then((response) => response.json());
-        console.log(response)
+        const response = await fetch(fetchUrl, fetchOptions).then(response =>
+          response.json()
+        );
+        console.log(response);
         return response.data.showCollection.items;
       } catch (error) {
         throw new Error("Could not receive the data from Contentful!");
