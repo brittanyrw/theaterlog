@@ -32,14 +32,7 @@ The guide will walk you through the following:
 
 ## Step 1: Get the code
 
-Fork this repository to your GitHub account, and clone your forked repo to your local machine using git or the GitHub CLI.
-
-To run this project, you will need to download the following to your computer:
-
-* [Node.js](https://nodejs.org/en/)
-* [Vue.js](https://vuejs.org/v2/guide/installation.html#NPM)
-
-And you may also want to download the [Vue CLI](https://cli.vuejs.org/#getting-started).
+Fork this repository to your GitHub account, and clone your **forked** repo to your local machine using git or the GitHub CLI.
 
 ---
 
@@ -56,7 +49,7 @@ Create your Contentful account.
 - Go to Settings > General Settings and make a note of the Space ID.
 - Go to Settings > API keys and generate an access token for the Content Delivery API.
 - Create an `.env` file at the root of your project.
-- Copy the contents of `.env.local.example` into your `.env` file.
+- Copy the variables in `.env.local.example` into your `.env` file.
 - Add your Space ID and access token to `.env`.
 
 ---
@@ -85,27 +78,26 @@ yarn global add contentful-cli
 
 ## Step 5: Authenticate with the CLI
 
-Run `contentful login` in your terminal and follow the instructions in your browser.
+Run `contentful login` in your terminal and follow the instructions in your browser and in the terminal.
 
 ---
 
 ## Step 6: Run the import
 
-Import the content model and example post to your Contentful space.
-
-[Access the Contentful CLI docs on importing/exporting data here.](https://www.contentful.com/developers/docs/tutorials/cli/import-and-export/)
-
-### ::TLDR
+Import the content model and example entries to your Contentful space.
 
 Run the following command in your terminal, ensuring you switch out SPACE_ID for your new Space ID.
 
 ```bash
+# navigate to the setup folder within your project
 cd /path/to/repo/theatherlog/setup
 
 contentful space import --space-id SPACE_ID --content-file contentful-export.json
 ```
 
-The terminal will do some fancy things. If all looks good - refresh Contentful in your browser and you'll find the content model and example post has been imported for you! 🎉🎉🎉
+[Access the Contentful CLI docs on importing/exporting data here.](https://www.contentful.com/developers/docs/tutorials/cli/import-and-export/)
+
+The terminal will do some fancy things. If all looks good - refresh Contentful in your browser and you'll find the content model and example entries have been imported for you! 🎉🎉🎉
 
 ---
 
