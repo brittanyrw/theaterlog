@@ -86,7 +86,7 @@ Run `contentful login` in your terminal and follow the instructions in your brow
 
 ## Step 6: Run the import
 
-Import the content model and example entries to your Contentful space.
+Import the content model and example entries to your Contentful space. This will import a content model for theater shows and sample entries. You can modify these entries to fit your own personal tracker after import.
 
 Run the following command in your terminal, ensuring you switch out SPACE_ID for your new Space ID.
 
