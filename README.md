@@ -30,6 +30,8 @@ The guide will walk you through the following:
 * Importing the content model and example content into your own Contentful space
 * Suggestions for customization
 
+Read [this blog post](https://www.contentful.com/blog/2021/08/26/build-using-vue-and-contentful/) to learn more about how I integrated Contentful into this project.
+
 ## Step 1: Get the code
 
 Fork this repository to your GitHub account, and clone your **forked** repo to your local machine using git or the GitHub CLI.
