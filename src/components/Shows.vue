@@ -113,6 +113,8 @@ export default {
     position: relative;
     margin-bottom: 20px;
     list-style: none;
+    display: grid;
+    grid-template-columns: 1fr;
     @media screen and (min-width: 662px) {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -132,6 +134,7 @@ export default {
       max-width: 400px;
       margin: 0 auto 40px auto;
       position: relative;
+      width: 100%;
       @media screen and (min-width: 662px) {
         max-width: none;
         margin: 0;
