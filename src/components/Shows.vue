@@ -30,15 +30,16 @@
           <p v-if="show.upcoming" class="upcoming-tag">upcoming</p>
           <p class="type">{{ show.type }}</p>
           <div class="show-name">
-            <a
-              v-if="show.link"
-              class="show-title"
-              v-bind:href="show.link"
-              target="_blank"
-              :title="`Go to website for ${show.name}`"
-              >{{ show.name }}</a
-            >
-            <p v-else class="show-title">{{ show.name }}</p>
+            <p v-if="show.link">
+              <a
+                v-bind:href="show.link"
+                class="upcoming-show-link"
+                target="_blank"
+                :title="`Go to website for ${show.name}`"
+                >{{ show.name }}</a
+              >
+            </p>
+            <p v-else>{{ show.name }}</p>
           </div>
           <div class="show-content">
             <p class="show-theater">{{ show.theater.name }}</p>
@@ -211,7 +212,7 @@ export default {
           background-color: $black;
           color: $purple;
           padding: 20px;
-          .show-title {
+          p {
             font-size: 25px;
             font-family: "Abril Fatface";
             text-align: center;
@@ -276,10 +277,8 @@ export default {
         .show-name {
           background-color: $purple;
           color: $black;
-          text-align: center;
-          a {
+          a.upcoming-show-link {
             color: $black;
-            text-decoration: none;
           }
         }
         .show-content {
