@@ -46,7 +46,7 @@
         <div class="stats-wrapper">
           <div class="stats">
             <div class="counter total-stat">
-              <p class="stat-number">{{ shows.length }}</p>
+              <p class="stat-number">{{ viewedShows.length }}</p>
               <p class="stat-title">Total Shows Seen</p>
             </div>
             <div class="counter upcoming-stat">
@@ -54,26 +54,26 @@
               <p class="stat-title">Upcoming</p>
             </div>
             <div class="counter musical-stat">
-              <p class="stat-number">{{ musicalsCounter }}</p>
+              <p class="stat-number">{{ valueCount("type", "musical") }}</p>
               <p class="stat-title">Musicals</p>
             </div>
             <div class="counter play-stat">
-              <p class="stat-number">{{ playsCounter }}</p>
+              <p class="stat-number">{{ valueCount("type", "play") }}</p>
               <p class="stat-title">Plays</p>
             </div>
             <div class="counter play-stat">
-              <p class="stat-number">{{ danceCounter }}</p>
+              <p class="stat-number">{{ valueCount("type", "dance") }}</p>
               <p class="stat-title">Dances</p>
             </div>          
           </div>
           <div class="stats">
             <div class="counter price-stat">
-              <p class="stat-number">${{ priceCounter.toLocaleString() }}</p>
+              <p class="stat-number">${{ count("price").toLocaleString() }}</p>
               <p class="stat-title">Total Spent</p>
             </div>
             <div class="counter price-stat">
               <p class="stat-number">
-                ${{ Math.floor(priceCounter / shows.length) }}
+                ${{ Math.floor(count("price") / viewedShows.length) }}
               </p>
               <p class="stat-title">Average Ticket Cost</p>
             </div>
@@ -139,26 +139,8 @@ export default {
     shows: Array
   },
   computed: {
-    musicalsCounter: function() {
-      const result = this.shows.reduce(
-        (res, item) => (item.type == "musical" ? res + 1 : res),
-        0
-      );
-      return result;
-    },
-    playsCounter: function() {
-      const result = this.shows.reduce(
-        (res, item) => (item.type == "play" ? res + 1 : res),
-        0
-      );
-      return result;
-    },
-    danceCounter: function() {
-      const result = this.shows.reduce(
-        (res, item) => (item.type == "dance" ? res + 1 : res),
-        0
-      );
-      return result;
+    viewedShows(){
+      return this.shows.filter(item => !item.upcoming);
     },
     upcomingCounter: function() {
       const result = this.shows.reduce(
@@ -166,13 +148,17 @@ export default {
         0
       );
       return result;
+    }
+  },
+  methods: {
+    valueCount(key, value) {
+      return this.viewedShows.filter(show => show[key] === value).length;
     },
-    priceCounter: function() {
-      const result = this.shows.reduce(
-        (res, item) => (item.price ? res + item.price : res),
+    count(key) {
+      return this.viewedShows.reduce(
+        (res, show) => (show[key] ? res + show[key] : res),
         0
       );
-      return Math.floor(result);
     }
   }
 };
