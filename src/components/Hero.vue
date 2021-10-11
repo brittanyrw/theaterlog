@@ -84,48 +84,18 @@
         <div class="review-legend">
           <h3>Review Legend</h3>
           <ul class="review-emoji-list">
-            <li>
-              <img alt="love emoji" src="./../assets/love.svg" />
-              <p>love</p>
-            </li>
-            <li>
-              <img alt="happy emoji" src="./../assets/happy.svg" />
-              <p>like</p>
-            </li>
-            <li>
-              <img alt="funny emoji" src="./../assets/funny.svg" />
-              <p>funny</p>
-            </li>
-            <li>
-              <img alt="sad emoji" src="./../assets/sad.svg" />
-              <p>sad</p>
-            </li>
-            <li>
-              <img alt="confused emoji" src="./../assets/confused.svg" />
-              <p>confused</p>
-            </li>
-            <li>
-              <img alt="meh emoji" src="./../assets/meh.svg" />
-              <p>meh</p>
-            </li>
-            <li>
-              <img alt="dislike emoji" src="./../assets/dislike.svg" />
-              <p>dislike</p>
-            </li>
-            <li>
-              <img
-                alt="happy but also sad emoji"
-                src="./../assets/happy-sad.svg"
-              />
-              <p>sad but happy</p>
-            </li>
-            <li>
-              <img
-                alt="thought provoking emoji"
-                src="./../assets/thought-provoking.svg"
-              />
-              <p>thought provoking</p>
-            </li>
+            <li
+            v-for="(ratingAmount, rating) in countArray(ratings)"
+            :key="rating"
+          >
+            <img 
+              :alt="`${rating} emoji`" 
+              class="emoji"
+              :src="require(`@/assets/${rating}.svg`)"/>
+            <p class="rating-name">{{ rating }} 
+              <span class="rating-amount">{{ ratingAmount }}</span>
+            </p>
+          </li>
           </ul>
         </div>
       </div>
@@ -148,6 +118,13 @@ export default {
         0
       );
       return result;
+    },
+    ratings() {
+      let reviewList = [];
+      this.viewedShows.forEach(function(each) {
+        reviewList.push(each.rating);
+      });
+      return reviewList;
     }
   },
   methods: {
@@ -159,6 +136,19 @@ export default {
         (res, show) => (show[key] ? res + show[key] : res),
         0
       );
+    },
+    countArray(arr) {
+      var countedArray = {};
+
+      arr.forEach(function(el) {
+        countedArray[el] = countedArray[el] + 1 || 1;
+      });
+
+     const sortedCountedObj = Object.entries(countedArray).sort(
+        (a, b) => b[1] - a[1]
+      );
+      countedArray = Object.fromEntries(sortedCountedObj);
+      return countedArray;
     }
   }
 };
@@ -294,9 +284,16 @@ export default {
       li {
         text-align: center;
         margin: 10px;
-        p {
-          border: 2px solid black;
+        .rating-name {
+          border: 2px solid $black;
+          padding: 5px 0 5px 5px;
+          margin-bottom: 5px;
+        }
+        .rating-amount {
           padding: 5px;
+          border-left: 2px solid $black;
+          background-color: $black;
+          color: $purple;
         }
         img {
           width: 40px;
