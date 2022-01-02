@@ -1,50 +1,53 @@
 <template>
   <div class="shows">
-    <div class="row">
-      <div
+    <ul class="show-container">
+      <li
         v-for="show in shows"
-        v-bind:key="show.id"
+        v-bind:key="show.sys.id"
         class="show"
         v-bind:class="[{ upcoming: show.upcoming }]"
       >
         <div
           v-if="
-            show.upcoming == false && (show.fav || show.review || show.multi)
+            show.upcoming == false &&
+              (show.favorite || show.rating || show.multi)
           "
           class="show-opinion"
         >
-          <div v-if="show.fav" class="fav-view">
+          <div v-if="show.favorite" class="fav-view">
             <font-awesome-icon icon="star" class="fav-icon" />
           </div>
-          <div v-if="show.review" class="review">
+          <div v-if="show.rating" class="review">
             <img
-              v-bind:src="require('../assets/' + show.review + '.svg')"
-              v-bind:alt="show.review + ' emoji'"
+              v-bind:src="require(`../assets/${show.rating}.svg`)"
+              v-bind:alt="`Impression of the show is ${show.rating}`"
             />
           </div>
           <div v-if="show.multi" class="multi-view">{{ show.multi }}</div>
           <p v-if="show.price >= 0" class="show-price">${{ show.price }}</p>
         </div>
         <div class="show-info">
+          <p v-if="show.upcoming" class="upcoming-tag">upcoming</p>
           <p class="type">{{ show.type }}</p>
           <div class="show-name">
             <p v-if="show.link">
               <a
                 v-bind:href="show.link"
+                class="upcoming-show-link"
                 target="_blank"
-                :title="'Go to website for ' + show.name"
+                :title="`Go to website for ${show.name}`"
                 >{{ show.name }}</a
               >
             </p>
             <p v-else>{{ show.name }}</p>
           </div>
           <div class="show-content">
-            <p class="show-theater">{{ show.theater }}</p>
-            <p class="show-location">{{ show.location }}</p>
-            <p class="show-date">{{ show.date }}</p>
+            <p class="show-theater">{{ show.theater.name }}</p>
+            <p class="show-location">{{ show.theater.city }}</p>
+            <p class="show-date">{{ moment(show.date).format("MMMM YYYY") }}</p>
           </div>
         </div>
-        <div v-if="show.favSong" class="favs">
+        <div v-if="show.song && !show.upcoming" class="favs">
           <p class="fav-song-label">Fav Song</p>
           <div class="fav-song">
             <div class="fav-song-content">
@@ -53,17 +56,19 @@
               </p>
               <p class="song-name">
                 <a
-                  v-bind:href="show.favSongLink"
+                  v-if="show.song.name"
+                  v-bind:href="show.song.videoLink"
                   target="_blank"
-                  :title="`View video for ${show.favSong} from ${show.name}`">
-                  {{ show.favSong }}
+                  :title="`View video for ${show.song.name} from ${show.name}`"
+                >
+                  {{ show.song.name }}
                 </a>
               </p>
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </li>
+    </ul>
     <div class="icon-attribute">
       Icons made by
       <a
@@ -88,31 +93,13 @@
 </template>
 
 <script>
-import { showList } from "../data/shows";
-
 export default {
-  name: "Shows",
-  data: function() {
-    return {
-      shows: showList,
-      rowLength: 3
-    };
-  },
-  computed: {
-    rowCount: function() {
-      return Math.ceil(this.shows.length / this.rowLength);
-    }
-  },
-  methods: {
-    itemCountInRow: function(index) {
-      return this.shows.slice(
-        (index - 1) * this.rowLength,
-        index * this.rowLength
-      );
-    }
+  props: {
+    shows: Array
   }
 };
 </script>
+
 <style lang="scss" scoped>
 @import "@/assets/styles/variables.scss";
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
@@ -122,10 +109,13 @@ export default {
   @media screen and (min-width: 662px) {
     padding: 20px;
   }
-  .row {
+  .show-container {
     padding: 0;
     position: relative;
     margin-bottom: 20px;
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr;
     @media screen and (min-width: 662px) {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -145,6 +135,7 @@ export default {
       max-width: 400px;
       margin: 0 auto 40px auto;
       position: relative;
+      width: 100%;
       @media screen and (min-width: 662px) {
         max-width: none;
         margin: 0;
@@ -199,12 +190,23 @@ export default {
         position: relative;
         .type {
           position: absolute;
-          background-color: orange;
           padding: 5px 10px;
           top: -38px;
           right: 10px;
           border: 3px solid $black;
           background-color: $purple;
+          z-index: 99;
+          text-align: center;
+        }
+        .upcoming-tag {
+          position: absolute;
+          padding: 5px 10px;
+          top: -38px;
+          right: 110px;
+          border: 3px solid $black;
+          background-color: $purple;
+          z-index: 99;
+          text-align: center;
         }
         .show-name {
           background-color: $black;
@@ -230,7 +232,7 @@ export default {
         text-align: center;
         padding: 10px 20px 60px 20px;
         @media screen and (min-width: 662px) {
-          padding: 20px 35px 90px 35px;
+          padding: 20px 35px 75px 35px;
         }
       }
       .favs {
@@ -268,6 +270,28 @@ export default {
               color: $purple;
             }
           }
+        }
+      }
+      &.upcoming {
+        background-color: $black;
+        .show-name {
+          background-color: $purple;
+          color: $black;
+          a.upcoming-show-link {
+            color: $black;
+          }
+        }
+        .show-content {
+          padding-bottom: 20px;
+          color: $purple;
+        }
+
+        .type,
+        .upcoming-tag {
+          background-color: $black;
+          color: $purple;
+          border: 3px solid $purple;
+          outline: 3px solid $black;
         }
       }
     }

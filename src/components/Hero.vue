@@ -1,5 +1,5 @@
 <template>
-  <div class="hero">
+  <section class="hero">
     <header>
       <div class="overview">
         <h1>Theater Log</h1>
@@ -24,7 +24,7 @@
       </div>
       <div class="hero-sidebar">
         <div class="external-links">
-          <h4>Other Logs</h4>
+          <h2>Other Logs</h2>
           <a href="https://thebookishlog.com" target="_blank">Bookish Log</a>
         </div>
         <div class="info">
@@ -43,32 +43,40 @@
     <div class="statistics">
       <div class="statistics-content">
         <h3>Statistics</h3>
-        <div class="stats">
-          <div class="counter total-stat">
-            <p class="stat-number">{{ shows.length + 26 }}</p>
-            <p class="stat-title">Total Shows Seen</p>
+        <div class="stats-wrapper">
+          <div class="stats">
+            <div class="counter total-stat">
+              <p class="stat-number">{{ viewedShows.length }}</p>
+              <p class="stat-title">Total Shows Seen</p>
+            </div>
+            <div class="counter upcoming-stat">
+              <p class="stat-number">{{ upcomingCounter }}</p>
+              <p class="stat-title">Upcoming</p>
+            </div>
+            <div class="counter musical-stat">
+              <p class="stat-number">{{ valueCount("type", "musical") }}</p>
+              <p class="stat-title">Musicals</p>
+            </div>
+            <div class="counter play-stat">
+              <p class="stat-number">{{ valueCount("type", "play") }}</p>
+              <p class="stat-title">Plays</p>
+            </div>
+            <div class="counter play-stat">
+              <p class="stat-number">{{ valueCount("type", "dance") }}</p>
+              <p class="stat-title">Dances</p>
+            </div>          
           </div>
-          <div class="counter upcoming-stat">
-            <p class="stat-number">{{ upcomingCounter }}</p>
-            <p class="stat-title">Upcoming</p>
-          </div>
-          <div class="counter musical-stat">
-            <p class="stat-number">{{ musicalsCounter + 26 }}</p>
-            <p class="stat-title">Musicals</p>
-          </div>
-          <div class="counter play-stat">
-            <p class="stat-number">{{ playsCounter }}</p>
-            <p class="stat-title">Plays</p>
-          </div>
-          <div class="counter price-stat">
-            <p class="stat-number">${{ priceCounter.toLocaleString() }}</p>
-            <p class="stat-title">Total Spent</p>
-          </div>
-          <div class="counter price-stat">
-            <p class="stat-number">
-              ${{ Math.floor(priceCounter / shows.length) }}
-            </p>
-            <p class="stat-title">Average Ticket Cost</p>
+          <div class="stats">
+            <div class="counter price-stat">
+              <p class="stat-number">${{ count("price").toLocaleString() }}</p>
+              <p class="stat-title">Total Spent</p>
+            </div>
+            <div class="counter price-stat">
+              <p class="stat-number">
+                ${{ Math.floor(count("price") / viewedShows.length) }}
+              </p>
+              <p class="stat-title">Average Ticket Cost</p>
+            </div>
           </div>
         </div>
       </div>
@@ -76,93 +84,71 @@
         <div class="review-legend">
           <h3>Review Legend</h3>
           <ul class="review-emoji-list">
-            <li>
-              <img alt="love emoji" src="./../assets/love.svg" />
-              <p>love</p>
-            </li>
-            <li>
-              <img alt="happy emoji" src="./../assets/happy.svg" />
-              <p>like</p>
-            </li>
-            <li>
-              <img alt="funny emoji" src="./../assets/funny.svg" />
-              <p>funny</p>
-            </li>
-            <li>
-              <img alt="sad emoji" src="./../assets/sad.svg" />
-              <p>sad</p>
-            </li>
-            <li>
-              <img alt="confused emoji" src="./../assets/confused.svg" />
-              <p>confused</p>
-            </li>
-            <li>
-              <img alt="meh emoji" src="./../assets/meh.svg" />
-              <p>meh</p>
-            </li>
-            <li>
-              <img alt="dislike emoji" src="./../assets/dislike.svg" />
-              <p>dislike</p>
-            </li>
-            <li>
-              <img
-                alt="happy but also sad emoji"
-                src="./../assets/happy-sad.svg"
-              />
-              <p>sad but happy</p>
-            </li>
-            <li>
-              <img
-                alt="thought provoking emoji"
-                src="./../assets/thought-provoking.svg"
-              />
-              <p>thought provoking</p>
-            </li>
+            <li
+            v-for="(ratingAmount, rating) in countArray(ratings)"
+            :key="rating"
+          >
+            <img 
+              :alt="`${rating} emoji`" 
+              class="emoji"
+              :src="require(`@/assets/${rating}.svg`)"/>
+            <p class="rating-name">{{ rating }} 
+              <span class="rating-amount">{{ ratingAmount }}</span>
+            </p>
+          </li>
           </ul>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
-import { showList } from "../data/shows";
-
 export default {
-  name: "Hero",
-  data: function() {
-    return {
-      shows: showList
-    };
+  props: {
+    shows: Array
   },
   computed: {
-    musicalsCounter: function() {
-      var result = showList.reduce(
-        (res, item) => (item.type == "musical" ? res + 1 : res),
-        0
-      );
-      return result;
-    },
-    playsCounter: function() {
-      var result = showList.reduce(
-        (res, item) => (item.type == "play" ? res + 1 : res),
-        0
-      );
-      return result;
+    viewedShows(){
+      return this.shows.filter(item => !item.upcoming);
     },
     upcomingCounter: function() {
-      var result = showList.reduce(
+      const result = this.shows.reduce(
         (res, item) => (item.upcoming ? res + item.upcoming : res),
         0
       );
       return result;
     },
-    priceCounter: function() {
-      var result = showList.reduce(
-        (res, item) => (item.price ? res + item.price : res),
+    ratings() {
+      let reviewList = [];
+      this.viewedShows.forEach(function(each) {
+        reviewList.push(each.rating);
+      });
+      return reviewList;
+    }
+  },
+  methods: {
+    valueCount(key, value) {
+      return this.viewedShows.filter(show => show[key] === value).length;
+    },
+    count(key) {
+      return this.viewedShows.reduce(
+        (res, show) => (show[key] ? res + show[key] : res),
         0
       );
-      return Math.floor(result);
+    },
+    countArray(arr) {
+      var countedArray = {};
+
+      arr.forEach(function(el) {
+        countedArray[el] = countedArray[el] + 1 || 1;
+      });
+
+     const sortedCountedObj = Object.entries(countedArray).sort(
+        (a, b) => b[1] - a[1]
+      );
+      countedArray = Object.fromEntries(sortedCountedObj);
+      return countedArray;
     }
   }
 };
@@ -298,9 +284,16 @@ export default {
       li {
         text-align: center;
         margin: 10px;
-        p {
-          border: 2px solid black;
+        .rating-name {
+          border: 2px solid $black;
+          padding: 5px 0 5px 5px;
+          margin-bottom: 5px;
+        }
+        .rating-amount {
           padding: 5px;
+          border-left: 2px solid $black;
+          background-color: $black;
+          color: $purple;
         }
         img {
           width: 40px;
