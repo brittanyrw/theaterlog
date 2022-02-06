@@ -24,7 +24,9 @@
             />
           </div>
           <div v-if="show.multi" class="multi-view">{{ show.multi }}</div>
-          <p v-if="show.price >= 0" class="show-price">${{ show.price }}</p>
+          <p v-if="show.price >= 0" class="show-price">
+            ${{ Math.floor(show.price) }}
+          </p>
         </div>
         <div class="show-info">
           <p v-if="show.upcoming" class="upcoming-tag">upcoming</p>

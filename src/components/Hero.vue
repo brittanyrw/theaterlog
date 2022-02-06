@@ -64,11 +64,13 @@
             <div class="counter play-stat">
               <p class="stat-number">{{ valueCount("type", "dance") }}</p>
               <p class="stat-title">Dances</p>
-            </div>          
+            </div>
           </div>
           <div class="stats">
             <div class="counter price-stat">
-              <p class="stat-number">${{ count("price").toLocaleString() }}</p>
+              <p class="stat-number">
+                ${{ Math.floor(count("price")).toLocaleString() }}
+              </p>
               <p class="stat-title">Total Spent</p>
             </div>
             <div class="counter price-stat">
@@ -85,17 +87,19 @@
           <h3>Review Legend</h3>
           <ul class="review-emoji-list">
             <li
-            v-for="(ratingAmount, rating) in countArray(ratings)"
-            :key="rating"
-          >
-            <img 
-              :alt="`${rating} emoji`" 
-              class="emoji"
-              :src="require(`@/assets/${rating}.svg`)"/>
-            <p class="rating-name">{{ rating }} 
-              <span class="rating-amount">{{ ratingAmount }}</span>
-            </p>
-          </li>
+              v-for="(ratingAmount, rating) in countArray(ratings)"
+              :key="rating"
+            >
+              <img
+                :alt="`${rating} emoji`"
+                class="emoji"
+                :src="require(`@/assets/${rating}.svg`)"
+              />
+              <p class="rating-name">
+                {{ rating }}
+                <span class="rating-amount">{{ ratingAmount }}</span>
+              </p>
+            </li>
           </ul>
         </div>
       </div>
@@ -109,7 +113,7 @@ export default {
     shows: Array
   },
   computed: {
-    viewedShows(){
+    viewedShows() {
       return this.shows.filter(item => !item.upcoming);
     },
     upcomingCounter: function() {
@@ -144,7 +148,7 @@ export default {
         countedArray[el] = countedArray[el] + 1 || 1;
       });
 
-     const sortedCountedObj = Object.entries(countedArray).sort(
+      const sortedCountedObj = Object.entries(countedArray).sort(
         (a, b) => b[1] - a[1]
       );
       countedArray = Object.fromEntries(sortedCountedObj);
