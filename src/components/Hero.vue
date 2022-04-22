@@ -17,7 +17,9 @@
           <p class="portfolio-link">
             Created by
             <a href="https://musicalwebdev.com" target="_blank"
-              >Brittany Walker.</a
+              >Brittany Walker</a
+            >. View the code <a href="https://github.com/brittanyrw/theaterlog" target="_blank"
+              >on GitHub.</a
             >
           </p>
         </div>
