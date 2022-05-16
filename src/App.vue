@@ -1,7 +1,7 @@
 <template>
   <main id="app">
-    <Hero v-bind:shows="shows" />
-    <Shows v-bind:shows="shows" />
+    <Hero :shows="shows" />
+    <Shows :shows="shows" />
   </main>
 </template>
 

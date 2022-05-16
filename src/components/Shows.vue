@@ -3,9 +3,9 @@
     <ul class="show-container">
       <li
         v-for="show in shows"
-        v-bind:key="show.sys.id"
+        :key="show.sys.id"
         class="show"
-        v-bind:class="[{ upcoming: show.upcoming }]"
+        :class="[{ upcoming: show.upcoming }]"
       >
         <div
           v-if="
@@ -19,8 +19,8 @@
           </div>
           <div v-if="show.rating" class="review">
             <img
-              v-bind:src="require(`../assets/${show.rating}.svg`)"
-              v-bind:alt="`Impression of the show is ${show.rating}`"
+              :src="require(`../assets/${show.rating}.svg`)"
+              :alt="`Impression of the show is ${show.rating}`"
             />
           </div>
           <div v-if="show.multi" class="multi-view">{{ show.multi }}</div>
@@ -34,7 +34,7 @@
           <div class="show-name">
             <p v-if="show.link">
               <a
-                v-bind:href="show.link"
+                :href="show.link"
                 class="upcoming-show-link"
                 target="_blank"
                 :title="`Go to website for ${show.name}`"
@@ -59,7 +59,7 @@
               <p class="song-name">
                 <a
                   v-if="show.song.name"
-                  v-bind:href="show.song.videoLink"
+                  :href="show.song.videoLink"
                   target="_blank"
                   :title="`View video for ${show.song.name} from ${show.name}`"
                 >

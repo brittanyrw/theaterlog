@@ -7,7 +7,7 @@
           <p>
             Since watching Grease for the first time in 5th grade, I have been
             hooked on musicals! This app was built to keep track of all of the
-            musicals and plays I have seen since 2010.
+            musicals and plays I have seen since 2008.
           </p>
           <p>
             Click on the show names to learn more about the show or current
