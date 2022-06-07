@@ -25,7 +25,7 @@ export default {
   methods: {
     getShows: async () => {
       const query = `{
-        showCollection(order: date_DESC) {
+        showCollection(order: date_DESC, limit: 200) {
           items {
             sys {
               id
