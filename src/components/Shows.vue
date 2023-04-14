@@ -46,8 +46,20 @@
           <div class="show-content">
             <p class="show-theater">{{ show.theater.name }}</p>
             <p class="show-location">{{ show.theater.city }}</p>
-            <p v-if="show.upcoming" class="show-date">{{ moment(show.date).add(1, 'd').format("MMMM YYYY") }}</p>
-            <p v-else class="show-date">{{ moment(show.date).add(1, 'd').format("MMMM DD, YYYY") }}</p>
+            <p v-if="show.upcoming" class="show-date">
+              {{
+                moment(show.date)
+                  .add(1, "d")
+                  .format("MMMM YYYY")
+              }}
+            </p>
+            <p v-else class="show-date">
+              {{
+                moment(show.date)
+                  .add(1, "d")
+                  .format("MMMM DD, YYYY")
+              }}
+            </p>
           </div>
         </div>
         <div v-if="show.song && !show.upcoming" class="favs">

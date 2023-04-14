@@ -18,7 +18,8 @@
             Created by
             <a href="https://musicalwebdev.com" target="_blank"
               >Brittany Walker</a
-            >. View the code <a href="https://github.com/brittanyrw/theaterlog" target="_blank"
+            >. View the code
+            <a href="https://github.com/brittanyrw/theaterlog" target="_blank"
               >on GitHub.</a
             >
           </p>
@@ -103,10 +104,7 @@
           </ul>
           <h3>Show Locations</h3>
           <ul class="review-emoji-list">
-            <li
-              v-for="(cityAmount, city) in countArray(cities)"
-              :key="city"
-            >
+            <li v-for="(cityAmount, city) in countArray(cities)" :key="city">
               <p class="rating-name">
                 {{ city }}
                 <span class="rating-amount">{{ cityAmount }}</span>
@@ -145,9 +143,12 @@ export default {
     cities() {
       let cityList = [];
       this.viewedShows.forEach(function(each) {
-        if(each.theater.city == "White Plains, NY"){
+        if (each.theater.city === "White Plains, NY") {
           cityList.push("New York, NY");
-        } else if (each.theater.city === "Bethesda, MD" || each.theater.city === "Columbia, MD") {
+        } else if (
+          each.theater.city === "Bethesda, MD" ||
+          each.theater.city === "Columbia, MD"
+        ) {
           cityList.push("Washington, DC");
         } else {
           cityList.push(each.theater.city);
