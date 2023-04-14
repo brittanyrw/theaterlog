@@ -67,8 +67,6 @@
               <p class="stat-number">{{ valueCount("type", "dance") }}</p>
               <p class="stat-title">Dances</p>
             </div>
-          </div>
-          <div class="stats">
             <div class="counter price-stat">
               <p class="stat-number">
                 ${{ Math.floor(count("price")).toLocaleString() }}
@@ -103,6 +101,18 @@
               </p>
             </li>
           </ul>
+          <h3>Show Locations</h3>
+          <ul class="review-emoji-list">
+            <li
+              v-for="(cityAmount, city) in countArray(cities)"
+              :key="city"
+            >
+              <p class="rating-name">
+                {{ city }}
+                <span class="rating-amount">{{ cityAmount }}</span>
+              </p>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
@@ -131,6 +141,19 @@ export default {
         reviewList.push(each.rating);
       });
       return reviewList;
+    },
+    cities() {
+      let cityList = [];
+      this.viewedShows.forEach(function(each) {
+        if(each.theater.city == "White Plains, NY"){
+          cityList.push("New York, NY");
+        } else if (each.theater.city === "Bethesda, MD" || each.theater.city === "Columbia, MD") {
+          cityList.push("Washington, DC");
+        } else {
+          cityList.push(each.theater.city);
+        }
+      });
+      return cityList;
     }
   },
   methods: {

@@ -47,6 +47,14 @@ export default {
               name
               videoLink
             }
+            linkedFrom {
+              actorCollection (limit: 5) {
+                total
+                items {
+                  name
+                }
+              }
+            }
           }
         }
       }`;
