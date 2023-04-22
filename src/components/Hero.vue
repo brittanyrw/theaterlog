@@ -111,6 +111,17 @@
               </p>
             </li>
           </ul>
+          <h3>Top Actors Seen</h3>
+          <ul class="review-emoji-list">
+            <li v-for="actor in actorsList" :key="actor.name">
+              <p class="rating-name">
+                {{ actor.name }}
+                <span class="rating-amount">{{
+                  actor.theaterShowCollection.total
+                }}</span>
+              </p>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
@@ -120,7 +131,8 @@
 <script>
 export default {
   props: {
-    shows: Array
+    shows: Array,
+    actors: Array
   },
   computed: {
     viewedShows() {
@@ -155,6 +167,15 @@ export default {
         }
       });
       return cityList;
+    },
+    actorsList() {
+      let actorData = this.actors;
+      return actorData
+        .sort(
+          (a, b) =>
+            b.theaterShowCollection.total - a.theaterShowCollection.total
+        )
+        .filter(actor => actor.theaterShowCollection.total > 2);
     }
   },
   methods: {
@@ -310,6 +331,9 @@ export default {
     padding: 20px;
     border-top: 3px solid $black;
     text-align: center;
+    h3 {
+      margin-bottom: 0;
+    }
     .review-emoji-list {
       li {
         text-align: center;

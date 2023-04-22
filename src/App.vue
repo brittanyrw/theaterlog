@@ -1,6 +1,6 @@
 <template>
   <main id="app">
-    <Hero :shows="shows" />
+    <Hero :shows="shows" :actors="actors" />
     <Shows :shows="shows" />
   </main>
 </template>
@@ -12,7 +12,8 @@ import Hero from "./components/Hero.vue";
 export default {
   data() {
     return {
-      shows: []
+      shows: [],
+      actors: []
     };
   },
   components: {
@@ -20,7 +21,9 @@ export default {
     Hero
   },
   async created() {
-    this.shows = await this.getShows();
+    let data = await this.getShows();
+    this.shows = data.showCollection.items;
+    this.actors = data.actorCollection.items;
   },
   methods: {
     getShows: async () => {
@@ -47,8 +50,12 @@ export default {
               name
               videoLink
             }
-            linkedFrom {
-              actorCollection (limit: 5) {
+          }
+        }
+          actorCollection (limit: 500, order: name_ASC) {
+            items {
+              name
+              theaterShowCollection (limit: 5) {
                 total
                 items {
                   name
@@ -56,7 +63,6 @@ export default {
               }
             }
           }
-        }
       }`;
       const fetchUrl = `https://graphql.contentful.com/content/v1/spaces/${process.env.VUE_APP_CONTENTFUL_SPACE_ID}`;
       const fetchOptions = {
@@ -72,7 +78,7 @@ export default {
         const response = await fetch(fetchUrl, fetchOptions).then(response =>
           response.json()
         );
-        return response.data.showCollection.items;
+        return response.data;
       } catch (error) {
         throw new Error("Could not receive the data from Contentful!");
       }
