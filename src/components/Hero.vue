@@ -111,6 +111,15 @@
               </p>
             </li>
           </ul>
+          <h3>Testing Actors</h3>
+          <ul class="review-emoji-list">
+            <li v-for="(actorAmount, actor) in countArray(actorsTest)" :key="actor">
+              <p class="rating-name">
+                {{ actor }}
+                <span class="rating-amount">{{ actorAmount }}</span>
+              </p>
+            </li>
+          </ul>
           <h3>Top Actors Seen</h3>
           <ul class="review-emoji-list">
             <li v-for="actor in actorsList" :key="actor.name">
@@ -151,6 +160,17 @@ export default {
         reviewList.push(each.rating);
       });
       return reviewList;
+    },
+    actorsTest() {
+      let actorListTest = [];
+      this.viewedShows.forEach(function(each) {
+        if(each.actors) {
+          each.actors.forEach(function(each) {
+            actorListTest.push(each);
+          })
+        }
+      });
+      return actorListTest;
     },
     cities() {
       let cityList = [];

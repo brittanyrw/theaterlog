@@ -50,6 +50,7 @@ export default {
               name
               videoLink
             }
+            actors
           }
         }
           actorCollection (limit: 500, order: name_ASC) {
