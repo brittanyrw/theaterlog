@@ -111,7 +111,7 @@
               </p>
             </li>
           </ul>
-          <h3>Top Actors Seen</h3>
+          <!-- <h3>Top Actors Seen</h3>
           <ul class="review-emoji-list">
             <li v-for="actor in actorsList" :key="actor.name">
               <p class="rating-name">
@@ -121,7 +121,7 @@
                 }}</span>
               </p>
             </li>
-          </ul>
+          </ul> -->
         </div>
       </div>
     </div>
