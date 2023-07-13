@@ -6,6 +6,9 @@ TheaterLog is a log of all of the musicals and plays I have seen since 2010.
 
 ![TheaterLog Screenshots](readme/theaterlog-screenshot.png?raw=true "TheaterLog Screenshots")
 
+## Note:
+This repo is no longer the source code for [this Contentful blog post](https://www.contentful.com/blog/2021/08/26/build-using-vue-and-contentful/), to view the source code for that blog go to [this Github repo](https://github.com/brittanyrw/theaterlog-contentful).
+
 ## Features
 The tracker is built using [Vue.js](https://vuejs.org/) and [Contentful](https://www.contentful.com). The site consists of Show Cards that are created for each show seen. In the top hero section, there are statistics (number of shows seen, number of musicals seen, etc) as well as a guide to the review emojis.
 
