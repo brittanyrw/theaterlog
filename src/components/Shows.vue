@@ -1,88 +1,92 @@
 <template>
   <div class="shows">
     <ul class="show-container">
-      <li
-        v-for="show in shows"
-        :key="show.sys.id"
-        class="show"
-        :class="[{ upcoming: show.upcoming }]"
-      >
-        <div
-          v-if="
-            show.upcoming == false &&
-              (show.favorite || show.rating || show.multi)
-          "
-          class="show-opinion"
+      <div class="row" v-for="i in rowCount" :key="i">
+        <li
+          v-for="show in itemCountInRow(i)"
+          :key="show.sys.id"
+          class="show"
+          :class="[{ upcoming: show.upcoming }]"
         >
-          <div v-if="show.favorite" class="fav-view">
-            <font-awesome-icon icon="star" class="fav-icon" />
-          </div>
-          <div v-if="show.rating" class="review">
-            <img
-              :src="require(`../assets/${show.rating}.svg`)"
-              :alt="`Impression of the show is ${show.rating}`"
-            />
-          </div>
-          <div v-if="show.multi" class="multi-view">{{ show.multi }}</div>
-          <p v-if="show.price >= 0" class="show-price">
-            ${{ Math.floor(show.price) }}
-          </p>
-        </div>
-        <div class="show-info">
-          <p v-if="show.upcoming" class="upcoming-tag">upcoming</p>
-          <p class="type">{{ show.type }}</p>
-          <div class="show-name">
-            <p v-if="show.link">
-              <a
-                :href="show.link"
-                class="upcoming-show-link"
-                target="_blank"
-                :title="`Go to website for ${show.name}`"
-                >{{ show.name }}</a
-              >
-            </p>
-            <p v-else>{{ show.name }}</p>
-          </div>
-          <div class="show-content">
-            <p class="show-theater">{{ show.theater.name }}</p>
-            <p class="show-location">{{ show.theater.city }}</p>
-            <p v-if="show.upcoming" class="show-date">
-              {{
-                moment(show.date)
-                  .add(1, "d")
-                  .format("MMMM YYYY")
-              }}
-            </p>
-            <p v-else class="show-date">
-              {{
-                moment(show.date)
-                  .add(1, "d")
-                  .format("MMMM DD, YYYY")
-              }}
+          <div
+            v-if="
+              show.upcoming == false &&
+                (show.favorite || show.rating || show.multi)
+            "
+            class="show-opinion"
+          >
+            <div v-if="show.favorite" class="fav-view">
+              <font-awesome-icon icon="star" class="fav-icon" />
+            </div>
+            <div v-if="show.rating" class="review">
+              <img
+                :src="require(`../assets/${show.rating}.svg`)"
+                :alt="`Impression of the show is ${show.rating}`"
+              />
+            </div>
+            <div v-if="show.multi" class="multi-view">{{ show.multi }}</div>
+            <p v-if="show.price >= 0" class="show-price">
+              ${{ Math.floor(show.price) }}
             </p>
           </div>
-        </div>
-        <div v-if="show.song && !show.upcoming" class="favs">
-          <p class="fav-song-label">Fav Song</p>
-          <div class="fav-song">
-            <div class="fav-song-content">
-              <p class="song-label">
-                <font-awesome-icon icon="music" class="fs-icon" />
-              </p>
-              <p class="song-name">
+          <div class="show-info">
+            <p v-if="show.upcoming" class="upcoming-tag">upcoming</p>
+            <p class="type">{{ show.type }}</p>
+            <div class="show-name">
+              <p v-if="show.link">
                 <a
-                  v-if="show.song.name"
-                  :href="show.song.videoLink"
+                  :href="show.link"
+                  class="upcoming-show-link"
                   target="_blank"
-                  :title="`View video for ${show.song.name} from ${show.name}`"
+                  :title="`Go to website for ${show.name}`"
+                  >{{ show.name }}</a
                 >
-                  {{ show.song.name }}
-                </a>
+              </p>
+              <p v-else>{{ show.name }}</p>
+            </div>
+            <div class="show-content">
+              <p class="show-theater">{{ show.theater.name }}</p>
+              <p class="show-location">{{ show.theater.city }}</p>
+              <p v-if="show.upcoming" class="show-date">
+                {{
+                  moment(show.date)
+                    .add(1, "d")
+                    .format("MMMM YYYY")
+                }}
+              </p>
+              <p v-else class="show-date">
+                {{
+                  moment(show.date)
+                    .add(1, "d")
+                    .format("MMMM DD, YYYY")
+                }}
               </p>
             </div>
           </div>
-        </div>
-      </li>
+          <div v-if="show.song && !show.upcoming" class="favs">
+            <p class="fav-song-label">Fav Song</p>
+            <div class="fav-song">
+              <div class="fav-song-content">
+                <p class="song-label">
+                  <font-awesome-icon icon="music" class="fs-icon" />
+                </p>
+                <p class="song-name">
+                  <a
+                    v-if="show.song.name"
+                    :href="show.song.videoLink"
+                    target="_blank"
+                    :title="
+                      `View video for ${show.song.name} from ${show.name}`
+                    "
+                  >
+                    {{ show.song.name }}
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </li>
+      </div>
     </ul>
     <div class="icon-attribute">
       Icons made by
@@ -111,6 +115,24 @@
 export default {
   props: {
     shows: Array
+  },
+  data() {
+    return {
+      rowLength: 3
+    };
+  },
+  computed: {
+    rowCount() {
+      return Math.ceil(this.shows.length / this.rowLength);
+    }
+  },
+  methods: {
+    itemCountInRow(index) {
+      return this.shows.slice(
+        (index - 1) * this.rowLength,
+        index * this.rowLength
+      );
+    }
   }
 };
 </script>
@@ -118,43 +140,63 @@ export default {
 <style lang="scss" scoped>
 @import "@/assets/styles/variables.scss";
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
-.shows {
-  padding: 40px 10px;
-  background-color: $black;
+
+.row {
+  background-color: $white;
+  display: flex;
+  flex-wrap: wrap;
+  // grid-template-columns: 1fr 1fr 1fr;
+  // grid-auto-rows: auto;
+  // grid-gap: 40px;
+  padding: 40px;
+  min-height: 410px;
+  border: 10px solid $mid-purple;
+  position: relative;
+  // grid-template-columns: 1fr;
+  justify-content: space-around;
+  align-content: center;
   @media screen and (min-width: 662px) {
-    padding: 20px;
+    // display: grid;
+    // grid-template-columns: 1fr 1fr;
+    // grid-gap: 60px;
+    padding: 40px 20px;
   }
+  @media screen and (min-width: 992px) {
+    // grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .row:after {
+  position: absolute;
+  content: "";
+  height: 23px;
+  width: 105%;
+  left: -2.5%;
+  top: -5.5%;
+  background-color: $dark-purple;
+}
+}
+.shows {
+  // padding: 40px 10px;
+  // background-color: $black;
+  // @media screen and (min-width: 662px) {
+  //   padding: 20px;
+  // }
   .show-container {
     padding: 0;
     position: relative;
     margin-bottom: 20px;
     list-style: none;
-    display: grid;
-    grid-template-columns: 1fr;
-    @media screen and (min-width: 662px) {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-gap: 60px;
-      padding: 20px;
-    }
-    @media screen and (min-width: 992px) {
-      grid-template-columns: 1fr 1fr 1fr;
-    }
     .show {
-      border: 2px solid $purple;
-      box-shadow: 9px 9px 0 $purple;
+      border: 2px solid $white;
       outline: 3px solid $black;
-      border-radius: 7px;
-      background-color: $purple;
+      background-color: $white;
       margin-bottom: 50px;
-      max-width: 400px;
-      margin: 0 auto 40px auto;
+      max-width: 320px;
+      margin: 20px auto 40px auto;
       position: relative;
       width: 100%;
-      @media screen and (min-width: 662px) {
-        max-width: none;
-        margin: 0;
-      }
       .show-opinion {
         position: absolute;
         left: -30px;
@@ -168,7 +210,7 @@ export default {
         }
         .fav-view {
           .fav-icon {
-            color: $purple;
+            color: $yellow;
             font-size: 35px;
             path {
               stroke: $black;
@@ -187,18 +229,20 @@ export default {
         }
         .multi-view,
         .show-price {
-          background-color: $black;
-          color: $purple;
+          color: $black;
           padding: 10px;
-          border: 3px solid $purple;
-          outline: 1px solid $black;
+          border: 3px solid $black;
         }
         .multi-view {
           display: inline-block;
+          background-color: $light-blue;
+          outline: 1px solid $light-blue;
         }
         .show-price {
           margin: 0;
           text-align: center;
+          background-color: $green;
+          outline: 1px solid $green;
         }
       }
       .show-info {
@@ -209,7 +253,7 @@ export default {
           top: -38px;
           right: 10px;
           border: 3px solid $black;
-          background-color: $purple;
+          background-color: $pink;
           z-index: 99;
           text-align: center;
         }
@@ -225,19 +269,19 @@ export default {
         }
         .show-name {
           background-color: $black;
-          color: $purple;
+          color: $light-purple;
           padding: 20px;
           p {
-            font-size: 25px;
+            font-size: 21px;
             font-family: "Abril Fatface";
             text-align: center;
             letter-spacing: 1.5px;
             margin: 0;
             @media screen and (min-width: 1200px) {
-              font-size: 30px;
+              font-size: 25px;
             }
             a {
-              color: $purple;
+              color: $light-purple;
               text-decoration: none;
             }
           }
@@ -251,17 +295,18 @@ export default {
         }
       }
       .favs {
-        background-color: $black;
-        color: $purple;
+        background-color: $white;
+        color: $light-purple;
         position: absolute;
         padding: 10px;
         bottom: 0;
         width: 100%;
+        border-top: 3px solid $black;
         p {
           margin: 0;
         }
         .fav-song-label {
-          background-color: $purple;
+          background-color: $light-purple;
           border: 3px solid $black;
           padding: 5px;
           color: $black;
@@ -279,10 +324,13 @@ export default {
             justify-content: center;
             .song-label {
               margin-right: 10px;
+              svg path {
+                fill: $dark-purple;
+              }
             }
             .song-name a {
               text-decoration: none;
-              color: $purple;
+              color: $dark-purple;
             }
           }
         }

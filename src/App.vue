@@ -101,24 +101,24 @@ body {
   color: $black;
 }
 
-#app {
-  background-color: $purple;
-  border: 7px solid $black;
-  box-shadow: 10px 10px 0 $black;
-  border-radius: 7px 7px 7px 0;
-  max-width: 1200px;
-  margin: 50px auto;
-  @media screen and (max-width: 1200px) {
-    margin: 20px;
-  }
-}
-
 ul {
   margin: 0;
   list-style: none;
   padding: 0;
-  li {
-    display: inline-block;
+}
+
+ul li {
+  display: inline-block;
+}
+
+#app {
+  max-width: 1200px;
+  margin: 50px auto;
+}
+
+@media screen and (max-width: 1200px) {
+  #app {
+    margin: 20px;
   }
 }
 </style>
