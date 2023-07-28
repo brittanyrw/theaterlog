@@ -2,7 +2,12 @@
   <section class="hero">
     <header>
       <div class="overview">
-        <h1>Theater Log</h1>
+        <div class="marquee">
+          <div class="lights">
+            <div class="light"></div>
+          </div>
+          <h1>Theater Log</h1>
+        </div>
         <div class="overview-text">
           <p>
             Since watching Grease for the first time in 5th grade, I have been
@@ -162,17 +167,10 @@ export default {
     cities() {
       let cityList = [];
       this.viewedShows.forEach(function(each) {
-        // if (each.theater.city === "White Plains, NY") {
-        //   cityList.push("New York, NY");
-        // } else if (
-        //   each.theater.city === "Bethesda, MD" ||
-        //   each.theater.city === "Columbia, MD"
-        // ) {
-        //   cityList.push("Washington, DC");
-        // } else {
-        //   cityList.push(each.theater.city);
-        // }
-        if (each.theater.city === "White Plains, NY" || each.theater.city === "New York, NY") {
+        if (
+          each.theater.city === "White Plains, NY" ||
+          each.theater.city === "New York, NY"
+        ) {
           cityList.push("NYC");
         } else if (
           each.theater.city === "Bethesda, MD" ||
@@ -180,11 +178,11 @@ export default {
           each.theater.city === "Washington, DC"
         ) {
           cityList.push("DC");
-        } else if ( each.theater.city === "Austin, TX") {
+        } else if (each.theater.city === "Austin, TX") {
           cityList.push("Austin");
-        } else if ( each.theater.city === "London, UK") {
+        } else if (each.theater.city === "London, UK") {
           cityList.push("London");
-        } else if ( each.theater.city === "Atlanta, GA") {
+        } else if (each.theater.city === "Atlanta, GA") {
           cityList.push("Atlanta");
         }
       });
@@ -234,8 +232,18 @@ export default {
 .hero {
   border: 10px solid $dark-purple;
   background-color: $white;
+  position: relative;
+  &:before {
+    content: "";
+    position: absolute;
+    height: 43px;
+    width: 105%;
+    left: -2.5%;
+    top: -4.5%;
+    background-color: $very-dark-purple;
+  }
   header {
-    border-bottom: 3px solid $black;
+    border-bottom: 3px solid $very-dark-purple;
     @media screen and (min-width: 662px) {
       display: flex;
     }
@@ -244,15 +252,34 @@ export default {
       display: flex;
       align-items: center;
       flex-wrap: wrap;
+      position: relative;
       @media screen and (min-width: 662px) {
         flex-basis: 75%;
-        border-right: 5px solid $black;
+        border-right: 5px solid $very-dark-purple;
       }
       h1 {
         font-family: "Abril Fatface", cursive;
         margin: 0;
         letter-spacing: 1.5px;
         font-size: 40px;
+        @media screen and (min-width: 662px) {
+          font-size: 50px;
+        }
+      }
+      .marquee {
+        position: absolute;
+        top: -45%;
+        background: #6661af;
+        color: white;
+        padding: 20px;
+        width: 65%;
+        height: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* font-size: 44px; */
+        border-radius: 7px;
+        border: 4px solid #545092;
       }
     }
     .hero-sidebar {
@@ -266,18 +293,18 @@ export default {
       }
 
       .external-links {
-        border-top: 3px solid $black;
-        border-bottom: 3px solid $black;
+        border-top: 3px solid $very-dark-purple;
+        border-bottom: 3px solid $very-dark-purple;
         a {
           padding: 5px 10px;
           background-color: $pink;
           color: $black;
           text-decoration: none;
-          border: 3px solid $black;
+          border: 3px solid $very-dark-purple;
         }
         a:hover {
-          background-color: $black;
-          color: $pink;
+          background-color: $very-dark-purple;
+          color: $white;
           transition: 0.5s;
         }
         @media screen and (min-width: 662px) {
@@ -316,7 +343,7 @@ export default {
 }
 
 .statistics {
-  border-bottom: 3px solid $black;
+  border-bottom: 3px solid $very-dark-purple;
   @media screen and (min-width: 992px) {
     display: grid;
     grid-template-columns: 1.5fr 1fr;
@@ -324,14 +351,14 @@ export default {
 
   .statistics-content {
     padding: 10px;
-    @media screen and (min-width: 662px) { 
+    @media screen and (min-width: 662px) {
       padding: 20px;
     }
   }
 
   .stats-sidebar {
     @media screen and (min-width: 992px) {
-      border-left: 5px solid $black;
+      border-left: 5px solid $very-dark-purple;
     }
   }
 
@@ -348,7 +375,7 @@ export default {
           margin: 0;
           padding: 5px;
           font-size: 18px;
-          @media screen and (min-width: 662px) { 
+          @media screen and (min-width: 662px) {
             padding: 10px;
           }
           &:last-child {
@@ -402,8 +429,8 @@ export default {
         border-top: 2px solid $black;
         font-size: 12px;
         @media screen and (min-width: 992px) {
-            width: 80px;
-          }
+          width: 80px;
+        }
       }
       .city-amount {
         font-size: 14px;
@@ -417,19 +444,19 @@ export default {
       &:nth-child(2) {
         .city-amount {
           background-color: $light-purple;
-            height: 100px;
+          height: 100px;
         }
       }
       &:nth-child(3) {
         .city-amount {
           background-color: $yellow;
-            height: 73px;
+          height: 73px;
         }
       }
       &:nth-child(4) {
         .city-amount {
           background-color: $light-blue;
-            height: 44px;
+          height: 44px;
         }
       }
       &:nth-child(5) {

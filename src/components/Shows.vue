@@ -150,7 +150,7 @@ export default {
   // grid-gap: 40px;
   padding: 40px;
   min-height: 410px;
-  border: 10px solid $mid-purple;
+  border: 10px solid $very-dark-purple;
   position: relative;
   // grid-template-columns: 1fr;
   justify-content: space-around;
@@ -168,14 +168,14 @@ export default {
 
 @media screen and (min-width: 992px) {
   .row:after {
-  position: absolute;
-  content: "";
-  height: 23px;
-  width: 105%;
-  left: -2.5%;
-  top: -5.5%;
-  background-color: $dark-purple;
-}
+    position: absolute;
+    content: "";
+    height: 23px;
+    width: 105%;
+    left: -2.5%;
+    top: -5.5%;
+    background-color: $dark-purple;
+  }
 }
 .shows {
   // padding: 40px 10px;
@@ -194,7 +194,7 @@ export default {
       background-color: $white;
       margin-bottom: 50px;
       max-width: 320px;
-      margin: 20px auto 40px auto;
+      margin: 20px 20px 40px 20px;
       position: relative;
       width: 100%;
       .show-opinion {
@@ -221,7 +221,7 @@ export default {
         .review {
           img {
             width: 100%;
-            background-color: $purple;
+            background-color: $light-blue;
             border-radius: 50%;
             width: 40px;
             border: 1px solid $black;
@@ -235,8 +235,8 @@ export default {
         }
         .multi-view {
           display: inline-block;
-          background-color: $light-blue;
-          outline: 1px solid $light-blue;
+          background-color: $light-purple;
+          outline: 1px solid $light-purple;
         }
         .show-price {
           margin: 0;
@@ -262,14 +262,14 @@ export default {
           padding: 5px 10px;
           top: -38px;
           right: 110px;
-          border: 3px solid $black;
-          background-color: $purple;
+          border: 3px solid $mid-purple;
+          background-color: $white;
           z-index: 99;
           text-align: center;
         }
         .show-name {
-          background-color: $black;
-          color: $light-purple;
+          background-color: $mid-purple;
+          color: $white;
           padding: 20px;
           p {
             font-size: 21px;
@@ -281,7 +281,7 @@ export default {
               font-size: 25px;
             }
             a {
-              color: $light-purple;
+              color: $white;
               text-decoration: none;
             }
           }
@@ -306,7 +306,7 @@ export default {
           margin: 0;
         }
         .fav-song-label {
-          background-color: $light-purple;
+          background-color: $yellow;
           border: 3px solid $black;
           padding: 5px;
           color: $black;
@@ -325,36 +325,38 @@ export default {
             .song-label {
               margin-right: 10px;
               svg path {
-                fill: $dark-purple;
+                fill: $black;
               }
             }
             .song-name a {
               text-decoration: none;
-              color: $dark-purple;
+              color: $black;
             }
           }
         }
       }
       &.upcoming {
-        background-color: $black;
+        background-color: $white;
+        outline-color: $mid-purple;
         .show-name {
-          background-color: $purple;
-          color: $black;
+          background-color: $white;
+          color: $mid-purple;
+          border-bottom: 3px solid $mid-purple;
           a.upcoming-show-link {
-            color: $black;
+            color: $mid-purple;
           }
         }
         .show-content {
           padding-bottom: 20px;
-          color: $purple;
+          color: $mid-purple;
         }
 
         .type,
         .upcoming-tag {
-          background-color: $black;
-          color: $purple;
-          border: 3px solid $purple;
-          outline: 3px solid $black;
+          background-color: $white;
+          color: $mid-purple;
+          border: 3px solid $mid-purple;
+          outline: 3px solid $white;
         }
       }
     }
