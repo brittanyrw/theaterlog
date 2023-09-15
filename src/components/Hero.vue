@@ -2,7 +2,9 @@
   <section class="hero">
     <header>
       <div class="overview">
-        <h1>Theater Log</h1>
+        <div class="marquee">
+          <h1>Theater Log</h1>
+        </div>
         <div class="overview-text">
           <p>
             Since watching Grease for the first time in 5th grade, I have been
@@ -49,39 +51,53 @@
         <div class="stats-wrapper">
           <div class="stats">
             <div class="counter total-stat">
+              <p class="stat-title">Total Shows</p>
               <p class="stat-number">{{ viewedShows.length }}</p>
-              <p class="stat-title">Total Shows Seen</p>
             </div>
             <div class="counter upcoming-stat">
-              <p class="stat-number">{{ upcomingCounter }}</p>
               <p class="stat-title">Upcoming</p>
+              <p class="stat-number">{{ upcomingCounter }}</p>
             </div>
             <div class="counter musical-stat">
-              <p class="stat-number">{{ valueCount("type", "musical") }}</p>
               <p class="stat-title">Musicals</p>
+              <p class="stat-number">{{ valueCount("type", "musical") }}</p>
             </div>
             <div class="counter play-stat">
-              <p class="stat-number">{{ valueCount("type", "play") }}</p>
               <p class="stat-title">Plays</p>
+              <p class="stat-number">{{ valueCount("type", "play") }}</p>
             </div>
-            <div class="counter play-stat">
-              <p class="stat-number">{{ valueCount("type", "dance") }}</p>
+            <div class="counter dance-stat">
               <p class="stat-title">Dances</p>
+              <p class="stat-number">{{ valueCount("type", "dance") }}</p>
             </div>
-            <div class="counter price-stat">
+            <div class="counter spent-stat">
+              <p class="stat-title">Total Spent</p>
               <p class="stat-number">
                 ${{ Math.floor(count("price")).toLocaleString() }}
               </p>
-              <p class="stat-title">Total Spent</p>
             </div>
-            <div class="counter price-stat">
+            <div class="counter ticket-stat">
+              <p class="stat-title">Average Ticket Cost</p>
               <p class="stat-number">
                 ${{ Math.floor(count("price") / viewedShows.length) }}
               </p>
-              <p class="stat-title">Average Ticket Cost</p>
             </div>
           </div>
         </div>
+        <h3>Show Locations</h3>
+        <ul class="show-location-list">
+          <li
+            v-for="(cityAmount, city) in countArray(cities)"
+            :key="city"
+            class="show-location"
+          >
+            <p class="city-amount">{{ cityAmount }}</p>
+
+            <p class="city">
+              {{ city }}
+            </p>
+          </li>
+        </ul>
       </div>
       <div class="stats-sidebar">
         <div class="review-legend">
@@ -91,23 +107,16 @@
               v-for="(ratingAmount, rating) in countArray(ratings)"
               :key="rating"
             >
-              <img
-                :alt="`${rating} emoji`"
-                class="emoji"
-                :src="require(`@/assets/${rating}.svg`)"
-              />
+              <div class="review-img-wrapper">
+                <img
+                  :alt="`${rating} emoji`"
+                  class="emoji"
+                  :src="require(`@/assets/${rating}.svg`)"
+                />
+              </div>
               <p class="rating-name">
                 {{ rating }}
                 <span class="rating-amount">{{ ratingAmount }}</span>
-              </p>
-            </li>
-          </ul>
-          <h3>Show Locations</h3>
-          <ul class="review-emoji-list">
-            <li v-for="(cityAmount, city) in countArray(cities)" :key="city">
-              <p class="rating-name">
-                {{ city }}
-                <span class="rating-amount">{{ cityAmount }}</span>
               </p>
             </li>
           </ul>
@@ -125,8 +134,8 @@
         </div>
       </div>
     </div>
-  </section>
-</template>
+  </section> </template
+>s
 
 <script>
 export default {
@@ -155,15 +164,23 @@ export default {
     cities() {
       let cityList = [];
       this.viewedShows.forEach(function(each) {
-        if (each.theater.city === "White Plains, NY") {
-          cityList.push("New York, NY");
+        if (
+          each.theater.city === "White Plains, NY" ||
+          each.theater.city === "New York, NY"
+        ) {
+          cityList.push("NYC");
         } else if (
           each.theater.city === "Bethesda, MD" ||
-          each.theater.city === "Columbia, MD"
+          each.theater.city === "Columbia, MD" ||
+          each.theater.city === "Washington, DC"
         ) {
-          cityList.push("Washington, DC");
-        } else {
-          cityList.push(each.theater.city);
+          cityList.push("DC");
+        } else if (each.theater.city === "Austin, TX") {
+          cityList.push("Austin");
+        } else if (each.theater.city === "London, UK") {
+          cityList.push("London");
+        } else if (each.theater.city === "Atlanta, GA") {
+          cityList.push("Atlanta");
         }
       });
       return cityList;
@@ -280,48 +297,99 @@ export default {
     }
     .portfolio-link a {
       color: $black;
+      font-weight: bold;
     }
   }
 }
 
 .statistics {
   border-bottom: 3px solid $black;
+  @media screen and (min-width: 992px) {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+  }
+
   .statistics-content {
-    background-color: $black;
-    color: $purple;
-    padding: 20px;
-    h3 {
-      margin: 0;
+    padding: 10px;
+    @media screen and (min-width: 662px) {
+      padding: 20px;
     }
+  }
+
+  .stats-sidebar {
+    @media screen and (min-width: 992px) {
+      border-left: 5px solid $black;
+    }
+  }
+
+  .stats-wrapper {
     .stats {
       display: flex;
-      align-items: center;
-      justify-content: center;
       flex-wrap: wrap;
-      padding: 20px 0;
-      @media screen and (min-width: 662px) {
-        padding: 20px;
-      }
       .counter {
-        background-color: $purple;
-        text-align: center;
-        margin: 10px;
-        border: 2px solid $purple;
-        -webkit-box-shadow: 5px 5px 0 $purple;
-        box-shadow: 9px 9px 0 $purple;
-        border-radius: 7px;
-        color: $black;
-        outline: 3px solid $black;
-        position: relative;
-        .stat-number {
-          font-size: 50px;
-          font-weight: bold;
+        border: 2px solid $black;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        p {
+          display: inline-block;
           margin: 0;
-          padding: 10px 15px 0 15px;
+          padding: 5px;
+          font-size: 18px;
+          @media screen and (min-width: 662px) {
+            padding: 10px;
+          }
+          &:last-child {
+            border-left: 2px solid $black;
+            background-color: $black;
+            color: $purple;
+          }
         }
-        .stat-title {
-          margin: 0;
-          padding: 0 15px 15px 15px;
+      }
+    }
+  }
+
+  .show-location-list {
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    .show-location {
+      border: 2px solid $black;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      p {
+        margin: 0;
+        padding: 5px;
+      }
+      .city {
+        border-top: 2px solid $black;
+        font-size: 12px;
+        @media screen and (min-width: 992px) {
+          width: 80px;
+        }
+      }
+      .city-amount {
+        font-size: 14px;
+        background-color: $black;
+        color: $purple;
+      }
+      &:nth-child(1) {
+        .city-amount {
+          height: 145px;
+        }
+      }
+      &:nth-child(2) {
+        .city-amount {
+          height: 105px;
+        }
+      }
+      &:nth-child(3) {
+        .city-amount {
+          height: 78px;
+        }
+      }
+      &:nth-child(4) {
+        .city-amount {
+          height: 49px;
         }
       }
     }
@@ -329,7 +397,6 @@ export default {
 
   .review-legend {
     padding: 20px;
-    border-top: 3px solid $black;
     text-align: center;
     h3 {
       margin-bottom: 0;
@@ -346,11 +413,15 @@ export default {
         .rating-amount {
           padding: 5px;
           border-left: 2px solid $black;
-          background-color: $black;
           color: $purple;
+          background-color: $black;
         }
-        img {
-          width: 40px;
+        .review-img-wrapper {
+          text-align: center;
+          margin: auto;
+          img {
+            width: 40px;
+          }
         }
       }
     }
