@@ -148,7 +148,7 @@ export default {
   // grid-template-columns: 1fr 1fr 1fr;
   // grid-auto-rows: auto;
   // grid-gap: 40px;
-  padding: 40px;
+  padding: 15px;
   min-height: 410px;
   border: 10px solid $very-dark-purple;
   position: relative;
@@ -289,7 +289,7 @@ export default {
       }
       .show-content {
         text-align: center;
-        padding: 10px 20px 60px 20px;
+        padding: 20px 30px 85px 30px;
         @media screen and (min-width: 662px) {
           padding: 20px 35px 75px 35px;
         }

@@ -114,11 +114,12 @@ ul li {
 #app {
   max-width: 1200px;
   margin: 200px auto 50px auto;
+  padding: 0 20px;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (min-width: 662px) {
   #app {
-    margin: 20px;
+    margin: 150px auto 50px auto;
   }
 }
 </style>

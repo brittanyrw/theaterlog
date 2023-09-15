@@ -3,9 +3,6 @@
     <header>
       <div class="overview">
         <div class="marquee">
-          <div class="lights">
-            <div class="light"></div>
-          </div>
           <h1>Theater Log</h1>
         </div>
         <div class="overview-text">
@@ -263,22 +260,18 @@ export default {
         letter-spacing: 1.5px;
         font-size: 40px;
         @media screen and (min-width: 662px) {
-          font-size: 50px;
+          font-size: 60px;
         }
       }
       .marquee {
         position: absolute;
-        top: -45%;
+        top: -37%;
         background: #6661af;
         color: white;
         padding: 20px;
-        width: 65%;
-        height: 150px;
         display: flex;
         align-items: center;
         justify-content: center;
-        /* font-size: 44px; */
-        border-radius: 7px;
         border: 4px solid #545092;
       }
     }
