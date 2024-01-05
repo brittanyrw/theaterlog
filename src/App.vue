@@ -42,6 +42,7 @@ export default {
             multi
             type
             rating
+            seatLevel
             theater {
               name
               city

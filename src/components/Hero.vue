@@ -98,6 +98,21 @@
             </p>
           </li>
         </ul>
+        <div class="show-years">
+          <h3>Show Years</h3>
+          <ul class="show-year-list">
+            <li
+              v-for="(yearAmount, year) in countArray(years)"
+              :key="year"
+              class="show-year"
+            >
+              <p class="year">
+                {{ year }}
+              </p>
+              <p class="year-amount">{{ yearAmount }}</p>
+            </li>
+          </ul>
+        </div>
       </div>
       <div class="stats-sidebar">
         <div class="review-legend">
@@ -132,10 +147,61 @@
             </li>
           </ul> -->
         </div>
+        <div class="show-years show-seats">
+          <h3>Seat Locations</h3>
+          <ul class="show-year-list">
+            <li
+              v-for="(seatAmount, seat) in countArray(seats)"
+              :key="seat"
+              class="show-year"
+            >
+              <p class="year">
+                {{ seat }}
+              </p>
+              <p class="year-amount">{{ seatAmount }}</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="birthday-shows-section">
+        <h3>Birthday Shows</h3>
+        <p>Shows seen for my birthday.</p>
+        <ul class="birthday-shows">
+          <li class="birthday-show-list">
+            <p class="show-year">2022</p>
+            <div class="shows">
+              <p>Little Shop of Horrors, KPOP, Hadestown</p>
+            </div>
+          </li>
+          <li class="birthday-show-list">
+            <p class="show-year">2021</p>
+            <div class="shows">
+              <p>Hadestown, Little Shop of Horrors, Waitress, Beyond Babel, Six</p>
+            </div>
+          </li>
+          <li class="birthday-show-list">
+            <p class="show-year">2019</p>
+            <div class="shows">
+              <p>Little Shop of Horrors</p>
+            </div>
+          </li>
+          <li class="birthday-show-list">
+            <p class="show-year">2016</p>
+            <div class="shows">
+              <p>Hamilton, Falsettos, Heathers, Sister Act</p>
+            </div>
+          </li>
+          <li class="birthday-show-list">
+            <p class="show-year">2015</p>
+            <div class="shows">
+              <p>Spring Awakening, Something Rotten</p>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
-  </section> </template
->s
+  </section>
+</template>
 
 <script>
 export default {
@@ -184,6 +250,22 @@ export default {
         }
       });
       return cityList;
+    },
+    years() {
+      let yearList = [];
+      this.viewedShows.forEach(function(each) {
+        yearList.push(new Date(each.date).getFullYear());
+      });
+      return yearList;
+    },
+    seats() {
+      let seatList = [];
+      this.viewedShows.forEach(function(each) {
+        if(each.seatLevel){
+          seatList.push(each.seatLevel);
+        }
+      });
+      return seatList;
     },
     actorsList() {
       let actorData = this.actors;
@@ -300,6 +382,61 @@ export default {
       font-weight: bold;
     }
   }
+}
+
+.show-years {
+  .show-year-list {
+    display: flex;
+    flex-wrap: wrap;
+    .show-year {
+      border: 2px solid $black;
+      margin-bottom: 5px;
+      display: flex;
+      margin-right: 5px;
+      .year {
+        margin: 0;
+        padding: 5px;
+      }
+      .year-amount {
+        padding: 5px;
+        border-left: 2px solid $black;
+        color: $purple;
+        background-color: $black;
+        margin: 0;
+      }
+    }
+  }
+}
+
+.show-seats {
+  padding: 20px;
+}
+
+.birthday-shows-section {
+  padding: 20px;
+  .birthday-shows {
+    display: flex;
+    flex-wrap: wrap;
+    .birthday-show-list {
+      border: 2px solid $black;
+      margin-right: 2px;
+      margin-bottom: 5px;
+      flex-grow: 1;
+      display: flex;
+      .show-year {
+        padding: 5px;
+        background-color: $black;
+        color: $purple;
+        margin: 0;
+      }
+      .shows {
+        padding: 5px;
+        p {
+          margin: 0;
+        }
+      }
+    }
+  } 
 }
 
 .statistics {
