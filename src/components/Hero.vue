@@ -163,42 +163,42 @@
           </ul>
         </div>
       </div>
-      <div class="birthday-shows-section">
-        <h3>Birthday Shows</h3>
-        <p>Shows seen for my birthday.</p>
-        <ul class="birthday-shows">
-          <li class="birthday-show-list">
-            <p class="show-year">2022</p>
-            <div class="shows">
-              <p>Little Shop of Horrors, KPOP, Hadestown</p>
-            </div>
-          </li>
-          <li class="birthday-show-list">
-            <p class="show-year">2021</p>
-            <div class="shows">
-              <p>Hadestown, Little Shop of Horrors, Waitress, Beyond Babel, Six</p>
-            </div>
-          </li>
-          <li class="birthday-show-list">
-            <p class="show-year">2019</p>
-            <div class="shows">
-              <p>Little Shop of Horrors</p>
-            </div>
-          </li>
-          <li class="birthday-show-list">
-            <p class="show-year">2016</p>
-            <div class="shows">
-              <p>Hamilton, Falsettos, Heathers, Sister Act</p>
-            </div>
-          </li>
-          <li class="birthday-show-list">
-            <p class="show-year">2015</p>
-            <div class="shows">
-              <p>Spring Awakening, Something Rotten</p>
-            </div>
-          </li>
-        </ul>
-      </div>
+    </div>
+    <div class="birthday-shows-section">
+      <h3>Birthday Shows</h3>
+      <p>Shows seen for my birthday.</p>
+      <ul class="birthday-shows">
+        <li class="birthday-show-list">
+          <p class="show-year">2022</p>
+          <div class="shows">
+            <p>Little Shop of Horrors, KPOP, Hadestown</p>
+          </div>
+        </li>
+        <li class="birthday-show-list">
+          <p class="show-year">2021</p>
+          <div class="shows">
+            <p>Hadestown, Little Shop of Horrors, Waitress, Beyond Babel, Six</p>
+          </div>
+        </li>
+        <li class="birthday-show-list">
+          <p class="show-year">2019</p>
+          <div class="shows">
+            <p>Little Shop of Horrors</p>
+          </div>
+        </li>
+        <li class="birthday-show-list">
+          <p class="show-year">2016</p>
+          <div class="shows">
+            <p>Hamilton, Falsettos, Heathers, Sister Act</p>
+          </div>
+        </li>
+        <li class="birthday-show-list">
+          <p class="show-year">2015</p>
+          <div class="shows">
+            <p>Spring Awakening, Something Rotten</p>
+          </div>
+        </li>
+      </ul>
     </div>
   </section>
 </template>
