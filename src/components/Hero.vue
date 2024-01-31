@@ -113,6 +113,22 @@
             </li>
           </ul>
         </div>
+        <div class="show-years">
+          <h3>Show Repeats</h3>
+          <ul class="show-year-list">
+            <li
+              v-for="(showAmount, show) in countArray(show)"
+              :key="show"
+              class="show-year"
+              :class="[{ 'hide-show': showAmount < 2 }]"
+            >
+              <p class="year">
+                {{ show }}
+              </p>
+              <p class="year-amount">{{ showAmount }}</p>
+            </li>
+          </ul>
+        </div>
       </div>
       <div class="stats-sidebar">
         <div class="review-legend">
@@ -177,7 +193,9 @@
         <li class="birthday-show-list">
           <p class="show-year">2021</p>
           <div class="shows">
-            <p>Hadestown, Little Shop of Horrors, Waitress, Beyond Babel, Six</p>
+            <p>
+              Hadestown, Little Shop of Horrors, Waitress, Beyond Babel, Six
+            </p>
           </div>
         </li>
         <li class="birthday-show-list">
@@ -258,10 +276,17 @@ export default {
       });
       return yearList;
     },
+    show() {
+      let showList = [];
+      this.viewedShows.forEach(function(each) {
+        showList.push(each.name);
+      });
+      return showList;
+    },
     seats() {
       let seatList = [];
       this.viewedShows.forEach(function(each) {
-        if(each.seatLevel){
+        if (each.seatLevel) {
           seatList.push(each.seatLevel);
         }
       });
@@ -408,6 +433,10 @@ export default {
   }
 }
 
+.hide-show {
+  display: none !important;
+}
+
 .show-seats {
   padding: 20px;
 }
@@ -436,7 +465,7 @@ export default {
         }
       }
     }
-  } 
+  }
 }
 
 .statistics {
