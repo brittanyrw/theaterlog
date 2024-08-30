@@ -35,8 +35,8 @@
         <div class="info">
           <ul>
             <li>
-              <font-awesome-icon icon="star" class="fav-icon" /> = favorite
-              shows
+              <font-awesome-icon icon="star" class="fav-icon" />
+              = favorite shows
             </li>
             <li>
               <span class="multi-example">4</span> = times a show was seen
@@ -45,45 +45,62 @@
         </div>
       </div>
     </header>
-    <div class="statistics">
-      <div class="statistics-content">
-        <h3>Statistics</h3>
-        <div class="stats-wrapper">
-          <div class="stats">
-            <div class="counter total-stat">
-              <p class="stat-title">Total Shows</p>
-              <p class="stat-number">{{ viewedShows.length }}</p>
-            </div>
-            <div class="counter upcoming-stat">
-              <p class="stat-title">Upcoming</p>
-              <p class="stat-number">{{ upcomingCounter }}</p>
-            </div>
-            <div class="counter musical-stat">
-              <p class="stat-title">Musicals</p>
-              <p class="stat-number">{{ valueCount("type", "musical") }}</p>
-            </div>
-            <div class="counter play-stat">
-              <p class="stat-title">Plays</p>
-              <p class="stat-number">{{ valueCount("type", "play") }}</p>
-            </div>
-            <div class="counter dance-stat">
-              <p class="stat-title">Dances</p>
-              <p class="stat-number">{{ valueCount("type", "dance") }}</p>
-            </div>
-            <div class="counter spent-stat">
-              <p class="stat-title">Total Spent</p>
-              <p class="stat-number">
-                ${{ Math.floor(count("price")).toLocaleString() }}
-              </p>
-            </div>
-            <div class="counter ticket-stat">
-              <p class="stat-title">Average Ticket Cost</p>
-              <p class="stat-number">
-                ${{ Math.floor(count("price") / viewedShows.length) }}
-              </p>
-            </div>
+    <div class="main-statistics">
+      <div class="stats-wrapper">
+        <div class="stats">
+          <div class="counter total-stat">
+            <p class="stat-title">Total Shows</p>
+            <p class="stat-number">{{ viewedShows.length }}</p>
+          </div>
+          <div class="counter upcoming-stat">
+            <p class="stat-title">Upcoming</p>
+            <p class="stat-number">{{ upcomingCounter }}</p>
+          </div>
+          <div class="counter musical-stat">
+            <p class="stat-title">Musicals</p>
+            <p class="stat-number">{{ valueCount("type", "musical") }}</p>
+          </div>
+          <div class="counter play-stat">
+            <p class="stat-title">Plays</p>
+            <p class="stat-number">{{ valueCount("type", "play") }}</p>
+          </div>
+          <div class="counter dance-stat">
+            <p class="stat-title">Dances</p>
+            <p class="stat-number">{{ valueCount("type", "dance") }}</p>
+          </div>
+          <div class="counter spent-stat">
+            <p class="stat-title">Total Spent</p>
+            <p class="stat-number">
+              ${{ Math.floor(count("price")).toLocaleString() }}
+            </p>
+          </div>
+          <div class="counter ticket-stat">
+            <p class="stat-title">Average Ticket Cost</p>
+            <p class="stat-number">
+              ${{ Math.floor(count("price") / viewedShows.length) }}
+            </p>
+          </div>
+          <div class="counter ticket-stat">
+            <p class="stat-title">Broadway Theaters</p>
+            <p class="stat-number">
+              {{
+                Math.floor((valueCountTheaters("broadway", true) / 41) * 100)
+              }}%
+            </p>
+          </div>
+          <div class="counter ticket-stat">
+            <p class="stat-title">West End Theaters</p>
+            <p class="stat-number">
+              {{
+                Math.floor((valueCountTheaters("westEnd", true) / 40) * 100)
+              }}%
+            </p>
           </div>
         </div>
+      </div>
+    </div>
+    <div class="statistics">
+      <div class="statistics-content">
         <h3>Show Locations</h3>
         <ul class="show-location-list">
           <li
@@ -102,32 +119,86 @@
           <h3>Show Years</h3>
           <ul class="show-year-list">
             <li
-              v-for="(yearAmount, year) in countArray(years)"
-              :key="year"
+              v-for="year in getYearlyStats"
+              :key="year.year"
               class="show-year"
             >
               <p class="year">
-                {{ year }}
+                {{ year.year }}
               </p>
-              <p class="year-amount">{{ yearAmount }}</p>
+              <p class="year-amount">{{ year.count }}</p>
             </li>
           </ul>
         </div>
         <div class="show-years">
-          <h3>Show Repeats</h3>
+          <h3>Show Cost Per Year (Average / Total Price)</h3>
           <ul class="show-year-list">
             <li
-              v-for="(showAmount, show) in countArray(show)"
-              :key="show"
+              v-for="stat in getYearlyStats"
+              :key="stat.year"
               class="show-year"
-              :class="[{ 'hide-show': showAmount < 2 }]"
             >
               <p class="year">
-                {{ show }}
+                {{ stat.year }}
               </p>
-              <p class="year-amount">{{ showAmount }}</p>
+              <p class="year-amount">
+                ${{ stat.averagePrice }}/${{ stat.totalPrice }}
+              </p>
             </li>
           </ul>
+        </div>
+        <div class="show-years show-seats">
+          <h3>Seat Locations</h3>
+          <ul class="show-year-list">
+            <li
+              v-for="(seatAmount, seat) in countArray(seats)"
+              :key="seat"
+              class="show-year"
+            >
+              <p class="year">
+                {{ seat }}
+              </p>
+              <p class="year-amount">{{ seatAmount }}</p>
+            </li>
+          </ul>
+          <!-- <div class="seat-map">
+            <h4>Balcony</h4>
+            <div class="balcony">
+              <div class="back">
+                <p class="seat-count">10</p>
+              </div>
+              <div class="center">
+                <p class="seat-count">35</p>
+              </div>
+              <div class="front">
+                <p class="seat-count">22</p>
+              </div>
+            </div>
+            <h4>Mezzanine</h4>
+            <div class="mezz">
+              <div class="back">
+                <p class="seat-count">10</p>
+              </div>
+              <div class="center">
+                <p class="seat-count">35</p>
+              </div>
+              <div class="front">
+                <p class="seat-count">22</p>
+              </div>
+            </div>
+            <h4>Orchestra</h4>
+            <div class="orchestra">
+              <div class="back">
+                <p class="seat-count">10</p>
+              </div>
+              <div class="center">
+                <p class="seat-count">35</p>
+              </div>
+              <div class="front">
+                <p class="seat-count">22</p>
+              </div>
+            </div>
+          </div> -->
         </div>
       </div>
       <div class="stats-sidebar">
@@ -151,30 +222,22 @@
               </p>
             </li>
           </ul>
-          <!-- <h3>Top Actors Seen</h3>
-          <ul class="review-emoji-list">
-            <li v-for="actor in actorsList" :key="actor.name">
-              <p class="rating-name">
-                {{ actor.name }}
-                <span class="rating-amount">{{
-                  actor.theaterShowCollection.total
-                }}</span>
-              </p>
-            </li>
-          </ul> -->
         </div>
-        <div class="show-years show-seats">
-          <h3>Seat Locations</h3>
+        <div class="show-years show-repeats">
+          <h3>Show Repeats</h3>
           <ul class="show-year-list">
             <li
-              v-for="(seatAmount, seat) in countArray(seats)"
-              :key="seat"
+              v-for="show in countShowsWithIcon(viewedShows)"
+              :key="show.icon"
               class="show-year"
             >
-              <p class="year">
-                {{ seat }}
-              </p>
-              <p class="year-amount">{{ seatAmount }}</p>
+              <div class="repeat-content">
+                <p class="year">
+                  <!-- <font-awesome-icon :icon="show.icon" class="fav-icon" /> -->
+                  {{ show.name }}
+                </p>
+                <p class="year-amount">{{ show.count }}</p>
+              </div>
             </li>
           </ul>
         </div>
@@ -225,7 +288,8 @@
 export default {
   props: {
     shows: Array,
-    actors: Array
+    actors: Array,
+    theaters: Array
   },
   computed: {
     viewedShows() {
@@ -269,13 +333,6 @@ export default {
       });
       return cityList;
     },
-    years() {
-      let yearList = [];
-      this.viewedShows.forEach(function(each) {
-        yearList.push(new Date(each.date).getFullYear());
-      });
-      return yearList;
-    },
     show() {
       let showList = [];
       this.viewedShows.forEach(function(each) {
@@ -292,19 +349,44 @@ export default {
       });
       return seatList;
     },
-    actorsList() {
-      let actorData = this.actors;
-      return actorData
-        .sort(
-          (a, b) =>
-            b.theaterShowCollection.total - a.theaterShowCollection.total
-        )
-        .filter(actor => actor.theaterShowCollection.total > 2);
+    getYearlyStats() {
+      const yearlyCounts = {};
+
+      this.viewedShows.forEach(item => {
+        const year = new Date(item.date).getFullYear();
+
+        if (!yearlyCounts[year]) {
+          yearlyCounts[year] = {
+            count: 0,
+            totalPrice: 0
+          };
+        }
+
+        yearlyCounts[year].count++;
+        yearlyCounts[year].totalPrice += item.price;
+      });
+
+      const result = Object.keys(yearlyCounts)
+        .map(year => {
+          const { count, totalPrice } = yearlyCounts[year];
+          return {
+            year: Number(year),
+            count,
+            averagePrice: Math.floor(totalPrice / count),
+            totalPrice: Math.floor(totalPrice)
+          };
+        })
+        .sort((a, b) => b.year - a.year);
+
+      return result;
     }
   },
   methods: {
     valueCount(key, value) {
       return this.viewedShows.filter(show => show[key] === value).length;
+    },
+    valueCountTheaters(key, value) {
+      return this.theaters.filter(theater => theater[key] === value).length;
     },
     count(key) {
       return this.viewedShows.reduce(
@@ -324,6 +406,23 @@ export default {
       );
       countedArray = Object.fromEntries(sortedCountedObj);
       return countedArray;
+    },
+    countShowsWithIcon(shows) {
+      const showCount = {};
+
+      shows.forEach(item => {
+        const { name, icon } = item;
+
+        if (showCount[name]) {
+          showCount[name].count++;
+        } else {
+          showCount[name] = { name: name, count: 1, icon: icon };
+        }
+      });
+
+      return Object.values(showCount)
+        .filter(item => item.count >= 2)
+        .sort((a, b) => b.count - a.count);
     }
   }
 };
@@ -433,12 +532,16 @@ export default {
   }
 }
 
-.hide-show {
-  display: none !important;
+.show-repeats {
+  .show-year {
+    .repeat-content {
+      display: flex;
+    }
+  }
 }
 
-.show-seats {
-  padding: 20px;
+.hide-show {
+  display: none !important;
 }
 
 .birthday-shows-section {
@@ -468,6 +571,47 @@ export default {
   }
 }
 
+.main-statistics {
+  padding: 20px;
+  border-bottom: 3px solid $black;
+  background-color: $black;
+  .stats-wrapper {
+    display: flex;
+    .stats {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      .counter {
+        background-color: $purple;
+        padding: 15px;
+        text-align: center;
+        margin: 10px;
+        border: 2px solid $purple;
+        -webkit-box-shadow: 5px 5px 0 $purple;
+        box-shadow: 9px 9px 0 $purple;
+        border-radius: 7px;
+        color: $black;
+        outline: 3px solid $black;
+        flex-grow: 1;
+        @media screen and (min-width: 922px) {
+          flex-grow: 0;
+        }
+        .stat-number {
+          font-size: 35px;
+          font-weight: bold;
+          margin: 0;
+          @media screen and (min-width: 922px) {
+            font-size: 40px;
+          }
+        }
+        .stat-title {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
 .statistics {
   border-bottom: 3px solid $black;
   @media screen and (min-width: 992px) {
@@ -486,30 +630,11 @@ export default {
     @media screen and (min-width: 992px) {
       border-left: 5px solid $black;
     }
-  }
-
-  .stats-wrapper {
-    .stats {
-      display: flex;
-      flex-wrap: wrap;
-      .counter {
-        border: 2px solid $black;
-        margin-right: 10px;
-        margin-bottom: 10px;
-        p {
-          display: inline-block;
-          margin: 0;
-          padding: 5px;
-          font-size: 18px;
-          @media screen and (min-width: 662px) {
-            padding: 10px;
-          }
-          &:last-child {
-            border-left: 2px solid $black;
-            background-color: $black;
-            color: $purple;
-          }
-        }
+    .show-years {
+      padding: 20px;
+      text-align: center;
+      .show-year-list {
+        justify-content: center;
       }
     }
   }

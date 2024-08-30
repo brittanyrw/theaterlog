@@ -1,6 +1,6 @@
 <template>
   <main id="app">
-    <Hero :shows="shows" :actors="actors" />
+    <Hero :shows="shows" :actors="actors" :theaters="theaters" />
     <Shows :shows="shows" />
   </main>
 </template>
@@ -13,7 +13,8 @@ export default {
   data() {
     return {
       shows: [],
-      actors: []
+      actors: [],
+      theaters: []
     };
   },
   components: {
@@ -24,6 +25,7 @@ export default {
     let data = await this.getShows();
     this.shows = data.showCollection.items;
     this.actors = data.actorCollection.items;
+    this.theaters = data.theaterCollection.items;
   },
   methods: {
     getShows: async () => {
@@ -43,6 +45,7 @@ export default {
             type
             rating
             seatLevel
+            icon
             theater {
               name
               city
@@ -64,6 +67,14 @@ export default {
               }
             }
           }
+        theaterCollection {
+          items {
+            name
+            city
+            broadway
+            westEnd
+          }
+        }    
       }`;
       const fetchUrl = `https://graphql.contentful.com/content/v1/spaces/${process.env.VUE_APP_CONTENTFUL_SPACE_ID}`;
       const fetchOptions = {
