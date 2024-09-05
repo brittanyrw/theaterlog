@@ -131,7 +131,7 @@
           </ul>
         </div>
         <div class="show-years">
-          <h3>Show Cost Per Year (Average / Total Price)</h3>
+          <h3>Show Cost Per Year</h3>
           <ul class="show-year-list">
             <li
               v-for="stat in getYearlyStats"
@@ -142,7 +142,7 @@
                 {{ stat.year }}
               </p>
               <p class="year-amount">
-                ${{ stat.averagePrice }}/${{ stat.totalPrice }}
+               ${{ stat.totalPrice }}
               </p>
             </li>
           </ul>
@@ -161,44 +161,6 @@
               <p class="year-amount">{{ seatAmount }}</p>
             </li>
           </ul>
-          <!-- <div class="seat-map">
-            <h4>Balcony</h4>
-            <div class="balcony">
-              <div class="back">
-                <p class="seat-count">10</p>
-              </div>
-              <div class="center">
-                <p class="seat-count">35</p>
-              </div>
-              <div class="front">
-                <p class="seat-count">22</p>
-              </div>
-            </div>
-            <h4>Mezzanine</h4>
-            <div class="mezz">
-              <div class="back">
-                <p class="seat-count">10</p>
-              </div>
-              <div class="center">
-                <p class="seat-count">35</p>
-              </div>
-              <div class="front">
-                <p class="seat-count">22</p>
-              </div>
-            </div>
-            <h4>Orchestra</h4>
-            <div class="orchestra">
-              <div class="back">
-                <p class="seat-count">10</p>
-              </div>
-              <div class="center">
-                <p class="seat-count">35</p>
-              </div>
-              <div class="front">
-                <p class="seat-count">22</p>
-              </div>
-            </div>
-          </div> -->
         </div>
       </div>
       <div class="stats-sidebar">
@@ -211,10 +173,10 @@
             >
               <div class="review-img-wrapper">
                 <img
-                  :alt="`${rating} emoji`"
-                  class="emoji"
-                  :src="require(`@/assets/${rating}.svg`)"
-                />
+              :alt="`${rating} emoji`"
+              class="emoji"
+              :src="getEmojiUrl(rating)"
+            />
               </div>
               <p class="rating-name">
                 {{ rating }}
@@ -233,7 +195,7 @@
             >
               <div class="repeat-content">
                 <p class="year">
-                  <!-- <font-awesome-icon :icon="show.icon" class="fav-icon" /> -->
+                  <font-awesome-icon :icon="show.icon" class="fav-icon" />
                   {{ show.name }}
                 </p>
                 <p class="year-amount">{{ show.count }}</p>
@@ -243,6 +205,26 @@
         </div>
       </div>
     </div>
+    <!-- <div class="map-section">
+    <div v-for="(level, index) in seatLevels" :key="level" class="levels">
+      <h3 v-if="level === 'balcony'">Balcony</h3>
+      <h3 v-if="level === 'mezzanine'">Mezzanine</h3>
+      <h3 v-if="level === 'orchestra'">Orchestra</h3>
+
+      <div :class="level">
+        <div v-for="area in seatAreas" :key="area" class="areas">
+          <div :class="area">
+            <div v-for="section in seatSections" :key="section" class="sections">
+              <div :class="[section, getSeatCount(level, area, section) === 0 ? 'zero' : '']">
+                <span>{{ getSeatCount(level, area, section) }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="stage">Stage</div>
+  </div> -->
     <div class="birthday-shows-section">
       <h3>Birthday Shows</h3>
       <p>Shows seen for my birthday.</p>
@@ -284,157 +266,179 @@
   </section>
 </template>
 
-<script>
-export default {
-  props: {
-    shows: Array,
-    actors: Array,
-    theaters: Array
-  },
-  computed: {
-    viewedShows() {
-      return this.shows.filter(item => !item.upcoming);
-    },
-    upcomingCounter: function() {
-      const result = this.shows.reduce(
-        (res, item) => (item.upcoming ? res + item.upcoming : res),
-        0
-      );
-      return result;
-    },
-    ratings() {
-      let reviewList = [];
-      this.viewedShows.forEach(function(each) {
-        reviewList.push(each.rating);
-      });
-      return reviewList;
-    },
-    cities() {
-      let cityList = [];
-      this.viewedShows.forEach(function(each) {
-        if (
-          each.theater.city === "White Plains, NY" ||
-          each.theater.city === "New York, NY"
-        ) {
-          cityList.push("NYC");
-        } else if (
-          each.theater.city === "Bethesda, MD" ||
-          each.theater.city === "Columbia, MD" ||
-          each.theater.city === "Washington, DC"
-        ) {
-          cityList.push("DC");
-        } else if (each.theater.city === "Austin, TX") {
-          cityList.push("Austin");
-        } else if (each.theater.city === "London, UK") {
-          cityList.push("London");
-        } else if (each.theater.city === "Atlanta, GA") {
-          cityList.push("Atlanta");
-        }
-      });
-      return cityList;
-    },
-    show() {
-      let showList = [];
-      this.viewedShows.forEach(function(each) {
-        showList.push(each.name);
-      });
-      return showList;
-    },
-    seats() {
-      let seatList = [];
-      this.viewedShows.forEach(function(each) {
-        if (each.seatLevel) {
-          seatList.push(each.seatLevel);
-        }
-      });
-      return seatList;
-    },
-    getYearlyStats() {
-      const yearlyCounts = {};
+<script setup>
+import { computed } from 'vue';
 
-      this.viewedShows.forEach(item => {
-        const year = new Date(item.date).getFullYear();
+const props = defineProps({
+  shows: Array,
+  actors: Array,
+  theaters: Array
+});
 
-        if (!yearlyCounts[year]) {
-          yearlyCounts[year] = {
-            count: 0,
-            totalPrice: 0
-          };
-        }
+const emojiMap = {
+  love: new URL('@/assets/love.svg', import.meta.url).href,
+  happy: new URL('@/assets/happy.svg', import.meta.url).href,
+  meaningful: new URL('@/assets/meaningful.svg', import.meta.url).href,
+  funny: new URL('@/assets/funny.svg', import.meta.url).href,
+  dislike: new URL('@/assets/dislike.svg', import.meta.url).href,
+  sad: new URL('@/assets/sad.svg', import.meta.url).href,
+  'happy-sad': new URL('@/assets/happy-sad.svg', import.meta.url).href,
+  meh: new URL('@/assets/meh.svg', import.meta.url).href,
+  confused: new URL('@/assets/confused.svg', import.meta.url).href
+};
 
-        yearlyCounts[year].count++;
-        yearlyCounts[year].totalPrice += item.price;
-      });
+const getEmojiUrl = (rating) => {
+  return emojiMap[rating] || '';
+};
 
-      const result = Object.keys(yearlyCounts)
-        .map(year => {
-          const { count, totalPrice } = yearlyCounts[year];
-          return {
-            year: Number(year),
-            count,
-            averagePrice: Math.floor(totalPrice / count),
-            totalPrice: Math.floor(totalPrice)
-          };
-        })
-        .sort((a, b) => b.year - a.year);
+const viewedShows = computed(() => {
+  return props.shows.filter(item => !item.upcoming);
+});
 
-      return result;
+const upcomingCounter = computed(() => {
+  return props.shows.reduce(
+    (res, item) => (item.upcoming ? res + 1 : res),
+    0
+  );
+});
+
+// const seatLevels = ['balcony', 'mezzanine', 'orchestra'];
+// const seatAreas = ['back', 'center', 'front'];
+// const seatSections = ['left', 'middle', 'right'];
+
+// const getSeatCount = (seatLevel, seatArea, seatSection) => {
+//   return viewedShows.value.filter(seat =>
+//     (!seatLevel || (seat.seatLevel && seat.seatLevel.toLowerCase() === seatLevel)) &&
+//     (!seatArea || (seat.seatArea && seat.seatArea.toLowerCase() === seatArea)) &&
+//     (!seatSection || (seat.seatSection && seat.seatSection.toLowerCase() === seatSection))
+//   ).length;
+// };
+
+const ratings = computed(() => {
+  let reviewList = [];
+  viewedShows.value.forEach(each => {
+    if (each.rating) {
+      reviewList.push(each.rating);
     }
-  },
-  methods: {
-    valueCount(key, value) {
-      return this.viewedShows.filter(show => show[key] === value).length;
-    },
-    valueCountTheaters(key, value) {
-      return this.theaters.filter(theater => theater[key] === value).length;
-    },
-    count(key) {
-      return this.viewedShows.reduce(
-        (res, show) => (show[key] ? res + show[key] : res),
-        0
-      );
-    },
-    countArray(arr) {
-      var countedArray = {};
+  });
+  return reviewList;
+});
 
-      arr.forEach(function(el) {
-        countedArray[el] = countedArray[el] + 1 || 1;
-      });
-
-      const sortedCountedObj = Object.entries(countedArray).sort(
-        (a, b) => b[1] - a[1]
-      );
-      countedArray = Object.fromEntries(sortedCountedObj);
-      return countedArray;
-    },
-    countShowsWithIcon(shows) {
-      const showCount = {};
-
-      shows.forEach(item => {
-        const { name, icon } = item;
-
-        if (showCount[name]) {
-          showCount[name].count++;
-        } else {
-          showCount[name] = { name: name, count: 1, icon: icon };
-        }
-      });
-
-      return Object.values(showCount)
-        .filter(item => item.count >= 2)
-        .sort((a, b) => b.count - a.count);
+const cities = computed(() => {
+  let cityList = [];
+  viewedShows.value.forEach(each => {
+    if (each.theater.city === "White Plains, NY" || each.theater.city === "New York, NY") {
+      cityList.push("NYC");
+    } else if (each.theater.city === "Bethesda, MD" || each.theater.city === "Columbia, MD" || each.theater.city === "Washington, DC") {
+      cityList.push("DC");
+    } else if (each.theater.city === "Austin, TX") {
+      cityList.push("Austin");
+    } else if (each.theater.city === "London, UK") {
+      cityList.push("London");
+    } else if (each.theater.city === "Atlanta, GA") {
+      cityList.push("Atlanta");
     }
-  }
+  });
+  return cityList;
+});
+
+const seats = computed(() => {
+  let seatList = [];
+  viewedShows.value.forEach(each => {
+    if (each.seatLevel) {
+      seatList.push(each.seatLevel);
+    }
+  });
+  return seatList;
+});
+
+const getYearlyStats = computed(() => {
+  const yearlyCounts = {};
+
+  viewedShows.value.forEach(item => {
+    const year = new Date(item.date).getFullYear();
+
+    if (!yearlyCounts[year]) {
+      yearlyCounts[year] = {
+        count: 0,
+        totalPrice: 0
+      };
+    }
+
+    yearlyCounts[year].count++;
+    yearlyCounts[year].totalPrice += item.price;
+  });
+
+  const result = Object.keys(yearlyCounts)
+    .map(year => {
+      const { count, totalPrice } = yearlyCounts[year];
+      return {
+        year: Number(year),
+        count,
+        averagePrice: Math.floor(totalPrice / count),
+        totalPrice: Math.floor(totalPrice)
+      };
+    })
+    .sort((a, b) => b.year - a.year);
+
+  return result;
+});
+
+// methods
+const valueCount = (key, value) => {
+  return viewedShows.value.filter(show => show[key] === value).length;
+};
+
+const valueCountTheaters = (key, value) => {
+  return props.theaters.filter(theater => theater[key] === value).length;
+};
+
+const count = (key) => {
+  return viewedShows.value.reduce(
+    (res, show) => (show[key] ? res + show[key] : res),
+    0
+  );
+};
+
+const countArray = (array = []) => {
+  const countedArray = {};
+
+  array.forEach(el => {
+    countedArray[el] = (countedArray[el] || 0) + 1;
+  });
+
+  const sortedCountedObj = Object.entries(countedArray).sort(
+    (a, b) => b[1] - a[1]
+  );
+
+  return Object.fromEntries(sortedCountedObj);
+};
+
+const countShowsWithIcon = (shows) => {
+  const showCount = {};
+
+  shows.forEach(item => {
+    const { name, icon } = item;
+
+    if (showCount[name]) {
+      showCount[name].count++;
+    } else {
+      showCount[name] = { name: name, count: 1, icon: icon };
+    }
+  });
+
+  return Object.values(showCount)
+    .filter(item => item.count >= 2)
+    .sort((a, b) => b.count - a.count);
 };
 </script>
 
-<style lang="scss">
-@import "@/assets/styles/variables.scss";
+<style>
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
 
 .hero {
   header {
-    border-bottom: 3px solid $black;
+    border-bottom: 3px solid var(--black);
     @media screen and (min-width: 662px) {
       display: flex;
     }
@@ -445,7 +449,7 @@ export default {
       flex-wrap: wrap;
       @media screen and (min-width: 662px) {
         flex-basis: 75%;
-        border-right: 3px solid $black;
+        border-right: 3px solid var(--black);
       }
       h1 {
         font-family: "Abril Fatface", cursive;
@@ -465,18 +469,18 @@ export default {
       }
 
       .external-links {
-        border-top: 3px solid $black;
-        border-bottom: 3px solid $black;
+        border-top: 3px solid var(--black);
+        border-bottom: 3px solid var(--black);
         a {
           padding: 5px 10px;
-          background-color: $black;
-          color: $purple;
+          background-color: var(--black);
+          color: var(--purple);
           text-decoration: none;
-          border: 3px solid $black;
+          border: 3px solid var(--black);
         }
         a:hover {
-          background-color: $purple;
-          color: $black;
+          background-color: var(--purple);
+          color: var(--black);
           transition: 0.5s;
         }
         @media screen and (min-width: 662px) {
@@ -489,7 +493,7 @@ export default {
           font-size: 24px;
         }
         .multi-example {
-          border: 2px solid $black;
+          border: 2px solid var(--black);
           padding: 5px;
           display: inline-block;
         }
@@ -502,7 +506,7 @@ export default {
       }
     }
     .portfolio-link a {
-      color: $black;
+      color: var(--black);
       font-weight: bold;
     }
   }
@@ -513,7 +517,7 @@ export default {
     display: flex;
     flex-wrap: wrap;
     .show-year {
-      border: 2px solid $black;
+      border: 2px solid var(--black);
       margin-bottom: 5px;
       display: flex;
       margin-right: 5px;
@@ -523,9 +527,9 @@ export default {
       }
       .year-amount {
         padding: 5px;
-        border-left: 2px solid $black;
-        color: $purple;
-        background-color: $black;
+        border-left: 2px solid var(--black);
+        color: var(--purple);
+        background-color: var(--black);
         margin: 0;
       }
     }
@@ -550,15 +554,15 @@ export default {
     display: flex;
     flex-wrap: wrap;
     .birthday-show-list {
-      border: 2px solid $black;
+      border: 2px solid var(--black);
       margin-right: 2px;
       margin-bottom: 5px;
       flex-grow: 1;
       display: flex;
       .show-year {
         padding: 5px;
-        background-color: $black;
-        color: $purple;
+        background-color: var(--black);
+        color: var(--purple);
         margin: 0;
       }
       .shows {
@@ -573,8 +577,8 @@ export default {
 
 .main-statistics {
   padding: 20px;
-  border-bottom: 3px solid $black;
-  background-color: $black;
+  border-bottom: 3px solid var(--black);
+  background-color: var(--black);
   .stats-wrapper {
     display: flex;
     .stats {
@@ -582,16 +586,16 @@ export default {
       flex-wrap: wrap;
       justify-content: center;
       .counter {
-        background-color: $purple;
+        background-color: var(--purple);
         padding: 15px;
         text-align: center;
         margin: 10px;
-        border: 2px solid $purple;
-        -webkit-box-shadow: 5px 5px 0 $purple;
-        box-shadow: 9px 9px 0 $purple;
+        border: 2px solid var(--purple);
+        -webkit-box-shadow: 5px 5px 0 var(--purple);
+        box-shadow: 9px 9px 0 var(--purple);
         border-radius: 7px;
-        color: $black;
-        outline: 3px solid $black;
+        color: var(--black);
+        outline: 3px solid var(--black);
         flex-grow: 1;
         @media screen and (min-width: 922px) {
           flex-grow: 0;
@@ -613,7 +617,7 @@ export default {
 }
 
 .statistics {
-  border-bottom: 3px solid $black;
+  border-bottom: 3px solid var(--black);
   @media screen and (min-width: 992px) {
     display: grid;
     grid-template-columns: 1.5fr 1fr;
@@ -628,7 +632,7 @@ export default {
 
   .stats-sidebar {
     @media screen and (min-width: 992px) {
-      border-left: 5px solid $black;
+      border-left: 5px solid var(--black);
     }
     .show-years {
       padding: 20px;
@@ -644,7 +648,7 @@ export default {
     align-items: flex-end;
     flex-wrap: wrap;
     .show-location {
-      border: 2px solid $black;
+      border: 2px solid var(--black);
       margin-right: 10px;
       margin-bottom: 10px;
       p {
@@ -652,7 +656,7 @@ export default {
         padding: 5px;
       }
       .city {
-        border-top: 2px solid $black;
+        border-top: 2px solid var(--black);
         font-size: 12px;
         @media screen and (min-width: 992px) {
           width: 80px;
@@ -660,8 +664,8 @@ export default {
       }
       .city-amount {
         font-size: 14px;
-        background-color: $black;
-        color: $purple;
+        background-color: var(--black);
+        color: var(--purple);
       }
       &:nth-child(1) {
         .city-amount {
@@ -697,15 +701,15 @@ export default {
         text-align: center;
         margin: 10px;
         .rating-name {
-          border: 2px solid $black;
+          border: 2px solid var(--black);
           padding: 5px 0 5px 5px;
           margin-bottom: 5px;
         }
         .rating-amount {
           padding: 5px;
-          border-left: 2px solid $black;
-          color: $purple;
-          background-color: $black;
+          border-left: 2px solid var(--black);
+          color: var(--purple);
+          background-color: var(--black);
         }
         .review-img-wrapper {
           text-align: center;
@@ -717,5 +721,52 @@ export default {
       }
     }
   }
+}
+
+.map-section {
+  max-width: 700px;
+  margin: auto;
+  text-align: center;
+}
+
+.balcony, .mezz, .orchestra {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.back, .front, .center {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.sections {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sections span {
+    display: block;
+    margin: 5px;
+    height: 40px;
+    width: 40px;
+    border: 3px solid;
+    display: flex;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    border: 3px solid var(--black);
+    padding: 5px;
+}
+
+.areas {
+    width: 100%;
+    align-self: center;
+    flex-direction: column;
+    justify-content: center;
 }
 </style>

@@ -19,7 +19,7 @@
           </div>
           <div v-if="show.rating" class="review">
             <img
-              :src="require(`../assets/${show.rating}.svg`)"
+              :src="getEmojiUrl(show.rating)"
               :alt="`Impression of the show is ${show.rating}`"
             />
           </div>
@@ -47,18 +47,10 @@
             <p class="show-theater">{{ show.theater.name }}</p>
             <p class="show-location">{{ show.theater.city }}</p>
             <p v-if="show.upcoming" class="show-date">
-              {{
-                moment(show.date)
-                  .add(1, "d")
-                  .format("MMMM YYYY")
-              }}
+              {{ formatDate(new Date(show.date)) }}
             </p>
             <p v-else class="show-date">
-              {{
-                moment(show.date)
-                  .add(1, "d")
-                  .format("MMMM DD, YYYY")
-              }}
+              {{ formatDate(new Date(show.date), true) }}
             </p>
           </div>
         </div>
@@ -107,20 +99,53 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    shows: Array
-  }
+
+<script setup>
+import { computed } from 'vue';
+
+const emojiMap = {
+  love: new URL('@/assets/love.svg', import.meta.url).href,
+  happy: new URL('@/assets/happy.svg', import.meta.url).href,
+  meaningful: new URL('@/assets/meaningful.svg', import.meta.url).href,
+  funny: new URL('@/assets/funny.svg', import.meta.url).href,
+  dislike: new URL('@/assets/dislike.svg', import.meta.url).href,
+  sad: new URL('@/assets/sad.svg', import.meta.url).href,
+  'happy-sad': new URL('@/assets/happy-sad.svg', import.meta.url).href,
+  meh: new URL('@/assets/meh.svg', import.meta.url).href,
+  confused: new URL('@/assets/confused.svg', import.meta.url).href
 };
+
+const getEmojiUrl = (rating) => {
+  return emojiMap[rating] || '';
+};
+
+const formatDate = (date, includeDay = false) => {
+  const newDate = new Date(date);
+  newDate.setDate(newDate.getDate() + 1);
+
+  const options = {
+    year: 'numeric',
+    month: 'long',
+    ...(includeDay && { day: '2-digit' })
+  };
+
+  return new Intl.DateTimeFormat('en-US', options).format(newDate);
+};
+
+const props = defineProps({
+  shows: Array
+});
+
+const shows = computed(() => props.shows);
 </script>
 
-<style lang="scss" scoped>
-@import "@/assets/styles/variables.scss";
+
+<style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
+
 .shows {
   padding: 40px 10px;
-  background-color: $black;
+  background-color: var(--black);
   @media screen and (min-width: 662px) {
     padding: 20px;
   }
@@ -141,11 +166,11 @@ export default {
       grid-template-columns: 1fr 1fr 1fr;
     }
     .show {
-      border: 2px solid $purple;
-      box-shadow: 9px 9px 0 $purple;
-      outline: 3px solid $black;
+      border: 2px solid var(--purple);
+      box-shadow: 9px 9px 0 var(--purple);
+      outline: 3px solid var(--black);
       border-radius: 7px;
-      background-color: $purple;
+      background-color: var(--purple);
       margin-bottom: 50px;
       max-width: 400px;
       margin: 0 auto 40px auto;
@@ -168,10 +193,10 @@ export default {
         }
         .fav-view {
           .fav-icon {
-            color: $purple;
+            color: var(--purple);
             font-size: 35px;
             path {
-              stroke: $black;
+              stroke: var(--black);
               stroke-width: 20px;
             }
           }
@@ -179,19 +204,19 @@ export default {
         .review {
           img {
             width: 100%;
-            background-color: $purple;
+            background-color: var(--purple);
             border-radius: 50%;
             width: 40px;
-            border: 1px solid $black;
+            border: 1px solid var(--black);
           }
         }
         .multi-view,
         .show-price {
-          background-color: $black;
-          color: $purple;
+          background-color: var(--black);
+          color: var(--purple);
           padding: 10px;
-          border: 3px solid $purple;
-          outline: 1px solid $black;
+          border: 3px solid var(--purple);
+          outline: 1px solid var(--black);
         }
         .multi-view {
           display: inline-block;
@@ -208,8 +233,8 @@ export default {
           padding: 5px 10px;
           top: -38px;
           right: 10px;
-          border: 3px solid $black;
-          background-color: $purple;
+          border: 3px solid var(--black);
+          background-color: var(--purple);
           z-index: 99;
           text-align: center;
         }
@@ -218,14 +243,14 @@ export default {
           padding: 5px 10px;
           top: -38px;
           right: 110px;
-          border: 3px solid $black;
-          background-color: $purple;
+          border: 3px solid var(--black);
+          background-color: var(--purple);
           z-index: 99;
           text-align: center;
         }
         .show-name {
-          background-color: $black;
-          color: $purple;
+          background-color: var(--black);
+          color: var(--purple);
           padding: 20px;
           p {
             font-size: 25px;
@@ -237,7 +262,7 @@ export default {
               font-size: 30px;
             }
             a {
-              color: $purple;
+              color: var(--purple);
               text-decoration: none;
             }
           }
@@ -251,8 +276,8 @@ export default {
         }
       }
       .favs {
-        background-color: $black;
-        color: $purple;
+        background-color: var(--black);
+        color: var(--purple);
         position: absolute;
         padding: 10px;
         bottom: 0;
@@ -261,10 +286,10 @@ export default {
           margin: 0;
         }
         .fav-song-label {
-          background-color: $purple;
-          border: 3px solid $black;
+          background-color: var(--purple);
+          border: 3px solid var(--black);
           padding: 5px;
-          color: $black;
+          color: var(--black);
           position: absolute;
           font-size: 14px;
           top: -15px;
@@ -282,42 +307,42 @@ export default {
             }
             .song-name a {
               text-decoration: none;
-              color: $purple;
+              color: var(--purple);
             }
           }
         }
       }
       &.upcoming {
-        background-color: $black;
+        background-color: var(--black);
         .show-name {
-          background-color: $purple;
-          color: $black;
+          background-color: var(--purple);
+          color: var(--black);
           a.upcoming-show-link {
-            color: $black;
+            color: var(--black);
           }
         }
         .show-content {
           padding-bottom: 20px;
-          color: $purple;
+          color: var(--purple);
         }
 
         .type,
         .upcoming-tag {
-          background-color: $black;
-          color: $purple;
-          border: 3px solid $purple;
-          outline: 3px solid $black;
+          background-color: var(--black);
+          color: var(--purple);
+          border: 3px solid var(--purple);
+          outline: 3px solid var(--black);
         }
       }
     }
   }
   .icon-attribute {
-    background-color: $purple;
+    background-color: var(--purple);
     padding: 20px;
     border-radius: 3px;
-    color: $black;
+    color: var(--black);
     a {
-      color: $black;
+      color: var(--black);
     }
   }
 }
