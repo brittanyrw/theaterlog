@@ -1,8 +1,40 @@
 <template>
   <div class="shows">
+    <div class="filters">
+      <div class="filter-container">
+      <label for="category-filter">Category:</label>
+      <select v-model="selectedCategory" id="category-filter">
+        <option value="">All</option>
+        <option v-for="category in categories" :key="category" :value="category">{{ category }}</option>
+      </select>
+    </div>
+    <div class="filter-container">
+      <label for="year-filter">Year:</label>
+      <select v-model="selectedYear" id="year-filter">
+        <option value="">All</option>
+        <option v-for="year in years" :key="year" :value="year">{{ year }}</option>
+      </select>
+      </div>
+      <div class="filter-container">
+      <label for="location-filter">Location:</label>
+      <select v-model="selectedLocation" id="location-filter">
+        <option value="">All</option>
+        <option v-for="location in locations" :key="location" :value="location">{{ location }}</option>
+      </select>
+</div>
+<div class="filter-container">
+      <label for="review-filter">Review:</label>
+      <select v-model="selectedReview" id="review-filter">
+        <option value="">All</option>
+        <option v-for="review in reviews" :key="review" :value="review">{{ review }}</option>
+      </select>
+      </div>
+      <div class="total">Total: {{ filteredShows.length }}</div>
+    </div>
+    <p v-if="filteredShows.length === 0" class="no-results">Oops! There are no shows to display.</p>
     <ul class="show-container">
       <li
-        v-for="show in shows"
+        v-for="show in filteredShows"
         :key="show.sys.id"
         class="show"
         :class="[{ upcoming: show.upcoming }]"
@@ -77,7 +109,7 @@
       </li>
     </ul>
     <div class="icon-attribute">
-      Icons made by
+      Emoji icons made by
       <a
         href="https://www.flaticon.com/authors/darius-dan"
         title="Darius Dan"
@@ -101,7 +133,7 @@
 
 
 <script setup>
-import { computed } from 'vue';
+import { ref, computed } from 'vue';
 
 const emojiMap = {
   love: new URL('@/assets/love.svg', import.meta.url).href,
@@ -136,8 +168,55 @@ const props = defineProps({
   shows: Array
 });
 
-const shows = computed(() => props.shows);
+const selectedYear = ref('');
+const selectedLocation = ref('');
+const selectedReview = ref('');
+const selectedCategory = ref('');
+
+// City mapping: map smaller cities to a larger city
+const cityMapping = {
+  'White Plains, NY': 'New York, NY',
+  'Columbia, MD': 'Washington, DC',
+  'Bethesda, MD': 'Washington, DC',
+};
+
+// Function to apply city mapping
+const mapCity = (city) => {
+  return cityMapping[city] || city;
+};
+
+// Get distinct locations for the dropdown (group smaller cities into one)
+const locations = computed(() => {
+  const mappedCities = props.shows.map(show => mapCity(show.theater.city));
+  return [...new Set(mappedCities)];
+});
+
+const years = computed(() => {
+  return [...new Set(props.shows.map(show => new Date(show.date).getFullYear()))];
+});
+
+const reviews = computed(() => {
+  return ['love', 'happy', 'meaningful', 'funny', 'dislike', 'sad', 'happy-sad', 'meh', 'confused'];
+});
+
+const categories = computed(() => {
+  return ['play', 'musical', 'dance'];
+});
+
+// Filtered shows based on selected filters
+const filteredShows = computed(() => {
+  return props.shows.filter(show => {
+    const showYear = new Date(show.date).getFullYear();
+    const matchesYear = selectedYear.value ? showYear === parseInt(selectedYear.value) : true;
+    const matchesLocation = selectedLocation.value ? mapCity(show.theater.city) === selectedLocation.value : true;
+    const matchesReview = selectedReview.value ? show.rating === selectedReview.value : true;
+    const matchesCategory = selectedCategory.value ? show.type === selectedCategory.value : true;
+
+    return matchesYear && matchesLocation && matchesReview && matchesCategory;
+  });
+});
 </script>
+
 
 
 <style scoped>
@@ -341,9 +420,54 @@ const shows = computed(() => props.shows);
     padding: 20px;
     border-radius: 3px;
     color: var(--black);
+    font-size: 12px !important;
     a {
       color: var(--black);
     }
   }
+}
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  margin-bottom: 20px;
+  label {
+    color: var(--purple);
+  }
+  .total {
+    color: var(--purple); 
+    margin-left: auto;
+  }
+  select {
+    background: var(--purple);
+    color: var(--black);
+    font-size: 16px;
+    padding: 5px;
+    margin-left: 10px;
+    border-color: var(--purple);
+    text-transform: capitalize;
+  }
+  .filter-container {
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .filters {
+    padding-top: 0;
+    margin-bottom: 40px;
+    flex-direction: column;
+    .total {
+    margin-left: 0;
+  }
+  }
+}
+
+.no-results {
+  color: var(--purple);
+  margin: auto;
+  text-align: center;
+  font-size: 16px;
 }
 </style>

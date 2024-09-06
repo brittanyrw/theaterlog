@@ -40,6 +40,8 @@ export default {
             seatArea
             seatSection
             icon
+            actors
+            time
             theater {
               name
               city

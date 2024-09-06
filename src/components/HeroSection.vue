@@ -18,12 +18,8 @@
           </p>
           <p class="portfolio-link">
             Created by
-            <a href="https://musicalwebdev.com" target="_blank"
-              >Brittany Walker</a
-            >. View the code
-            <a href="https://github.com/brittanyrw/theaterlog" target="_blank"
-              >on GitHub.</a
-            >
+            <a href="https://musicalwebdev.com" target="_blank">Brittany Walker</a>. View the code
+            <a href="https://github.com/brittanyrw/theaterlog" target="_blank">on GitHub.</a>
           </p>
         </div>
       </div>
@@ -84,8 +80,8 @@
             <p class="stat-title">Broadway Theaters</p>
             <p class="stat-number">
               {{
-                Math.floor((valueCountTheaters("broadway", true) / 41) * 100)
-              }}%
+              Math.floor((valueCountTheaters("broadway", true) / 41) * 100)
+            }}%
             </p>
           </div>
           <div class="counter ticket-stat">
@@ -96,6 +92,24 @@
               }}%
             </p>
           </div>
+          <!-- <div class="counter total-time-stat">
+            <p class="stat-title">Total Time Watched</p>
+            <p class="stat-number">{{ totalTime }}</p>
+          </div>
+          <div class="counter avg-time-stat">
+            <p class="stat-title">Average Show Length</p>
+            <p class="stat-number">{{ averageTime }}</p>
+          </div>
+          <div class="counter shortest-show-stat">
+            <p class="stat-title">Shortest Show</p>
+            <p class="stat-number">{{ shortestShow.name }} <span>{{ shortestShow.duration }}</span></p>
+          </div>
+          <div class="counter longest-show-stat">
+            <p class="stat-title">Longest Show</p>
+            <p class="stat-number">{{ longestShow.name }}
+              <span>{{ longestShow.duration }}</span>
+            </p>
+          </div> -->
         </div>
       </div>
     </div>
@@ -103,11 +117,7 @@
       <div class="statistics-content">
         <h3>Show Locations</h3>
         <ul class="show-location-list">
-          <li
-            v-for="(cityAmount, city) in countArray(cities)"
-            :key="city"
-            class="show-location"
-          >
+          <li v-for="(cityAmount, city) in countArray(cities)" :key="city" class="show-location">
             <p class="city-amount">{{ cityAmount }}</p>
 
             <p class="city">
@@ -118,11 +128,7 @@
         <div class="show-years">
           <h3>Show Years</h3>
           <ul class="show-year-list">
-            <li
-              v-for="year in getYearlyStats"
-              :key="year.year"
-              class="show-year"
-            >
+            <li v-for="year in getYearlyStats" :key="year.year" class="show-year">
               <p class="year">
                 {{ year.year }}
               </p>
@@ -133,16 +139,12 @@
         <div class="show-years">
           <h3>Show Cost Per Year</h3>
           <ul class="show-year-list">
-            <li
-              v-for="stat in getYearlyStats"
-              :key="stat.year"
-              class="show-year"
-            >
+            <li v-for="stat in getYearlyStats" :key="stat.year" class="show-year">
               <p class="year">
                 {{ stat.year }}
               </p>
               <p class="year-amount">
-               ${{ stat.totalPrice }}
+                ${{ stat.totalPrice }}
               </p>
             </li>
           </ul>
@@ -150,11 +152,7 @@
         <div class="show-years show-seats">
           <h3>Seat Locations</h3>
           <ul class="show-year-list">
-            <li
-              v-for="(seatAmount, seat) in countArray(seats)"
-              :key="seat"
-              class="show-year"
-            >
+            <li v-for="(seatAmount, seat) in countArray(seats)" :key="seat" class="show-year">
               <p class="year">
                 {{ seat }}
               </p>
@@ -167,16 +165,9 @@
         <div class="review-legend">
           <h3>Review Legend</h3>
           <ul class="review-emoji-list">
-            <li
-              v-for="(ratingAmount, rating) in countArray(ratings)"
-              :key="rating"
-            >
+            <li v-for="(ratingAmount, rating) in countArray(ratings)" :key="rating">
               <div class="review-img-wrapper">
-                <img
-              :alt="`${rating} emoji`"
-              class="emoji"
-              :src="getEmojiUrl(rating)"
-            />
+                <img :alt="`${rating} emoji`" class="emoji" :src="getEmojiUrl(rating)" />
               </div>
               <p class="rating-name">
                 {{ rating }}
@@ -185,20 +176,42 @@
             </li>
           </ul>
         </div>
-        <div class="show-years show-repeats">
-          <h3>Show Repeats</h3>
-          <ul class="show-year-list">
-            <li
-              v-for="show in countShowsWithIcon(viewedShows)"
-              :key="show.icon"
-              class="show-year"
-            >
-              <div class="repeat-content">
-                <p class="year">
-                  <font-awesome-icon :icon="show.icon" class="fav-icon" />
-                  {{ show.name }}
+        <div class="birthday-shows-section">
+          <div class="birthday-header">
+            <h3>Birthday Shows</h3>
+            <p>Shows seen for my birthday.</p>
+          </div>
+          <ul class="birthday-shows">
+            <li class="birthday-show-list">
+              <p class="show-year">2022</p>
+              <div class="shows">
+                <p>Little Shop of Horrors, KPOP, Hadestown</p>
+              </div>
+            </li>
+            <li class="birthday-show-list">
+              <p class="show-year">2021</p>
+              <div class="shows">
+                <p>
+                  Hadestown, Little Shop of Horrors, Waitress, Beyond Babel, Six
                 </p>
-                <p class="year-amount">{{ show.count }}</p>
+              </div>
+            </li>
+            <li class="birthday-show-list">
+              <p class="show-year">2019</p>
+              <div class="shows">
+                <p>Little Shop of Horrors</p>
+              </div>
+            </li>
+            <li class="birthday-show-list">
+              <p class="show-year">2016</p>
+              <div class="shows">
+                <p>Hamilton, Falsettos, Heathers, Sister Act</p>
+              </div>
+            </li>
+            <li class="birthday-show-list">
+              <p class="show-year">2015</p>
+              <div class="shows">
+                <p>Spring Awakening, Something Rotten</p>
               </div>
             </li>
           </ul>
@@ -225,44 +238,31 @@
     </div>
     <div class="stage">Stage</div>
   </div> -->
-    <div class="birthday-shows-section">
-      <h3>Birthday Shows</h3>
-      <p>Shows seen for my birthday.</p>
-      <ul class="birthday-shows">
-        <li class="birthday-show-list">
-          <p class="show-year">2022</p>
-          <div class="shows">
-            <p>Little Shop of Horrors, KPOP, Hadestown</p>
-          </div>
-        </li>
-        <li class="birthday-show-list">
-          <p class="show-year">2021</p>
-          <div class="shows">
-            <p>
-              Hadestown, Little Shop of Horrors, Waitress, Beyond Babel, Six
+    <div class="show-years show-repeats">
+      <h3>Show Repeats</h3>
+      <ul class="show-year-list">
+        <li v-for="show in countShowsWithIcon(viewedShows)" :key="show.icon" class="show-year">
+          <div class="repeat-content">
+            <p class="year">
+              <font-awesome-icon :icon="show.icon" class="fav-icon" />
+              {{ show.name }}
             </p>
-          </div>
-        </li>
-        <li class="birthday-show-list">
-          <p class="show-year">2019</p>
-          <div class="shows">
-            <p>Little Shop of Horrors</p>
-          </div>
-        </li>
-        <li class="birthday-show-list">
-          <p class="show-year">2016</p>
-          <div class="shows">
-            <p>Hamilton, Falsettos, Heathers, Sister Act</p>
-          </div>
-        </li>
-        <li class="birthday-show-list">
-          <p class="show-year">2015</p>
-          <div class="shows">
-            <p>Spring Awakening, Something Rotten</p>
+            <p class="year-amount">{{ show.count }}</p>
           </div>
         </li>
       </ul>
     </div>
+    <!-- <div class="show-years actor-repeats">
+      <h3>Actor Repeats</h3>
+      <ul class="show-year-list">
+        <li v-for="actor in actorShowCounts" :key="actor.name" class="show-year">
+          <div class="repeat-content">
+            <p class="year">{{ actor.name }}</p>
+            <p class="year-amount">{{ actor.count }}</p>
+          </div>
+        </li>
+      </ul>
+    </div> -->
   </section>
 </template>
 
@@ -384,6 +384,72 @@ const getYearlyStats = computed(() => {
   return result;
 });
 
+const showsWithTime = computed(() => {
+  return viewedShows.value.filter(show => show.time !== null);
+});
+
+const totalTime = computed(() => {
+  const totalMinutes = showsWithTime.value.reduce((sum, show) => sum + show.time, 0);
+  const hours = Math.floor(totalMinutes / 60);
+  const minutes = totalMinutes % 60;
+  return `${hours} hrs ${minutes} mins`;
+});
+
+const shortestShow = computed(() => {
+  if (showsWithTime.value.length === 0) return 'N/A';
+  const minDuration = Math.min(...showsWithTime.value.map(show => show.time));
+  const show = showsWithTime.value.find(show => show.time === minDuration);
+  const hours = Math.floor(minDuration / 60);
+  const minutes = minDuration % 60;
+  const duration = `${hours} hrs ${minutes} mins`;
+  return {
+    name: show.name,
+    duration: duration
+  }
+});
+
+const longestShow = computed(() => {
+  if (showsWithTime.value.length === 0) return 'N/A';
+  const maxDuration = Math.max(...showsWithTime.value.map(show => show.time));
+  const show = showsWithTime.value.find(show => show.time === maxDuration);
+  const hours = Math.floor(maxDuration / 60);
+  const minutes = maxDuration % 60;
+  const duration = `${hours} hrs ${minutes} mins`;
+  return {
+    name: show.name,
+    duration: duration
+  }
+});
+
+const averageTime = computed(() => {
+  if (showsWithTime.value.length === 0) return 'N/A';
+  const totalMinutes = showsWithTime.value.reduce((sum, show) => sum + show.time, 0);
+  const avgMinutes = totalMinutes / showsWithTime.value.length;
+  const hours = Math.floor(avgMinutes / 60);
+  const minutes = Math.round(avgMinutes % 60);
+  return `${hours} hrs ${minutes} mins`;
+});
+
+const actorShowCounts = computed(() => {
+  const actorCount = {};
+
+  viewedShows.value.forEach(show => {
+    if (show.actors) { // Check if show.actors is not null
+      show.actors.forEach(actor => {
+        if (actorCount[actor]) {
+          actorCount[actor].count++;
+        } else {
+          actorCount[actor] = { name: actor, count: 1 };
+        }
+      });
+    }
+  });
+
+  return Object.values(actorCount)
+    .filter(item => item.count > 2)
+    .sort((a, b) => b.count - a.count);
+});
+
 // methods
 const valueCount = (key, value) => {
   return viewedShows.value.filter(show => show[key] === value).length;
@@ -439,18 +505,22 @@ const countShowsWithIcon = (shows) => {
 .hero {
   header {
     border-bottom: 3px solid var(--black);
+
     @media screen and (min-width: 662px) {
       display: flex;
     }
+
     .overview {
       padding: 20px;
       display: flex;
       align-items: center;
       flex-wrap: wrap;
+
       @media screen and (min-width: 662px) {
         flex-basis: 75%;
         border-right: 3px solid var(--black);
       }
+
       h1 {
         font-family: "Abril Fatface", cursive;
         margin: 0;
@@ -458,6 +528,7 @@ const countShowsWithIcon = (shows) => {
         font-size: 40px;
       }
     }
+
     .hero-sidebar {
       @media screen and (min-width: 662px) {
         width: 300px;
@@ -471,6 +542,7 @@ const countShowsWithIcon = (shows) => {
       .external-links {
         border-top: 3px solid var(--black);
         border-bottom: 3px solid var(--black);
+
         a {
           padding: 5px 10px;
           background-color: var(--black);
@@ -478,11 +550,13 @@ const countShowsWithIcon = (shows) => {
           text-decoration: none;
           border: 3px solid var(--black);
         }
+
         a:hover {
           background-color: var(--purple);
           color: var(--black);
           transition: 0.5s;
         }
+
         @media screen and (min-width: 662px) {
           border-top: 0;
         }
@@ -492,19 +566,23 @@ const countShowsWithIcon = (shows) => {
         .fa-star {
           font-size: 24px;
         }
+
         .multi-example {
           border: 2px solid var(--black);
           padding: 5px;
           display: inline-block;
         }
+
         li:first-child {
           margin-bottom: 10px;
         }
+
         li {
           display: block;
         }
       }
     }
+
     .portfolio-link a {
       color: var(--black);
       font-weight: bold;
@@ -516,15 +594,18 @@ const countShowsWithIcon = (shows) => {
   .show-year-list {
     display: flex;
     flex-wrap: wrap;
+
     .show-year {
       border: 2px solid var(--black);
       margin-bottom: 5px;
       display: flex;
       margin-right: 5px;
+
       .year {
         margin: 0;
         padding: 5px;
       }
+
       .year-amount {
         padding: 5px;
         border-left: 2px solid var(--black);
@@ -536,13 +617,13 @@ const countShowsWithIcon = (shows) => {
   }
 }
 
-.show-repeats {
-  .show-year {
-    .repeat-content {
+.show-repeats, .actor-repeats {
+  padding: 20px;
+}
+
+.repeat-content {
       display: flex;
     }
-  }
-}
 
 .hide-show {
   display: none !important;
@@ -550,23 +631,32 @@ const countShowsWithIcon = (shows) => {
 
 .birthday-shows-section {
   padding: 20px;
+
+  .birthday-header {
+    text-align: center;
+  }
+
   .birthday-shows {
     display: flex;
     flex-wrap: wrap;
+
     .birthday-show-list {
       border: 2px solid var(--black);
       margin-right: 2px;
       margin-bottom: 5px;
       flex-grow: 1;
       display: flex;
+
       .show-year {
         padding: 5px;
         background-color: var(--black);
         color: var(--purple);
         margin: 0;
       }
+
       .shows {
         padding: 5px;
+
         p {
           margin: 0;
         }
@@ -579,12 +669,15 @@ const countShowsWithIcon = (shows) => {
   padding: 20px;
   border-bottom: 3px solid var(--black);
   background-color: var(--black);
+
   .stats-wrapper {
     display: flex;
+
     .stats {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
+
       .counter {
         background-color: var(--purple);
         padding: 15px;
@@ -597,17 +690,21 @@ const countShowsWithIcon = (shows) => {
         color: var(--black);
         outline: 3px solid var(--black);
         flex-grow: 1;
+
         @media screen and (min-width: 922px) {
           flex-grow: 0;
         }
+
         .stat-number {
           font-size: 35px;
           font-weight: bold;
           margin: 0;
+
           @media screen and (min-width: 922px) {
             font-size: 40px;
           }
         }
+
         .stat-title {
           margin: 0;
         }
@@ -618,6 +715,7 @@ const countShowsWithIcon = (shows) => {
 
 .statistics {
   border-bottom: 3px solid var(--black);
+
   @media screen and (min-width: 992px) {
     display: grid;
     grid-template-columns: 1.5fr 1fr;
@@ -625,6 +723,7 @@ const countShowsWithIcon = (shows) => {
 
   .statistics-content {
     padding: 10px;
+
     @media screen and (min-width: 662px) {
       padding: 20px;
     }
@@ -634,9 +733,11 @@ const countShowsWithIcon = (shows) => {
     @media screen and (min-width: 992px) {
       border-left: 5px solid var(--black);
     }
+
     .show-years {
       padding: 20px;
       text-align: center;
+
       .show-year-list {
         justify-content: center;
       }
@@ -647,41 +748,50 @@ const countShowsWithIcon = (shows) => {
     display: flex;
     align-items: flex-end;
     flex-wrap: wrap;
+
     .show-location {
       border: 2px solid var(--black);
       margin-right: 10px;
       margin-bottom: 10px;
+
       p {
         margin: 0;
         padding: 5px;
       }
+
       .city {
         border-top: 2px solid var(--black);
         font-size: 12px;
+
         @media screen and (min-width: 992px) {
           width: 80px;
         }
       }
+
       .city-amount {
         font-size: 14px;
         background-color: var(--black);
         color: var(--purple);
       }
+
       &:nth-child(1) {
         .city-amount {
           height: 145px;
         }
       }
+
       &:nth-child(2) {
         .city-amount {
           height: 105px;
         }
       }
+
       &:nth-child(3) {
         .city-amount {
           height: 78px;
         }
       }
+
       &:nth-child(4) {
         .city-amount {
           height: 49px;
@@ -693,27 +803,34 @@ const countShowsWithIcon = (shows) => {
   .review-legend {
     padding: 20px;
     text-align: center;
+
     h3 {
       margin-bottom: 0;
     }
+
     .review-emoji-list {
       li {
         text-align: center;
         margin: 10px;
+
         .rating-name {
           border: 2px solid var(--black);
           padding: 5px 0 5px 5px;
           margin-bottom: 5px;
+          text-transform: capitalize;
         }
+
         .rating-amount {
           padding: 5px;
           border-left: 2px solid var(--black);
           color: var(--purple);
           background-color: var(--black);
         }
+
         .review-img-wrapper {
           text-align: center;
           margin: auto;
+
           img {
             width: 40px;
           }
@@ -729,17 +846,21 @@ const countShowsWithIcon = (shows) => {
   text-align: center;
 }
 
-.balcony, .mezz, .orchestra {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+.balcony,
+.mezz,
+.orchestra {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-.back, .front, .center {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+.back,
+.front,
+.center {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .sections {
@@ -749,24 +870,36 @@ const countShowsWithIcon = (shows) => {
 }
 
 .sections span {
-    display: block;
-    margin: 5px;
-    height: 40px;
-    width: 40px;
-    border: 3px solid;
-    display: flex;
-    border-radius: 50%;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    border: 3px solid var(--black);
-    padding: 5px;
+  display: block;
+  margin: 5px;
+  height: 40px;
+  width: 40px;
+  border: 3px solid;
+  display: flex;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  border: 3px solid var(--black);
+  padding: 5px;
 }
 
 .areas {
-    width: 100%;
-    align-self: center;
-    flex-direction: column;
-    justify-content: center;
+  width: 100%;
+  align-self: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+.counter.shortest-show-stat,
+.counter.longest-show-stat {
+  .stat-number {
+    font-size: 21px !important;
+  }
+
+  span {
+    display: block;
+  }
 }
 </style>
