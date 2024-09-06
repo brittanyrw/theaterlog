@@ -109,7 +109,6 @@ export default {
 </script>
 
 <style>
-
 * {
   box-sizing: border-box;
 }
@@ -128,6 +127,7 @@ body {
   border-radius: 7px 7px 7px 0;
   max-width: 1200px;
   margin: 50px auto;
+
   @media screen and (max-width: 1200px) {
     margin: 20px;
   }
@@ -137,6 +137,7 @@ ul {
   margin: 0;
   list-style: none;
   padding: 0;
+
   li {
     display: inline-block;
   }

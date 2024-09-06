@@ -1,59 +1,47 @@
 <template>
-  <div class="shows">
+  <div class="shows" id="shows">
     <div class="filters">
       <div class="filter-container">
-      <label for="category-filter">Category:</label>
-      <select v-model="selectedCategory" id="category-filter">
-        <option value="">All</option>
-        <option v-for="category in categories" :key="category" :value="category">{{ category }}</option>
-      </select>
-    </div>
-    <div class="filter-container">
-      <label for="year-filter">Year:</label>
-      <select v-model="selectedYear" id="year-filter">
-        <option value="">All</option>
-        <option v-for="year in years" :key="year" :value="year">{{ year }}</option>
-      </select>
+        <label for="category-filter">Category:</label>
+        <select v-model="selectedCategory" id="category-filter">
+          <option value="">All</option>
+          <option v-for="category in categories" :key="category" :value="category">{{ category }}</option>
+        </select>
       </div>
       <div class="filter-container">
-      <label for="location-filter">Location:</label>
-      <select v-model="selectedLocation" id="location-filter">
-        <option value="">All</option>
-        <option v-for="location in locations" :key="location" :value="location">{{ location }}</option>
-      </select>
-</div>
-<div class="filter-container">
-      <label for="review-filter">Review:</label>
-      <select v-model="selectedReview" id="review-filter">
-        <option value="">All</option>
-        <option v-for="review in reviews" :key="review" :value="review">{{ review }}</option>
-      </select>
+        <label for="year-filter">Year:</label>
+        <select v-model="selectedYear" id="year-filter">
+          <option value="">All</option>
+          <option v-for="year in years" :key="year" :value="year">{{ year }}</option>
+        </select>
+      </div>
+      <div class="filter-container">
+        <label for="location-filter">Location:</label>
+        <select v-model="selectedLocation" id="location-filter">
+          <option value="">All</option>
+          <option v-for="location in locations" :key="location" :value="location">{{ location }}</option>
+        </select>
+      </div>
+      <div class="filter-container">
+        <label for="review-filter">Review:</label>
+        <select v-model="selectedReview" id="review-filter">
+          <option value="">All</option>
+          <option v-for="review in reviews" :key="review" :value="review">{{ review }}</option>
+        </select>
       </div>
       <div class="total">Total: {{ filteredShows.length }}</div>
     </div>
     <p v-if="filteredShows.length === 0" class="no-results">Oops! There are no shows to display.</p>
     <ul class="show-container">
-      <li
-        v-for="show in filteredShows"
-        :key="show.sys.id"
-        class="show"
-        :class="[{ upcoming: show.upcoming }]"
-      >
-        <div
-          v-if="
-            show.upcoming == false &&
-              (show.favorite || show.rating || show.multi)
-          "
-          class="show-opinion"
-        >
+      <li v-for="show in filteredShows" :key="show.sys.id" class="show" :class="[{ upcoming: show.upcoming }]">
+        <div v-if="show.upcoming == false &&
+          (show.favorite || show.rating || show.multi)
+          " class="show-opinion">
           <div v-if="show.favorite" class="fav-view">
             <font-awesome-icon icon="star" class="fav-icon" />
           </div>
           <div v-if="show.rating" class="review">
-            <img
-              :src="getEmojiUrl(show.rating)"
-              :alt="`Impression of the show is ${show.rating}`"
-            />
+            <img :src="getEmojiUrl(show.rating)" :alt="`Impression of the show is ${show.rating}`" />
           </div>
           <div v-if="show.multi" class="multi-view">{{ show.multi }}</div>
           <p v-if="show.price >= 0" class="show-price">
@@ -65,13 +53,8 @@
           <p class="type">{{ show.type }}</p>
           <div class="show-name">
             <p v-if="show.link">
-              <a
-                :href="show.link"
-                class="upcoming-show-link"
-                target="_blank"
-                :title="`Go to website for ${show.name}`"
-                >{{ show.name }}</a
-              >
+              <a :href="show.link" class="upcoming-show-link" target="_blank"
+                :title="`Go to website for ${show.name}`">{{ show.name }}</a>
             </p>
             <p v-else>{{ show.name }}</p>
           </div>
@@ -94,12 +77,8 @@
                 <font-awesome-icon icon="music" class="fs-icon" />
               </p>
               <p class="song-name">
-                <a
-                  v-if="show.song.name"
-                  :href="show.song.videoLink"
-                  target="_blank"
-                  :title="`View video for ${show.song.name} from ${show.name}`"
-                >
+                <a v-if="show.song.name" :href="show.song.videoLink" target="_blank"
+                  :title="`View video for ${show.song.name} from ${show.name}`">
                   {{ show.song.name }}
                 </a>
               </p>
@@ -110,23 +89,12 @@
     </ul>
     <div class="icon-attribute">
       Emoji icons made by
-      <a
-        href="https://www.flaticon.com/authors/darius-dan"
-        title="Darius Dan"
-        target="_blank"
-        >Darius Dan</a
-      >
+      <a href="https://www.flaticon.com/authors/darius-dan" title="Darius Dan" target="_blank">Darius Dan</a>
       from
-      <a href="https://www.flaticon.com/" title="Flaticon" target="_blank"
-        >www.flaticon.com</a
-      >
+      <a href="https://www.flaticon.com/" title="Flaticon" target="_blank">www.flaticon.com</a>
       is licensed by
-      <a
-        href="http://creativecommons.org/licenses/by/3.0/"
-        title="Creative Commons BY 3.0"
-        target="_blank"
-        >CC 3.0 BY</a
-      >
+      <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0
+        BY</a>
     </div>
   </div>
 </template>
@@ -225,9 +193,11 @@ const filteredShows = computed(() => {
 .shows {
   padding: 40px 10px;
   background-color: var(--black);
+
   @media screen and (min-width: 662px) {
     padding: 20px;
   }
+
   .show-container {
     padding: 0;
     position: relative;
@@ -235,15 +205,18 @@ const filteredShows = computed(() => {
     list-style: none;
     display: grid;
     grid-template-columns: 1fr;
+
     @media screen and (min-width: 662px) {
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-gap: 60px;
       padding: 20px;
     }
+
     @media screen and (min-width: 992px) {
       grid-template-columns: 1fr 1fr 1fr;
     }
+
     .show {
       border: 2px solid var(--purple);
       box-shadow: 9px 9px 0 var(--purple);
@@ -255,31 +228,37 @@ const filteredShows = computed(() => {
       margin: 0 auto 40px auto;
       position: relative;
       width: 100%;
+
       @media screen and (min-width: 662px) {
         max-width: none;
         margin: 0;
       }
+
       .show-opinion {
         position: absolute;
         left: -30px;
         top: 5px;
         z-index: 1;
         text-align: center;
+
         .fav-view,
         .review,
         .multi-view {
           margin-bottom: 10px;
         }
+
         .fav-view {
           .fav-icon {
             color: var(--purple);
             font-size: 35px;
+
             path {
               stroke: var(--black);
               stroke-width: 20px;
             }
           }
         }
+
         .review {
           img {
             width: 100%;
@@ -289,6 +268,7 @@ const filteredShows = computed(() => {
             border: 1px solid var(--black);
           }
         }
+
         .multi-view,
         .show-price {
           background-color: var(--black);
@@ -297,16 +277,20 @@ const filteredShows = computed(() => {
           border: 3px solid var(--purple);
           outline: 1px solid var(--black);
         }
+
         .multi-view {
           display: inline-block;
         }
+
         .show-price {
           margin: 0;
           text-align: center;
         }
       }
+
       .show-info {
         position: relative;
+
         .type {
           position: absolute;
           padding: 5px 10px;
@@ -317,6 +301,7 @@ const filteredShows = computed(() => {
           z-index: 99;
           text-align: center;
         }
+
         .upcoming-tag {
           position: absolute;
           padding: 5px 10px;
@@ -327,19 +312,23 @@ const filteredShows = computed(() => {
           z-index: 99;
           text-align: center;
         }
+
         .show-name {
           background-color: var(--black);
           color: var(--purple);
           padding: 20px;
+
           p {
             font-size: 25px;
             font-family: "Abril Fatface";
             text-align: center;
             letter-spacing: 1.5px;
             margin: 0;
+
             @media screen and (min-width: 1200px) {
               font-size: 30px;
             }
+
             a {
               color: var(--purple);
               text-decoration: none;
@@ -347,13 +336,16 @@ const filteredShows = computed(() => {
           }
         }
       }
+
       .show-content {
         text-align: center;
         padding: 10px 20px 60px 20px;
+
         @media screen and (min-width: 662px) {
           padding: 20px 35px 75px 35px;
         }
       }
+
       .favs {
         background-color: var(--black);
         color: var(--purple);
@@ -361,9 +353,11 @@ const filteredShows = computed(() => {
         padding: 10px;
         bottom: 0;
         width: 100%;
+
         p {
           margin: 0;
         }
+
         .fav-song-label {
           background-color: var(--purple);
           border: 3px solid var(--black);
@@ -372,18 +366,22 @@ const filteredShows = computed(() => {
           position: absolute;
           font-size: 14px;
           top: -15px;
+
           @media screen and (min-width: 662px) {
             left: 20px;
           }
         }
+
         .fav-song {
           .fav-song-content {
             padding: 15px 0 10px 0;
             display: flex;
             justify-content: center;
+
             .song-label {
               margin-right: 10px;
             }
+
             .song-name a {
               text-decoration: none;
               color: var(--purple);
@@ -391,15 +389,19 @@ const filteredShows = computed(() => {
           }
         }
       }
+
       &.upcoming {
         background-color: var(--black);
+
         .show-name {
           background-color: var(--purple);
           color: var(--black);
+
           a.upcoming-show-link {
             color: var(--black);
           }
         }
+
         .show-content {
           padding-bottom: 20px;
           color: var(--purple);
@@ -415,29 +417,35 @@ const filteredShows = computed(() => {
       }
     }
   }
+
   .icon-attribute {
     background-color: var(--purple);
     padding: 20px;
     border-radius: 3px;
     color: var(--black);
     font-size: 12px !important;
+
     a {
       color: var(--black);
     }
   }
 }
+
 .filters {
   display: flex;
   flex-wrap: wrap;
   padding: 20px;
   margin-bottom: 20px;
+
   label {
     color: var(--purple);
   }
+
   .total {
-    color: var(--purple); 
+    color: var(--purple);
     margin-left: auto;
   }
+
   select {
     background: var(--purple);
     color: var(--black);
@@ -447,6 +455,7 @@ const filteredShows = computed(() => {
     border-color: var(--purple);
     text-transform: capitalize;
   }
+
   .filter-container {
     margin-right: 10px;
     margin-bottom: 10px;
@@ -458,9 +467,10 @@ const filteredShows = computed(() => {
     padding-top: 0;
     margin-bottom: 40px;
     flex-direction: column;
+
     .total {
-    margin-left: 0;
-  }
+      margin-left: 0;
+    }
   }
 }
 

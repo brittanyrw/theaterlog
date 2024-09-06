@@ -21,6 +21,13 @@
             <a href="https://musicalwebdev.com" target="_blank">Brittany Walker</a>. View the code
             <a href="https://github.com/brittanyrw/theaterlog" target="_blank">on GitHub.</a>
           </p>
+          <nav>
+            <ul>
+              <li>Skip To:</li>
+              <li><a href="#stats">Statistics</a></li>
+              <li><a href="#shows">Shows</a></li>
+            </ul>
+          </nav>
         </div>
       </div>
       <div class="hero-sidebar">
@@ -41,7 +48,7 @@
         </div>
       </div>
     </header>
-    <div class="main-statistics">
+    <div class="main-statistics" id="stats">
       <div class="stats-wrapper">
         <div class="stats">
           <div class="counter total-stat">
@@ -617,13 +624,32 @@ const countShowsWithIcon = (shows) => {
   }
 }
 
-.show-repeats, .actor-repeats {
+nav {
+  a {
+    padding: 5px 10px;
+    background-color: var(--black);
+    color: var(--purple);
+    text-decoration: none;
+    border: 3px solid var(--black);
+    margin: 10px;
+    display: inline-block;
+  }
+
+  a:hover {
+    background-color: var(--purple);
+    color: var(--black);
+    transition: 0.5s;
+  }
+}
+
+.show-repeats,
+.actor-repeats {
   padding: 20px;
 }
 
 .repeat-content {
-      display: flex;
-    }
+  display: flex;
+}
 
 .hide-show {
   display: none !important;
