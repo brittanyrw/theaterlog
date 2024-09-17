@@ -42,6 +42,7 @@ export default {
             icon
             actors
             time
+            reviewContent
             theater {
               name
               city
@@ -49,17 +50,6 @@ export default {
             song {
               name
               videoLink
-            }
-          }
-        }
-        actorCollection(limit: 500, order: name_ASC) {
-          items {
-            name
-            theaterShowCollection(limit: 5) {
-              total
-              items {
-                name
-              }
             }
           }
         }
@@ -95,13 +85,11 @@ export default {
     onMounted(async () => {
       let data = await getShows();
       shows.value = data.showCollection.items;
-      actors.value = data.actorCollection.items;
       theaters.value = data.theaterCollection.items;
     });
 
     return {
       shows,
-      actors,
       theaters,
     };
   },

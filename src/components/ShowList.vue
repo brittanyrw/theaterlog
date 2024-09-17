@@ -33,58 +33,66 @@
     </div>
     <p v-if="filteredShows.length === 0" class="no-results">Oops! There are no shows to display.</p>
     <ul class="show-container">
-      <li v-for="show in filteredShows" :key="show.sys.id" class="show" :class="[{ upcoming: show.upcoming }]">
-        <div v-if="show.upcoming == false &&
-          (show.favorite || show.rating || show.multi)
-          " class="show-opinion">
-          <div v-if="show.favorite" class="fav-view">
-            <font-awesome-icon icon="star" class="fav-icon" />
-          </div>
-          <div v-if="show.rating" class="review">
-            <img :src="getEmojiUrl(show.rating)" :alt="`Impression of the show is ${show.rating}`" />
-          </div>
-          <div v-if="show.multi" class="multi-view">{{ show.multi }}</div>
-          <p v-if="show.price >= 0" class="show-price">
-            ${{ Math.floor(show.price) }}
-          </p>
-        </div>
-        <div class="show-info">
-          <p v-if="show.upcoming" class="upcoming-tag">upcoming</p>
-          <p class="type">{{ show.type }}</p>
-          <div class="show-name">
-            <p v-if="show.link">
-              <a :href="show.link" class="upcoming-show-link" target="_blank"
-                :title="`Go to website for ${show.name}`">{{ show.name }}</a>
-            </p>
-            <p v-else>{{ show.name }}</p>
-          </div>
-          <div class="show-content">
-            <p class="show-theater">{{ show.theater.name }}</p>
-            <p class="show-location">{{ show.theater.city }}</p>
-            <p v-if="show.upcoming" class="show-date">
-              {{ formatDate(new Date(show.date)) }}
-            </p>
-            <p v-else class="show-date">
-              {{ formatDate(new Date(show.date), true) }}
+      <li v-for="(show, index) in filteredShows" :key="show.sys.id" class="show" :class="[{ upcoming: show.upcoming }, { 'review-displayed': showReviews[index] }]">
+        <div class="show-wrapper">
+          <div v-if="show.upcoming == false &&
+            (show.favorite || show.rating || show.multi)
+            " class="show-opinion">
+            <div v-if="show.favorite" class="fav-view">
+              <font-awesome-icon icon="star" class="fav-icon" />
+            </div>
+            <div v-if="show.rating" class="review">
+              <img :src="getEmojiUrl(show.rating)" :alt="`Impression of the show is ${show.rating}`" @click="toggleReview(index)" v-if="show.reviewContent"/>
+              <img :src="getEmojiUrl(show.rating)" :alt="`Impression of the show is ${show.rating}`" v-else/>
+            </div>
+            <div v-if="show.multi" class="multi-view">{{ show.multi }}</div>
+            <p v-if="show.price >= 0" class="show-price">
+              ${{ Math.floor(show.price) }}
             </p>
           </div>
-        </div>
-        <div v-if="show.song && !show.upcoming" class="favs">
-          <p class="fav-song-label">Fav Song</p>
-          <div class="fav-song">
-            <div class="fav-song-content">
-              <p class="song-label">
-                <font-awesome-icon icon="music" class="fs-icon" />
+          <div class="show-info">
+            <p v-if="show.upcoming" class="upcoming-tag">upcoming</p>
+            <p class="type">{{ show.type }}</p>
+            <div class="show-name">
+              <p v-if="show.link">
+                <a :href="show.link" class="upcoming-show-link" target="_blank"
+                  :title="`Go to website for ${show.name}`">{{ show.name }}</a>
               </p>
-              <p class="song-name">
-                <a v-if="show.song.name" :href="show.song.videoLink" target="_blank"
-                  :title="`View video for ${show.song.name} from ${show.name}`">
-                  {{ show.song.name }}
-                </a>
+              <p v-else>{{ show.name }}</p>
+            </div>
+            <div class="show-content">
+              <p class="show-theater">{{ show.theater.name }}</p>
+              <p class="show-location">{{ show.theater.city }}</p>
+              <p v-if="show.upcoming" class="show-date">
+                {{ formatDate(new Date(show.date)) }}
+              </p>
+              <p v-else class="show-date">
+                {{ formatDate(new Date(show.date), true) }}
               </p>
             </div>
           </div>
+          <div v-if="show.song && !show.upcoming" class="favs">
+            <p class="fav-song-label">Fav Song</p>
+            <div class="fav-song">
+              <div class="fav-song-content">
+                <p class="song-label">
+                  <font-awesome-icon icon="music" class="fs-icon" />
+                </p>
+                <p class="song-name">
+                  <a v-if="show.song.name" :href="show.song.videoLink" target="_blank"
+                    :title="`View video for ${show.song.name} from ${show.name}`">
+                    {{ show.song.name }}
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
+        <Transition>
+          <div class="show-review-content" v-show="showReviews[index]" v-if="show.reviewContent">
+            <div class="review-thoughts">{{ show.reviewContent }}</div>
+          </div>
+        </Transition>
       </li>
     </ul>
     <div class="icon-attribute">
@@ -183,6 +191,12 @@ const filteredShows = computed(() => {
     return matchesYear && matchesLocation && matchesReview && matchesCategory;
   });
 });
+
+const showReviews = ref([]);
+
+const toggleReview = (index) => {
+  showReviews.value[index] = !showReviews.value[index];
+};
 </script>
 
 
@@ -203,18 +217,21 @@ const filteredShows = computed(() => {
     position: relative;
     margin-bottom: 20px;
     list-style: none;
-    display: grid;
-    grid-template-columns: 1fr;
+    /* display: grid;
+    grid-template-columns: 1fr; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 
     @media screen and (min-width: 662px) {
-      display: grid;
+      /* display: grid;
       grid-template-columns: 1fr 1fr;
-      grid-gap: 60px;
+      grid-gap: 60px; */
       padding: 20px;
     }
 
     @media screen and (min-width: 992px) {
-      grid-template-columns: 1fr 1fr 1fr;
+      /* grid-template-columns: 1fr 1fr 1fr; */
     }
 
     .show {
@@ -231,7 +248,8 @@ const filteredShows = computed(() => {
 
       @media screen and (min-width: 662px) {
         max-width: none;
-        margin: 0;
+        margin: 20px;
+        width: 325px;
       }
 
       .show-opinion {
@@ -479,5 +497,41 @@ const filteredShows = computed(() => {
   margin: auto;
   text-align: center;
   font-size: 16px;
+}
+
+.show-review-content {
+  padding: 20px;
+}
+
+.review-displayed .show-review-content {
+  max-width: 700px;
+}
+
+.review-displayed .show-wrapper {
+  width: 325px;
+  border-right: 3px solid var(--black);
+}
+
+.review-displayed .favs {
+  position: relative !important;
+}
+
+.review-displayed.show {
+  display: flex;
+  width: 100% !important;
+}
+
+.see-review {
+  font-size: 12px;
+  font-family: sans-serif;
+}
+
+.v-enter-active {
+  transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
 }
 </style>
