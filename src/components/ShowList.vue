@@ -154,6 +154,7 @@ const cityMapping = {
   'White Plains, NY': 'New York, NY',
   'Columbia, MD': 'Washington, DC',
   'Bethesda, MD': 'Washington, DC',
+  'Tysons, VA': 'Washington, DC',
 };
 
 // Function to apply city mapping

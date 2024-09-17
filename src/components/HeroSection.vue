@@ -336,7 +336,7 @@ const cities = computed(() => {
   viewedShows.value.forEach(each => {
     if (each.theater.city === "White Plains, NY" || each.theater.city === "New York, NY") {
       cityList.push("NYC");
-    } else if (each.theater.city === "Bethesda, MD" || each.theater.city === "Columbia, MD" || each.theater.city === "Washington, DC") {
+    } else if (each.theater.city === "Tysons, VA" || each.theater.city === "Bethesda, MD" || each.theater.city === "Columbia, MD" || each.theater.city === "Washington, DC") {
       cityList.push("DC");
     } else if (each.theater.city === "Austin, TX") {
       cityList.push("Austin");
@@ -391,71 +391,71 @@ const getYearlyStats = computed(() => {
   return result;
 });
 
-const showsWithTime = computed(() => {
-  return viewedShows.value.filter(show => show.time !== null);
-});
+// const showsWithTime = computed(() => {
+//   return viewedShows.value.filter(show => show.time !== null);
+// });
 
-const totalTime = computed(() => {
-  const totalMinutes = showsWithTime.value.reduce((sum, show) => sum + show.time, 0);
-  const hours = Math.floor(totalMinutes / 60);
-  const minutes = totalMinutes % 60;
-  return `${hours} hrs ${minutes} mins`;
-});
+// const totalTime = computed(() => {
+//   const totalMinutes = showsWithTime.value.reduce((sum, show) => sum + show.time, 0);
+//   const hours = Math.floor(totalMinutes / 60);
+//   const minutes = totalMinutes % 60;
+//   return `${hours} hrs ${minutes} mins`;
+// });
 
-const shortestShow = computed(() => {
-  if (showsWithTime.value.length === 0) return 'N/A';
-  const minDuration = Math.min(...showsWithTime.value.map(show => show.time));
-  const show = showsWithTime.value.find(show => show.time === minDuration);
-  const hours = Math.floor(minDuration / 60);
-  const minutes = minDuration % 60;
-  const duration = `${hours} hrs ${minutes} mins`;
-  return {
-    name: show.name,
-    duration: duration
-  }
-});
+// const shortestShow = computed(() => {
+//   if (showsWithTime.value.length === 0) return 'N/A';
+//   const minDuration = Math.min(...showsWithTime.value.map(show => show.time));
+//   const show = showsWithTime.value.find(show => show.time === minDuration);
+//   const hours = Math.floor(minDuration / 60);
+//   const minutes = minDuration % 60;
+//   const duration = `${hours} hrs ${minutes} mins`;
+//   return {
+//     name: show.name,
+//     duration: duration
+//   }
+// });
 
-const longestShow = computed(() => {
-  if (showsWithTime.value.length === 0) return 'N/A';
-  const maxDuration = Math.max(...showsWithTime.value.map(show => show.time));
-  const show = showsWithTime.value.find(show => show.time === maxDuration);
-  const hours = Math.floor(maxDuration / 60);
-  const minutes = maxDuration % 60;
-  const duration = `${hours} hrs ${minutes} mins`;
-  return {
-    name: show.name,
-    duration: duration
-  }
-});
+// const longestShow = computed(() => {
+//   if (showsWithTime.value.length === 0) return 'N/A';
+//   const maxDuration = Math.max(...showsWithTime.value.map(show => show.time));
+//   const show = showsWithTime.value.find(show => show.time === maxDuration);
+//   const hours = Math.floor(maxDuration / 60);
+//   const minutes = maxDuration % 60;
+//   const duration = `${hours} hrs ${minutes} mins`;
+//   return {
+//     name: show.name,
+//     duration: duration
+//   }
+// });
 
-const averageTime = computed(() => {
-  if (showsWithTime.value.length === 0) return 'N/A';
-  const totalMinutes = showsWithTime.value.reduce((sum, show) => sum + show.time, 0);
-  const avgMinutes = totalMinutes / showsWithTime.value.length;
-  const hours = Math.floor(avgMinutes / 60);
-  const minutes = Math.round(avgMinutes % 60);
-  return `${hours} hrs ${minutes} mins`;
-});
+// const averageTime = computed(() => {
+//   if (showsWithTime.value.length === 0) return 'N/A';
+//   const totalMinutes = showsWithTime.value.reduce((sum, show) => sum + show.time, 0);
+//   const avgMinutes = totalMinutes / showsWithTime.value.length;
+//   const hours = Math.floor(avgMinutes / 60);
+//   const minutes = Math.round(avgMinutes % 60);
+//   return `${hours} hrs ${minutes} mins`;
+// });
 
-const actorShowCounts = computed(() => {
-  const actorCount = {};
+// const actorShowCounts = computed(() => {
+//   const actorCount = {};
 
-  viewedShows.value.forEach(show => {
-    if (show.actors) { // Check if show.actors is not null
-      show.actors.forEach(actor => {
-        if (actorCount[actor]) {
-          actorCount[actor].count++;
-        } else {
-          actorCount[actor] = { name: actor, count: 1 };
-        }
-      });
-    }
-  });
+//   viewedShows.value.forEach(show => {
+//     if (show.actors) { // Check if show.actors is not null
+//       show.actors.forEach(actor => {
+//         if (actorCount[actor]) {
+//           actorCount[actor].count++;
+//         } else {
+//           actorCount[actor] = { name: actor, count: 1 };
+//         }
+//       });
+//     }
+//   });
 
-  return Object.values(actorCount)
-    .filter(item => item.count > 2)
-    .sort((a, b) => b.count - a.count);
-});
+//   return Object.values(actorCount)
+//     .filter(item => item.count > 2)
+//     .sort((a, b) => b.count - a.count);
+// });
 
 // methods
 const valueCount = (key, value) => {
