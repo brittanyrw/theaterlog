@@ -1,6 +1,6 @@
 <template>
   <main id="main">
-    <HeroSection :shows="shows" :actors="actors" :theaters="theaters" />
+    <HeroSection :shows="shows" :theaters="theaters" />
     <ShowList :shows="shows" />
   </main>
 </template>
@@ -17,7 +17,6 @@ export default {
   },
   setup() {
     const shows = ref([]);
-    const actors = ref([]);
     const theaters = ref([]);
 
     const getShows = async () => {
