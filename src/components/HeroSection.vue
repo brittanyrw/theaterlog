@@ -190,6 +190,12 @@
           </div>
           <ul class="birthday-shows">
             <li class="birthday-show-list">
+              <p class="show-year">2024</p>
+              <div class="shows">
+                <p>Six, Showstopper, Cabaret, Starlight Express, Operation Mincemeat, Hadestown</p>
+              </div>
+            </li>
+            <li class="birthday-show-list">
               <p class="show-year">2022</p>
               <div class="shows">
                 <p>Little Shop of Horrors, KPOP, Hadestown</p>
