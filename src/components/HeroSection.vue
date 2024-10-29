@@ -254,7 +254,7 @@
     <div class="show-years show-repeats">
       <h3>Show Repeats</h3>
       <ul class="show-year-list">
-        <li v-for="show in countShowsWithIcon(viewedShows)" :key="show.icon" class="show-year">
+        <li v-for="show in countShowsWithIcon(otherShows)" :key="show.icon" class="show-year">
           <div class="repeat-content">
             <p class="year">
               <font-awesome-icon :icon="show.icon" class="fav-icon" />
@@ -264,6 +264,18 @@
           </div>
         </li>
       </ul>
+  <h4>For these shows I was a volunteer usher:</h4>
+  <ul class="show-year-list">
+    <li v-for="show in countShowsWithIcon(volunteerShows)" :key="show.icon" class="show-year">
+      <div class="repeat-content">
+        <p class="year">
+          <font-awesome-icon :icon="show.icon" class="fav-icon" />
+          {{ show.name }}
+        </p>
+        <p class="year-amount">{{ show.count }}</p>
+      </div>
+    </li>
+  </ul>
     </div>
     <!-- <div class="show-years actor-repeats">
       <h3>Actor Repeats</h3>
@@ -510,6 +522,19 @@ const countShowsWithIcon = (shows) => {
     .filter(item => item.count >= 2)
     .sort((a, b) => b.count - a.count);
 };
+
+const volunteerShows = computed(() => {
+  return viewedShows.value.filter(show =>
+    ["Wicked", "Beauty and the Beast", "Mary Poppins"].includes(show.name)
+  );
+});
+
+const otherShows = computed(() => {
+  return viewedShows.value.filter(show =>
+    !["Wicked", "Beauty and the Beast", "Mary Poppins"].includes(show.name)
+  );
+});
+
 </script>
 
 <style>

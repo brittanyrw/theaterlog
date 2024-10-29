@@ -45,7 +45,7 @@
               <img :src="getEmojiUrl(show.rating)" :alt="`Impression of the show is ${show.rating}`" @click="toggleReview(index)" v-if="show.reviewContent"/>
               <img :src="getEmojiUrl(show.rating)" :alt="`Impression of the show is ${show.rating}`" v-else/>
             </div>
-            <div v-if="show.multi" class="multi-view">{{ show.multi }}</div>
+            <div v-if="showCount[show.name] > 1" class="multi-view">{{ showCount[show.name] }}</div>
             <p v-if="show.price >= 0" class="show-price">
               ${{ Math.floor(show.price) }}
             </p>
@@ -194,6 +194,13 @@ const filteredShows = computed(() => {
 });
 
 const showReviews = ref([]);
+
+const showCount = computed(() => {
+  return props.shows.reduce((countMap, show) => {
+    countMap[show.name] = (countMap[show.name] || 0) + 1;
+    return countMap;
+  }, {});
+});
 
 const toggleReview = (index) => {
   showReviews.value[index] = !showReviews.value[index];
