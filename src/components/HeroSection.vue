@@ -327,18 +327,6 @@ const upcomingCounter = computed(() => {
   );
 });
 
-// const seatLevels = ['balcony', 'mezzanine', 'orchestra'];
-// const seatAreas = ['back', 'center', 'front'];
-// const seatSections = ['left', 'middle', 'right'];
-
-// const getSeatCount = (seatLevel, seatArea, seatSection) => {
-//   return viewedShows.value.filter(seat =>
-//     (!seatLevel || (seat.seatLevel && seat.seatLevel.toLowerCase() === seatLevel)) &&
-//     (!seatArea || (seat.seatArea && seat.seatArea.toLowerCase() === seatArea)) &&
-//     (!seatSection || (seat.seatSection && seat.seatSection.toLowerCase() === seatSection))
-//   ).length;
-// };
-
 const ratings = computed(() => {
   let reviewList = [];
   viewedShows.value.forEach(each => {
@@ -409,73 +397,6 @@ const getYearlyStats = computed(() => {
   return result;
 });
 
-// const showsWithTime = computed(() => {
-//   return viewedShows.value.filter(show => show.time !== null);
-// });
-
-// const totalTime = computed(() => {
-//   const totalMinutes = showsWithTime.value.reduce((sum, show) => sum + show.time, 0);
-//   const hours = Math.floor(totalMinutes / 60);
-//   const minutes = totalMinutes % 60;
-//   return `${hours} hrs ${minutes} mins`;
-// });
-
-// const shortestShow = computed(() => {
-//   if (showsWithTime.value.length === 0) return 'N/A';
-//   const minDuration = Math.min(...showsWithTime.value.map(show => show.time));
-//   const show = showsWithTime.value.find(show => show.time === minDuration);
-//   const hours = Math.floor(minDuration / 60);
-//   const minutes = minDuration % 60;
-//   const duration = `${hours} hrs ${minutes} mins`;
-//   return {
-//     name: show.name,
-//     duration: duration
-//   }
-// });
-
-// const longestShow = computed(() => {
-//   if (showsWithTime.value.length === 0) return 'N/A';
-//   const maxDuration = Math.max(...showsWithTime.value.map(show => show.time));
-//   const show = showsWithTime.value.find(show => show.time === maxDuration);
-//   const hours = Math.floor(maxDuration / 60);
-//   const minutes = maxDuration % 60;
-//   const duration = `${hours} hrs ${minutes} mins`;
-//   return {
-//     name: show.name,
-//     duration: duration
-//   }
-// });
-
-// const averageTime = computed(() => {
-//   if (showsWithTime.value.length === 0) return 'N/A';
-//   const totalMinutes = showsWithTime.value.reduce((sum, show) => sum + show.time, 0);
-//   const avgMinutes = totalMinutes / showsWithTime.value.length;
-//   const hours = Math.floor(avgMinutes / 60);
-//   const minutes = Math.round(avgMinutes % 60);
-//   return `${hours} hrs ${minutes} mins`;
-// });
-
-// const actorShowCounts = computed(() => {
-//   const actorCount = {};
-
-//   viewedShows.value.forEach(show => {
-//     if (show.actors) { // Check if show.actors is not null
-//       show.actors.forEach(actor => {
-//         if (actorCount[actor]) {
-//           actorCount[actor].count++;
-//         } else {
-//           actorCount[actor] = { name: actor, count: 1 };
-//         }
-//       });
-//     }
-//   });
-
-//   return Object.values(actorCount)
-//     .filter(item => item.count > 2)
-//     .sort((a, b) => b.count - a.count);
-// });
-
-// methods
 const valueCount = (key, value) => {
   return viewedShows.value.filter(show => show[key] === value).length;
 };
@@ -534,11 +455,41 @@ const otherShows = computed(() => {
     !["Wicked", "Beauty and the Beast", "Mary Poppins"].includes(show.name)
   );
 });
-
 </script>
+
 
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
+
+.heatmap {
+  display: flex;
+  flex-direction: column;
+}
+
+.level-group {
+  margin: 20px 0;
+}
+
+.seat-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+  gap: 10px;
+}
+
+.seat-box {
+  background-color: #d3d3d3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #333;
+  border-radius: 8px;
+  padding: 5px;
+}
+
+.seat-box:hover {
+  background-color: #a9a9a9;
+}
 
 .hero {
   header {
