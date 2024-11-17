@@ -144,14 +144,14 @@
           </ul>
         </div>
         <div class="show-years">
-          <h3>Show Cost Per Year</h3>
+          <h3>Show Cost Per Year / Avg Ticket Cost</h3>
           <ul class="show-year-list">
             <li v-for="stat in getYearlyStats" :key="stat.year" class="show-year">
               <p class="year">
                 {{ stat.year }}
               </p>
               <p class="year-amount">
-                ${{ stat.totalPrice }}
+                ${{ stat.totalPrice }} / ${{ Math.floor(stat.totalPrice/stat.count) }}
               </p>
             </li>
           </ul>
