@@ -122,7 +122,7 @@
     </div>
     <div class="statistics">
       <div class="statistics-content">
-        <h3>Show Locations</h3>
+        <h3><font-awesome-icon icon="city" class="fav-icon" /> Show Locations</h3>
         <ul class="show-location-list">
           <li v-for="(cityAmount, city) in countArray(cities)" :key="city" class="show-location">
             <p class="city-amount">{{ cityAmount }}</p>
@@ -133,7 +133,7 @@
           </li>
         </ul>
         <div class="show-years">
-          <h3>Show Years</h3>
+          <h3><font-awesome-icon icon="calendar-check" class="fav-icon" /> Show Years</h3>
           <ul class="show-year-list">
             <li v-for="year in getYearlyStats" :key="year.year" class="show-year">
               <p class="year">
@@ -144,7 +144,7 @@
           </ul>
         </div>
         <div class="show-years">
-          <h3>Show Cost Per Year / Avg Ticket Cost</h3>
+          <h3><font-awesome-icon icon="money-bill-wave" class="fav-icon" /> Show Cost Per Year / Avg Ticket Cost</h3>
           <ul class="show-year-list">
             <li v-for="stat in getYearlyStats" :key="stat.year" class="show-year">
               <p class="year">
@@ -157,7 +157,7 @@
           </ul>
         </div>
         <div class="show-years show-seats">
-          <h3>Seat Locations</h3>
+          <h3><font-awesome-icon icon="chair" class="fav-icon" /> Seat Locations</h3>
           <ul class="show-year-list">
             <li v-for="(seatAmount, seat) in countArray(seats)" :key="seat" class="show-year">
               <p class="year">
@@ -170,7 +170,7 @@
       </div>
       <div class="stats-sidebar">
         <div class="review-legend">
-          <h3>Review Legend</h3>
+          <h3><font-awesome-icon icon="heart" class="fav-icon" /> Review Legend</h3>
           <ul class="review-emoji-list">
             <li v-for="(ratingAmount, rating) in countArray(ratings)" :key="rating">
               <div class="review-img-wrapper">
@@ -185,7 +185,7 @@
         </div>
         <div class="birthday-shows-section">
           <div class="birthday-header">
-            <h3>Birthday Shows</h3>
+            <h3><font-awesome-icon icon="cake-candles" class="fav-icon" /> Birthday Shows</h3>
             <p>Shows seen for my birthday.</p>
           </div>
           <ul class="birthday-shows">
@@ -252,7 +252,7 @@
     <div class="stage">Stage</div>
   </div> -->
     <div class="show-years show-repeats">
-      <h3>Show Repeats</h3>
+      <h3><font-awesome-icon icon="repeat" class="fav-icon" /> Show Repeats</h3>
       <ul class="show-year-list">
         <li v-for="show in countShowsWithIcon(otherShows)" :key="show.icon" class="show-year">
           <div class="repeat-content">
