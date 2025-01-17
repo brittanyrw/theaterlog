@@ -9,6 +9,7 @@
 import { ref, onMounted } from 'vue';
 import ShowList from './components/ShowList.vue';
 import HeroSection from './components/HeroSection.vue';
+import data from './data/data.json';
 
 export default {
   components: {
@@ -19,72 +20,10 @@ export default {
     const shows = ref([]);
     const theaters = ref([]);
 
-    const getShows = async () => {
-      const query = `{
-        showCollection(order: date_DESC, limit: 200) {
-          items {
-            sys {
-              id
-            }
-            name
-            link
-            date
-            price
-            favorite
-            upcoming
-            multi
-            type
-            rating
-            seatLevel
-            seatArea
-            seatSection
-            icon
-            actors
-            time
-            reviewContent
-            theater {
-              name
-              city
-            }
-            song {
-              name
-              videoLink
-            }
-          }
-        }
-        theaterCollection {
-          items {
-            name
-            city
-            broadway
-            westEnd
-          }
-        }
-      }`;
-
-      const fetchUrl = `https://graphql.contentful.com/content/v1/spaces/${import.meta.env.VITE_CONTENTFUL_SPACE_ID}`;
-      const fetchOptions = {
-        method: 'POST',
-        headers: {
-          Authorization: `Bearer ${import.meta.env.VITE_CONTENTFUL_ACCESS_TOKEN}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ query }),
-      };
-
-      try {
-        const response = await fetch(fetchUrl, fetchOptions);
-        const data = await response.json();
-        return data.data;
-      } catch (error) {
-        throw new Error('Could not receive the data from Contentful!');
-      }
-    };
 
     onMounted(async () => {
-      let data = await getShows();
-      shows.value = data.showCollection.items;
-      theaters.value = data.theaterCollection.items;
+      shows.value = data.data.showCollection.items;
+      theaters.value = data.data.theaterCollection.items;
     });
 
     return {
