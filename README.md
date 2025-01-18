@@ -36,7 +36,3 @@ Each show generates a card that includes the following:
   - An emoji representing my review of the show
   - A numbered card displaying the number of times I have seen that particular show
 - If a musical, my favorite song from the show (at the time of viewing) will be displayed. 
-
-
-## Note:
-This repo is no longer the source code for [this Contentful blog post](https://www.contentful.com/blog/2021/08/26/build-using-vue-and-contentful/), to view the source code for that blog go to [this Github repo](https://github.com/brittanyrw/theaterlog-contentful).
