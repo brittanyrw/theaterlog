@@ -10,6 +10,7 @@ TheaterLog is a log of all of the musicals and plays I have seen since 2010.
 The tracker is built using [Vue.js](https://vuejs.org/). The site consists of Show Cards that are created for each show seen. In the top hero section, there are statistics (number of shows seen, number of musicals seen, etc) as well as a guide to the review emojis.
 
 ### Statistics
+![TheaterLog Screenshots](readme/stats.png?raw=true "TheaterLog Screenshots")
 The following statistics are tracked:
 - Total number of shows seen
 - Total number of upcoming shows
@@ -26,6 +27,9 @@ The following statistics are tracked:
 
 
 ### Show Cards
+
+![TheaterLog Screenshots](readme/show-cards.png?raw=true "TheaterLog Screenshots")
+
 Each show generates a card that includes the following:
 - The show name 
 - The theater and city of the show
