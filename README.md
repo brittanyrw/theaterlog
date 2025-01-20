@@ -40,3 +40,7 @@ Each show generates a card that includes the following:
   - An emoji representing my review of the show
   - A numbered card displaying the number of times I have seen that particular show
 - If a musical, my favorite song from the show (at the time of viewing) will be displayed. 
+
+### Past vs Present
+Here is a quick peek of what version 1 of TheaterLog (2018) looked like.
+![TheaterLog Screenshots](readme/evolution.png?raw=true "TheaterLog Screenshots")
