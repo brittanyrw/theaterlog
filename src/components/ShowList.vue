@@ -149,20 +149,18 @@ const selectedLocation = ref('');
 const selectedReview = ref('');
 const selectedCategory = ref('');
 
-// City mapping: map smaller cities to a larger city
 const cityMapping = {
   'White Plains, NY': 'New York, NY',
   'Columbia, MD': 'Washington, DC',
   'Bethesda, MD': 'Washington, DC',
   'Tysons, VA': 'Washington, DC',
+  'Arlington, VA': 'Washington, DC',
 };
 
-// Function to apply city mapping
 const mapCity = (city) => {
   return cityMapping[city] || city;
 };
 
-// Get distinct locations for the dropdown (group smaller cities into one)
 const locations = computed(() => {
   const mappedCities = props.shows.map(show => mapCity(show.theater.city));
   return [...new Set(mappedCities)];
@@ -180,7 +178,6 @@ const categories = computed(() => {
   return ['play', 'musical', 'dance'];
 });
 
-// Filtered shows based on selected filters
 const filteredShows = computed(() => {
   return props.shows.filter(show => {
     const showYear = new Date(show.date).getFullYear();

@@ -504,12 +504,12 @@
                 },
                 {
                     "sys": {
-                        "id": "28h49D1cCoXmjk8EkYUvBk"
+                        "id": "3squgi18hlj5lAIKcXGM1Ns"
                     },
-                    "name": "Schmigadoon!",
+                    "name": "In the Heights",
                     "link": null,
-                    "date": "2025-01-31T00:00:00.000Z",
-                    "price": null,
+                    "date": "2025-03-09T00:00:00.000Z",
+                    "price": 138,
                     "favorite": null,
                     "upcoming": true,
                     "multi": null,
@@ -524,8 +524,8 @@
                     "reviewContent": null,
                     "song": null,
                     "theater": {
-                        "name": "John F. Kennedy Center for the Performing Arts",
-                        "city": "Washington, DC"
+                        "name": "Signature Theatre",
+                        "city": "Arlington, VA"
                     }
                 },
                 {
@@ -536,11 +536,11 @@
                     "link": null,
                     "date": "2025-01-31T00:00:00.000Z",
                     "price": 178.3,
-                    "favorite": null,
-                    "upcoming": true,
+                    "favorite": true,
+                    "upcoming": false,
                     "multi": null,
                     "type": "musical",
-                    "rating": null,
+                    "rating": "sad",
                     "seatLevel": null,
                     "seatArea": null,
                     "seatSection": null,
@@ -548,7 +548,10 @@
                     "actors": null,
                     "time": 100,
                     "reviewContent": null,
-                    "song": null,
+                    "song": {
+                        "name": "Welcome to the Rock",
+                        "videoLink": "https://www.youtube.com/watch?v=UH-ozsBI570"
+                    },
                     "theater": {
                         "name": "Capital One Hall",
                         "city": "Tysons, VA"
