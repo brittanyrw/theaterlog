@@ -374,58 +374,6 @@
             "items": [
                 {
                     "sys": {
-                        "id": "309g43bXLGqfVJszAanM9L"
-                    },
-                    "name": "Sound of Music",
-                    "link": null,
-                    "date": "2025-09-21T00:00:00.000Z",
-                    "price": null,
-                    "favorite": null,
-                    "upcoming": true,
-                    "multi": null,
-                    "type": "musical",
-                    "rating": null,
-                    "seatLevel": null,
-                    "seatArea": null,
-                    "seatSection": null,
-                    "icon": null,
-                    "actors": null,
-                    "time": null,
-                    "reviewContent": null,
-                    "song": null,
-                    "theater": {
-                        "name": "John F. Kennedy Center for the Performing Arts",
-                        "city": "Washington, DC"
-                    }
-                },
-                {
-                    "sys": {
-                        "id": "MqW2BhUBgdjsn1nkDVpjX"
-                    },
-                    "name": "Parade",
-                    "link": null,
-                    "date": "2025-08-31T00:00:00.000Z",
-                    "price": null,
-                    "favorite": null,
-                    "upcoming": true,
-                    "multi": null,
-                    "type": "musical",
-                    "rating": null,
-                    "seatLevel": null,
-                    "seatArea": null,
-                    "seatSection": null,
-                    "icon": null,
-                    "actors": null,
-                    "time": null,
-                    "reviewContent": null,
-                    "song": null,
-                    "theater": {
-                        "name": "John F. Kennedy Center for the Performing Arts",
-                        "city": "Washington, DC"
-                    }
-                },
-                {
-                    "sys": {
                         "id": "1splqub9bblDXfyTw7T6HW"
                     },
                     "name": "Natasha, Pierre & The Great Comet of 1812",
@@ -448,32 +396,6 @@
                     "theater": {
                         "name": "Royal Alexandra Theatre",
                         "city": "Toronto, Canada"
-                    }
-                },
-                {
-                    "sys": {
-                        "id": "6pukE5dteIQpGPNKJpaVXy"
-                    },
-                    "name": "Legally Blonde",
-                    "link": null,
-                    "date": "2025-06-06T00:00:00.000Z",
-                    "price": null,
-                    "favorite": null,
-                    "upcoming": true,
-                    "multi": null,
-                    "type": "musical",
-                    "rating": null,
-                    "seatLevel": null,
-                    "seatArea": null,
-                    "seatSection": null,
-                    "icon": null,
-                    "actors": null,
-                    "time": null,
-                    "reviewContent": null,
-                    "song": null,
-                    "theater": {
-                        "name": "John F. Kennedy Center for the Performing Arts",
-                        "city": "Washington, DC"
                     }
                 },
                 {
@@ -511,18 +433,21 @@
                     "date": "2025-03-09T00:00:00.000Z",
                     "price": 138,
                     "favorite": null,
-                    "upcoming": true,
-                    "multi": null,
+                    "upcoming": false,
+                    "multi": 2,
                     "type": "musical",
-                    "rating": null,
-                    "seatLevel": null,
+                    "rating": "love",
+                    "seatLevel": "Front Row Orchestra",
                     "seatArea": null,
                     "seatSection": null,
-                    "icon": null,
+                    "icon": "mug-saucer",
                     "actors": null,
                     "time": null,
                     "reviewContent": null,
-                    "song": null,
+                    "song": {
+                        "name": "96,000",
+                        "videoLink": "https://www.youtube.com/watch?v=B2Rd7Cpx-Ss"
+                    },
                     "theater": {
                         "name": "Signature Theatre",
                         "city": "Arlington, VA"
@@ -2928,7 +2853,7 @@
                     "seatLevel": "Orchestra",
                     "seatArea": null,
                     "seatSection": null,
-                    "icon": null,
+                    "icon": "mug-saucer",
                     "actors": null,
                     "time": null,
                     "reviewContent": null,
