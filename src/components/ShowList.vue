@@ -1,5 +1,39 @@
 <template>
   <div class="shows" id="shows">
+    <!-- <div class="theater-stats">
+      <h2>
+        <font-awesome-icon icon="building" /> Theater Visits
+      </h2>
+      <div class="theater-groups">
+        <div class="theater-group" v-if="broadwayTheaters.length > 0">
+          <h3>Broadway</h3>
+          <div class="theater-badges">
+            <div class="theater-badge" v-for="theater in broadwayTheaters" :key="theater.name">
+              <span class="theater-name">{{ theater.name }}</span>
+              <span class="theater-count">{{ theater.count }}</span>
+            </div>
+          </div>
+        </div>
+        <div class="theater-group" v-if="westEndTheaters.length > 0">
+          <h3>West End</h3>
+          <div class="theater-badges">
+            <div class="theater-badge" v-for="theater in westEndTheaters" :key="theater.name">
+              <span class="theater-name">{{ theater.name }}</span>
+              <span class="theater-count">{{ theater.count }}</span>
+            </div>
+          </div>
+        </div>
+        <div class="theater-group" v-if="otherTheaters.length > 0">
+          <h3>Other Theaters</h3>
+          <div class="theater-badges">
+            <div class="theater-badge" v-for="theater in otherTheaters" :key="theater.name">
+              <span class="theater-name">{{ theater.name }}</span>
+              <span class="theater-count">{{ theater.count }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
     <div class="filters">
       <div class="filter-container">
         <label for="category-filter">Category:</label>
@@ -141,7 +175,8 @@ const formatDate = (date, includeDay = false) => {
 };
 
 const props = defineProps({
-  shows: Array
+  shows: Array,
+  theaters: Array
 });
 
 const selectedYear = ref('');
@@ -199,6 +234,62 @@ const showCount = computed(() => {
   }, {});
 });
 
+// Logic for theater stats
+const theaterCount = computed(() => {
+  const counts = {};
+  props.shows.forEach(show => {
+    const theaterName = show.theater.name;
+    counts[theaterName] = (counts[theaterName] || 0) + 1;
+  });
+  return counts;
+});
+
+// Get the full theater info from theaterCollection
+const allTheaters = computed(() => {
+  // Create mapping of theater names to their details
+  const theaterMap = {};
+  if (props.theaters && props.theaters.length > 0) {
+    props.theaters.forEach(theater => {
+      theaterMap[theater.name] = {
+        city: theater.city,
+        broadway: theater.broadway,
+        westEnd: theater.westEnd
+      };
+    });
+  }
+  
+  // Create array of theaters with counts
+  return Object.entries(theaterCount.value).map(([name, count]) => {
+    const theaterInfo = theaterMap[name] || {};
+    return {
+      name,
+      count,
+      broadway: theaterInfo.broadway === true,
+      westEnd: theaterInfo.westEnd === true,
+      city: theaterInfo.city || ''
+    };
+  });
+});
+
+// Group theaters by type
+const broadwayTheaters = computed(() => {
+  return allTheaters.value
+    .filter(theater => theater.broadway && theater.count > 2)
+    .sort((a, b) => b.count - a.count);
+});
+
+const westEndTheaters = computed(() => {
+  return allTheaters.value
+    .filter(theater => theater.westEnd && theater.count > 2)
+    .sort((a, b) => b.count - a.count);
+});
+
+const otherTheaters = computed(() => {
+  return allTheaters.value
+    .filter(theater => !theater.broadway && !theater.westEnd && theater.count > 2)
+    .sort((a, b) => b.count - a.count);
+});
+
 const toggleReview = (index) => {
   showReviews.value[index] = !showReviews.value[index];
 };
@@ -208,6 +299,68 @@ const toggleReview = (index) => {
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
+
+.theater-stats {
+  padding: 20px;
+  margin-bottom: 20px;
+  color: var(--purple);
+}
+
+.theater-stats h2 {
+  color: var(--purple);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Abril Fatface";
+}
+
+.theater-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.theater-group h3 {
+  color: var(--purple);
+  margin-bottom: 10px;
+  font-family: "Abril Fatface";
+  font-size: 1.2rem;
+}
+
+.theater-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.theater-badge {
+  background-color: var(--purple);
+  color: var(--black);
+  padding: 8px 12px;
+  border-radius: 5px;
+  border: 2px solid var(--black);
+  box-shadow: 3px 3px 0 var(--black);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.theater-name {
+  font-weight: bold;
+}
+
+.theater-count {
+  background-color: var(--black);
+  color: var(--purple);
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
 
 .shows {
   padding: 40px 10px;

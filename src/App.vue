@@ -1,7 +1,7 @@
 <template>
   <main id="main">
     <HeroSection :shows="shows" :theaters="theaters" />
-    <ShowList :shows="shows" />
+    <ShowList :shows="shows" :theaters="theaters" />
   </main>
 </template>
 

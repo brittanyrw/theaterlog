@@ -426,6 +426,35 @@
                 },
                 {
                     "sys": {
+                        "id": "2Ns0mNWsOyJpRpvKowxNC2"
+                    },
+                    "name": "Sister Act",
+                    "link": "http://www.playbill.com/production/sister-act-broadway-theatre-vault-0000013729",
+                    "date": "2025-04-09T00:00:00.000Z",
+                    "price": 95,
+                    "favorite": false,
+                    "upcoming": false,
+                    "multi": 2,
+                    "type": "musical",
+                    "rating": "funny",
+                    "seatLevel": "Front Row Mezzanine",
+                    "seatArea": null,
+                    "seatSection": null,
+                    "icon": "cross",
+                    "actors": null,
+                    "time": null,
+                    "reviewContent": null,
+                    "theater": {
+                        "name": "Ford’s Theatre",
+                        "city": "Washington, DC"
+                    },
+                    "song": {
+                        "name": "Raise Your Voice",
+                        "videoLink": "https://www.youtube.com/watch?v=0InYv_5uWak"
+                    }
+                },
+                {
+                    "sys": {
                         "id": "3squgi18hlj5lAIKcXGM1Ns"
                     },
                     "name": "In the Heights",
@@ -3021,13 +3050,13 @@
                     "price": 0,
                     "favorite": false,
                     "upcoming": false,
-                    "multi": 0,
+                    "multi": 2,
                     "type": "musical",
                     "rating": "funny",
                     "seatLevel": "Orchestra",
                     "seatArea": null,
                     "seatSection": null,
-                    "icon": null,
+                    "icon": "cross",
                     "actors": null,
                     "time": null,
                     "reviewContent": null,
