@@ -374,54 +374,31 @@
             "items": [
                 {
                     "sys": {
-                        "id": "1splqub9bblDXfyTw7T6HW"
-                    },
-                    "name": "Natasha, Pierre & The Great Comet of 1812",
-                    "link": null,
-                    "date": "2025-08-02T00:00:00.000Z",
-                    "price": 111.52,
-                    "favorite": false,
-                    "upcoming": true,
-                    "multi": null,
-                    "type": "musical",
-                    "rating": null,
-                    "seatLevel": "Mezzanine",
-                    "seatArea": null,
-                    "seatSection": null,
-                    "icon": "envelope",
-                    "actors": null,
-                    "time": null,
-                    "reviewContent": null,
-                    "song": null,
-                    "theater": {
-                        "name": "Royal Alexandra Theatre",
-                        "city": "Toronto, Canada"
-                    }
-                },
-                {
-                    "sys": {
                         "id": "3squgi18hlj5lAIKcXGM1N"
                     },
                     "name": "Falsettos",
                     "link": null,
                     "date": "2025-05-18T00:00:00.000Z",
                     "price": 69,
-                    "favorite": null,
-                    "upcoming": true,
-                    "multi": null,
+                    "favorite": true,
+                    "upcoming": false,
+                    "multi": 3,
                     "type": "musical",
-                    "rating": null,
-                    "seatLevel": null,
+                    "rating": "love",
+                    "seatLevel": "Front Row Orchestra",
                     "seatArea": null,
                     "seatSection": null,
-                    "icon": null,
+                    "icon": "chess",
                     "actors": null,
                     "time": null,
                     "reviewContent": null,
-                    "song": null,
                     "theater": {
                         "name": "Keegan Theatre",
                         "city": "Washington, DC"
+                    },
+                    "song": {
+                        "name": "What Would I Do",
+                        "videoLink": "https://www.youtube.com/watch?v=QC4zjD9qL5o"
                     }
                 },
                 {
