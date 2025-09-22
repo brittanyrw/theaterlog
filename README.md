@@ -44,6 +44,3 @@ Each show generates a card that includes the following:
 ### Past vs Present
 Here is a quick peek of what version 1 of TheaterLog (2018) looked like.
 ![TheaterLog Screenshots](readme/evolution.png?raw=true "TheaterLog Screenshots")
-
-## Note:
-This repo is no longer the source code for [this Contentful blog post](https://www.contentful.com/blog/2021/08/26/build-using-vue-and-contentful/), to view the source code for that blog go to [this Github repo](https://github.com/brittanyrw/theaterlog-contentful).
