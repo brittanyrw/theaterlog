@@ -374,6 +374,93 @@
             "items": [
                 {
                     "sys": {
+                        "id": "3squgi18hlj5lAIKcXGM1"
+                    },
+                    "name": "Hadestown",
+                    "link": null,
+                    "date": "2025-10-15T00:00:00.000Z",
+                    "price": 217.48,
+                    "favorite": true,
+                    "upcoming": true,
+                    "multi": 7,
+                    "type": "musical",
+                    "rating": "love",
+                    "seatLevel": "Front Row Orchestra",
+                    "seatArea": null,
+                    "seatSection": null,
+                    "icon": "guitar",
+                    "actors": null,
+                    "time": null,
+                    "reviewContent": null,
+                    "theater": {
+                        "name": "Walter Kerr Theatre ",
+                        "city": "New York, NY"
+                    },
+                    "song": {
+                        "name": "Flowers",
+                        "videoLink": "https://www.youtube.com/watch?v=IzDzpJcQ8l4"
+                    }
+                },
+                {
+                    "sys": {
+                        "id": "3squgi18hlj5lAIKcXGM"
+                    },
+                    "name": "&Juliet",
+                    "link": null,
+                    "date": "2025-10-14T00:00:00.000Z",
+                    "price": 0,
+                    "favorite": false,
+                    "upcoming": true,
+                    "multi": 0,
+                    "type": "musical",
+                    "rating": "love",
+                    "seatLevel": "Orchestra",
+                    "seatArea": null,
+                    "seatSection": null,
+                    "icon": "",
+                    "actors": null,
+                    "time": null,
+                    "reviewContent": null,
+                    "theater": {
+                        "name": "Stephen Sondheim Theatre",
+                        "city": "New York, NY"
+                    },
+                    "song": {
+                        "name": "",
+                        "videoLink": ""
+                    }
+                },
+                {
+                    "sys": {
+                        "id": "3squgi18hlj5lAIKcXG"
+                    },
+                    "name": "Heathers",
+                    "link": null,
+                    "date": "2025-10-13T00:00:00.000Z",
+                    "price": 123.00,
+                    "favorite": false,
+                    "upcoming": true,
+                    "multi": 2,
+                    "type": "musical",
+                    "rating": "love",
+                    "seatLevel": "Orchestra",
+                    "seatArea": null,
+                    "seatSection": null,
+                    "icon": "heart-crack",
+                    "actors": null,
+                    "time": null,
+                    "reviewContent": null,
+                    "theater": {
+                        "name": "New World Stages",
+                        "city": "New York, NY"
+                    },
+                    "song": {
+                        "name": "",
+                        "videoLink": ""
+                    }
+                },                                                
+                {
+                    "sys": {
                         "id": "3squgi18hlj5lAIKcXGM1N"
                     },
                     "name": "Falsettos",
