@@ -285,6 +285,12 @@
             <p class="year">{{ actor.name }}</p>
             <p class="year-amount">{{ actor.count }}</p>
           </div>
+
+          <div class="actor-shows">
+            <p v-for="s in actor.shows" :key="s._key" class="actor-show">
+              {{ s.display }}
+            </p>
+          </div>
         </li>
       </ul>
     </div>
@@ -413,23 +419,60 @@ const count = (key) => {
 };
 
 const actorCounts = computed(() => {
-  const counts = {};
+  const byActor = new Map();
 
   viewedShows.value.forEach(show => {
-    if (Array.isArray(show.actors)) {
-      show.actors.forEach(actor => {
-        if (actor) {
-          counts[actor] = (counts[actor] || 0) + 1;
-        }
-      });
-    }
+    if (!Array.isArray(show.actors)) return;
+
+    const title = show.name ?? 'Untitled';
+    const d = show.date ? new Date(show.date) : null;
+    const isValidDate = d && !isNaN(d.getTime());
+    const year = isValidDate ? d.getFullYear() : null;
+    const stamp = isValidDate ? d.getTime() : -Infinity;
+    const dateStr = isValidDate
+      ? `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`
+      : null;
+
+    const uniqueActors = new Set(show.actors.filter(Boolean));
+
+    uniqueActors.forEach(actor => {
+      if (!byActor.has(actor)) {
+        byActor.set(actor, { name: actor, count: 0, shows: [] });
+      }
+      const entry = byActor.get(actor);
+      entry.count += 1;
+      entry.shows.push({ title, year, dateStr, _stamp: stamp, _key: `${title}|${show.date || ''}` });
+    });
   });
 
-  return Object.entries(counts)
-    .filter(([_, count]) => count >= 2) 
-    .map(([name, count]) => ({ name, count })) 
-    .sort((a, b) => b.count - a.count);
+  return Array.from(byActor.values())
+    .filter(a => a.count >= 3)
+    .map(a => {
+      a.shows.sort((s1, s2) => s2._stamp - s1._stamp);
+
+      const dupMap = new Map();
+      a.shows.forEach(s => {
+        const k = `${s.title}|${s.year ?? ''}`;
+        dupMap.set(k, (dupMap.get(k) || 0) + 1);
+      });
+
+      a.shows = a.shows.map(s => {
+        const k = `${s.title}|${s.year ?? ''}`;
+        const needsFullDate = (dupMap.get(k) || 0) > 1 && s.dateStr;
+        return {
+          ...s,
+          display: needsFullDate
+            ? `${s.title}, ${s.year ?? ''} — ${s.dateStr}`
+            : `${s.title}, ${s.year ?? ''}`.trim().replace(/,\s*$/, '')
+        };
+      });
+
+      return a;
+    })
+    .sort((a, b) => (b.count - a.count) || a.name.localeCompare(b.name));
 });
+
+
 
 const countArray = (array = []) => {
   const countedArray = {};

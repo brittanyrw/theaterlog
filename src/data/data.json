@@ -592,7 +592,7 @@
                     "seatArea": null,
                     "seatSection": null,
                     "icon": "crown",
-                    "actors": null,
+                    "actors": ["Adrianna Hicks", "Storm Lever", "Jenny Mollet", "Olivia Donalson", "Didi Romero", "Jana Larell Glover"],
                     "time": 80,
                     "reviewContent": null,
                     "theater": {
@@ -650,7 +650,7 @@
                     "seatArea": null,
                     "seatSection": null,
                     "icon": "book",
-                    "actors": null,
+                    "actors": ["Trevor Wayne", "Daryl Tofa", "Joshua Boone", "Brent Comer", "Jason Schmidt", "Emma Pittman", "Renni Anthony Magee", "Kevin William Paul", "Ryo Kamibayashi", "Maggie Kuntz", "Tilly Evans-Krueger", "Andre Malcolm", "RJ Higton", "Cameron Burke", "Melody Rose", "Jordan Chin", "John Patrick Collins", "Milena J. Comeau", "Josh Strobl"],
                     "time": null,
                     "reviewContent": null,
                     "theater": {
@@ -705,7 +705,7 @@
                     "seatArea": "Center",
                     "seatSection": "Right",
                     "icon": "book",
-                    "actors": null,
+                    "actors": ["Brody Grant", "Sky Lakota-Lynch", "Joshua Boone", "Brent Comer", "Victor Carrillo Tracey", "Emma Pittman", "Daryl Tofa", "Kevin William Paul", "Dan Berry", "Sarahgrace Mariani", "Tilly Evans-Krueger", "Renni Anthony Magee", "RJ Higton", "Sean Harrison Jones", "Barton Cowperthwaite", "Melody Rose", "Wonza Johnson", "Josh Strobl", "Trevor Wayne"],
                     "time": null,
                     "reviewContent": null,
                     "theater": {
@@ -734,7 +734,7 @@
                     "seatArea": null,
                     "seatSection": null,
                     "icon": null,
-                    "actors": null,
+                    "actors": ["Jeremy Jordan", "Traci Elaine Lee", "Dan Rosales", "Samantha Pauly", "Sara Chase", "John Zdrojeski", "Charlie Pollock", "Eric Anderson", "Ryah Nixon", "Kayla Pecchioni", "Alex Prakken", "Dariana Mullen", "Curtis Holland", "Derek Jordan Taylor", "Jasmine Pearl Villaroel", "Katie Webber", "Pascal Pastrana", "Carissa Gaughran", "Dave Schoonover", "Tanairi Sade Vazequez", "Brandon J. Large", "Samantha Pollino"],
                     "time": null,
                     "reviewContent": null,
                     "theater": {
@@ -763,7 +763,7 @@
                     "seatArea": "Back",
                     "seatSection": "Middle",
                     "icon": null,
-                    "actors": null,
+                    "actors": ["Sean Astin", "Corinne C. Broadbent", "Grey Henson", "J Savage", "Kalen Allen", "Michael Hayden", "Peli Naomi Woods", "David Paul Kidder", "Ashley Brown", "Kai Edgar", "Jennifer Sanchez", "Sydni Moon", "Kayla Davion", "Clifton Samuels", "Michael Deaner", "Michael Milkanin", "Halli Toland", "DeMarius R. Copes", "Cameron Anika Hill", "Bronwyn Tarboton", "Rodney Thompson"],
                     "time": null,
                     "reviewContent": null,
                     "theater": {
@@ -792,7 +792,7 @@
                     "seatArea": "Front",
                     "seatSection": "Right",
                     "icon": "seedling",
-                    "actors": null,
+                    "actors": ["Sherie Rene Scott", "Nicholas Christopher", "James Carpinello", "Michael Iannucci", "Major Attaway", "Tiffany Renee Thompson", "Daria Pilar Redus", "Morgan Ashley Bryant", "Teddy Yudain", "Weston Chandler Long", "Melissa Victor", "Camryn Hampton", "Jeff Sears"],
                     "time": 129,
                     "reviewContent": null,
                     "theater": {
@@ -850,7 +850,7 @@
                     "seatArea": null,
                     "seatSection": null,
                     "icon": "guitar",
-                    "actors": null,
+                    "actors": ["Phillip Boykin", "Jordan Fisher", "Maia Reficco", "Allison Russell", "Lillias White", "Shea Renee", "Jessie Shelton", "Brit West", "Emily Afton", "Malcolm Armwood", "Timothy H. Lee", "Alex Puette", "Grace Yoo"],
                     "time": null,
                     "reviewContent": "I’ve seen Hadestown a bunch of times, and every time I’m blown away, but this cast was something else! Maia Reficco as Eurydice and Jordan Fisher as Orpheus were incredible. Jordan’s take on Orpheus was so different from the original—he felt more aware, passionate, and emotional. It really made his journey hit harder, and his chemistry with Maia was just perfect.\n\nEven though I’ve seen this show so many times, there are still new things to notice. This time, I was really struck by the direction during Chant. The way everything came together—voices, movement, the lighting—it was just mind-blowing.\n\nHonestly, this was my favorite production so far. Hadestown keeps finding ways to surprise me, and I love it more every time. ",
                     "theater": {
@@ -1163,7 +1163,7 @@
                     "seatArea": "Front",
                     "seatSection": "Middle",
                     "icon": "book",
-                    "actors": null,
+                    "actors": ["Trevor Wayne", "Josh Strobl", "Joshua Boone", "Brent Comer", "Jason Schmidt", "Emma Pittman", "Henry Julian Gendron", "Kevin William Paul","Dan Berry", "Sarahgrace Mariani", "Tilly Evans-Krueger", "Ryo Kamibayashi", "RJ Higton", "Kevin Csolak", "Barton Cowperthwaite", "Melody Rose", "Wonza Johnson", "Sean Harrison Jones"],
                     "time": null,
                     "reviewContent": null,
                     "theater": {
@@ -1247,7 +1247,7 @@
                     "seatArea": null,
                     "seatSection": null,
                     "icon": null,
-                    "actors": null,
+                    "actors": ["Jonathan Groff", "Daniel Radcliffe", "Sherz Aletaha", "Krystal Joy Brown", "Reg Rogers", "Katie Rose Clarke", "Brady Wagner", "Amanda Rose", "Brianna Stoute", "Leana Rae Concepcion", "Corey Mach", "Talia Simone Robinson", "Gemma Baird", "Coby Getzug", "Evan Alexander Smith", "Christian Strange", "Vishal Vaidya", "Natalie Wachen", "David Scott Purdy"],
                     "time": null,
                     "reviewContent": null,
                     "theater": {
@@ -1360,7 +1360,7 @@
                     "seatArea": null,
                     "seatSection": null,
                     "icon": "fire",
-                    "actors": null,
+                    "actors": ["Brandon Cameron", "Isa Briones", "Tara Jackson", "Phillip Boykin", "Jon Jon Briones", "Emily Afton", "Belen Moyano", "Kay Trinidad", "Brit West", "Malcolm Armwood", "Chibueze Ihuoma", "Alex Puette", "Grace Yoo"],
                     "time": null,
                     "reviewContent": null,
                     "theater": {
@@ -1429,7 +1429,7 @@
                     "seatArea": null,
                     "seatSection": null,
                     "icon": null,
-                    "actors": null,
+                    "actors": ["Brandon Uranowitz", "Grey Henson", "Denee Benton", "Kennedy Caughell", "Kevin Moon Loh", "Yael 'Yaya' Reich", "Nikhil Saboo"],
                     "time": null,
                     "reviewContent": null,
                     "theater": {
@@ -1516,7 +1516,7 @@
                     "seatArea": "Front",
                     "seatSection": "Center",
                     "icon": "fire",
-                    "actors": null,
+                    "actors": ["Malcolm Armwood", "Reeve Carney", "Solea Pfeiffer", "Jewelle Blackman", "Tom Hewitt", "Amelia Cormack", "Lindsey Hailes", "Brit West", "Emily Afton", "Alex Lugo", "Sayo Oni", "Alex Puette"],
                     "time": null,
                     "reviewContent": null,
                     "theater": {
@@ -1554,8 +1554,8 @@
                         "D'Kaylah Unique Whitley",
                         "Tiffany Renee Thompson",
                         "Khadija Sankoh",
-                        "Tedding Yudain",
-                        "Westin Chandler Long",
+                        "Teddy Yudain",
+                        "Weston Chandler Long",
                         "Najah Hetsberger",
                         "Camryn Hampton",
                         "Jeff Sears"
@@ -1876,7 +1876,7 @@
                     "seatArea": null,
                     "seatSection": null,
                     "icon": "fire",
-                    "actors": null,
+                    "actors": ["Mariand Torres", "Reeve Carney", "Eva Noblezada", "Jewelle Blackman", "Patrick Page", "Lillias White", "Amelia Cormack", "Soara-Joye Ross", "Kay Trinidad", "Emily Afton", "Malcolm Armwood", "Alex Puette", "Trent Saunders", "Grace Yoo"],
                     "time": null,
                     "reviewContent": null,
                     "theater": {
@@ -2363,7 +2363,7 @@
                     "seatArea": null,
                     "seatSection": null,
                     "icon": "fire",
-                    "actors": null,
+                    "actors": ["Nicholas Barasch", "Morgan Siobhan Green", "Kimberly Marable", "Kevyn Morrow", "Levi Kreis", "Belen Moyano", "Bex Odorisio", "Shea Renee", "Lindsey Hailes", "Chibueze Ihuoma", "Will Mann", "Sydney Parra", "Jamari Johnson Williams"],
                     "time": null,
                     "reviewContent": null,
                     "theater": {
@@ -2392,7 +2392,7 @@
                     "seatArea": null,
                     "seatSection": null,
                     "icon": "house",
-                    "actors": null,
+                    "actors": ["Rachel Bay Jones", "Brandon Victor Dixon", "Maia Reficco", "Khamary Rose", "Ben Levi Ross", "Michael Park"],
                     "time": null,
                     "reviewContent": null,
                     "theater": {
@@ -2947,7 +2947,7 @@
                     "seatArea": null,
                     "seatSection": null,
                     "icon": "mug-saucer",
-                    "actors": null,
+                    "actors": ["Anthony Ramos", "Rick Negron", "Blanca Camacho", "J. Quinton Johnson", "Vanessa Hudgens", "Mateo Ferro", "Saundra Santiago", "Eden Espinosa", "Arianna Rosario", "Virgil Gadson", "Eliseo Roman", "Ana Villafane", "David Baida", "Nico DeJesus", "John Edwards", "Hope Easterbrook", "Rosie Lani Fiedelman", "Henry Gainza", "Carlos E. Gonzalez", "Morgan Marcell", "April Ortiz", "Khori Petinaud", "Voltaire Wade-Greene"],
                     "time": null,
                     "reviewContent": null,
                     "theater": {
@@ -3034,7 +3034,7 @@
                     "seatArea": null,
                     "seatSection": null,
                     "icon": null,
-                    "actors": null,
+                    "actors": ["Jon Jon Briones", "Eva Noblezada", "Lianah Sta. Ana", "Rachelle Anne Go", "Anna-Lee Wright", "Kimerly-Ann Truong", "Tiffany Toh", "Catherine Ricafort", "Minami Yusui", "Emily Bautista", "Paige Faure", "Ericka Hunter", "Lina Lee", "Nicholas Christopher", "Alistair Brammer", "Colby Dezelick", "Taurean Everett", "Graham Scott Fleming", "Casey Garvin", "Nkrumah Gatling", "Dan Horn", "Casey Lee Ross", "Antoine L. Smith", "Sam Strasfeld", "Travis Ward-Osborne", "Warren Yang", "Julian DeGuzman", "Paul Heesang Miller", "Robert Pendilla", "Christopher Vo", "Devin Ilaw", "Jason Sermonia", "Billy Bustamante", "Katie Rose Clarke", "Jace Chen", "Adam Kaokept", "Kei Tsuruharatani", "Carol Angeli", "Mike Baerga", "Viveca Chow", "Julius Sermonia", "Charlie Williams"],
                     "time": null,
                     "reviewContent": null,
                     "theater": {
@@ -3092,7 +3092,7 @@
                     "seatArea": "Front",
                     "seatSection": "Middle",
                     "icon": "pen-fancy",
-                    "actors": null,
+                    "actors": ["Jevon McFerrin", "Lexi Lawson", "Brandon Victor Dixon", "Elizabeth Judd", "Bryan Terrell Clark", "Seth Stewart", "J. Quinton Johnson", "Jordan Fisher", "Alysha Deslorieux", "Rory O'Malley", "Donald Webber, Jr.", "Thayne Jasperson", "Neil Haskell", "Rickey Tripp", "Lauren Boyd", "Gregory Haney", "Sasha Hollinger", "Morgan Marcell", "Kamille Upshaw", "Tanairi Sade Vazequez"],
                     "time": null,
                     "reviewContent": null,
                     "theater": {
@@ -3150,7 +3150,7 @@
                     "seatArea": null,
                     "seatSection": null,
                     "icon": "chess",
-                    "actors": null,
+                    "actors": ["Christian Borle", "Anthony Rosenthal", "Andrew Rannells", "Brandon Uranowitz", "Tracie Thoms", "Betsy Wolfe", "Stephanie Umoh"],
                     "time": null,
                     "reviewContent": null,
                     "theater": {
@@ -3179,7 +3179,7 @@
                     "seatArea": "Front",
                     "seatSection": "Middle",
                     "icon": "pen-fancy",
-                    "actors": null,
+                    "actors": ["Javier Munoz", "Lexi Lawson", "Brandon Victor Dixon", "Mandy Gonzalez", "Christopher Jackson", "Seth Stewart", "Okieriete Onaodowan", "Anthony Ramos", "Jasmine Cephas Jones", "Rory O'Malley", "Roddy Kennedy", "Thayne Jasperson", "Neil Haskell", "Gerald Avery", "Careigh Bettiol", "Hope Easterbrook", "Sasha Hollinger", "Elizabeth Judd", "Tanairi Sade Vazequez", "Nik Walker", "Zelig Williams"],
                     "time": null,
                     "reviewContent": null,
                     "theater": {
@@ -3423,7 +3423,7 @@
                     "seatArea": "Center",
                     "seatSection": "Middle",
                     "icon": "pen-fancy",
-                    "actors": null,
+                    "actors": ["Lin-Manuel Miranda", "Phillipa Soo", "Leslie Odom, Jr.", "Renee Elise Goldsberry", "Christopher Jackson", "Daveed Diggs", "Okieriete Onaodowan", "Anthony Ramos", "Jasmine Cephas Jones", "Rory O'Malley", "Gregory Haney", "Thayne Jasperson", "Jon Rua", "Ephraim Sykes", "Careigh Bettiol", "Hope Easterbrook", "Shonica Gooden", "Sasha Hutchings", "Elizabeth Judd", "Austin Smith", "Ricardo A. Zayas"],
                     "time": null,
                     "reviewContent": null,
                     "theater": {
@@ -3646,7 +3646,7 @@
                     "seatArea": "Center",
                     "seatSection": "Middle",
                     "icon": "pen-fancy",
-                    "actors": null,
+                    "actors": ["Daveed Diggs", "Renee Elise Goldsberry", "Jonathan Groff", "Christopher Jackson", "Jasmine Cephas Jones", "Lin-Manuel Miranda", "Leslie Odom, Jr.", "Okieriete Onaodowan", "Anthony Ramos", "Phillipa Soo", "Careigh Bettiol", "Ariana DeBose", "Sydney James Harcourt", "Sasha Hutchings", "Thayne Jasperson", "Emmy Raver-Lampman", "Jon Rua", "Austin Smith", "Seth Stewart", "Betsy Struxness", "Ephraim Sykes"],
                     "time": null,
                     "reviewContent": null,
                     "theater": {
@@ -3817,7 +3817,33 @@
                     "seatArea": null,
                     "seatSection": null,
                     "icon": null,
-                    "actors": null,
+                    "actors": [ "Bud Weber",
+                    "Brooks Ashmanskas",
+                    "Kate Reinders",
+                    "Christian Borle",
+                    "Brian d'Arcy James",
+                    "John Cariani",
+                    "David Hibbard",
+                    "Stacey Todd Holt",
+                    "Austin Lesch",
+                    "Brian Shepard",
+                    "Aaron Kaburick",
+                    "Matt Wall",
+                    "Peter Bartlett",
+                    "Gerry Vichi",
+                    "Heidi Blickenstaff",
+                    "David Hibbard",
+                    "Brad Oscar",
+                    "Ryan VanDenBoom",
+                    "Aleks Pevek",
+                    "Eric Sciotto",
+                    "Linda Griffin",
+                    "Jenny Hill",
+                    "Betty Johnson Nicely",
+                    "Michael James Scott",
+                    "Angie Schworer",
+                    "Chelsea Morgan Stock",
+                    "Marisha Wallace"],
                     "time": null,
                     "reviewContent": null,
                     "theater": {
