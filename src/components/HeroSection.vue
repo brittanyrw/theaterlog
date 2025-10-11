@@ -277,17 +277,17 @@
     </li>
   </ul>
     </div>
-    <!-- <div class="show-years actor-repeats">
+    <div class="show-years actor-repeats">
       <h3>Actor Repeats</h3>
       <ul class="show-year-list">
-        <li v-for="actor in actorShowCounts" :key="actor.name" class="show-year">
+        <li v-for="actor in actorCounts" :key="actor.name" class="show-year">
           <div class="repeat-content">
             <p class="year">{{ actor.name }}</p>
             <p class="year-amount">{{ actor.count }}</p>
           </div>
         </li>
       </ul>
-    </div> -->
+    </div>
   </section>
 </template>
 
@@ -411,6 +411,25 @@ const count = (key) => {
     0
   );
 };
+
+const actorCounts = computed(() => {
+  const counts = {};
+
+  viewedShows.value.forEach(show => {
+    if (Array.isArray(show.actors)) {
+      show.actors.forEach(actor => {
+        if (actor) {
+          counts[actor] = (counts[actor] || 0) + 1;
+        }
+      });
+    }
+  });
+
+  return Object.entries(counts)
+    .filter(([_, count]) => count >= 2) 
+    .map(([name, count]) => ({ name, count })) 
+    .sort((a, b) => b.count - a.count);
+});
 
 const countArray = (array = []) => {
   const countedArray = {};
