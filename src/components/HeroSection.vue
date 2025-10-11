@@ -277,7 +277,7 @@
     </li>
   </ul>
     </div>
-    <div class="show-years actor-repeats">
+    <!-- <div class="show-years actor-repeats">
       <h3>Actor Repeats</h3>
       <ul class="show-year-list">
         <li v-for="actor in actorCounts" :key="actor.name" class="show-year">
@@ -293,7 +293,7 @@
           </div>
         </li>
       </ul>
-    </div>
+    </div> -->
   </section>
 </template>
 
