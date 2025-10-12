@@ -403,6 +403,35 @@
                 },
                 {
                     "sys": {
+                        "id": "3vb5Tl705l2B2d3VLsZ5ds"
+                    },
+                    "name": "The Outsiders",
+                    "link": null,
+                    "date": "2025-10-15T00:00:00.000Z",
+                    "price": 166.50,
+                    "favorite": false,
+                    "upcoming": true,
+                    "multi": null,
+                    "type": "musical",
+                    "rating": "",
+                    "seatLevel": "Orchestra",
+                    "seatArea": "Right",
+                    "seatSection": "Middle",
+                    "icon": "book",
+                    "actors": null,
+                    "time": null,
+                    "reviewContent": null,
+                    "theater": {
+                        "name": "Bernard Jacobs Theatre",
+                        "city": "New York, NY"
+                    },
+                    "song": {
+                        "name": "",
+                        "videoLink": ""
+                    }
+                },
+                {
+                    "sys": {
                         "id": "3squgi18hlj5lAIKcXGM"
                     },
                     "name": "&Juliet",
