@@ -381,7 +381,7 @@
                     "date": "2025-10-15T00:00:00.000Z",
                     "price": 217.48,
                     "favorite": true,
-                    "upcoming": true,
+                    "upcoming": false,
                     "multi": 7,
                     "type": "musical",
                     "rating": "love",
@@ -409,11 +409,11 @@
                     "link": null,
                     "date": "2025-10-15T00:00:00.000Z",
                     "price": 166.50,
-                    "favorite": false,
-                    "upcoming": true,
+                    "favorite": true,
+                    "upcoming": false,
                     "multi": null,
                     "type": "musical",
-                    "rating": "",
+                    "rating": "love",
                     "seatLevel": "Orchestra",
                     "seatArea": "Right",
                     "seatSection": "Middle",
@@ -426,23 +426,23 @@
                         "city": "New York, NY"
                     },
                     "song": {
-                        "name": "",
-                        "videoLink": ""
+                        "name": "Great Expectations",
+                        "videoLink": "https://www.youtube.com/watch?v=AtppVOPfENc&list=RDAtppVOPfENc"
                     }
                 },
                 {
                     "sys": {
                         "id": "3squgi18hlj5lAIKcXGM"
                     },
-                    "name": "&Juliet",
+                    "name": "& Juliet",
                     "link": null,
                     "date": "2025-10-14T00:00:00.000Z",
                     "price": 0,
                     "favorite": false,
-                    "upcoming": true,
+                    "upcoming": false,
                     "multi": 0,
                     "type": "musical",
-                    "rating": "love",
+                    "rating": "happy",
                     "seatLevel": "Orchestra",
                     "seatArea": null,
                     "seatSection": null,
@@ -455,8 +455,8 @@
                         "city": "New York, NY"
                     },
                     "song": {
-                        "name": "",
-                        "videoLink": ""
+                        "name": "Since You've Been Gone",
+                        "videoLink": "https://www.youtube.com/watch?v=vpnrpzq3QFQ"
                     }
                 },
                 {
@@ -467,8 +467,8 @@
                     "link": null,
                     "date": "2025-10-13T00:00:00.000Z",
                     "price": 123.00,
-                    "favorite": false,
-                    "upcoming": true,
+                    "favorite": true,
+                    "upcoming": false,
                     "multi": 2,
                     "type": "musical",
                     "rating": "love",
@@ -484,8 +484,8 @@
                         "city": "New York, NY"
                     },
                     "song": {
-                        "name": "",
-                        "videoLink": ""
+                        "name": "Lifeboat",
+                        "videoLink": "https://www.youtube.com/watch?v=tNeAXIFOY8Q"
                     }
                 },                                                
                 {

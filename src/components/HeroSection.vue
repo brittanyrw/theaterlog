@@ -192,7 +192,7 @@
             <li class="birthday-show-list">
               <p class="show-year">2025</p>
               <div class="shows">
-                <p>Heathers, &Juliet, Outsiders, Hadestown</p>
+                <p>Heathers, & Juliet, Outsiders, Hadestown</p>
               </div>
             </li>
             <li class="birthday-show-list">
