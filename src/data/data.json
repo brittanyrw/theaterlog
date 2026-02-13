@@ -372,6 +372,35 @@
         },
         "showCollection": {
             "items": [
+                 {
+                    "sys": {
+                        "id": "3squgi18hlj5lAIKcXGM78"
+                    },
+                    "name": "Hadestown",
+                    "link": null,
+                    "date": "2026-02-13T00:00:00.000Z",
+                    "price": 114.66,
+                    "favorite": true,
+                    "upcoming": false,
+                    "multi": 8,
+                    "type": "musical",
+                    "rating": "love",
+                    "seatLevel": "Front Row Orchestra",
+                    "seatArea": null,
+                    "seatSection": null,
+                    "icon": "guitar",
+                    "actors": null,
+                    "time": null,
+                    "reviewContent": null,
+                    "theater": {
+                        "name": "Lyric Theatre ",
+                        "city": "London, UK"
+                    },
+                    "song": {
+                        "name": "Flowers",
+                        "videoLink": "https://www.youtube.com/watch?v=IzDzpJcQ8l4"
+                    }
+                },
                 {
                     "sys": {
                         "id": "3squgi18hlj5lAIKcXGM1"
