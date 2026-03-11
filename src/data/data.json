@@ -372,6 +372,64 @@
         },
         "showCollection": {
             "items": [
+                {
+                    "sys": {
+                        "id": "SyQEYTUUK0nlCOmYTlyfB66"
+                    },
+                    "name": "Starlight Express",
+                    "link": null,
+                    "date": "2026-02-15T00:00:00.000Z",
+                    "price": 176.15,
+                    "favorite": false,
+                    "upcoming": false,
+                    "multi": 2,
+                    "type": "musical",
+                    "rating": "love",
+                    "seatLevel": "Orchestra",
+                    "seatArea": null,
+                    "seatSection": null,
+                    "icon": "person-skating",
+                    "actors": null,
+                    "time": null,
+                    "reviewContent": null,
+                    "theater": {
+                        "name": "Troubadour Wembley Park Theatre",
+                        "city": "London, UK"
+                    },
+                    "song": {
+                        "name": "Light at the End of the Tunnel",
+                        "videoLink": "https://www.youtube.com/watch?v=Vv5a7DYMxSI"
+                    }
+                },
+                {
+                    "sys": {
+                        "id": "4aOCmKr8zLGgNvReskMuYI9"
+                    },
+                    "name": "Six",
+                    "link": null,
+                    "date": "2026-02-14T00:00:00.000Z",
+                    "price": 102.56,
+                    "favorite": true,
+                    "upcoming": false,
+                    "multi": 5,
+                    "type": "musical",
+                    "rating": "love",
+                    "seatLevel": "Front Row Mezzanine",
+                    "seatArea": null,
+                    "seatSection": null,
+                    "icon": "crown",
+                    "actors": null,
+                    "time": null,
+                    "reviewContent": null,
+                    "theater": {
+                        "name": "Vaudeville Theatre",
+                        "city": "London, UK"
+                    },
+                    "song": {
+                        "name": "All You Wanna Do",
+                        "videoLink": null
+                    }
+                },
                  {
                     "sys": {
                         "id": "3squgi18hlj5lAIKcXGM78"
