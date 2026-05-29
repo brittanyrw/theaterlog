@@ -156,16 +156,32 @@
             </li>
           </ul>
         </div>
-        <div class="show-years show-seats">
+        <div class="show-seats">
           <h3><font-awesome-icon icon="chair" class="fav-icon" /> Seat Locations</h3>
-          <ul class="show-year-list">
-            <li v-for="(seatAmount, seat) in countArray(seats)" :key="seat" class="show-year">
-              <p class="year">
-                {{ seat }}
-              </p>
-              <p class="year-amount">{{ seatAmount }}</p>
-            </li>
-          </ul>
+          <div class="theater-map">
+            <div v-for="level in ['Balcony', 'Mezzanine', 'Orchestra']" :key="level" class="theater-section">
+              <div class="section-grid">
+                <template v-for="section in activeRows(level)" :key="section">
+                  <div v-for="area in ['Left', 'Center', 'Right']" :key="area" class="grid-cell">
+                    <div
+                      v-if="getMapCount(level, area, section) > 0"
+                      :class="bubbleClass(getMapCount(level, area, section))"
+                    >{{ getMapCount(level, area, section) }}</div>
+                  </div>
+                </template>
+              </div>
+              <div class="front-row-strip">
+                <div v-for="area in ['Left', 'Center', 'Right']" :key="area" class="front-row-cell">
+                  <div
+                    v-if="getMapCount(level, area, 'Front Row') > 0"
+                    :class="bubbleClass(getMapCount(level, area, 'Front Row'))"
+                  >{{ getMapCount(level, area, 'Front Row') }}</div>
+                </div>
+              </div>
+              <span class="section-label">{{ level }}</span>
+            </div>
+            <div class="theater-stage">Stage</div>
+          </div>
         </div>
       </div>
       <div class="stats-sidebar">
@@ -377,6 +393,44 @@ const seats = computed(() => {
   return seatList;
 });
 
+const seatCounts = computed(() => {
+  const counts = {};
+  viewedShows.value.forEach(each => {
+    if (each.seatLevel) {
+      counts[each.seatLevel] = (counts[each.seatLevel] || 0) + 1;
+    }
+  });
+  return counts;
+});
+
+const theaterMapData = computed(() => {
+  const map = {};
+  viewedShows.value.forEach(each => {
+    const { seatLevel, seatArea, seatSection } = each;
+    if (!seatLevel || !seatArea || !seatSection) return;
+    if (seatLevel.startsWith('Front Row')) return;
+    const key = `${seatLevel}|${seatArea}|${seatSection}`;
+    map[key] = (map[key] || 0) + 1;
+  });
+  return map;
+});
+
+function getMapCount(level, area, section) {
+  return theaterMapData.value[`${level}|${area}|${section}`] || 0;
+}
+
+function bubbleClass(count) {
+  if (count >= 11) return 'seat-bubble bubble-inverted';
+  if (count >= 6) return 'seat-bubble bubble-heavy';
+  return 'seat-bubble';
+}
+
+function activeRows(level) {
+  return ['Back', 'Center', 'Front'].filter(section =>
+    ['Left', 'Center', 'Right'].some(area => getMapCount(level, area, section) > 0)
+  );
+}
+
 const getYearlyStats = computed(() => {
   const yearlyCounts = {};
 
@@ -536,6 +590,107 @@ const otherShows = computed(() => {
 
 .level-group {
   margin: 20px 0;
+}
+
+.theater-map {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 0 0;
+  width: 100%;
+}
+
+.theater-section {
+  position: relative;
+  width: 280px;
+  border: 2px solid var(--black);
+  border-radius: 12px;
+  margin-top: 64px;
+  overflow: visible;
+}
+
+.theater-section:first-child {
+  margin-top: 0;
+}
+
+.section-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.grid-cell {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.front-row-strip {
+  position: absolute;
+  bottom: -28px;
+  left: 0;
+  right: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.front-row-cell {
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.seat-bubble {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 2px solid var(--black);
+  background: var(--purple);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+  color: var(--black);
+  flex-shrink: 0;
+}
+
+.bubble-heavy {
+  border-width: 4px;
+}
+
+.bubble-inverted {
+  border-width: 2px;
+  background: var(--black);
+  color: var(--purple);
+}
+
+.section-label {
+  position: absolute;
+  bottom: -52px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  color: var(--black);
+  white-space: nowrap;
+}
+
+.theater-stage {
+  margin-top: 72px;
+  width: 200px;
+  height: 24px;
+  border-radius: 6px;
+  background: var(--black);
+  color: var(--purple);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 1px;
 }
 
 .seat-group {
