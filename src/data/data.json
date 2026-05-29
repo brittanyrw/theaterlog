@@ -372,6 +372,64 @@
         },
         "showCollection": {
             "items": [
+                                {
+                    "sys": {
+                        "id": "SyQEYTUUK0nlCOmYTlyfB22"
+                    },
+                    "name": "Galileo",
+                    "link": null,
+                    "date": "2026-11-14T00:00:00.000Z",
+                    "price": 156,
+                    "favorite": false,
+                    "upcoming": true,
+                    "multi": 0,
+                    "type": "musical",
+                    "rating": "",
+                    "seatLevel": "Mezzanine",
+                    "seatArea": null,
+                    "seatSection": null,
+                    "icon": "",
+                    "actors": null,
+                    "time": null,
+                    "reviewContent": null,
+                    "theater": {
+                        "name": "Shubert Theatre",
+                        "city": "New York, NY"
+                    },
+                    "song": {
+                        "name": "",
+                        "videoLink": ""
+                    }
+                },
+                                {
+                    "sys": {
+                        "id": "SyQEYTUUK0nlCOmYTlyf9"
+                    },
+                    "name": "Come From Away",
+                    "link": null,
+                    "date": "2026-10-09T00:00:00.000Z",
+                    "price": 85,
+                    "favorite": false,
+                    "upcoming": true,
+                    "multi": 2,
+                    "type": "musical",
+                    "rating": "",
+                    "seatLevel": "Front Row Orchestra",
+                    "seatArea": null,
+                    "seatSection": null,
+                    "icon": "plane",
+                    "actors": null,
+                    "time": null,
+                    "reviewContent": null,
+                    "theater": {
+                        "name": "Ford’s Theatre",
+                        "city": "Washington, DC"
+                    },
+                    "song": {
+                        "name": "",
+                        "videoLink": ""
+                    }
+                },
                 {
                     "sys": {
                         "id": "SyQEYTUUK0nlCOmYTlyfB66"
@@ -678,7 +736,7 @@
                     "seatLevel": null,
                     "seatArea": null,
                     "seatSection": null,
-                    "icon": null,
+                    "icon": "plane",
                     "actors": null,
                     "time": 100,
                     "reviewContent": null,
