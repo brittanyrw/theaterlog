@@ -372,6 +372,35 @@
         },
         "showCollection": {
             "items": [
+                {
+                    "sys": {
+                        "id": "3squgi18hlj5lAIKc"
+                    },
+                    "name": "American Idiot",
+                    "link": null,
+                    "date": "2027-07-11T00:00:00.000Z",
+                    "price": 70,
+                    "favorite": false,
+                    "upcoming": true,
+                    "multi": 2,
+                    "type": "musical",
+                    "rating": "",
+                    "seatLevel": "Front Row Orchestra",
+                    "seatArea": null,
+                    "seatSection": null,
+                    "icon": "",
+                    "actors": null,
+                    "time": null,
+                    "reviewContent": null,
+                    "theater": {
+                        "name": "Keegan Theatre",
+                        "city": "Washington, DC"
+                    },
+                    "song": {
+                        "name": "",
+                        "videoLink": ""
+                    }
+                },
                                 {
                     "sys": {
                         "id": "SyQEYTUUK0nlCOmYTlyfB22"
@@ -424,6 +453,180 @@
                     "theater": {
                         "name": "Ford’s Theatre",
                         "city": "Washington, DC"
+                    },
+                    "song": {
+                        "name": "",
+                        "videoLink": ""
+                    }
+                },
+                {
+                    "sys": {
+                        "id": "3squgi18hlj5lAIKcX"
+                    },
+                    "name": "The Play That Goes Wrong",
+                    "link": null,
+                    "date": "2026-06-28T00:00:00.000Z",
+                    "price": 70,
+                    "favorite": false,
+                    "upcoming": true,
+                    "multi": 3,
+                    "type": "play",
+                    "rating": "",
+                    "seatLevel": "Front Row Orchestra",
+                    "seatArea": null,
+                    "seatSection": null,
+                    "icon": "magnifying-glass",
+                    "actors": null,
+                    "time": null,
+                    "reviewContent": null,
+                    "theater": {
+                        "name": "Keegan Theatre",
+                        "city": "Washington, DC"
+                    },
+                    "song": {
+                        "name": "",
+                        "videoLink": ""
+                    }
+                },
+                {
+                    "sys": {
+                        "id": "6jFtf9"
+                    },
+                    "name": "Six",
+                    "link": null,
+                    "date": "2026-06-21T00:00:00.000Z",
+                    "price": 0,
+                    "favorite": null,
+                    "upcoming": true,
+                    "multi": null,
+                    "type": "musical",
+                    "rating": "",
+                    "seatLevel": "Orchestra",
+                    "seatArea": "Front",
+                    "seatSection": "Left",
+                    "icon": "crown",
+                    "actors": [],
+                    "time": 80,
+                    "reviewContent": null,
+                    "theater": {
+                        "name": "Lena Horne Theatre",
+                        "city": "New York, NY"
+                    },
+                    "song": {
+                        "name": "",
+                        "videoLink": null
+                    }
+                },
+                 {
+                    "sys": {
+                        "id": "3vb5Tl705l2"
+                    },
+                    "name": "The Outsiders",
+                    "link": null,
+                    "date": "2026-06-21T00:00:00.000Z",
+                    "price": 187,
+                    "favorite": false,
+                    "upcoming": true,
+                    "multi": null,
+                    "type": "musical",
+                    "rating": "",
+                    "seatLevel": "Front Row Orchestra",
+                    "seatArea": "Front",
+                    "seatSection": "Right",
+                    "icon": "book",
+                    "actors": null,
+                    "time": null,
+                    "reviewContent": null,
+                    "theater": {
+                        "name": "Bernard Jacobs Theatre",
+                        "city": "New York, NY"
+                    },
+                    "song": {
+                        "name": "",
+                        "videoLink": ""
+                    }
+                },
+                {
+                    "sys": {
+                        "id": "3WqeVYgyAXldnUH"
+                    },
+                    "name": "Little Shop of Horrors",
+                    "link": "",
+                    "date": "2026-06-20T00:00:00.000Z",
+                    "price": 122.50,
+                    "favorite": false,
+                    "upcoming": true,
+                    "multi": null,
+                    "type": "musical",
+                    "rating": "",
+                    "seatLevel": "Orchestra",
+                    "seatArea": "Front",
+                    "seatSection": "Left",
+                    "icon": "seedling",
+                    "actors": [],
+                    "time": null,
+                    "reviewContent": null,
+                    "theater": {
+                        "name": "Westside Theatre Upstairs",
+                        "city": "New York, NY"
+                    },
+                    "song": {
+                        "name": "",
+                        "videoLink": ""
+                    }
+                },
+                {
+                    "sys": {
+                        "id": "3squgi18hlj5lAIKcX"
+                    },
+                    "name": "Hadestown",
+                    "link": null,
+                    "date": "2026-06-20T00:00:00.000Z",
+                    "price": 221.77,
+                    "favorite": false,
+                    "upcoming": true,
+                    "multi": 8,
+                    "type": "musical",
+                    "rating": "",
+                    "seatLevel": "Front Row Orchestra",
+                    "seatArea": null,
+                    "seatSection": null,
+                    "icon": "guitar",
+                    "actors": null,
+                    "time": null,
+                    "reviewContent": null,
+                    "theater": {
+                        "name": "Walter Kerr Theatre ",
+                        "city": "New York, NY"
+                    },
+                    "song": {
+                        "name": "",
+                        "videoLink": ""
+                    }
+                },
+                 {
+                    "sys": {
+                        "id": "1YU7dcrwTgvEzoUljEE"
+                    },
+                    "name": "Maybe Happy Ending",
+                    "link": null,
+                    "date": "2026-06-19T00:00:00.000Z",
+                    "price": 169,
+                    "favorite": false,
+                    "upcoming": true,
+                    "multi": null,
+                    "type": "musical",
+                    "rating": "",
+                    "seatLevel": "Front Row Mezzanine",
+                    "seatArea": null,
+                    "seatSection": null,
+                    "icon": "robot",
+                    "actors": null,
+                    "time": null,
+                    "reviewContent": null,
+                    "theater": {
+                        "name": "Belasco Theatre",
+                        "city": "New York, NY"
                     },
                     "song": {
                         "name": "",
