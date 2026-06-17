@@ -162,7 +162,7 @@
             <div v-for="level in ['Balcony', 'Mezzanine', 'Orchestra']" :key="level" class="theater-section">
               <div class="section-grid">
                 <template v-for="section in activeRows(level)" :key="section">
-                  <div v-for="area in ['Left', 'Center', 'Right']" :key="area" class="grid-cell">
+                  <div v-for="area in ['Left', 'Center', 'Right']" :key="area" :class="['grid-cell', section === 'Front' ? 'grid-cell-front' : '']">
                     <div
                       v-if="getMapCount(level, area, section) > 0"
                       :class="bubbleClass(getMapCount(level, area, section))"
@@ -604,7 +604,7 @@ const otherShows = computed(() => {
   position: relative;
   width: 280px;
   border: 2px solid var(--black);
-  border-radius: 12px;
+  border-radius: 0;
   margin-top: 64px;
   overflow: visible;
 }
@@ -623,6 +623,19 @@ const otherShows = computed(() => {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.grid-cell-front {
+  height: 80px;
+  padding-bottom: 20px;
+}
+
+.section-grid .grid-cell:nth-child(3n+2) {
+  padding-left: 16px;
+}
+
+.front-row-strip .front-row-cell:nth-child(2) {
+  padding-left: 16px;
 }
 
 .front-row-strip {
@@ -657,10 +670,14 @@ const otherShows = computed(() => {
 }
 
 .bubble-heavy {
+  width: 45px;
+  height: 45px;
   border-width: 4px;
 }
 
 .bubble-inverted {
+  width: 65px;
+  height: 65px;
   border-width: 2px;
   background: var(--black);
   color: var(--purple);
@@ -668,21 +685,22 @@ const otherShows = computed(() => {
 
 .section-label {
   position: absolute;
-  bottom: -52px;
+  top: -19px;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 11px;
+  font-size: 13px;
   font-weight: bold;
   letter-spacing: 0.5px;
   color: var(--black);
   white-space: nowrap;
+  padding: 10px;
 }
 
 .theater-stage {
   margin-top: 72px;
   width: 200px;
   height: 24px;
-  border-radius: 6px;
+  border-radius: 0;
   background: var(--black);
   color: var(--purple);
   display: flex;
