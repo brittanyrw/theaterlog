@@ -424,59 +424,65 @@ const count = (key) => {
   );
 };
 
-const actorCounts = computed(() => {
-  const byActor = new Map();
+// const actorCounts = computed(() => {
+//   const byActor = new Map();
 
-  viewedShows.value.forEach(show => {
-    if (!Array.isArray(show.actors)) return;
+//   viewedShows.value.forEach(show => {
+//     if (!Array.isArray(show.actors)) return;
 
-    const title = show.name ?? 'Untitled';
-    const d = show.date ? new Date(show.date) : null;
-    const isValidDate = d && !isNaN(d.getTime());
-    const year = isValidDate ? d.getFullYear() : null;
-    const stamp = isValidDate ? d.getTime() : -Infinity;
-    const dateStr = isValidDate
-      ? `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`
-      : null;
+//     const title = show.name ?? 'Untitled';
+//     const d = show.date ? new Date(show.date) : null;
+//     const isValidDate = d && !isNaN(d.getTime());
+//     const year = isValidDate ? d.getFullYear() : null;
+//     const stamp = isValidDate ? d.getTime() : -Infinity;
+//     const dateStr = isValidDate
+//       ? `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`
+//       : null;
 
-    const uniqueActors = new Set(show.actors.filter(Boolean));
+//     const uniqueActors = new Set(show.actors.filter(Boolean));
 
-    uniqueActors.forEach(actor => {
-      if (!byActor.has(actor)) {
-        byActor.set(actor, { name: actor, count: 0, shows: [] });
-      }
-      const entry = byActor.get(actor);
-      entry.count += 1;
-      entry.shows.push({ title, year, dateStr, _stamp: stamp, _key: `${title}|${show.date || ''}` });
-    });
-  });
+//     uniqueActors.forEach(actor => {
+//       if (!byActor.has(actor)) {
+//         byActor.set(actor, { name: actor, count: 0, shows: [] });
+//       }
+//       const entry = byActor.get(actor);
+//       entry.count += 1;
+//       entry.shows.push({ title, year, dateStr, _stamp: stamp, _key: `${title}|${show.date || ''}` });
+//     });
+//   });
 
-  return Array.from(byActor.values())
-    .filter(a => a.count >= 3)
-    .map(a => {
-      a.shows.sort((s1, s2) => s2._stamp - s1._stamp);
+//   return Array.from(byActor.values())
+//     .map(a => {
+//       a.shows.sort((s1, s2) => s2._stamp - s1._stamp);
 
-      const dupMap = new Map();
-      a.shows.forEach(s => {
-        const k = `${s.title}|${s.year ?? ''}`;
-        dupMap.set(k, (dupMap.get(k) || 0) + 1);
-      });
+//       const dupMap = new Map();
+//       a.shows.forEach(s => {
+//         const k = `${s.title}|${s.year ?? ''}`;
+//         dupMap.set(k, (dupMap.get(k) || 0) + 1);
+//       });
 
-      a.shows = a.shows.map(s => {
-        const k = `${s.title}|${s.year ?? ''}`;
-        const needsFullDate = (dupMap.get(k) || 0) > 1 && s.dateStr;
-        return {
-          ...s,
-          display: needsFullDate
-            ? `${s.title}, ${s.year ?? ''} — ${s.dateStr}`
-            : `${s.title}, ${s.year ?? ''}`.trim().replace(/,\s*$/, '')
-        };
-      });
+//       a.shows = a.shows.map(s => {
+//         const k = `${s.title}|${s.year ?? ''}`;
+//         const needsFullDate = (dupMap.get(k) || 0) > 1 && s.dateStr;
+//         return {
+//           ...s,
+//           display: needsFullDate
+//             ? `${s.title}, ${s.year ?? ''} — ${s.dateStr}`
+//             : `${s.title}, ${s.year ?? ''}`.trim().replace(/,\s*$/, '')
+//         };
+//       });
+//       const uniqueShowTitles = new Set(
+//         a.shows.map(show => show.title)
+//       );
 
-      return a;
-    })
-    .sort((a, b) => (b.count - a.count) || a.name.localeCompare(b.name));
-});
+//       a.count = uniqueShowTitles.size;
+//       return a;
+//     })
+//     .filter(a => a.count >= 3)
+//     .sort((a, b) => (b.count - a.count) || a.name.localeCompare(b.name));
+// });
+
+
 
 
 
@@ -523,6 +529,7 @@ const otherShows = computed(() => {
     !["Wicked", "Beauty and the Beast", "Mary Poppins"].includes(show.name)
   );
 });
+
 </script>
 
 

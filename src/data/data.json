@@ -468,10 +468,10 @@
                     "date": "2026-06-28T00:00:00.000Z",
                     "price": 70,
                     "favorite": false,
-                    "upcoming": true,
+                    "upcoming": false,
                     "multi": 3,
                     "type": "play",
-                    "rating": "",
+                    "rating": "funny",
                     "seatLevel": "Front Row Orchestra",
                     "seatArea": null,
                     "seatSection": null,
@@ -484,8 +484,8 @@
                         "city": "Washington, DC"
                     },
                     "song": {
-                        "name": "",
-                        "videoLink": ""
+                        "name": null,
+                        "videoLink": null
                     }
                 },
                 {
@@ -496,16 +496,16 @@
                     "link": null,
                     "date": "2026-06-21T00:00:00.000Z",
                     "price": 0,
-                    "favorite": null,
-                    "upcoming": true,
+                    "favorite": false,
+                    "upcoming": false,
                     "multi": null,
                     "type": "musical",
-                    "rating": "",
+                    "rating": "love",
                     "seatLevel": "Orchestra",
                     "seatArea": "Front",
                     "seatSection": "Left",
                     "icon": "crown",
-                    "actors": [],
+                    "actors": ["Khaila Wilcoxon", "Kristin Maldonado", "Jasmine Forsberg", "Olivia Donalson", "Abigail Barlow", "Anna Uzele"],
                     "time": 80,
                     "reviewContent": null,
                     "theater": {
@@ -513,8 +513,8 @@
                         "city": "New York, NY"
                     },
                     "song": {
-                        "name": "",
-                        "videoLink": null
+                        "name": "Heart of Stone",
+                        "videoLink": "https://www.youtube.com/watch?v=8VDt9rHmUlk&list=RD8VDt9rHmUlk"
                     }
                 },
                  {
@@ -525,16 +525,16 @@
                     "link": null,
                     "date": "2026-06-21T00:00:00.000Z",
                     "price": 187,
-                    "favorite": false,
-                    "upcoming": true,
+                    "favorite": true,
+                    "upcoming": false,
                     "multi": null,
                     "type": "musical",
-                    "rating": "",
+                    "rating": "love",
                     "seatLevel": "Front Row Orchestra",
                     "seatArea": "Front",
                     "seatSection": "Right",
                     "icon": "book",
-                    "actors": null,
+                    "actors": ["Noah Pacht", "Caleb Mathura", "Sequoiia", "Dan Berry", "Sutton James Kaylor", "Emma Pittman", "Daryl Tofa", "Nicholas McDonough", "Victor Carrillo Tracey", "Logan Gray Saad", "Runako Campbell", "Alejandro Mullerdahlberg", "Davis Wayne", "Abby Matsusaka", "Devin Tyler Hatch", "Hailey Hyde", "Brandon Lee Jordan", "Eli Talley", "Wes Williams", "Cole Zieser"],
                     "time": null,
                     "reviewContent": null,
                     "theater": {
@@ -542,8 +542,8 @@
                         "city": "New York, NY"
                     },
                     "song": {
-                        "name": "",
-                        "videoLink": ""
+                        "name": "Stay Gold",
+                        "videoLink": "https://www.youtube.com/watch?v=XzbHPqULtdA"
                     }
                 },
                 {
@@ -555,15 +555,15 @@
                     "date": "2026-06-20T00:00:00.000Z",
                     "price": 122.50,
                     "favorite": false,
-                    "upcoming": true,
+                    "upcoming": false,
                     "multi": null,
                     "type": "musical",
-                    "rating": "",
+                    "rating": "funny",
                     "seatLevel": "Orchestra",
                     "seatArea": "Front",
                     "seatSection": "Left",
                     "icon": "seedling",
-                    "actors": [],
+                    "actors": ["Nikki M. James", "Jordan Fisher", "Claybourne Elder", "Reg Rogers", "Christian McQueen", "Christine Wanda", "Savannah Lee Birdsong", "Morgan Ashley Bryant", "Teddy Yudain", "Mecca Hicks", "Weston Chandler Long", "Aveena Sawyer", "Jeff Sears"],
                     "time": null,
                     "reviewContent": null,
                     "theater": {
@@ -571,8 +571,8 @@
                         "city": "New York, NY"
                     },
                     "song": {
-                        "name": "",
-                        "videoLink": ""
+                        "name": "Grow for Me",
+                        "videoLink": "https://www.youtube.com/watch?v=j4msKe1Dh9w&list=RDj4msKe1Dh9w"
                     }
                 },
                 {
@@ -583,16 +583,16 @@
                     "link": null,
                     "date": "2026-06-20T00:00:00.000Z",
                     "price": 221.77,
-                    "favorite": false,
-                    "upcoming": true,
+                    "favorite": true,
+                    "upcoming": false,
                     "multi": 8,
                     "type": "musical",
-                    "rating": "",
+                    "rating": "love",
                     "seatLevel": "Front Row Orchestra",
                     "seatArea": null,
                     "seatSection": null,
                     "icon": "guitar",
-                    "actors": null,
+                    "actors": ["John-Michael Lyles", "Jordan Tyson", "Gaby Moreno", "Gary Dourdan", "J. Harrison Ghee", "Jewelle Blackman", "Jessie Shelton", "Kay Trinidad", "Malcolm Armwood", "Sojourner Brown", "Jeffrey Cornelius", "Sydney Parra", "Alex Puette"],
                     "time": null,
                     "reviewContent": null,
                     "theater": {
@@ -600,8 +600,8 @@
                         "city": "New York, NY"
                     },
                     "song": {
-                        "name": "",
-                        "videoLink": ""
+                        "name": "Way Down Hadestown",
+                        "videoLink": "https://www.youtube.com/watch?v=Yo6Z2ki-MWk&list=RDYo6Z2ki-MWk"
                     }
                 },
                  {
@@ -612,16 +612,16 @@
                     "link": null,
                     "date": "2026-06-19T00:00:00.000Z",
                     "price": 169,
-                    "favorite": false,
-                    "upcoming": true,
+                    "favorite": true,
+                    "upcoming": false,
                     "multi": null,
                     "type": "musical",
-                    "rating": "",
+                    "rating": "love",
                     "seatLevel": "Front Row Mezzanine",
                     "seatArea": null,
                     "seatSection": null,
                     "icon": "robot",
-                    "actors": null,
+                    "actors": ["Zachary Noah Piser", "Savy Jackson", "Marcus Choi", "Dez Duron"],
                     "time": null,
                     "reviewContent": null,
                     "theater": {
@@ -629,8 +629,8 @@
                         "city": "New York, NY"
                     },
                     "song": {
-                        "name": "",
-                        "videoLink": ""
+                        "name": "Maybe Happy Ending",
+                        "videoLink": "https://www.youtube.com/watch?v=wrBy72CiCF8&list=RDwrBy72CiCF8"
                     }
                 },
                 {

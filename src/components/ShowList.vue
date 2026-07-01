@@ -105,7 +105,7 @@
               </p>
             </div>
           </div>
-          <div v-if="show.song && !show.upcoming" class="favs">
+          <div v-if="show.type == 'musical' && show.song && !show.upcoming" class="favs">
             <p class="fav-song-label">Fav Song</p>
             <div class="fav-song">
               <div class="fav-song-content">
