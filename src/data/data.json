@@ -519,6 +519,35 @@
         },
         {
           "sys": {
+            "id": "SyQEYTUUK0nlC344454"
+          },
+          "name": "Spring Awakening",
+          "link": null,
+          "date": "2026-12-20T00:00:00.000Z",
+          "price": 156,
+          "favorite": false,
+          "upcoming": true,
+          "multi": 0,
+          "type": "musical",
+          "rating": "",
+          "seatLevel": "Mezzanine",
+          "seatArea": null,
+          "seatSection": null,
+          "icon": "",
+          "actors": null,
+          "time": null,
+          "reviewContent": null,
+          "theater": {
+            "name": "Studio Seaview",
+            "city": "New York, NY"
+          },
+          "song": {
+            "name": "",
+            "videoLink": ""
+          }
+        },
+        {
+          "sys": {
             "id": "SyQEYTUUK0nlCOmYTlyfB22"
           },
           "name": "Galileo",
@@ -540,6 +569,35 @@
           "theater": {
             "name": "Shubert Theatre",
             "city": "New York, NY"
+          },
+          "song": {
+            "name": "",
+            "videoLink": ""
+          }
+        },
+        {
+          "sys": {
+            "id": "SyQEYTUUK0nlCOmYT"
+          },
+          "name": "Come From Away",
+          "link": null,
+          "date": "2026-10-16T00:00:00.000Z",
+          "price": 85,
+          "favorite": false,
+          "upcoming": true,
+          "multi": 2,
+          "type": "musical",
+          "rating": "",
+          "seatLevel": "Front Row Orchestra",
+          "seatArea": null,
+          "seatSection": null,
+          "icon": "plane",
+          "actors": null,
+          "time": null,
+          "reviewContent": null,
+          "theater": {
+            "name": "Ford’s Theatre",
+            "city": "Washington, DC"
           },
           "song": {
             "name": "",
@@ -575,33 +633,33 @@
             "videoLink": ""
           }
         },
-        {
+         {
           "sys": {
-            "id": "SyQEYTUUK0nlCOmYTlyf9"
+            "id": "3squgerdd"
           },
-          "name": "Come From Away",
+          "name": "Merrily We Roll Along",
           "link": null,
-          "date": "2026-09-19T00:00:00.000Z",
-          "price": 85,
-          "favorite": false,
-          "upcoming": true,
-          "multi": 2,
+          "date": "2026-09-12T00:00:00.000Z",
+          "price": 141,
+          "favorite": true,
+          "upcoming": false,
+          "multi": 3,
           "type": "musical",
-          "rating": "",
-          "seatLevel": "Front Row Orchestra",
+          "rating": "love",
+          "seatLevel": "Orchestra",
           "seatArea": null,
           "seatSection": null,
-          "icon": "plane",
+          "icon": "martini-glass",
           "actors": null,
           "time": null,
           "reviewContent": null,
-          "theater": {
-            "name": "Ford’s Theatre",
-            "city": "Washington, DC"
-          },
           "song": {
             "name": "",
             "videoLink": ""
+          },
+          "theater": {
+            "name": "Signature Theatre",
+            "city": "Arlington, VA"
           }
         },
         {
@@ -612,15 +670,15 @@
           "link": null,
           "date": "2026-09-04T00:00:00.000Z",
           "price": 141,
-          "favorite": null,
-          "upcoming": true,
-          "multi": 2,
+          "favorite": true,
+          "upcoming": false,
+          "multi": 3,
           "type": "musical",
-          "rating": "",
+          "rating": "love",
           "seatLevel": "Orchestra",
           "seatArea": null,
           "seatSection": null,
-          "icon": "",
+          "icon": "martini-glass",
           "actors": null,
           "time": null,
           "reviewContent": null,
@@ -1997,7 +2055,7 @@
           "seatLevel": "Mezzanine",
           "seatArea": null,
           "seatSection": null,
-          "icon": null,
+          "icon": "martini-glass",
           "actors": [
             "Jonathan Groff",
             "Daniel Radcliffe",
