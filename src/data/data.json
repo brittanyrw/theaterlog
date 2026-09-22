@@ -548,6 +548,35 @@
         },
         {
           "sys": {
+            "id": "SyQEYT222UK032775TlyfB22"
+          },
+          "name": "Maybe Happy Ending",
+          "link": null,
+          "date": "2026-11-14T00:00:00.000Z",
+          "price": 169,
+          "favorite": false,
+          "upcoming": true,
+          "multi": 4,
+          "type": "musical",
+          "rating": "",
+          "seatLevel": "Front Row Orchestra",
+          "seatArea": null,
+          "seatSection": null,
+          "icon": "",
+          "actors": null,
+          "time": null,
+          "reviewContent": null,
+          "theater": {
+            "name": "Belasco Theatre",
+            "city": "New York, NY"
+          },
+          "song": {
+            "name": "",
+            "videoLink": ""
+          }
+        },
+        {
+          "sys": {
             "id": "SyQEYTUUK0nlCOmYTlyfB22"
           },
           "name": "Galileo",
@@ -568,6 +597,35 @@
           "reviewContent": null,
           "theater": {
             "name": "Shubert Theatre",
+            "city": "New York, NY"
+          },
+          "song": {
+            "name": "",
+            "videoLink": ""
+          }
+        },
+        {
+          "sys": {
+            "id": "SyQEYTUUK032775TlyfB22"
+          },
+          "name": "Operation Mincemeat",
+          "link": null,
+          "date": "2026-11-13T00:00:00.000Z",
+          "price": 199,
+          "favorite": false,
+          "upcoming": true,
+          "multi": 2,
+          "type": "musical",
+          "rating": "",
+          "seatLevel": "Mezzanine",
+          "seatArea": null,
+          "seatSection": null,
+          "icon": "",
+          "actors": null,
+          "time": null,
+          "reviewContent": null,
+          "theater": {
+            "name": "John Golden Theatre",
             "city": "New York, NY"
           },
           "song": {
@@ -660,6 +718,9 @@
           "theater": {
             "name": "Signature Theatre",
             "city": "Arlington, VA"
+          },"song": {
+            "name": "Franklin Shepard Inc",
+            "videoLink": "https://www.youtube.com/watch?v=l3RAF6jqOYc"
           }
         },
         {
@@ -689,6 +750,9 @@
           "theater": {
             "name": "Signature Theatre",
             "city": "Arlington, VA"
+          },"song": {
+            "name": "Franklin Shepard Inc",
+            "videoLink": "https://www.youtube.com/watch?v=l3RAF6jqOYc"
           }
         },
         {
