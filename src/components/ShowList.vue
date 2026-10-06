@@ -83,9 +83,12 @@
             <p v-if="show.price >= 0" class="show-price">
               ${{ Math.floor(show.price) }}
             </p>
-            <div v-if="show.image" class="fav-view">
+            <!-- <div v-if="show.image" class="fav-view">
               <font-awesome-icon icon="camera" class="image-icon" />
             </div>
+            <div v-if="show.review" class="fav-view">
+              <font-awesome-icon icon="lightbulb" class="review-icon" />
+            </div> -->
           </div>
           <div class="show-info">
             <p v-if="show.upcoming" class="upcoming-tag">upcoming</p>
