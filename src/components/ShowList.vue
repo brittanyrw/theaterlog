@@ -83,6 +83,9 @@
             <p v-if="show.price >= 0" class="show-price">
               ${{ Math.floor(show.price) }}
             </p>
+            <div v-if="show.image" class="fav-view">
+              <font-awesome-icon icon="camera" class="image-icon" />
+            </div>
           </div>
           <div class="show-info">
             <p v-if="show.upcoming" class="upcoming-tag">upcoming</p>
@@ -435,6 +438,10 @@ const toggleReview = (index) => {
           }
         }
 
+        .image-icon {
+          color: var(--black);
+        }
+
         .review {
           img {
             width: 100%;
@@ -542,9 +549,10 @@ const toggleReview = (index) => {
           position: absolute;
           font-size: 14px;
           top: -15px;
+          left: 120px;
 
           @media screen and (min-width: 662px) {
-            left: 20px;
+            /* left: 20px; */
           }
         }
 
