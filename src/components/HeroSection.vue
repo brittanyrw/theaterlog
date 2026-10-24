@@ -859,7 +859,7 @@ nav {
 
       &:nth-child(1) {
         .city-amount {
-          height: 145px;
+          height: 175px;
         }
       }
 
