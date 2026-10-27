@@ -578,6 +578,35 @@
         },
         {
           "sys": {
+            "id": "SyQEYT23395hdd55"
+          },
+          "name": "All the World's a Stage",
+          "link": null,
+          "date": "2026-11-21T00:00:00.000Z",
+          "price": 104,
+          "favorite": false,
+          "upcoming": true,
+          "multi": 0,
+          "type": "musical",
+          "rating": "",
+          "seatLevel": "Front Row Orchestra",
+          "seatArea": null,
+          "seatSection": null,
+          "icon": "",
+          "actors": null,
+          "time": null,
+          "reviewContent": null,
+          "theater": {
+            "name": "Signature Theatre",
+            "city": "Arlington, VA"
+          },
+          "song": {
+            "name": "",
+            "videoLink": ""
+          }
+        },
+        {
+          "sys": {
             "id": "SyQEYT222UK032775TlyfB22"
           },
           "name": "Maybe Happy Ending",
