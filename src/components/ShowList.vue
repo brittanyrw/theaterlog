@@ -525,10 +525,10 @@ const toggleReview = (index) => {
 
       .show-content {
         text-align: center;
-        padding: 10px 20px 60px 20px;
+        padding: 10px 20px 80px 20px;
 
         @media screen and (min-width: 662px) {
-          padding: 20px 35px 75px 35px;
+          padding: 20px 35px 75px 35px !important;
         }
       }
 

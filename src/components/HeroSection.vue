@@ -18,8 +18,12 @@
           </p>
           <p class="portfolio-link">
             Created by
-            <a href="https://musicalwebdev.com" target="_blank">Brittany Walker</a>. View the code
-            <a href="https://github.com/brittanyrw/theaterlog" target="_blank">on GitHub.</a>
+            <a href="https://musicalwebdev.com" target="_blank"
+              >Brittany Walker</a
+            >. View the code
+            <a href="https://github.com/brittanyrw/theaterlog" target="_blank"
+              >on GitHub.</a
+            >
           </p>
           <nav>
             <ul>
@@ -87,8 +91,8 @@
             <p class="stat-title">Broadway Theaters</p>
             <p class="stat-number">
               {{
-              Math.floor((valueCountTheaters("broadway", true) / 41) * 100)
-            }}%
+                Math.floor((valueCountTheaters("broadway", true) / 41) * 100)
+              }}%
             </p>
           </div>
           <div class="counter ticket-stat">
@@ -122,9 +126,15 @@
     </div>
     <div class="statistics">
       <div class="statistics-content">
-        <h3><font-awesome-icon icon="city" class="fav-icon" /> Show Locations</h3>
+        <h3>
+          <font-awesome-icon icon="city" class="fav-icon" /> Show Locations
+        </h3>
         <ul class="show-location-list">
-          <li v-for="(cityAmount, city) in countArray(cities)" :key="city" class="show-location">
+          <li
+            v-for="(cityAmount, city) in countArray(cities)"
+            :key="city"
+            class="show-location"
+          >
             <p class="city-amount">{{ cityAmount }}</p>
 
             <p class="city">
@@ -133,9 +143,16 @@
           </li>
         </ul>
         <div class="show-years">
-          <h3><font-awesome-icon icon="calendar-check" class="fav-icon" /> Show Years</h3>
+          <h3>
+            <font-awesome-icon icon="calendar-check" class="fav-icon" /> Show
+            Years
+          </h3>
           <ul class="show-year-list">
-            <li v-for="year in getYearlyStats" :key="year.year" class="show-year">
+            <li
+              v-for="year in getYearlyStats"
+              :key="year.year"
+              class="show-year"
+            >
               <p class="year">
                 {{ year.year }}
               </p>
@@ -144,22 +161,37 @@
           </ul>
         </div>
         <div class="show-years">
-          <h3><font-awesome-icon icon="money-bill-wave" class="fav-icon" /> Show Cost Per Year / Avg Ticket Cost</h3>
+          <h3>
+            <font-awesome-icon icon="money-bill-wave" class="fav-icon" /> Show
+            Cost Per Year / Avg Ticket Cost
+          </h3>
           <ul class="show-year-list">
-            <li v-for="stat in getYearlyStats" :key="stat.year" class="show-year">
+            <li
+              v-for="stat in getYearlyStats"
+              :key="stat.year"
+              class="show-year"
+            >
               <p class="year">
                 {{ stat.year }}
               </p>
               <p class="year-amount">
-                ${{ stat.totalPrice }} / ${{ Math.floor(stat.totalPrice/stat.count) }}
+                ${{ stat.totalPrice }} / ${{
+                  Math.floor(stat.totalPrice / stat.count)
+                }}
               </p>
             </li>
           </ul>
         </div>
         <div class="show-years show-seats">
-          <h3><font-awesome-icon icon="chair" class="fav-icon" /> Seat Locations</h3>
+          <h3>
+            <font-awesome-icon icon="chair" class="fav-icon" /> Seat Locations
+          </h3>
           <ul class="show-year-list">
-            <li v-for="(seatAmount, seat) in countArray(seats)" :key="seat" class="show-year">
+            <li
+              v-for="(seatAmount, seat) in countArray(seats)"
+              :key="seat"
+              class="show-year"
+            >
               <p class="year">
                 {{ seat }}
               </p>
@@ -170,11 +202,20 @@
       </div>
       <div class="stats-sidebar">
         <div class="review-legend">
-          <h3><font-awesome-icon icon="heart" class="fav-icon" /> Review Legend</h3>
+          <h3>
+            <font-awesome-icon icon="heart" class="fav-icon" /> Review Legend
+          </h3>
           <ul class="review-emoji-list">
-            <li v-for="(ratingAmount, rating) in countArray(ratings)" :key="rating">
+            <li
+              v-for="(ratingAmount, rating) in countArray(ratings)"
+              :key="rating"
+            >
               <div class="review-img-wrapper">
-                <img :alt="`${rating} emoji`" class="emoji" :src="getEmojiUrl(rating)" />
+                <img
+                  :alt="`${rating} emoji`"
+                  class="emoji"
+                  :src="getEmojiUrl(rating)"
+                />
               </div>
               <p class="rating-name">
                 {{ rating }}
@@ -185,10 +226,19 @@
         </div>
         <div class="birthday-shows-section">
           <div class="birthday-header">
-            <h3><font-awesome-icon icon="cake-candles" class="fav-icon" /> Birthday Shows</h3>
+            <h3>
+              <font-awesome-icon icon="cake-candles" class="fav-icon" />
+              Birthday Shows
+            </h3>
             <p>Shows seen for my birthday.</p>
           </div>
           <ul class="birthday-shows">
+            <li class="birthday-show-list">
+              <p class="show-year">2026</p>
+              <div class="shows">
+                <p>Operation Mincemeat, Maybe Happy Ending, Galileo</p>
+              </div>
+            </li>
             <li class="birthday-show-list">
               <p class="show-year">2025</p>
               <div class="shows">
@@ -198,7 +248,10 @@
             <li class="birthday-show-list">
               <p class="show-year">2024</p>
               <div class="shows">
-                <p>Six, Showstopper, Cabaret, Starlight Express, Operation Mincemeat, Hadestown</p>
+                <p>
+                  Six, Showstopper, Cabaret, Starlight Express, Operation
+                  Mincemeat, Hadestown
+                </p>
               </div>
             </li>
             <li class="birthday-show-list">
@@ -260,7 +313,11 @@
     <div class="show-years show-repeats">
       <h3><font-awesome-icon icon="repeat" class="fav-icon" /> Show Repeats</h3>
       <ul class="show-year-list">
-        <li v-for="show in countShowsWithIcon(otherShows)" :key="show.icon" class="show-year">
+        <li
+          v-for="show in countShowsWithIcon(otherShows)"
+          :key="show.icon"
+          class="show-year"
+        >
           <div class="repeat-content">
             <p class="year">
               <font-awesome-icon :icon="show.icon" class="fav-icon" />
@@ -270,18 +327,40 @@
           </div>
         </li>
       </ul>
-  <h4>For these shows I was a volunteer usher:</h4>
-  <ul class="show-year-list">
-    <li v-for="show in countShowsWithIcon(volunteerShows)" :key="show.icon" class="show-year">
-      <div class="repeat-content">
-        <p class="year">
-          <font-awesome-icon :icon="show.icon" class="fav-icon" />
-          {{ show.name }}
-        </p>
-        <p class="year-amount">{{ show.count }}</p>
-      </div>
-    </li>
-  </ul>
+      <h4>For these shows I was a volunteer usher:</h4>
+      <ul class="show-year-list">
+        <li
+          v-for="show in countShowsWithIcon(volunteerShows)"
+          :key="show.icon"
+          class="show-year"
+        >
+          <div class="repeat-content">
+            <p class="year">
+              <font-awesome-icon :icon="show.icon" class="fav-icon" />
+              {{ show.name }}
+            </p>
+            <p class="year-amount">{{ show.count }}</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="show-years show-repeats theater-repeats">
+      <h3>
+        <font-awesome-icon icon="repeat" class="fav-icon" /> Theater Repeats
+      </h3>
+      <p>Theaters visited 5+ times</p>
+      <ul class="show-year-list">
+        <li
+          v-for="theater in countTheaters(otherShows)"
+          :key="theater.name"
+          class="show-year"
+        >
+          <div class="repeat-content">
+            <p class="year">{{ theater.name }} in {{ theater.city }}</p>
+            <p class="year-amount">{{ theater.count }}</p>
+          </div>
+        </li>
+      </ul>
     </div>
     <!-- <div class="show-years actor-repeats">
       <h3>Actor Repeats</h3>
@@ -304,44 +383,41 @@
 </template>
 
 <script setup>
-import { computed } from 'vue';
+import { computed } from "vue";
 
 const props = defineProps({
   shows: Array,
   actors: Array,
-  theaters: Array
+  theaters: Array,
 });
 
 const emojiMap = {
-  love: new URL('@/assets/love.svg', import.meta.url).href,
-  happy: new URL('@/assets/happy.svg', import.meta.url).href,
-  meaningful: new URL('@/assets/meaningful.svg', import.meta.url).href,
-  funny: new URL('@/assets/funny.svg', import.meta.url).href,
-  dislike: new URL('@/assets/dislike.svg', import.meta.url).href,
-  sad: new URL('@/assets/sad.svg', import.meta.url).href,
-  'happy-sad': new URL('@/assets/happy-sad.svg', import.meta.url).href,
-  meh: new URL('@/assets/meh.svg', import.meta.url).href,
-  confused: new URL('@/assets/confused.svg', import.meta.url).href
+  love: new URL("@/assets/love.svg", import.meta.url).href,
+  happy: new URL("@/assets/happy.svg", import.meta.url).href,
+  meaningful: new URL("@/assets/meaningful.svg", import.meta.url).href,
+  funny: new URL("@/assets/funny.svg", import.meta.url).href,
+  dislike: new URL("@/assets/dislike.svg", import.meta.url).href,
+  sad: new URL("@/assets/sad.svg", import.meta.url).href,
+  "happy-sad": new URL("@/assets/happy-sad.svg", import.meta.url).href,
+  meh: new URL("@/assets/meh.svg", import.meta.url).href,
+  confused: new URL("@/assets/confused.svg", import.meta.url).href,
 };
 
 const getEmojiUrl = (rating) => {
-  return emojiMap[rating] || '';
+  return emojiMap[rating] || "";
 };
 
 const viewedShows = computed(() => {
-  return props.shows.filter(item => !item.upcoming);
+  return props.shows.filter((item) => !item.upcoming);
 });
 
 const upcomingCounter = computed(() => {
-  return props.shows.reduce(
-    (res, item) => (item.upcoming ? res + 1 : res),
-    0
-  );
+  return props.shows.reduce((res, item) => (item.upcoming ? res + 1 : res), 0);
 });
 
 const ratings = computed(() => {
   let reviewList = [];
-  viewedShows.value.forEach(each => {
+  viewedShows.value.forEach((each) => {
     if (each.rating) {
       reviewList.push(each.rating);
     }
@@ -351,10 +427,18 @@ const ratings = computed(() => {
 
 const cities = computed(() => {
   let cityList = [];
-  viewedShows.value.forEach(each => {
-    if (each.theater.city === "White Plains, NY" || each.theater.city === "New York, NY") {
+  viewedShows.value.forEach((each) => {
+    if (
+      each.theater.city === "White Plains, NY" ||
+      each.theater.city === "New York, NY"
+    ) {
       cityList.push("NYC");
-    } else if (each.theater.city === "Tysons, VA" || each.theater.city === "Bethesda, MD" || each.theater.city === "Columbia, MD" || each.theater.city === "Washington, DC") {
+    } else if (
+      each.theater.city === "Tysons, VA" ||
+      each.theater.city === "Bethesda, MD" ||
+      each.theater.city === "Columbia, MD" ||
+      each.theater.city === "Washington, DC"
+    ) {
       cityList.push("DC");
     } else if (each.theater.city === "Austin, TX") {
       cityList.push("Austin");
@@ -369,7 +453,7 @@ const cities = computed(() => {
 
 const seats = computed(() => {
   let seatList = [];
-  viewedShows.value.forEach(each => {
+  viewedShows.value.forEach((each) => {
     if (each.seatLevel) {
       seatList.push(each.seatLevel);
     }
@@ -380,13 +464,13 @@ const seats = computed(() => {
 const getYearlyStats = computed(() => {
   const yearlyCounts = {};
 
-  viewedShows.value.forEach(item => {
+  viewedShows.value.forEach((item) => {
     const year = new Date(item.date).getFullYear();
 
     if (!yearlyCounts[year]) {
       yearlyCounts[year] = {
         count: 0,
-        totalPrice: 0
+        totalPrice: 0,
       };
     }
 
@@ -395,13 +479,13 @@ const getYearlyStats = computed(() => {
   });
 
   const result = Object.keys(yearlyCounts)
-    .map(year => {
+    .map((year) => {
       const { count, totalPrice } = yearlyCounts[year];
       return {
         year: Number(year),
         count,
         averagePrice: Math.floor(totalPrice / count),
-        totalPrice: Math.floor(totalPrice)
+        totalPrice: Math.floor(totalPrice),
       };
     })
     .sort((a, b) => b.year - a.year);
@@ -410,17 +494,17 @@ const getYearlyStats = computed(() => {
 });
 
 const valueCount = (key, value) => {
-  return viewedShows.value.filter(show => show[key] === value).length;
+  return viewedShows.value.filter((show) => show[key] === value).length;
 };
 
 const valueCountTheaters = (key, value) => {
-  return props.theaters.filter(theater => theater[key] === value).length;
+  return props.theaters.filter((theater) => theater[key] === value).length;
 };
 
 const count = (key) => {
   return viewedShows.value.reduce(
     (res, show) => (show[key] ? res + show[key] : res),
-    0
+    0,
   );
 };
 
@@ -482,19 +566,15 @@ const count = (key) => {
 //     .sort((a, b) => (b.count - a.count) || a.name.localeCompare(b.name));
 // });
 
-
-
-
-
 const countArray = (array = []) => {
   const countedArray = {};
 
-  array.forEach(el => {
+  array.forEach((el) => {
     countedArray[el] = (countedArray[el] || 0) + 1;
   });
 
   const sortedCountedObj = Object.entries(countedArray).sort(
-    (a, b) => b[1] - a[1]
+    (a, b) => b[1] - a[1],
   );
 
   return Object.fromEntries(sortedCountedObj);
@@ -503,7 +583,7 @@ const countArray = (array = []) => {
 const countShowsWithIcon = (shows) => {
   const showCount = {};
 
-  shows.forEach(item => {
+  shows.forEach((item) => {
     const { name, icon } = item;
 
     if (showCount[name]) {
@@ -514,24 +594,47 @@ const countShowsWithIcon = (shows) => {
   });
 
   return Object.values(showCount)
-    .filter(item => item.count >= 2)
+    .filter((item) => item.count >= 2)
+    .sort((a, b) => b.count - a.count);
+};
+
+const countTheaters = (shows) => {
+  const theaterCount = {};
+
+  shows.forEach((item) => {
+    if (!item.theater) return;
+
+    const { name, city } = item.theater;
+
+    if (theaterCount[name]) {
+      theaterCount[name].count++;
+    } else {
+      theaterCount[name] = {
+        name: name,
+        city: city,
+        count: 1,
+      };
+    }
+  });
+
+  return Object.values(theaterCount)
+    .filter((item) => item.count >= 5)
     .sort((a, b) => b.count - a.count);
 };
 
 const volunteerShows = computed(() => {
-  return viewedShows.value.filter(show =>
-    ["Wicked", "Beauty and the Beast", "Mary Poppins"].includes(show.name)
+  return viewedShows.value.filter((show) =>
+    ["Wicked", "Beauty and the Beast", "Mary Poppins"].includes(show.name),
   );
 });
 
 const otherShows = computed(() => {
-  return viewedShows.value.filter(show =>
-    !["Wicked", "Beauty and the Beast", "Mary Poppins"].includes(show.name)
+  return viewedShows.value.filter(
+    (show) =>
+      !["Wicked", "Beauty and the Beast", "Mary Poppins"].includes(show.name),
   );
 });
-
 </script>
-
 
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
@@ -702,6 +805,10 @@ nav {
 .show-repeats,
 .actor-repeats {
   padding: 20px;
+}
+
+.theater-repeats {
+  border-top: 3px solid var(--black);
 }
 
 .repeat-content {
@@ -973,7 +1080,6 @@ nav {
   flex-direction: column;
   justify-content: center;
 }
-
 
 .counter.shortest-show-stat,
 .counter.longest-show-stat {
